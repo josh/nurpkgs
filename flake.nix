@@ -30,14 +30,12 @@
         "aarch64-linux"
         "x86_64-linux"
       ];
-      eachSystem = f: nixpkgs.lib.genAttrs systems (system: f nixpkgs.legacyPackages.${system});
+      inherit (nixpkgs) lib;
+      eachSystem = f: lib.genAttrs systems (system: f nixpkgs.legacyPackages.${system});
       treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
     in
     {
-      packages.aarch64-darwin.hello = nixpkgs.legacyPackages.aarch64-darwin.hello;
-      packages.aarch64-linux.hello = nixpkgs.legacyPackages.aarch64-linux.hello;
-      packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
-
+      packages = eachSystem (pkgs: import ./pkgs pkgs);
       formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
       checks = eachSystem (pkgs: {
         formatting = treefmtEval.${pkgs.system}.config.build.check self;
