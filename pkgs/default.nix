@@ -8,5 +8,6 @@ let
   packages = {
     hello = callPackage ./hello.nix { };
   };
+
 in
 lib.attrsets.filterAttrs isAvailable packages

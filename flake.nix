@@ -39,6 +39,12 @@
       formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
       checks = eachSystem (pkgs: {
         formatting = treefmtEval.${pkgs.system}.config.build.check self;
+        tests = pkgs.runCommand "nurpkgs-tests" {
+          nativeBuildInputs = lib.concatMap (
+            pkg:
+            if (builtins.hasAttr "tests" pkg.passthru) then (builtins.attrValues pkg.passthru.tests) else [ ]
+          ) (lib.attrValues self.packages.${pkgs.system});
+        } "touch $out";
       });
     };
 }

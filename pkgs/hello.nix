@@ -3,6 +3,8 @@
   stdenv,
   writeText,
   cowsay,
+  runCommand,
+  hello,
 }:
 let
   wrapperScript = writeText "hello" ''
@@ -22,6 +24,12 @@ stdenv.mkDerivation {
     chmod +x $out/bin/hello
   '';
 
+  # doInstallCheck = true;
+  # nativeInstallCheckInputs = [
+  #   versionCheckHook
+  # ];
+
+  # See https://nixos.org/manual/nixpkgs/unstable/
   meta = {
     description = "A program that produces a familiar, friendly greeting";
     longDescription = ''
@@ -29,11 +37,25 @@ stdenv.mkDerivation {
     '';
     homepage = "https://example.com/";
     license = lib.licenses.mit;
+    sourceProvenance = [ lib.sourceTypes.fromSource ];
     mainPackage = "hello";
     platforms = [
       "aarch64-darwin"
       "aarch64-linux"
       "x86_64-linux"
     ];
+  };
+
+  passthru.tests = {
+    # version = testers.testVersion { package = hello; };
+    run =
+      runCommand "hello-test-run"
+        {
+          nativeBuildInputs = [ hello ];
+        }
+        ''
+          hello
+          touch $out
+        '';
   };
 }
