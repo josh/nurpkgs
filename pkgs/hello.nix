@@ -4,7 +4,6 @@
   writeText,
   cowsay,
   runCommand,
-  hello,
 }:
 let
   wrapperScript = writeText "hello" ''
@@ -12,7 +11,7 @@ let
     exec ${cowsay}/bin/cowsay "Hello, world!"
   '';
 in
-stdenv.mkDerivation {
+stdenv.mkDerivation (finalAttrs: {
   pname = "hello";
   version = "0.1.0";
 
@@ -51,11 +50,11 @@ stdenv.mkDerivation {
     run =
       runCommand "hello-test-run"
         {
-          nativeBuildInputs = [ hello ];
+          nativeBuildInputs = [ finalAttrs.finalPackage ];
         }
         ''
           hello
           touch $out
         '';
   };
-}
+})
