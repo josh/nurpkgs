@@ -1,4 +1,5 @@
 {
+  system,
   lib,
   stdenv,
   fetchurl,
@@ -6,13 +7,23 @@
   testers,
   age,
 }:
+let
+  version = "0.1.4";
+  sources = {
+    "aarch64-linux" = fetchurl {
+      url = "https://github.com/remko/age-plugin-se/releases/download/v0.1.4/age-plugin-se-v0.1.4-aarch64-linux.tgz";
+      sha256 = "11hyqakcp3jvr092z61b9sv1bpn088f68bxmigja7w4mb1bar6j5";
+    };
+    "x86_64-linux" = fetchurl {
+      url = "https://github.com/remko/age-plugin-se/releases/download/v0.1.4/age-plugin-se-v0.1.4-x86_64-linux.tgz";
+      sha256 = "1lw1iycri4v0xgpsih83abl3gmy6lmcz83m57vi0jjrgkfl5q57x";
+    };
+  };
+in
 stdenv.mkDerivation (finalAttrs: {
   pname = "age-plugin-se";
-  version = "0.1.4";
-  src = fetchurl {
-    url = "https://github.com/remko/age-plugin-se/releases/download/v0.1.4/age-plugin-se-v0.1.4-x86_64-linux.tgz";
-    sha256 = "sha256-/RRcqJsvSwniPqUO9Fmlxtc36FIDwajv62CTmJmPgdM=";
-  };
+  inherit version;
+  src = sources.${system};
 
   installPhase = ''
     mkdir -p $out/bin
@@ -25,7 +36,10 @@ stdenv.mkDerivation (finalAttrs: {
     license = lib.licenses.mit;
     sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
     mainPackage = "age-plugin-se";
-    platforms = [ "x86_64-linux" ];
+    platforms = [
+      "aarch64-linux"
+      "x86_64-linux"
+    ];
   };
 
   passthru.tests = {
