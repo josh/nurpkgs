@@ -48,10 +48,7 @@
         system:
         let
           isAvailable = _: lib.meta.availableOn { inherit system; };
-          pkgs = import nixpkgs {
-            inherit system;
-            overlays = [ self.overlays.default ];
-          };
+          pkgs = nixpkgs.legacyPackages.${system}.extend self.overlays.default;
         in
         lib.attrsets.filterAttrs isAvailable pkgs.nur.repos.josh
       );
