@@ -31,37 +31,43 @@
         "x86_64-linux"
       ];
       inherit (nixpkgs) lib;
-      eachSystem = f: lib.genAttrs systems (system: f nixpkgs.legacyPackages.${system});
-      treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
+      eachSystem = lib.genAttrs systems;
+      treefmtEval = eachSystem (
+        system: treefmt-nix.lib.evalModule nixpkgs.legacyPackages.${system} ./treefmt.nix
+      );
     in
     {
+      overlays.default = final: prev: {
+        nur.repos.josh = final.lib.filesystem.packagesFromDirectoryRecursive {
+          callPackage = final.lib.callPackageWith (final // { inherit final prev; });
+          directory = ./pkgs;
+        };
+      };
+
       packages = eachSystem (
-        pkgs:
+        system:
         let
-          inherit (pkgs) system;
           isAvailable = _: lib.meta.availableOn { inherit system; };
-          packages = lib.filesystem.packagesFromDirectoryRecursive {
-            callPackage = lib.callPackageWith (
-              pkgs
-              // {
-                final = packages;
-                prev = pkgs;
-              }
-            );
-            directory = ./pkgs;
-          };
+          pkgs = nixpkgs.legacyPackages.${system}.extend self.overlays.default;
         in
-        lib.attrsets.filterAttrs isAvailable packages
+        lib.attrsets.filterAttrs isAvailable pkgs.nur.repos.josh
       );
-      formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
-      checks = eachSystem (pkgs: {
-        formatting = treefmtEval.${pkgs.system}.config.build.check self;
-        tests = pkgs.runCommand "nurpkgs-tests" {
-          nativeBuildInputs = lib.concatMap (
-            pkg:
-            if (builtins.hasAttr "tests" pkg.passthru) then (builtins.attrValues pkg.passthru.tests) else [ ]
-          ) (lib.attrValues self.packages.${pkgs.system});
-        } "touch $out";
-      });
+
+      formatter = eachSystem (system: treefmtEval.${system}.config.build.wrapper);
+      checks = eachSystem (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+        in
+        {
+          formatting = treefmtEval.${system}.config.build.check self;
+          tests = pkgs.runCommand "nurpkgs-tests" {
+            nativeBuildInputs = lib.concatMap (
+              pkg:
+              if (builtins.hasAttr "tests" pkg.passthru) then (builtins.attrValues pkg.passthru.tests) else [ ]
+            ) (lib.attrValues self.packages.${system});
+          } "touch $out";
+        }
+      );
     };
 }
