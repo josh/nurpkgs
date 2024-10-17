@@ -45,7 +45,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     mainPackage = "pixlet";
     platforms = [
       "aarch64-darwin"
-      "aarch64-linux"
+      # "aarch64-linux"
       "x86_64-linux"
     ];
   };
