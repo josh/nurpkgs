@@ -32,6 +32,9 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   src = sources.${system};
   sourceRoot = ".";
 
+  dontPatch = true;
+  dontFixup = true;
+
   installPhase = ''
     mkdir -p "$out/bin"
     cp pixlet "$out/bin/pixlet"
