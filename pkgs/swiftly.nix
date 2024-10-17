@@ -14,7 +14,6 @@
   fetchurl,
   autoPatchelfHook,
   zlib,
-  swiftly,
 }:
 let
   version = "0.3.0";
@@ -29,7 +28,7 @@ let
     };
   };
 in
-stdenvNoCC.mkDerivation {
+stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "swiftly";
   inherit version;
   src = sources.${system};
@@ -66,7 +65,7 @@ stdenvNoCC.mkDerivation {
     version =
       runCommand "test-swiftly-version"
         {
-          nativeBuildInputs = [ swiftly ];
+          nativeBuildInputs = [ finalAttrs.finalPackage ];
         }
         ''
           swiftly --version
@@ -76,11 +75,11 @@ stdenvNoCC.mkDerivation {
     help =
       runCommand "test-swiftly-help"
         {
-          nativeBuildInputs = [ swiftly ];
+          nativeBuildInputs = [ finalAttrs.finalPackage ];
         }
         ''
           swiftly --help
           touch $out
         '';
   };
-}
+})

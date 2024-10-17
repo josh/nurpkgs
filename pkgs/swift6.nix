@@ -18,7 +18,6 @@
   python3,
   sqlite,
   z3,
-  swift6,
 }:
 let
   version = "6.0.1";
@@ -33,7 +32,7 @@ let
     };
   };
 in
-stdenv.mkDerivation {
+stdenv.mkDerivation (finalAttrs: {
   pname = "swift";
   inherit version;
   src = sources.${system};
@@ -73,18 +72,18 @@ stdenv.mkDerivation {
 
   passthru.tests = {
     version = testers.testVersion {
-      package = swift6;
+      package = finalAttrs.finalPackage;
       command = "swift --version";
     };
 
     help =
       runCommand "test-swift-help"
         {
-          nativeBuildInputs = [ swift6 ];
+          nativeBuildInputs = [ finalAttrs.finalPackage ];
         }
         ''
           swift --help
           touch $out
         '';
   };
-}
+})
