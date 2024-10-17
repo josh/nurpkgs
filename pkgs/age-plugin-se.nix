@@ -6,7 +6,7 @@
   testers,
   age,
 }:
-stdenv.mkDerivation {
+stdenv.mkDerivation (finalAttrs: {
   pname = "age-plugin-se";
   version = "0.1.4";
   src = fetchurl {
@@ -58,4 +58,4 @@ stdenv.mkDerivation {
           touch $out
         '';
   };
-}
+})
