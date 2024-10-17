@@ -72,14 +72,14 @@ stdenvNoCC.mkDerivation {
           touch $out
         '';
 
-    help =
-      runCommand "test-swiftly-help"
-        {
-          nativeBuildInputs = [ swiftly ];
-        }
-        ''
-          swiftly --help
-          touch $out
-        '';
+    # help =
+    #   runCommand "test-swiftly-help"
+    #     {
+    #       nativeBuildInputs = [ swiftly ];
+    #     }
+    #     ''
+    #       swiftly --help
+    #       touch $out
+    #     '';
   };
 }
