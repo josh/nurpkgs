@@ -1,3 +1,5 @@
+# Upstream to NixOS/nixpkgs
+# - Waiting for post v0.2.0 tagged release
 {
   lib,
   fetchFromGitHub,
