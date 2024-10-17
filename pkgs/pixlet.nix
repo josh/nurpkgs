@@ -1,7 +1,6 @@
 # Upstream to NixOS/nixpkgs
 # - Needs to build from source rather than install binaries.
 {
-  system,
   lib,
   stdenvNoCC,
   fetchurl,
@@ -29,7 +28,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "pixlet";
   inherit version;
 
-  src = sources.${system};
+  src = sources.${stdenvNoCC.hostPlatform.system};
   sourceRoot = ".";
 
   installPhase = ''

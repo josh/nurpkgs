@@ -6,7 +6,6 @@
 #   - Adds macOS support
 #
 {
-  system,
   lib,
   stdenv,
   stdenvNoCC,
@@ -31,7 +30,7 @@ in
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "swiftly";
   inherit version;
-  src = sources.${system};
+  src = sources.${stdenvNoCC.hostPlatform.system};
   dontUnpack = true;
   nativeBuildInputs = [
     autoPatchelfHook

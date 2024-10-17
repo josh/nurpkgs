@@ -1,6 +1,5 @@
 {
   lib,
-  system,
   stdenv,
   runCommand,
   testers,
@@ -35,7 +34,7 @@ in
 stdenv.mkDerivation (finalAttrs: {
   pname = "swift";
   inherit version;
-  src = sources.${system};
+  src = sources.${stdenv.hostPlatform.system};
   nativeBuildInputs = [
     autoPatchelfHook
   ];

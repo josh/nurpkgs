@@ -3,9 +3,8 @@
 #   - Blocked on NixOS/nixpkgs supporting Swift 6.0
 #
 {
-  system,
   lib,
-  stdenv,
+  stdenvNoCC,
   fetchurl,
   unzip,
   runCommand,
@@ -28,16 +27,17 @@ let
       sha256 = "1lw1iycri4v0xgpsih83abl3gmy6lmcz83m57vi0jjrgkfl5q57x";
     };
   };
+  useZip = stdenvNoCC.hostPlatform.system == "aarch64-darwin";
 in
-stdenv.mkDerivation (finalAttrs: {
+stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "age-plugin-se";
   inherit version;
-  src = sources.${system};
+  src = sources.${stdenvNoCC.hostPlatform.system};
 
   nativeBuildInputs = [
-    (lib.optional (system == "aarch64-darwin") unzip)
+    (lib.optional useZip unzip)
   ];
-  sourceRoot = if system == "aarch64-darwin" then "." else null;
+  sourceRoot = if useZip then "." else null;
 
   installPhase = ''
     if [ -f age-plugin-se ]; then
