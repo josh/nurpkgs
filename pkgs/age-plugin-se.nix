@@ -37,7 +37,7 @@ stdenv.mkDerivation (finalAttrs: {
   nativeBuildInputs = [
     (lib.optional (system == "aarch64-darwin") unzip)
   ];
-  sourceRoot = ".";
+  sourceRoot = if system == "aarch64-darwin" then "." else null;
 
   installPhase = ''
     if [ -f age-plugin-se ]; then
