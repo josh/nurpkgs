@@ -3,6 +3,7 @@
 #   - Blocked on NixOS/nixpkgs supporting Swift 6.0
 # - Waiting for v0.3.0+ to be released
 #   - Adds `swiftly init`
+#   - Adds macOS support
 #
 {
   system,
