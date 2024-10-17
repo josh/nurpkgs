@@ -1,3 +1,7 @@
+# Upstream to NixOS/nixpkgs
+# - Needs to build from source rather than install binaries.
+#   - Blocked on NixOS/nixpkgs supporting Swift 6.0
+#
 {
   system,
   lib,
