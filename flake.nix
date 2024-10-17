@@ -39,7 +39,7 @@
     {
       overlays.default = final: prev: {
         nur.repos.josh = final.lib.filesystem.packagesFromDirectoryRecursive {
-          callPackage = final.lib.callPackageWith prev;
+          callPackage = final.lib.callPackageWith (final // { inherit final prev; });
           directory = ./pkgs;
         };
       };
