@@ -1,6 +1,6 @@
 {
   lib,
-  # age,
+  age,
   age-plugin-tpm',
   age-plugin-tpm,
   fetchFromGitHub,
@@ -28,18 +28,19 @@ age-plugin-tpm'.overrideAttrs (_oldAttrs: {
           touch $out
         '';
 
-    # encrypt =
-    #   runCommand "test-age-plugin-tpm-encrypt"
-    #     {
-    #       nativeBuildInputs = [
-    #         age
-    #         age-plugin-tpm
-    #       ];
-    #     }
-    #     ''
-    #       echo "Hello World" | age --encrypt \
-    #         --recipient "age1tpm1syqqqpqrtxsnkkqlmu505zzrq439hetls4qwwmyhsv8dgjhksvtewvx29lxs7s68qy" \
-    #         --output "$out"
-    #     '';
+    encrypt =
+      runCommand "test-age-plugin-tpm-encrypt"
+        {
+          nativeBuildInputs = [
+            age
+            age-plugin-tpm
+          ];
+        }
+        ''
+          echo "Hello World" | age --encrypt \
+            --recipient "age1tpm1qg86fn5esp30u9h6jy6zvu9gcsvnac09vn8jzjxt8s3qtlcv5h2x287wm36" \
+            --armor
+          touch $out
+        '';
   };
 })
