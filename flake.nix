@@ -35,7 +35,15 @@
       treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
     in
     {
-      packages = eachSystem (pkgs: import ./pkgs pkgs);
+      packages = eachSystem (
+        pkgs:
+        lib.attrsets.filterAttrs (_: lib.meta.availableOn { inherit (pkgs) system; }) (
+          lib.filesystem.packagesFromDirectoryRecursive {
+            callPackage = lib.callPackageWith pkgs;
+            directory = ./pkgs;
+          }
+        )
+      );
       formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
       checks = eachSystem (pkgs: {
         formatting = treefmtEval.${pkgs.system}.config.build.check self;
