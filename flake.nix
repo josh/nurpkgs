@@ -37,12 +37,21 @@
     {
       packages = eachSystem (
         pkgs:
-        lib.attrsets.filterAttrs (_: lib.meta.availableOn { inherit (pkgs) system; }) (
-          lib.filesystem.packagesFromDirectoryRecursive {
-            callPackage = lib.callPackageWith pkgs;
+        let
+          inherit (pkgs) system;
+          isAvailable = _: lib.meta.availableOn { inherit system; };
+          packages = lib.filesystem.packagesFromDirectoryRecursive {
+            callPackage = lib.callPackageWith (
+              pkgs
+              // {
+                final = packages;
+                prev = pkgs;
+              }
+            );
             directory = ./pkgs;
-          }
-        )
+          };
+        in
+        lib.attrsets.filterAttrs isAvailable packages
       );
       formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
       checks = eachSystem (pkgs: {
