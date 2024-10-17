@@ -7,6 +7,7 @@ let
 
   packages = {
     hello = callPackage ./hello.nix { };
+    swiftly = callPackage ./swiftly.nix { };
   };
 
 in
