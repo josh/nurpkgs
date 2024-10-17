@@ -4,7 +4,7 @@
   ssh-tpm-agent,
 }:
 ssh-tpm-agent.overrideAttrs (
-  _finalAttrs: _previousAttrs: {
+  finalAttrs: _previousAttrs: {
     version = "0.6.0";
 
     src = fetchFromGitHub {
