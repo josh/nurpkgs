@@ -84,5 +84,17 @@ stdenv.mkDerivation (finalAttrs: {
           swift --help
           touch $out
         '';
+
+    run =
+      runCommand "test-swift-run"
+        {
+          nativeBuildInputs = [ finalAttrs.finalPackage ];
+        }
+        ''
+          export XDG_CACHE_HOME=$TMPDIR
+          echo 'print("Hello, World!")' >hello.swift
+          swift hello.swift
+          touch $out
+        '';
   };
 })
