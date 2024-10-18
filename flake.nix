@@ -37,12 +37,19 @@
       );
     in
     {
-      overlays.default = final: prev: {
-        nur.repos.josh = final.lib.filesystem.packagesFromDirectoryRecursive {
-          callPackage = final.lib.callPackageWith (final // { inherit final prev; });
-          directory = ./pkgs;
+      overlays.default =
+        final: prev:
+        let
+          inherit (final) lib;
+          prev' = lib.attrsets.mapAttrs' (name: lib.attrsets.nameValuePair "${name}'") prev;
+          callPackage = lib.callPackageWith (final // prev');
+        in
+        {
+          nur.repos.josh = lib.filesystem.packagesFromDirectoryRecursive {
+            inherit callPackage;
+            directory = ./pkgs;
+          };
         };
-      };
 
       packages = eachSystem (
         system:

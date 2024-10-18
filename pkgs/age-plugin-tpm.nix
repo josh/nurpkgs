@@ -5,9 +5,9 @@
   fetchFromGitHub,
   runCommand,
   age,
-  age-plugin-tpm,
+  age-plugin-tpm',
 }:
-age-plugin-tpm.overrideAttrs (
+age-plugin-tpm'.overrideAttrs (
   finalAttrs: _previousAttrs: {
     src = fetchFromGitHub {
       owner = "Foxboron";
