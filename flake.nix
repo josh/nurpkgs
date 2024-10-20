@@ -55,7 +55,7 @@
       packages = eachSystem (
         system:
         let
-          isAvailable = _: lib.meta.availableOn { inherit system; };
+          isAvailable = _: pkg: pkg.meta.available;
           pkgs = nixpkgs.legacyPackages.${system}.extend self.overlays.default;
         in
         lib.attrsets.filterAttrs isAvailable pkgs.nur.repos.josh
