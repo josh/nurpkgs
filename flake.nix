@@ -43,12 +43,13 @@
           inherit (final) lib;
           prev' = lib.attrsets.mapAttrs' (name: lib.attrsets.nameValuePair "${name}'") prev;
           callPackage = lib.callPackageWith (final // prev');
-        in
-        {
-          nur.repos.josh = lib.filesystem.packagesFromDirectoryRecursive {
+          pkgs = lib.filesystem.packagesFromDirectoryRecursive {
             inherit callPackage;
             directory = ./pkgs;
           };
+        in
+        {
+          inherit (pkgs) nur;
         };
 
       packages = eachSystem (
