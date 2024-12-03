@@ -49,7 +49,7 @@
           };
         in
         {
-          inherit (pkgs) nur;
+          nur.repos.josh = pkgs;
         };
 
       packages = eachSystem (
