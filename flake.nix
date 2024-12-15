@@ -65,17 +65,19 @@
       checks = eachSystem (
         system:
         let
-          pkgs = nixpkgs.legacyPackages.${system};
+          addAttrsetPrefix = prefix: lib.attrsets.concatMapAttrs (n: v: { "${prefix}${n}" = v; });
+          localTests = lib.attrsets.concatMapAttrs (
+            pkgName: pkg:
+            if (builtins.hasAttr "tests" pkg) then
+              ({ "${pkgName}-build" = pkg; } // (addAttrsetPrefix "${pkgName}-tests-" pkg.tests))
+            else
+              { "${pkgName}-build" = pkg; }
+          ) self.packages.${system};
         in
         {
           formatting = treefmtEval.${system}.config.build.check self;
-          tests = pkgs.runCommand "nurpkgs-tests" {
-            nativeBuildInputs = lib.concatMap (
-              pkg:
-              if (builtins.hasAttr "tests" pkg.passthru) then (builtins.attrValues pkg.passthru.tests) else [ ]
-            ) (lib.attrValues self.packages.${system});
-          } "touch $out";
         }
+        // localTests
       );
     };
 }
