@@ -12,18 +12,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      treefmt-nix,
-    }:
+    { self, nixpkgs }:
     let
       systems = [
         "aarch64-darwin"
@@ -32,8 +24,13 @@
       ];
       inherit (nixpkgs) lib;
       eachSystem = lib.genAttrs systems;
+
+      internal-inputs = builtins.mapAttrs (
+        _name: node: builtins.getFlake (builtins.flakeRefToString node.locked)
+      ) (builtins.fromJSON (builtins.readFile ./internal/flake.lock)).nodes;
+
       treefmtEval = eachSystem (
-        system: treefmt-nix.lib.evalModule nixpkgs.legacyPackages.${system} ./treefmt.nix
+        system: internal-inputs.treefmt-nix.lib.evalModule nixpkgs.legacyPackages.${system} ./treefmt.nix
       );
     in
     {
