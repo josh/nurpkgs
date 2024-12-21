@@ -25,13 +25,7 @@
       inherit (nixpkgs) lib;
       eachSystem = lib.genAttrs systems;
 
-      internal-inputs = builtins.mapAttrs (
-        _name: node: builtins.getFlake (builtins.flakeRefToString node.locked)
-      ) (builtins.fromJSON (builtins.readFile ./internal/flake.lock)).nodes;
-
-      treefmtEval = eachSystem (
-        system: internal-inputs.treefmt-nix.lib.evalModule nixpkgs.legacyPackages.${system} ./treefmt.nix
-      );
+      treefmt-nix = eachSystem (system: import ./internal/treefmt.nix nixpkgs.legacyPackages.${system});
     in
     {
       overlays.default =
@@ -58,7 +52,7 @@
         lib.attrsets.filterAttrs isAvailable pkgs.nur.repos.josh
       );
 
-      formatter = eachSystem (system: treefmtEval.${system}.config.build.wrapper);
+      formatter = eachSystem (system: treefmt-nix.${system}.wrapper);
       checks = eachSystem (
         system:
         let
@@ -72,7 +66,7 @@
           ) self.packages.${system};
         in
         {
-          formatting = treefmtEval.${system}.config.build.check self;
+          formatting = treefmt-nix.${system}.check self;
         }
         // localTests
       );
