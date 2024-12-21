@@ -28,20 +28,7 @@
       treefmt-nix = eachSystem (system: import ./internal/treefmt.nix nixpkgs.legacyPackages.${system});
     in
     {
-      overlays.default =
-        final: prev:
-        let
-          inherit (final) lib;
-          prev' = lib.attrsets.mapAttrs' (name: lib.attrsets.nameValuePair "${name}'") prev;
-          callPackage = lib.callPackageWith (final // prev');
-          pkgs = lib.filesystem.packagesFromDirectoryRecursive {
-            inherit callPackage;
-            directory = ./pkgs;
-          };
-        in
-        {
-          nur.repos.josh = pkgs;
-        };
+      overlays.default = import ./overlay.nix;
 
       packages = eachSystem (
         system:
