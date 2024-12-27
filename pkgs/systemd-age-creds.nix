@@ -4,6 +4,7 @@
   buildGoModule,
   fetchFromGitHub,
   age,
+  nix-update-script,
 }:
 buildGoModule rec {
   pname = "systemd-age-creds";
@@ -26,6 +27,8 @@ buildGoModule rec {
   ];
 
   nativeBuildInputs = [ age ];
+
+  passthru.updateScript = nix-update-script { };
 
   meta = {
     description = "Load age encrypted credentials in systemd units";

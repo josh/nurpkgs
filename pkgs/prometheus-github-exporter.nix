@@ -3,6 +3,7 @@
   lib,
   buildGoModule,
   fetchFromGitHub,
+  nix-update-script,
 }:
 buildGoModule {
   pname = "prometheus-github-exporter";
@@ -22,6 +23,8 @@ buildGoModule {
     "-s"
     "-w"
   ];
+
+  passthru.updateScript = nix-update-script { };
 
   meta = {
     description = "Prometheus exporter for GitHub metrics";
