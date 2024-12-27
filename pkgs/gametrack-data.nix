@@ -20,6 +20,8 @@ python3Packages.buildPythonApplication rec {
     hatchling
   ];
 
+  passthru.updateScriptVersion = "stable";
+
   meta = {
     description = "Export GameTrack data to CSV";
     homepage = "https://github.com/josh/gametrack-data";

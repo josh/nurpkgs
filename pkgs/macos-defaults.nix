@@ -18,6 +18,8 @@ rustPlatform.buildRustPackage rec {
 
   doCheck = false;
 
+  passthru.updateScriptVersion = "stable";
+
   meta = {
     description = "A tool for managing macOS defaults declaratively via YAML files.";
     homepage = "https://github.com/dsully/macos-defaults";

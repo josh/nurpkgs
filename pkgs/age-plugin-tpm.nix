@@ -19,6 +19,8 @@ age-plugin-tpm'.overrideAttrs (
 
     meta.platforms = lib.platforms.linux ++ lib.platforms.darwin;
 
+    passthru.updateScriptVersion = "stable";
+
     passthru.tests = {
       help =
         runCommand "test-age-plugin-tpm-help"

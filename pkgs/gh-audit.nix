@@ -26,6 +26,8 @@ python3Packages.buildPythonApplication rec {
     pyyaml
   ];
 
+  passthru.updateScriptVersion = "branch";
+
   meta = {
     description = "Personal GitHub repository meta linting tool for consistent configuration";
     homepage = "https://github.com/josh/gh-audit";
