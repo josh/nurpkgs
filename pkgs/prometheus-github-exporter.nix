@@ -24,6 +24,7 @@ buildGoModule {
     "-w"
   ];
 
+  passthru.updateScriptVersion = "branch";
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
   meta = {
