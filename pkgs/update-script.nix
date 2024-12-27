@@ -14,7 +14,7 @@ let
     else if !pkg.meta.available then
       '': skip ${name} unavailable on ${system}''
     else
-      ''nix-update --flake ${name} --version=${pkg.passthru.updateScriptVersion}''
+      ''nix-update --flake --commit ${name} --version=${pkg.passthru.updateScriptVersion}''
   ) nur.repos.josh;
   text = lib.concatStringsSep "\n" commands;
 in
