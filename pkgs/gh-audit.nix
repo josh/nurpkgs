@@ -6,14 +6,14 @@
 }:
 python3Packages.buildPythonApplication rec {
   pname = "gh-audit";
-  version = "0.1.0";
+  version = "0-unstable-2024-12-23";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "gh-audit";
-    rev = "8238eba83e5f46302b7c6c9becb2b0f32d4fa4d3";
-    hash = "sha256-m7TzEImaW6n6RhWNO1i8KtsUUiKyX3hUJHQ2rKu3Y3A=";
+    rev = "2c4e59b4815fd21b5ae8d5fc5bd4094d863014f5";
+    hash = "sha256-RbnSYEhzQoLLD7/1ZSCLVSzW2KeLkWuQ35gVQnaX510=";
   };
 
   build-system = with python3Packages; [
