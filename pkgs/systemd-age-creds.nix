@@ -8,7 +8,7 @@
 }:
 buildGoModule rec {
   pname = "systemd-age-creds";
-  version = "0.0.0";
+  version = "0-unstable-2024-12-25";
 
   src = fetchFromGitHub {
     owner = "josh";
