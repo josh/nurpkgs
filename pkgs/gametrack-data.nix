@@ -1,4 +1,3 @@
-# See <https://github.com/josh/gametrack-data/blob/main/package.nix>
 {
   lib,
   fetchFromGitHub,
@@ -6,14 +5,14 @@
 }:
 python3Packages.buildPythonApplication rec {
   pname = "gametrack-data";
-  version = "1.0.0";
+  version = "1.0.1";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "gametrack-data";
     rev = "v${version}";
-    hash = "sha256-N6c72fwSLz5KQ82AW/pDQrBbrD55U4WG5EpGcHzMzrY=";
+    hash = "sha256-4A1vM0DtaB+alnLnwD/Y8tdnQwAWUXH3r+Cxr4C4DaQ=";
   };
 
   build-system = with python3Packages; [
