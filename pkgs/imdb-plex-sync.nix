@@ -1,36 +1,22 @@
 {
   lib,
   fetchFromGitHub,
-  writeText,
   python3Packages,
 }:
 python3Packages.buildPythonApplication rec {
   pname = "imdb-plex-sync";
-  version = "0-unstable-2024-12-23";
+  version = "0.1.0-unstable-2024-12-28";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "imdb-plex-sync";
-    rev = "c78cc9a959b3fef448f2a7462cb22783bf4a3c37";
-    hash = "sha256-M1D08jrNsRC+4l1quw7x9m0zqI/xl90rA0b0iCWvlg4=";
+    rev = "dc9421e09acc73c78c875744947a4afa6dba1c98";
+    hash = "sha256-5gNh+Y1edtWkMW1oTY9qeVl1QSDXfnubot4+xj2XQsE=";
   };
 
-  patches = [
-    (writeText "pyproject.patch" ''
-      --- a/pyproject.toml
-      +++ b/pyproject.toml
-      @@ -1,4 +1,5 @@
-       [project]
-      +version = "0.0.0"
-       name = "imdb-plex-sync"
-       readme = "README.md"
-       authors = [{ name = "Joshua Peek" }]
-    '')
-  ];
-
   build-system = with python3Packages; [
-    setuptools
+    hatchling
   ];
 
   dependencies = with python3Packages; [
