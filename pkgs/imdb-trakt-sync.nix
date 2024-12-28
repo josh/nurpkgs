@@ -5,7 +5,7 @@
 }:
 python3Packages.buildPythonApplication rec {
   pname = "imdb-trakt-sync";
-  version = "0.0.0";
+  version = "0-unstable-2024-12-23";
   pyproject = true;
 
   src = fetchFromGitHub {
