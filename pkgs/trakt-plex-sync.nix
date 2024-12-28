@@ -1,37 +1,23 @@
 {
   lib,
   fetchFromGitHub,
-  writeText,
   python3Packages,
   nur,
 }:
 python3Packages.buildPythonApplication rec {
   pname = "trakt-plex-sync";
-  version = "0-unstable-2024-12-23";
+  version = "0-unstable-2024-12-28";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "trakt-plex-sync";
-    rev = "7b6e4fcff1f2658fc1647e58e2e7fbfc4fcca233";
-    hash = "sha256-hc/7R+1Cm4Xw2jKoYh9RdT7w01aGoW7moOQFgXih0UA=";
+    rev = "7024f64c72fadd3668c42dc7ec20cdafd8bf8357";
+    hash = "sha256-O2FGdXvyxMQ8Oe3Me1Wxkw4gPmcKFF7l5J7Opiwv2Cg=";
   };
 
-  patches = [
-    (writeText "pyproject.patch" ''
-      --- a/pyproject.toml
-      +++ b/pyproject.toml
-      @@ -1,4 +1,5 @@
-       [project]
-      +version = "0-unstable-2024-12-23"
-       name = "trakt-plex-sync"
-       readme = "README.md"
-       authors = [{ name = "Joshua Peek" }]
-    '')
-  ];
-
   build-system = with python3Packages; [
-    setuptools
+    hatchling
   ];
 
   dependencies = with python3Packages; [
@@ -48,6 +34,5 @@ python3Packages.buildPythonApplication rec {
     license = lib.licenses.mit;
     platforms = lib.platforms.all;
     mainProgram = "trakt-plex-sync";
-    broken = true;
   };
 }
