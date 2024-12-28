@@ -1,4 +1,3 @@
-# See <https://github.com/josh/gh-audit/blob/main/package.nix>
 {
   lib,
   fetchFromGitHub,
@@ -6,14 +5,14 @@
 }:
 python3Packages.buildPythonApplication rec {
   pname = "gh-audit";
-  version = "0.1.0-unstable-2024-12-28";
+  version = "0.1.1-unstable-2024-12-28";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "gh-audit";
-    rev = "dfea9513708ccef78af5110bf6d8d89ceebfa8d1";
-    hash = "sha256-RbnSYEhzQoLLD7/1ZSCLVSzW2KeLkWuQ35gVQnaX510=";
+    rev = "52f4a23541cd7163a3cfbed4e7753b38b5df1fb7";
+    hash = "sha256-+WT7Agg8+NBiJfry43F03o7gcJsQnGVqVwyvyLNHtIE=";
   };
 
   build-system = with python3Packages; [
