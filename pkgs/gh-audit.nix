@@ -6,13 +6,13 @@
 }:
 python3Packages.buildPythonApplication rec {
   pname = "gh-audit";
-  version = "0-unstable-2024-12-23";
+  version = "0.1.0-unstable-2024-12-28";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "gh-audit";
-    rev = "2c4e59b4815fd21b5ae8d5fc5bd4094d863014f5";
+    rev = "dfea9513708ccef78af5110bf6d8d89ceebfa8d1";
     hash = "sha256-RbnSYEhzQoLLD7/1ZSCLVSzW2KeLkWuQ35gVQnaX510=";
   };
 
