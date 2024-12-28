@@ -22,7 +22,7 @@ python3Packages.buildPythonApplication rec {
       +++ b/pyproject.toml
       @@ -1,4 +1,5 @@
        [project]
-      +version = "0-unstable-2024-12-23"
+      +version = "0.0.0"
        name = "imdb-plex-sync"
        readme = "README.md"
        authors = [{ name = "Joshua Peek" }]
