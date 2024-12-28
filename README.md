@@ -1,6 +1,6 @@
 # nurpkgs
 
-My Nix User Repository. Mainly re-packaging other people's code hoping to get upstreamed at some point.
+My Nix User Repository. Mainly re-packaging other people's code hoping to get upstreamed at some point, but also some of my own personal packages.
 
 ## Outputs
 
