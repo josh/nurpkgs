@@ -3,6 +3,7 @@
   stdenv,
   fetchFromGitHub,
   runCommand,
+  apple-sdk_13,
   swift,
   swiftpm,
   nix-update-script,
@@ -21,6 +22,10 @@ stdenv.mkDerivation (finalAttrs: {
   nativeBuildInputs = [
     swift
     swiftpm
+  ];
+
+  buildInputs = [
+    apple-sdk_13
   ];
 
   installPhase = ''
