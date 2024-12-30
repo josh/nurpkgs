@@ -28,8 +28,6 @@ let
       pyyaml
     ];
 
-    passthru.updateScriptVersion = "branch";
-
     meta = {
       description = "Personal GitHub repository meta linting tool for consistent configuration";
       homepage = "https://github.com/josh/gh-audit";
@@ -47,6 +45,8 @@ gh-audit.overrideAttrs (
     stable-version = "${builtins.elemAt version-parts 0}.${builtins.elemAt version-parts 1}.${builtins.elemAt version-parts 2}";
   in
   {
+    passthru.updateScriptVersion = "branch";
+
     passthru.tests = {
       version = testers.testVersion {
         package = gh-audit;

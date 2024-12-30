@@ -27,8 +27,6 @@ let
       requests
     ];
 
-    passthru.updateScriptVersion = "branch";
-
     meta = {
       description = "Sync Trakt history to Plex library";
       homepage = "https://github.com/josh/trakt-plex-sync";
@@ -40,6 +38,8 @@ let
 in
 trakt-plex-sync.overrideAttrs (
   _finalAttrs: _previousAttrs: {
+    passthru.updateScriptVersion = "branch";
+
     passthru.tests = {
       # TODO: Add --version test
       # TODO: Add --help test

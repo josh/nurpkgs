@@ -27,8 +27,6 @@ let
       requests
     ];
 
-    passthru.updateScriptVersion = "branch";
-
     meta = {
       description = "IMDB personal lists and ratings data scaper";
       homepage = "https://github.com/josh/imdb-data";
@@ -44,6 +42,8 @@ imdb-data.overrideAttrs (
     imdb-data = finalAttrs.finalPackage;
   in
   {
+    passthru.updateScriptVersion = "branch";
+
     passthru.tests = {
       # TODO: Add --version test
 

@@ -21,8 +21,6 @@ let
       hatchling
     ];
 
-    passthru.updateScriptVersion = "stable";
-
     meta = {
       description = "Export GameTrack data to CSV";
       homepage = "https://github.com/josh/gametrack-data";
@@ -38,6 +36,8 @@ gametrack-data.overrideAttrs (
     gametrack-data = finalAttrs.finalPackage;
   in
   {
+    passthru.updateScriptVersion = "stable";
+
     passthru.tests = {
       # TODO: Add --version test
 

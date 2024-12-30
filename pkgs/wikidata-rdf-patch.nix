@@ -28,8 +28,6 @@ let
       tqdm
     ];
 
-    passthru.updateScriptVersion = "stable";
-
     meta = {
       description = "Edit Wikidata items with RDF";
       homepage = "https://github.com/josh/wikidata-rdf-patch";
@@ -45,6 +43,8 @@ wikidata-rdf-patch.overrideAttrs (
     wikidata-rdf-patch = finalAttrs.finalPackage;
   in
   {
+    passthru.updateScriptVersion = "stable";
+
     passthru.tests = {
       version = testers.testVersion {
         package = wikidata-rdf-patch;

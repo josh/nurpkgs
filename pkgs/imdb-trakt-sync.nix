@@ -26,8 +26,6 @@ let
       requests
     ];
 
-    passthru.updateScriptVersion = "branch";
-
     meta = {
       description = "Sync IMDb watchlist and ratings to Trakt";
       homepage = "https://github.com/josh/imdb-trakt-sync";
@@ -43,6 +41,8 @@ imdb-trakt-sync.overrideAttrs (
     imdb-trakt-sync = finalAttrs.finalPackage;
   in
   {
+    passthru.updateScriptVersion = "branch";
+
     passthru.tests = {
       # TODO: Add --version test
 
