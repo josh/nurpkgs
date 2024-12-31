@@ -22,7 +22,7 @@ jobs:
         with:
           extra-conf: |
             accept-flake-config = true
-  
+
       - uses: cachix/cachix-action@v15
         with:
           name: josh
@@ -37,9 +37,17 @@ jobs:
         run: |
           nix run .#update-script
 
+      - name: Git status
+        id: git-status
+        run: |
+          count=$(git rev-list @{upstream}..HEAD --count)
+          echo "count=$count" >>"$GITHUB_OUTPUT"
+
       - name: Check flake
+        if: steps.git-status.outputs.count != 0
         run: |
           nix flake check --print-build-logs
 
       - name: Push changes
+        if: steps.git-status.outputs.count != 0
         run: git push
