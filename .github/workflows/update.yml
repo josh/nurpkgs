@@ -19,7 +19,10 @@ jobs:
           token: ${{ secrets.GH_TOKEN }}
 
       - uses: DeterminateSystems/nix-installer-action@main
-
+        with:
+          extra-conf: |
+            accept-flake-config = true
+  
       - uses: cachix/cachix-action@v15
         with:
           name: josh
