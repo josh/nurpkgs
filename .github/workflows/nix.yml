@@ -33,7 +33,6 @@ jobs:
 
       - uses: DeterminateSystems/nix-installer-action@main
         with:
-          determinate: true
           extra-conf: |
             system = ${{ matrix.system }}
             accept-flake-config = true
