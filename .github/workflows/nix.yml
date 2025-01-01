@@ -48,3 +48,18 @@ jobs:
       - name: Check flake
         run: |
           nix flake check --print-build-logs
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: DeterminateSystems/nix-installer-action@main
+
+      - uses: DeterminateSystems/flakehub-push@main
+        with:
+          visibility: public
+          include-output-paths: true
+          rolling: true
