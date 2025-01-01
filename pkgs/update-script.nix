@@ -26,6 +26,11 @@ writeShellApplication {
       nix-update
     ];
   };
-  bashOptions = [ "xtrace" ];
+  bashOptions = [
+    "errexit"
+    "nounset"
+    "pipefail"
+    "xtrace"
+  ];
   inherit text;
 }
