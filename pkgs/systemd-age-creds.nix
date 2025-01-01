@@ -8,13 +8,13 @@
 }:
 buildGoModule rec {
   pname = "systemd-age-creds";
-  version = "0-unstable-2024-12-30";
+  version = "0.1.0-unstable-2025-01-01";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "systemd-age-creds";
-    rev = "af6fe0b04a1d3c5dbd6e55e70650dfe228fcd37b";
-    hash = "sha256-aqLd0vGGfZtR0oInY4g1p4N1QBGXTZHOrOi+lr5Alxg=";
+    rev = "241e5bf8df057a54a21afe7484f0bd70eff33801";
+    hash = "sha256-IOXMPo97w6wZ2eMH8NdmsBn6ZClueSx/cjny1F1Iw8E=";
   };
   vendorHash = null;
 
