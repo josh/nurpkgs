@@ -9,6 +9,8 @@
 }:
 age-plugin-tpm'.overrideAttrs (
   finalAttrs: _previousAttrs: {
+    version = "0.2.0-unstable-2024-06-20";
+
     src = fetchFromGitHub {
       owner = "Foxboron";
       repo = "age-plugin-tpm";
@@ -18,8 +20,9 @@ age-plugin-tpm'.overrideAttrs (
     vendorHash = "sha256-qNSQV8GOPdKSzCWUb5ZmXPUb3V6Kgq7w84Tj5zfyLQ4=";
 
     meta.platforms = lib.platforms.linux ++ lib.platforms.darwin;
+    meta.position = "${./age-plugin-tpm.nix}:12";
 
-    passthru.updateScriptVersion = "stable";
+    passthru.updateScriptVersion = "branch";
 
     passthru.tests = {
       help =
