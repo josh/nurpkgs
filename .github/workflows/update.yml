@@ -35,7 +35,7 @@ jobs:
 
       - name: Build
         run: |
-          nix build .#update-script --no-out-link
+          nix build --no-link .#update-script
 
       - name: Run package update scripts
         run: |
