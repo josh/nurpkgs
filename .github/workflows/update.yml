@@ -33,6 +33,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+      - name: Build
+        run: |
+          nix build .#update-script --no-out-link
+
       - name: Run package update scripts
         run: |
           nix run .#update-script
