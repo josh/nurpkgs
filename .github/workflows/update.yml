@@ -11,7 +11,7 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-    concurrency: git-push-${ github.ref }
+    concurrency: git-push-${{ github.ref }}
 
     steps:
       - uses: actions/checkout@v4
