@@ -7,14 +7,14 @@
 let
   imdb-data = python3Packages.buildPythonApplication rec {
     pname = "imdb-data";
-    version = "0.1.0-unstable-2024-12-28";
+    version = "0.1.0-unstable-2025-01-04";
     pyproject = true;
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "imdb-data";
-      rev = "435eb2ac17846f7b73bfc235c123b8288c69cb93";
-      hash = "sha256-CfCzASkGu2zQonsvUdTby9cYXAI1O3v7bGe+sC95vls=";
+      rev = "5f986961b9558758db6fbdc8bb818811a59f1652";
+      hash = "sha256-1L5IJIEib0ygqTYC3OMjbsqxTYbNnVD766Re9uTFD+s=";
     };
 
     build-system = with python3Packages; [
