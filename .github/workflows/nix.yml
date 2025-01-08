@@ -49,14 +49,57 @@ jobs:
         run: |
           nix flake check --print-build-logs
 
+  build-flakehub:
+    strategy:
+      fail-fast: false
+      matrix:
+        system:
+          - "aarch64-darwin"
+          - "aarch64-linux"
+          - "x86_64-linux"
+
+    runs-on: ${{ endsWith(matrix.system, '-darwin') && 'macos-latest' || 'ubuntu-latest' }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - if: matrix.system == 'aarch64-linux'
+        uses: docker/setup-qemu-action@v3
+        with:
+          platforms: arm64
+
+      - uses: DeterminateSystems/nix-installer-action@main
+        with:
+          determinate: true
+          extra-conf: |
+            system = ${{ matrix.system }}
+            accept-flake-config = true
+            allow-import-from-derivation = false
+
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+        with:
+          use-gha-cache: false
+
+      - uses: DeterminateSystems/flake-checker-action@v9
+
+      - name: Check flake
+        run: |
+          nix flake check --print-build-logs
+
   publish:
-    needs: build
+    needs: build-flakehub
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
 
       - uses: DeterminateSystems/nix-installer-action@main
+        with:
+          determinate: true
+
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+        with:
+          use-gha-cache: false
 
       - uses: DeterminateSystems/flakehub-push@main
         with:
