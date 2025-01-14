@@ -62,7 +62,7 @@ stdenv.mkDerivation (finalAttrs: {
     homepage = "https://github.com/swiftlang/swift";
     license = lib.licenses.asl20;
     sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
-    mainPackage = "swift";
+    mainProgram = "swift";
     platforms = [
       "aarch64-linux"
       "x86_64-linux"

@@ -57,7 +57,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     homepage = "https://github.com/remko/age-plugin-se";
     license = lib.licenses.mit;
     sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
-    mainPackage = "age-plugin-se";
+    mainProgram = "age-plugin-se";
     platforms = [
       "aarch64-darwin"
       "aarch64-linux"

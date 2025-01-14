@@ -53,7 +53,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     homepage = "https://github.com/swiftlang/swiftly";
     license = lib.licenses.asl20;
     sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
-    mainPackage = "swiftly";
+    mainProgram = "swiftly";
     platforms = [
       "aarch64-linux"
       "x86_64-linux"
