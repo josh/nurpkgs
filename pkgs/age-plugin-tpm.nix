@@ -19,8 +19,11 @@ age-plugin-tpm'.overrideAttrs (
     };
     vendorHash = "sha256-qNSQV8GOPdKSzCWUb5ZmXPUb3V6Kgq7w84Tj5zfyLQ4=";
 
-    meta.platforms = lib.platforms.linux ++ lib.platforms.darwin;
-    meta.position = "${./age-plugin-tpm.nix}:12";
+    meta = {
+      mainProgram = "age-plugin-tpm";
+      platforms = lib.platforms.linux ++ lib.platforms.darwin;
+      position = "${./age-plugin-tpm.nix}:12";
+    };
 
     passthru.updateScriptVersion = "branch";
 
