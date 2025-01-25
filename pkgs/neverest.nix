@@ -15,16 +15,17 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "neverest";
-  version = "1.0.0";
+  version = "1.0.0-beta-unstable-2024-12-19";
 
   src = fetchFromGitHub {
     owner = "pimalaya";
     repo = "neverest";
-    rev = "v${version}";
-    hash = "sha256-3PSJyhxrOCiuHUeVHO77+NecnI5fN5EZfPhYizuYvtE=";
+    rev = "cc5f5214d3bea064ed059116ac81e40a803faa7e";
+    hash = "sha256-MXQDy5b/ooSkISEVM9KxHeqkkhPimZJtX3j9jqTP5aU=";
   };
 
-  cargoHash = "sha256-QLVQOnHoLhQC7TUrM+QD9eNvpvoDcPMBhstIAea7QAU=";
+  cargoHash = "sha256-oQrbHYbsfPAVAe3UPawRg/GRTIytQZMcxZcwC8J1T/Y=";
+  useFetchCargoVendor = true;
 
   inherit buildNoDefaultFeatures buildFeatures;
 
