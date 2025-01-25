@@ -70,6 +70,9 @@ rustPlatform.buildRustPackage rec {
     homepage = "https://github.com/pimalaya/neverest";
     changelog = "${homepage}/blob/v${version}/CHANGELOG.md";
     license = lib.licenses.mit;
+    platforms = lib.platforms.all;
+    # FIXME: Waiting for real GitHub Actions arm64 support
+    badPlatforms = [ "aarch64-linux" ];
     maintainers = with lib.maintainers; [ soywod ];
   };
 
