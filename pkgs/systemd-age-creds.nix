@@ -16,8 +16,8 @@ let
     src = fetchFromGitHub {
       owner = "josh";
       repo = "systemd-age-creds";
-      rev = "7f38534da84e95fb12b0975d25d855e3b32558ad";
-      hash = "sha256-LO2ArFXF0XK9ze0aq+6ja7V9fsN3ljem0QB94mzqtRE=";
+      rev = "f7c44fb9b2a374af4fb161e3be4165e2643be52d";
+      hash = "sha256-t3iiakfaTiKihNu+C6WkcyhIQcpNTFVFTzWuhV0Jmf8=";
     };
     vendorHash = null;
 
