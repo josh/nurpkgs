@@ -64,9 +64,7 @@ jobs:
             accept-flake-config = true
             allow-import-from-derivation = false
 
-      - uses: DeterminateSystems/magic-nix-cache-action@main
-        with:
-          use-gha-cache: false
+      - uses: DeterminateSystems/flakehub-cache-action@main
 
       - uses: DeterminateSystems/flake-checker-action@v9
 
@@ -86,9 +84,7 @@ jobs:
         with:
           determinate: true
 
-      - uses: DeterminateSystems/magic-nix-cache-action@main
-        with:
-          use-gha-cache: false
+      - uses: DeterminateSystems/flakehub-cache-action@main
 
       - uses: DeterminateSystems/flakehub-push@main
         with:
