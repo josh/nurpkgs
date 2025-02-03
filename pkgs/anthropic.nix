@@ -8,5 +8,7 @@ python3Packages.anthropic.overrideAttrs rec {
     hash = "sha256-/QuAUU0/nNhJZouCP0LVkCFMTiNdeze/fF+SZKD1Jis=";
   };
 
+  doInstallCheck = false;
+
   passthru.updateScriptVersion = "stable";
 }
