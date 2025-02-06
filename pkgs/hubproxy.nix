@@ -8,15 +8,15 @@
 let
   hubproxy = buildGoModule rec {
     pname = "hubproxy";
-    version = "0.0.0";
+    version = "0-unstable-2025-02-06";
 
     src = fetchFromGitHub {
       owner = "cased";
       repo = "hubproxy";
-      rev = "94d6484fd679d5d25587d1e311cef6ea71dc80fb";
-      hash = "sha256-GXzWvYM5rXH5I7+xYESU9z50dAvNaKVtSuhNj1LYQM0=";
+      rev = "c2b11c2c42721433541f9cedbd2e106fdbe79347";
+      hash = "sha256-2WC8wcW74cVMaEJCQlO8zBu0V9fiv39GZxGMENtyE7M=";
     };
-    vendorHash = "sha256-ia57cSe3pXzK7kh0Vj7vUD5xtvXnDchVGWV+Iklsk8M=";
+    vendorHash = "sha256-g9uqDESN65+juVXMsEzKJQzdlNkSzSDmGceaVXNwAhA=";
 
     installPhase = ''
       runHook preInstall
