@@ -18,15 +18,6 @@ let
     };
     vendorHash = "sha256-g9uqDESN65+juVXMsEzKJQzdlNkSzSDmGceaVXNwAhA=";
 
-    installPhase = ''
-      runHook preInstall
-
-      mkdir -p $out/bin
-      cp $GOPATH/bin/proxy $out/bin/hubproxy
-
-      runHook postInstall
-    '';
-
     meta = {
       description = "A proxy for better github webhooks";
       mainProgram = "hubproxy";
