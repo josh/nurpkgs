@@ -41,7 +41,7 @@ jobs:
 
       - name: Check flake
         run: |
-          nix flake check --print-build-logs
+          nix flake check --keep-going --print-build-logs
 
   build-flakehub:
     strategy:
@@ -70,7 +70,7 @@ jobs:
 
       - name: Check flake
         run: |
-          nix flake check --print-build-logs
+          nix flake check --keep-going --print-build-logs
 
   publish:
     needs: build-flakehub
