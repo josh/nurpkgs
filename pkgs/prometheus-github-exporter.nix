@@ -14,11 +14,11 @@ let
     src = fetchFromGitHub {
       owner = "josh";
       repo = "github_exporter";
-      rev = "3204ce1f7fd7c6bf70eeace18a52b421fd4f76f4";
-      hash = "sha256-HE4eogysJVFay4kXc4oNHxeI41RPd8ug71FAGCM+RD0=";
+      rev = "478fda7c5144c3c918d63b8aef82847705a75736";
+      hash = "sha256-4/K7iLqkvSHNspOj+8vVCUsFehBhsl2acm15/asNjSU=";
     };
 
-    vendorHash = "sha256-t4pJuohTzjvKQ1uslgPqIi2k6brUgkEIOxyWiQzTmNs=";
+    vendorHash = "sha256-Pmc993kvy4ziR1nbHUsljmsDE12n+vHs6yYk2n0PQLI=";
 
     env.CGO_ENABLED = 0;
     ldflags = [
