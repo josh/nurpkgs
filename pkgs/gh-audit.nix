@@ -8,14 +8,14 @@
 let
   gh-audit = python3Packages.buildPythonApplication rec {
     pname = "gh-audit";
-    version = "0.1.2-unstable-2025-02-03";
+    version = "0.1.2-unstable-2025-02-08";
     pyproject = true;
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "gh-audit";
-      rev = "4183a1e27215b1fc32b3d3192dc0eaa5b8c20c34";
-      hash = "sha256-ozRoKRT6cYe1A9Ib5KmdqIZW0AkXGz4eCUpLQcA/jfE=";
+      rev = "459ac682386b07dfcebbae0595ca3bde487f3eea";
+      hash = "sha256-mPwI842ypYT7C7SWo88vqx68v5S7yO3J/n3HKNaa5lk=";
     };
 
     build-system = with python3Packages; [
