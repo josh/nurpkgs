@@ -9,16 +9,16 @@
 let
   prometheus-github-exporter = buildGoModule {
     pname = "prometheus-github-exporter";
-    version = "0.1.0-unstable-2025-01-22";
+    version = "0.1.0-unstable-2025-02-08";
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "github_exporter";
-      rev = "d7e90139010aa5e9d576e2421ab221f748692147";
-      hash = "sha256-QNhz0KDDwHek0LIJI882Q4VHaKlH4Tdac1aUuTACFbA=";
+      rev = "3204ce1f7fd7c6bf70eeace18a52b421fd4f76f4";
+      hash = "sha256-HE4eogysJVFay4kXc4oNHxeI41RPd8ug71FAGCM+RD0=";
     };
 
-    vendorHash = "sha256-xCrD6PjyPnNsgFJnfuD40TDhyo9wVgIwqb3Atc6fFso=";
+    vendorHash = "sha256-t4pJuohTzjvKQ1uslgPqIi2k6brUgkEIOxyWiQzTmNs=";
 
     env.CGO_ENABLED = 0;
     ldflags = [
