@@ -2,7 +2,6 @@
   lib,
   fetchFromGitHub,
   python3Packages,
-  nur,
 }:
 python3Packages.buildPythonPackage rec {
   pname = "llm-anthropic";
@@ -22,7 +21,7 @@ python3Packages.buildPythonPackage rec {
   ];
 
   dependencies = [
-    nur.repos.josh.anthropic
+    python3Packages.anthropic
   ];
 
   pythonImportsCheck = [
