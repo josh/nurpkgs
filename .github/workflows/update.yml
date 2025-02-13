@@ -73,7 +73,7 @@ jobs:
       - name: Git status
         id: git-status
         run: |
-          count=$(git rev-list "origin/$GITHUB_REF..HEAD" --count)
+          count=$(git rev-list "origin/$GITHUB_REF_NAME..HEAD" --count)
           echo "count=$count" >>"$GITHUB_OUTPUT"
 
       - name: Check flake
