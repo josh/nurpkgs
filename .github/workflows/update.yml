@@ -73,8 +73,7 @@ jobs:
       - name: Git status
         id: git-status
         run: |
-          ref="${{ github.ref_name }}"
-          count=$(git rev-list "origin/$ref..HEAD" --count)
+          count=$(git rev-list "origin/$GITHUB_REF..HEAD" --count)
           echo "count=$count" >>"$GITHUB_OUTPUT"
 
       - name: Check flake
@@ -92,7 +91,7 @@ jobs:
           gh pr create \
             --base "${{ github.ref_name }}" \
             --head "update-${{ matrix.attr }}" \
-            --title "Update ${{ matrix.attr }}"
+            --title "Update ${{ matrix.attr }}" \
             || true
         env:
           GH_TOKEN: ${{ github.token }}
