@@ -82,12 +82,12 @@ jobs:
 
       - name: Create PR
         if: steps.git-status.outputs.count != 0
+        continue-on-error: true
         run: |
           gh pr create \
             --base "${{ github.ref_name }}" \
             --head "update-${{ matrix.attr }}" \
             --title "Update ${{ matrix.attr }}" \
-            --body "Update ${{ matrix.attr }} using nix-update" \
-            || true
+            --body "Update ${{ matrix.attr }} using nix-update"
         env:
           GH_TOKEN: ${{ github.token }}
