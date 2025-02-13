@@ -82,12 +82,21 @@ jobs:
 
       - name: Create PR
         if: steps.git-status.outputs.count != 0
+        id: create-pr
         continue-on-error: true
         run: |
+          echo -n "url=" >"$GITHUB_OUTPUT"
           gh pr create \
             --base "${{ github.ref_name }}" \
             --head "update-${{ matrix.attr }}" \
             --title "Update ${{ matrix.attr }}" \
-            --fill-verbose
+            --fill-verbose | tee -a "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Enable auto-merge
+        if: steps.git-status.outputs.count != 0 && steps.create-pr.outcome == 'success'
+        run: |
+          gh pr merge --merge --auto "${{ steps.create-pr.outputs.url }}"
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
