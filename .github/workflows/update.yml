@@ -28,13 +28,12 @@ jobs:
         env:
           FLAKE_URI: ${{ github.workspace }}
 
-  # TODO: Push to branch and open PR
   update:
     name: update-${{ matrix.attr }}
     needs: matrix
     runs-on: ubuntu-24.04
     concurrency:
-      group: git-push-${{ github.ref }}
+      group: git-push-update-${{ matrix.attr }}
       cancel-in-progress: false
     strategy:
       matrix: ${{fromJSON(needs.matrix.outputs.matrix)}}
@@ -43,6 +42,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_TOKEN }}
+
+      - name: Checkout new branch
+        run: |
+          git checkout -B "update-${{ matrix.attr }}"
 
       - uses: DeterminateSystems/nix-installer-action@main
         with:
@@ -70,7 +73,8 @@ jobs:
       - name: Git status
         id: git-status
         run: |
-          count=$(git rev-list '@{upstream}..HEAD' --count)
+          ref="${{ github.ref_name }}"
+          count=$(git rev-list "origin/$ref..HEAD" --count)
           echo "count=$count" >>"$GITHUB_OUTPUT"
 
       - name: Check flake
@@ -80,4 +84,4 @@ jobs:
 
       - name: Push changes
         if: steps.git-status.outputs.count != 0
-        run: git push
+        run: git push -f origin "update-${{ matrix.attr }}"
