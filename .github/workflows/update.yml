@@ -24,7 +24,8 @@ jobs:
       - id: set-matrix
         name: Generate package matrix
         run: |
-          nix eval --file ./internal/update-script-matrix.nix --write-to "$GITHUB_OUTPUT"
+          nix eval --file ./internal/update-script-matrix.nix --write-to "matrix.json"
+          mv matrix.json "$GITHUB_OUTPUT"
         env:
           FLAKE_URI: ${{ github.workspace }}
 
