@@ -9,9 +9,27 @@ permissions:
   contents: write
 
 jobs:
+  matrix:
+    runs-on: ubuntu-24.04
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: set-matrix
+        name: Generate package matrix
+        run: |
+          nix eval --file ./internal/update-script-matrix.nix --write-to "$GITHUB_OUTPUT"
+        env:
+          FLAKE_URI: ${{ github.workspace }}
+
+  # TODO: Push to branch and open PR
   update:
+    name: update-${{ matrix.attr }}
+    needs: matrix
     runs-on: ubuntu-24.04
     concurrency: git-push-${{ github.ref }}
+    strategy:
+      matrix: ${{fromJSON(needs.matrix.outputs.matrix)}}
 
     steps:
       - uses: actions/checkout@v4
@@ -33,13 +51,13 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Build
+      - name: Build nix-update
         run: |
-          nix build --no-link .#update-script
+          nix build --no-link nixpkgs#nix-update
 
-      - name: Run package update scripts
+      - name: Run nix-update
         run: |
-          nix run .#update-script
+          nix run nixpkgs#nix-update -- --flake --commit ${{ matrix.attr }} --version=${{ matrix.version }}
 
       - name: Git status
         id: git-status
