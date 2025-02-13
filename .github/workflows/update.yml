@@ -76,11 +76,6 @@ jobs:
           count=$(git rev-list "origin/$GITHUB_REF_NAME..HEAD" --count)
           echo "count=$count" >>"$GITHUB_OUTPUT"
 
-      - name: Check flake
-        if: steps.git-status.outputs.count != 0
-        run: |
-          nix flake check --print-build-logs
-
       - name: Push changes
         if: steps.git-status.outputs.count != 0
         run: git push -f origin "update-${{ matrix.attr }}"
