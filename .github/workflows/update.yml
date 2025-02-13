@@ -90,4 +90,4 @@ jobs:
             --title "Update ${{ matrix.attr }}" \
             --body "Update ${{ matrix.attr }} using nix-update"
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
