@@ -88,6 +88,6 @@ jobs:
             --base "${{ github.ref_name }}" \
             --head "update-${{ matrix.attr }}" \
             --title "Update ${{ matrix.attr }}" \
-            --body "Update ${{ matrix.attr }} using nix-update"
+            --fill-verbose
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
