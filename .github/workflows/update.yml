@@ -85,3 +85,14 @@ jobs:
       - name: Push changes
         if: steps.git-status.outputs.count != 0
         run: git push -f origin "update-${{ matrix.attr }}"
+
+      - name: Create PR
+        if: steps.git-status.outputs.count != 0
+        run: |
+          gh pr create \
+            --base "${{ github.ref_name }}" \
+            --head "update-${{ matrix.attr }}" \
+            --title "Update ${{ matrix.attr }}"
+            || true
+        env:
+          GH_TOKEN: ${{ github.token }}
