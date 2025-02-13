@@ -33,7 +33,9 @@ jobs:
     name: update-${{ matrix.attr }}
     needs: matrix
     runs-on: ubuntu-24.04
-    concurrency: git-push-${{ github.ref }}
+    concurrency:
+      group: git-push-${{ github.ref }}
+      cancel-in-progress: false
     strategy:
       matrix: ${{fromJSON(needs.matrix.outputs.matrix)}}
 
