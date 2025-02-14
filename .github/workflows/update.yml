@@ -36,6 +36,7 @@ jobs:
       group: git-push-update-${{ matrix.attr }}
       cancel-in-progress: false
     strategy:
+      fail-fast: false
       matrix: ${{fromJSON(needs.matrix.outputs.matrix)}}
 
     steps:
