@@ -1,24 +1,18 @@
 {
-  lib,
-  fetchFromGitHub,
   runCommand,
   python3Packages,
-  nix-update-script,
+  nur,
 }:
 let
+  source = nur.repos.josh.mcp-servers-source;
+
   mcp-server-git = python3Packages.buildPythonPackage rec {
     pname = "mcp-server-git";
-    version = "2025.1.17";
+    version = source.tag;
     pyproject = true;
 
-    src = fetchFromGitHub {
-      owner = "modelcontextprotocol";
-      repo = "servers";
-      rev = version;
-      hash = "sha256-qJQWSPYXI4hA/NMSwb6eiEAOPAc2yRfk9hf7J9wdqp4=";
-    };
-
-    sourceRoot = "source/src/git";
+    src = source;
+    sourceRoot = "${source.name}/src/git";
 
     build-system = [ python3Packages.hatchling ];
 
@@ -28,11 +22,9 @@ let
       python3Packages.mcp
     ];
 
-    meta = {
+    meta = source.meta // {
       description = "A Model Context Protocol server providing tools to read, search, and manipulate Git repositories programmatically via LLMs";
       homepage = "https://github.com/modelcontextprotocol/servers/tree/main/src/git";
-      changelog = "https://github.com/modelcontextprotocol/servers/releases/tag/${version}";
-      license = lib.licenses.mit;
       mainProgram = "mcp-server-git";
     };
   };
@@ -43,9 +35,6 @@ mcp-server-git.overrideAttrs (
     mcp-server-git = finalAttrs.finalPackage;
   in
   {
-    passthru.updateScriptVersion = "stable";
-    passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
-
     passthru.tests = {
       help =
         runCommand "test-mcp-server-git-help"
