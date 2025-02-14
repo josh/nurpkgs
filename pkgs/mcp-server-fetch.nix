@@ -14,7 +14,7 @@ let
 
   mcp-server-fetch = python3Packages.buildPythonPackage rec {
     pname = "mcp-server-fetch";
-    version = source.tag;
+    inherit (source) version;
     pyproject = true;
 
     src = source;

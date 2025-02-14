@@ -1,20 +1,31 @@
 {
   lib,
+  stdenvNoCC,
   fetchFromGitHub,
   nix-update-script,
 }:
-fetchFromGitHub {
+stdenvNoCC.mkDerivation rec {
   name = "modelcontextprotocol-source";
-  owner = "modelcontextprotocol";
-  repo = "servers";
-  tag = "2025.1.17";
-  hash = "sha256-qJQWSPYXI4hA/NMSwb6eiEAOPAc2yRfk9hf7J9wdqp4=";
+  version = src.tag;
+
+  src = fetchFromGitHub {
+    owner = "modelcontextprotocol";
+    repo = "servers";
+    tag = "2025.2.12";
+    hash = "sha256-XKlgTdK3fQ6Z+bB7ZIGHTw8xHW9bT8vp6BFVNspHcd8=";
+  };
+
+  buildCommand = ''
+    cp -r $src $out
+  '';
+
   meta = {
     description = "Model Context Protocol Servers";
     homepage = "https://github.com/modelcontextprotocol/servers";
     license = lib.licenses.mit;
-    available = true;
+    platforms = lib.platforms.all;
   };
+
   passthru.updateScriptVersion = "stable";
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 }

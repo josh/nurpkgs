@@ -8,7 +8,7 @@ let
 
   mcp-server-time = python3Packages.buildPythonPackage rec {
     pname = "mcp-server-time";
-    version = source.tag;
+    inherit (source) version;
     pyproject = true;
 
     src = source;

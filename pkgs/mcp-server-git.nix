@@ -8,7 +8,7 @@ let
 
   mcp-server-git = python3Packages.buildPythonPackage rec {
     pname = "mcp-server-git";
-    version = source.tag;
+    inherit (source) version;
     pyproject = true;
 
     src = source;
