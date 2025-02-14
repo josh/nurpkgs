@@ -36,7 +36,7 @@
           isAvailable = _: pkg: pkg.meta.available;
           pkgs = nixpkgs.legacyPackages.${system}.extend self.overlays.default;
         in
-        lib.attrsets.filterAttrs isAvailable pkgs.nur.repos.josh
+        lib.attrsets.filterAttrs isAvailable (builtins.removeAttrs pkgs.nur.repos.josh [ "nodePackages" ])
       );
 
       formatter = eachSystem (system: treefmt-nix.${system}.wrapper);
