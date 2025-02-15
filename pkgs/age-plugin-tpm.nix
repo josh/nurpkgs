@@ -9,13 +9,13 @@
 }:
 age-plugin-tpm'.overrideAttrs (
   finalAttrs: _previousAttrs: {
-    version = "0.2.0-unstable-2024-06-20";
+    version = "0.2.0-unstable-2025-02-15";
 
     src = fetchFromGitHub {
       owner = "Foxboron";
       repo = "age-plugin-tpm";
-      rev = "5dedd8a6a240ef68851884fe850293e3cc954ac6";
-      hash = "sha256-N6Rsnh5V90SCGO0dd6q5xp7k168PDtX3YNdXF4gLDgI=";
+      rev = "7afaac49a9a3c7df2d8bd9ac6aaef8aed175fd11";
+      hash = "sha256-UNy7lsqvqZ6JNPA2INpKtUq1Jg439zw3/z9l1+N2AfY=";
     };
     vendorHash = "sha256-qNSQV8GOPdKSzCWUb5ZmXPUb3V6Kgq7w84Tj5zfyLQ4=";
 
