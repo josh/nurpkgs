@@ -35,8 +35,12 @@
         let
           isAvailable = _: pkg: pkg.meta.available;
           pkgs = nixpkgs.legacyPackages.${system}.extend self.overlays.default;
+          availablePkgs = lib.attrsets.filterAttrs isAvailable (
+            builtins.removeAttrs pkgs.nur.repos.josh [ "nodePackages" ]
+          );
+          all-packages = pkgs.linkFarmFromDrvs "all-packages" (builtins.attrValues availablePkgs);
         in
-        lib.attrsets.filterAttrs isAvailable (builtins.removeAttrs pkgs.nur.repos.josh [ "nodePackages" ])
+        availablePkgs // { default = all-packages; }
       );
 
       formatter = eachSystem (system: treefmt-nix.${system}.wrapper);
