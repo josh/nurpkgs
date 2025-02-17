@@ -27,5 +27,3 @@ let
   };
 in
 "matrix=${builtins.toJSON matrix}"
-
-# --write-to
