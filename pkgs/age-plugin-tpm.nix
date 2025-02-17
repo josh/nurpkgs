@@ -1,5 +1,3 @@
-# Upstream to NixOS/nixpkgs
-# - Waiting for post v0.2.0 tagged release
 {
   lib,
   fetchFromGitHub,
@@ -8,24 +6,29 @@
   age-plugin-tpm',
 }:
 age-plugin-tpm'.overrideAttrs (
-  finalAttrs: _previousAttrs: {
-    version = "0.2.0-unstable-2025-02-15";
+  finalAttrs: previousAttrs: {
+    version = "0.3.0";
 
     src = fetchFromGitHub {
       owner = "Foxboron";
       repo = "age-plugin-tpm";
-      rev = "7afaac49a9a3c7df2d8bd9ac6aaef8aed175fd11";
-      hash = "sha256-UNy7lsqvqZ6JNPA2INpKtUq1Jg439zw3/z9l1+N2AfY=";
+      rev = "2c8f8e818a3d5a2d9bc8a175daad12a0dfce91e8";
+      hash = "sha256-yr1PSSmcUoOrQ8VMQEoaCLNvDO+3+6N7XXdNUyYVz9M=";
     };
-    vendorHash = "sha256-qNSQV8GOPdKSzCWUb5ZmXPUb3V6Kgq7w84Tj5zfyLQ4=";
+
+    vendorHash = "sha256-VEx6qP02QcwETOQUkMsrqVb+cOElceXcTDaUr480ngs=";
+
+    nativeCheckInputs = previousAttrs.nativeCheckInputs ++ [
+      age
+    ];
 
     meta = {
       mainProgram = "age-plugin-tpm";
-      platforms = lib.platforms.linux ++ lib.platforms.darwin;
+      platforms = lib.platforms.all;
       position = "${./age-plugin-tpm.nix}:12";
     };
 
-    passthru.updateScriptVersion = "branch";
+    passthru.updateScriptVersion = "stable";
 
     passthru.tests = {
       help =
