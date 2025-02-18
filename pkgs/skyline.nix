@@ -6,6 +6,8 @@
 }:
 let
   skyline = python3Packages.buildPythonApplication rec {
+    __structuredAttrs = true;
+
     pname = "skyline";
     version = "0-unstable-2025-02-03";
     pyproject = true;
@@ -50,6 +52,7 @@ skyline.overrideAttrs (
       help =
         runCommand "test-skyline-help"
           {
+            __structuredAttrs = true;
             nativeBuildInputs = [ skyline ];
           }
           ''

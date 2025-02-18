@@ -8,6 +8,8 @@
   nix-update-script,
 }:
 swiftPackages.stdenv.mkDerivation (finalAttrs: {
+  __structuredAttrs = true;
+
   pname = "itunes-library-export";
   version = "0.1.1";
 
@@ -36,6 +38,7 @@ swiftPackages.stdenv.mkDerivation (finalAttrs: {
     help =
       runCommand "test-itunes-library-export-help"
         {
+          __structuredAttrs = true;
           nativeBuildInputs = [ finalAttrs.finalPackage ];
         }
         ''

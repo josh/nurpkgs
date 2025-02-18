@@ -34,6 +34,7 @@ age-plugin-tpm'.overrideAttrs (
       help =
         runCommand "test-age-plugin-tpm-help"
           {
+            __structuredAttrs = true;
             nativeBuildInputs = [ finalAttrs.finalPackage ];
           }
           ''
@@ -44,6 +45,7 @@ age-plugin-tpm'.overrideAttrs (
       encrypt =
         runCommand "test-age-plugin-tpm-encrypt"
           {
+            __structuredAttrs = true;
             nativeBuildInputs = [
               age
               finalAttrs.finalPackage

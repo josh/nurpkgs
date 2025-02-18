@@ -14,6 +14,8 @@
   buildFeatures ? [ ],
 }:
 rustPlatform.buildRustPackage rec {
+  __structuredAttrs = true;
+
   pname = "neverest";
   version = "1.0.0-beta-unstable-2024-12-19";
 

@@ -55,6 +55,7 @@ prometheus-github-exporter.overrideAttrs (
       help =
         runCommand "test-prometheus-github-exporter-help"
           {
+            __structuredAttrs = true;
             nativeBuildInputs = [ prometheus-github-exporter ];
           }
           ''

@@ -15,6 +15,8 @@
   buildFeatures ? [ ],
 }:
 rustPlatform.buildRustPackage rec {
+  __structuredAttrs = true;
+
   pname = "himalaya";
   version = "1.1.0-unstable-2025-02-17";
 

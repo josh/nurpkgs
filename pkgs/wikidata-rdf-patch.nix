@@ -7,6 +7,8 @@
 }:
 let
   wikidata-rdf-patch = python3Packages.buildPythonApplication rec {
+    __structuredAttrs = true;
+
     pname = "wikidata-rdf-patch";
     version = "0.1.1";
     pyproject = true;
@@ -54,6 +56,7 @@ wikidata-rdf-patch.overrideAttrs (
       help =
         runCommand "test-wikidata-rdf-patch-help"
           {
+            __structuredAttrs = true;
             nativeBuildInputs = [ wikidata-rdf-patch ];
           }
           ''

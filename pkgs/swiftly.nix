@@ -28,6 +28,8 @@ let
   };
 in
 stdenvNoCC.mkDerivation (finalAttrs: {
+  __structuredAttrs = true;
+
   pname = "swiftly";
   inherit version;
   src = sources.${stdenvNoCC.hostPlatform.system};
@@ -64,6 +66,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     version =
       runCommand "test-swiftly-version"
         {
+          __structuredAttrs = true;
           nativeBuildInputs = [ finalAttrs.finalPackage ];
         }
         ''
@@ -74,6 +77,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     help =
       runCommand "test-swiftly-help"
         {
+          __structuredAttrs = true;
           nativeBuildInputs = [ finalAttrs.finalPackage ];
         }
         ''

@@ -7,6 +7,8 @@
 }:
 let
   gh-audit = python3Packages.buildPythonApplication rec {
+    __structuredAttrs = true;
+
     pname = "gh-audit";
     version = "0.1.2-unstable-2025-02-17";
     pyproject = true;
@@ -56,6 +58,7 @@ gh-audit.overrideAttrs (
       help =
         runCommand "test-gh-audit-help"
           {
+            __structuredAttrs = true;
             nativeBuildInputs = [ gh-audit ];
           }
           ''

@@ -4,6 +4,8 @@
   fetchFromGitHub,
 }:
 python3Packages.buildPythonPackage rec {
+  __structuredAttrs = true;
+
   pname = "lru-cache";
   version = "1.0.1";
   pyproject = true;

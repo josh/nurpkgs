@@ -6,6 +6,8 @@
 }:
 let
   imdb-plex-sync = python3Packages.buildPythonApplication rec {
+    __structuredAttrs = true;
+
     pname = "imdb-plex-sync";
     version = "0.1.0-unstable-2024-12-28";
     pyproject = true;
@@ -49,6 +51,7 @@ imdb-plex-sync.overrideAttrs (
       help =
         runCommand "test-imdb-plex-sync-help"
           {
+            __structuredAttrs = true;
             nativeBuildInputs = [ imdb-plex-sync ];
           }
           ''

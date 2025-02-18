@@ -74,6 +74,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     help =
       runCommand "test-age-plugin-se-help"
         {
+          __structuredAttrs = true;
           nativeBuildInputs = [ finalAttrs.finalPackage ];
         }
         ''
@@ -84,6 +85,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     encrypt =
       runCommand "test-age-plugin-se-encrypt"
         {
+          __structuredAttrs = true;
           nativeBuildInputs = [
             age
             finalAttrs.finalPackage

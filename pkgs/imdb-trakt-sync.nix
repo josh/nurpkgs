@@ -6,6 +6,8 @@
 }:
 let
   imdb-trakt-sync = python3Packages.buildPythonApplication rec {
+    __structuredAttrs = true;
+
     pname = "imdb-trakt-sync";
     version = "0.1.0-unstable-2025-02-08";
     pyproject = true;
@@ -49,6 +51,7 @@ imdb-trakt-sync.overrideAttrs (
       help =
         runCommand "test-imdb-trakt-sync-help"
           {
+            __structuredAttrs = true;
             nativeBuildInputs = [ imdb-trakt-sync ];
           }
           ''

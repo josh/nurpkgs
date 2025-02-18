@@ -6,6 +6,8 @@
 }:
 let
   gametrack-data = python3Packages.buildPythonApplication rec {
+    __structuredAttrs = true;
+
     pname = "gametrack-data";
     version = "1.0.1";
     pyproject = true;
@@ -44,6 +46,7 @@ gametrack-data.overrideAttrs (
       help =
         runCommand "test-gametrack-data-help"
           {
+            __structuredAttrs = true;
             nativeBuildInputs = [ gametrack-data ];
           }
           ''
