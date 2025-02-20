@@ -39,14 +39,13 @@ jobs:
         env:
           NIX_EXPR: |
             let
-              workspace = builtins.getEnv "GITHUB_WORKSPACE";
               ref = builtins.getEnv "REF";
-              flake = builtins.getFlake "git+file://${workspace}?ref=${ref}";
+              flake = builtins.getFlake "git+file://${{ github.workspace }}?ref=${ref}";
             in
             derivation {
               __structuredAttrs = true;
               name = "all-packages";
-              system = builtins.currentSystem;
+              system = "x86_64-linux";
               builder = "/bin/sh";
               inherit (flake.outputs) packages checks;
             }
