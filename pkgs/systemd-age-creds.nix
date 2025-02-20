@@ -66,6 +66,7 @@ systemd-age-creds.overrideAttrs (
       help =
         runCommand "test-systemd-age-creds-help"
           {
+            __structuredAttrs = true;
             nativeBuildInputs = [ systemd-age-creds ];
           }
           ''

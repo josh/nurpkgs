@@ -40,6 +40,7 @@ hubproxy.overrideAttrs (
       help =
         runCommand "test-hubproxy-help"
           {
+            __structuredAttrs = true;
             nativeBuildInputs = [ hubproxy ];
           }
           ''

@@ -6,6 +6,8 @@
 }:
 let
   imdb-data = python3Packages.buildPythonApplication rec {
+    __structuredAttrs = true;
+
     pname = "imdb-data";
     version = "0.1.0-unstable-2025-02-14";
     pyproject = true;
@@ -50,6 +52,7 @@ imdb-data.overrideAttrs (
       help =
         runCommand "test-imdb-data-help"
           {
+            __structuredAttrs = true;
             nativeBuildInputs = [ imdb-data ];
           }
           ''

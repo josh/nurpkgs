@@ -13,6 +13,8 @@ let
   );
 
   mcp-server-fetch = python3Packages.buildPythonPackage rec {
+    __structuredAttrs = true;
+
     pname = "mcp-server-fetch";
     inherit (source) version;
     pyproject = true;
@@ -47,6 +49,7 @@ mcp-server-fetch.overrideAttrs (
       help =
         runCommand "test-mcp-server-fetch-help"
           {
+            __structuredAttrs = true;
             nativeBuildInputs = [ mcp-server-fetch ];
           }
           ''

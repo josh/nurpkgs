@@ -4,6 +4,8 @@
   python3Packages,
 }:
 python3Packages.buildPythonPackage rec {
+  __structuredAttrs = true;
+
   pname = "llm-anthropic";
   version = "0.13";
   pyproject = true;

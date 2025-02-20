@@ -7,6 +7,8 @@ let
   source = nur.repos.josh.mcp-servers-source;
 
   mcp-server-git = python3Packages.buildPythonPackage rec {
+    __structuredAttrs = true;
+
     pname = "mcp-server-git";
     inherit (source) version;
     pyproject = true;
@@ -39,6 +41,7 @@ mcp-server-git.overrideAttrs (
       help =
         runCommand "test-mcp-server-git-help"
           {
+            __structuredAttrs = true;
             nativeBuildInputs = [ mcp-server-git ];
           }
           ''

@@ -5,6 +5,8 @@
   nix-update-script,
 }:
 stdenvNoCC.mkDerivation rec {
+  __structuredAttrs = true;
+
   name = "modelcontextprotocol-source";
   version = src.tag;
 

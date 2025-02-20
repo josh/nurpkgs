@@ -38,6 +38,7 @@ mcp-server-time.overrideAttrs (
       help =
         runCommand "test-mcp-server-time-help"
           {
+            __structuredAttrs = true;
             nativeBuildInputs = [ mcp-server-time ];
           }
           ''

@@ -13,6 +13,8 @@
   buildFeatures ? [ ],
 }:
 rustPlatform.buildRustPackage rec {
+  __structuredAttrs = true;
+
   pname = "mirador";
   version = "root-unstable-2025-01-18";
 

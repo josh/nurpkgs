@@ -32,6 +32,8 @@ let
   };
 in
 stdenv.mkDerivation (finalAttrs: {
+  __structuredAttrs = true;
+
   pname = "swift";
   inherit version;
   src = sources.${stdenv.hostPlatform.system};
@@ -78,6 +80,7 @@ stdenv.mkDerivation (finalAttrs: {
     help =
       runCommand "test-swift-help"
         {
+          __structuredAttrs = true;
           nativeBuildInputs = [ finalAttrs.finalPackage ];
         }
         ''
@@ -88,6 +91,7 @@ stdenv.mkDerivation (finalAttrs: {
     run =
       runCommand "test-swift-run"
         {
+          __structuredAttrs = true;
           nativeBuildInputs = [ finalAttrs.finalPackage ];
         }
         ''
