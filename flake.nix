@@ -38,9 +38,8 @@
           availablePkgs = lib.attrsets.filterAttrs isAvailable (
             builtins.removeAttrs pkgs.nur.repos.josh [ "nodePackages" ]
           );
-          all-packages = pkgs.linkFarmFromDrvs "all-packages" (builtins.attrValues availablePkgs);
         in
-        availablePkgs // { default = all-packages; }
+        availablePkgs
       );
 
       formatter = eachSystem (system: treefmt-nix.${system}.wrapper);
