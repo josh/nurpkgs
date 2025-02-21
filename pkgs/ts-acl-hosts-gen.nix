@@ -8,12 +8,12 @@
 let
   ts-acl-hosts-gen = buildGoModule {
     pname = "ts-acl-hosts-gen";
-    version = "0.0.0";
+    version = "0.1.0-unstable-2025-02-21";
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "ts-acl-hosts-gen";
-      rev = "b99aa88aaf76736dd16921394f267a5f4719a49f";
+      rev = "07c4fafa164f04f8ba2fe92290d8385dcb4a24a1";
       hash = "sha256-spv8yKhgOQ/5ycX6mzZSWOe7uoU0Yg5Ko2zPK9IzHE0=";
     };
 
