@@ -1,7 +1,7 @@
 {
   fetchFromGitHub,
   writeText,
-  offlineimap',
+  offlineimap,
 }:
 let
   no-install-requires-patch = writeText "urlib3.patch" ''
@@ -18,7 +18,7 @@ let
            )
   '';
 in
-offlineimap'.overrideAttrs (
+offlineimap.overrideAttrs (
   _finalAttrs: _previousAttrs: {
     version = "8.0.0.72";
     name = "offlineimap-8.0.0.72";
