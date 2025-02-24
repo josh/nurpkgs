@@ -2,7 +2,7 @@
   lib,
   writers,
   callPackage,
-  writeShellScript,
+  writeShellScriptBin,
   nix,
   node2nix,
 }:
@@ -15,7 +15,7 @@ let
   ];
   packageNamesJSON = writers.writeJSON "node-packages.json" packageNames;
 
-  updateScript = writeShellScript "update-node-packages" ''
+  updateScript = writeShellScriptBin "update-node-packages" ''
     set -o errexit
     set -o xtrace
     export PATH=${
