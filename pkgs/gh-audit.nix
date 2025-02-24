@@ -10,14 +10,14 @@ let
     __structuredAttrs = true;
 
     pname = "gh-audit";
-    version = "0.1.2-unstable-2025-02-17";
+    version = "0.1.2-unstable-2025-02-24";
     pyproject = true;
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "gh-audit";
-      rev = "e3908d6ae9de6f29245c2446246c489097a07edd";
-      hash = "sha256-fCm3Rnp0jb3Y29D9pIWhUFQzaU+OZpXZ6DmV5mBfkCY=";
+      rev = "6651bf266623a88c275e1bc5b9d60ecc9fce41c8";
+      hash = "sha256-e3+mhxvPIH4kouy4pxF6kBAn8QW7SJjywL4SeQhEM/M=";
     };
 
     build-system = with python3Packages; [
