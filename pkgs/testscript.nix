@@ -5,7 +5,7 @@
 }:
 buildGoModule {
   pname = "testscript";
-  version = "1.13.1";
+  version = "1.14.0";
 
   src = fetchFromGitHub {
     owner = "rogpeppe";
