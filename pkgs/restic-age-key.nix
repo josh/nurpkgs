@@ -10,7 +10,7 @@
 let
   restic-age-key = buildGoModule {
     pname = "restic-age-key";
-    version = "0.0.0";
+    version = "0-unstable-2025-02-24";
 
     src = fetchFromGitHub {
       owner = "josh";
