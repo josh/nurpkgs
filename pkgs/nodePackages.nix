@@ -10,6 +10,7 @@ let
   nodeEnv = callPackage ./nodePackages/node-env.nix { };
 
   packageNames = [
+    "@anthropic-ai/claude-code"
     "@modelcontextprotocol/inspector"
     "@modelcontextprotocol/server-filesystem"
   ];
