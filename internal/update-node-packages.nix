@@ -6,4 +6,4 @@ let
     overlays = [ flake.overlays.default ];
   };
 in
-pkgs.nur.repos.josh.nodePackages.updateScript
+pkgs.callPackage ./pkgs/node2nix/update-script.nix { }

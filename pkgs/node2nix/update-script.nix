@@ -1,14 +1,11 @@
 {
   lib,
   writers,
-  callPackage,
   writeShellScriptBin,
   nix,
   node2nix,
 }:
 let
-  nodeEnv = callPackage ./nodePackages/node-env.nix { };
-
   packageNames = [
     "@anthropic-ai/claude-code"
     "@modelcontextprotocol/inspector"
@@ -25,13 +22,10 @@ let
         node2nix
       ]
     }
-    cd pkgs/nodePackages
+    pushd pkgs/node2nix
     node2nix --input ${packageNamesJSON} --composition /dev/null
+    popd
     nix fmt
   '';
-
-  pkgs = callPackage ./nodePackages/node-packages.nix {
-    inherit nodeEnv;
-  };
 in
-pkgs // { inherit updateScript; }
+updateScript
