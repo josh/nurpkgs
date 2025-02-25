@@ -47,21 +47,6 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     chmod +x "$out/bin/swiftly"
   '';
 
-  meta = {
-    description = "A Swift toolchain installer and manager, written in Swift";
-    longDescription = ''
-      swiftly is a CLI tool for installing, managing, and switching between Swift toolchains, written in Swift.
-    '';
-    homepage = "https://github.com/swiftlang/swiftly";
-    license = lib.licenses.asl20;
-    sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
-    mainProgram = "swiftly";
-    platforms = [
-      "aarch64-linux"
-      "x86_64-linux"
-    ];
-  };
-
   passthru.tests = {
     version =
       runCommand "test-swiftly-version"
@@ -84,5 +69,20 @@ stdenvNoCC.mkDerivation (finalAttrs: {
           swiftly --help
           touch $out
         '';
+  };
+
+  meta = {
+    description = "A Swift toolchain installer and manager, written in Swift";
+    longDescription = ''
+      swiftly is a CLI tool for installing, managing, and switching between Swift toolchains, written in Swift.
+    '';
+    homepage = "https://github.com/swiftlang/swiftly";
+    license = lib.licenses.asl20;
+    sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
+    mainProgram = "swiftly";
+    platforms = [
+      "aarch64-linux"
+      "x86_64-linux"
+    ];
   };
 })

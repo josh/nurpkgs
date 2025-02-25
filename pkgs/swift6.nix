@@ -59,18 +59,6 @@ stdenv.mkDerivation (finalAttrs: {
     cp -r usr/ $out
   '';
 
-  meta = {
-    description = "The Swift Programming Language";
-    homepage = "https://github.com/swiftlang/swift";
-    license = lib.licenses.asl20;
-    sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
-    mainProgram = "swift";
-    platforms = [
-      "aarch64-linux"
-      "x86_64-linux"
-    ];
-  };
-
   passthru.tests = {
     version = testers.testVersion {
       package = finalAttrs.finalPackage;
@@ -100,5 +88,17 @@ stdenv.mkDerivation (finalAttrs: {
           swift hello.swift
           touch $out
         '';
+  };
+
+  meta = {
+    description = "The Swift Programming Language";
+    homepage = "https://github.com/swiftlang/swift";
+    license = lib.licenses.asl20;
+    sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
+    mainProgram = "swift";
+    platforms = [
+      "aarch64-linux"
+      "x86_64-linux"
+    ];
   };
 })

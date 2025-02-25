@@ -21,13 +21,13 @@ stdenvNoCC.mkDerivation rec {
     cp -r $src $out
   '';
 
+  passthru.updateScriptVersion = "stable";
+  passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
+
   meta = {
     description = "Model Context Protocol Servers";
     homepage = "https://github.com/modelcontextprotocol/servers";
     license = lib.licenses.mit;
     platforms = lib.platforms.all;
   };
-
-  passthru.updateScriptVersion = "stable";
-  passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 }

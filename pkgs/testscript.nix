@@ -22,6 +22,8 @@ buildGoModule {
 
   doCheck = false;
 
+  passthru.updateScriptVersion = "stable";
+
   meta = {
     description = "Provides a shell-like test environment that is very nicely tuned for testing Go CLI commands";
     homepage = "https://github.com/rogpeppe/go-internal";
@@ -29,6 +31,4 @@ buildGoModule {
     platforms = lib.platforms.all;
     mainProgram = "testscript";
   };
-
-  passthru.updateScriptVersion = "stable";
 }

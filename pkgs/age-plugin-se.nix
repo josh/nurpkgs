@@ -52,19 +52,6 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     fi
   '';
 
-  meta = with lib; {
-    description = "Age plugin for Apple's Secure Enclave";
-    homepage = "https://github.com/remko/age-plugin-se";
-    license = lib.licenses.mit;
-    sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
-    mainProgram = "age-plugin-se";
-    platforms = [
-      "aarch64-darwin"
-      "aarch64-linux"
-      "x86_64-linux"
-    ];
-  };
-
   passthru.tests = {
     version = testers.testVersion {
       package = finalAttrs.finalPackage;
@@ -97,5 +84,18 @@ stdenvNoCC.mkDerivation (finalAttrs: {
             --armor
           touch $out
         '';
+  };
+
+  meta = with lib; {
+    description = "Age plugin for Apple's Secure Enclave";
+    homepage = "https://github.com/remko/age-plugin-se";
+    license = lib.licenses.mit;
+    sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
+    mainProgram = "age-plugin-se";
+    platforms = [
+      "aarch64-darwin"
+      "aarch64-linux"
+      "x86_64-linux"
+    ];
   };
 })

@@ -64,6 +64,8 @@ rustPlatform.buildRustPackage rec {
       installShellCompletion "$out"/share/completions/mirador.{bash,fish,zsh}
     '';
 
+  passthru.updateScriptVersion = "branch";
+
   meta = rec {
     description = "CLI to watch mailbox changes";
     mainProgram = "mirador";
@@ -72,6 +74,4 @@ rustPlatform.buildRustPackage rec {
     license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ soywod ];
   };
-
-  passthru.updateScriptVersion = "branch";
 }

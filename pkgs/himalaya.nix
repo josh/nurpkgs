@@ -69,6 +69,8 @@ rustPlatform.buildRustPackage rec {
       installShellCompletion "$out"/share/completions/himalaya.{bash,fish,zsh}
     '';
 
+  passthru.updateScriptVersion = "branch";
+
   meta = rec {
     description = "CLI to manage emails";
     mainProgram = "himalaya";
@@ -81,6 +83,4 @@ rustPlatform.buildRustPackage rec {
       yanganto
     ];
   };
-
-  passthru.updateScriptVersion = "branch";
 }

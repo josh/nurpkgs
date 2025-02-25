@@ -66,6 +66,8 @@ rustPlatform.buildRustPackage rec {
       installShellCompletion "$out"/share/completions/neverest.{bash,fish,zsh}
     '';
 
+  passthru.updateScriptVersion = "branch";
+
   meta = rec {
     description = "CLI to manage emails";
     mainProgram = "neverest";
@@ -75,6 +77,4 @@ rustPlatform.buildRustPackage rec {
     platforms = lib.platforms.all;
     maintainers = with lib.maintainers; [ soywod ];
   };
-
-  passthru.updateScriptVersion = "branch";
 }
