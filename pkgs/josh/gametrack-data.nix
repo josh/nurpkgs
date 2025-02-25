@@ -6,11 +6,8 @@
 }:
 let
   gametrack-data = python3Packages.buildPythonApplication rec {
-    __structuredAttrs = true;
-
     pname = "gametrack-data";
     version = "1.0.1";
-    pyproject = true;
 
     src = fetchFromGitHub {
       owner = "josh";
@@ -18,6 +15,9 @@ let
       rev = "v${version}";
       hash = "sha256-4A1vM0DtaB+alnLnwD/Y8tdnQwAWUXH3r+Cxr4C4DaQ=";
     };
+
+    pyproject = true;
+    __structuredAttrs = true;
 
     build-system = with python3Packages; [
       hatchling

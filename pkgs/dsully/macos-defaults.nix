@@ -4,8 +4,6 @@
   rustPlatform,
 }:
 rustPlatform.buildRustPackage rec {
-  __structuredAttrs = true;
-
   pname = "macos-defaults";
   version = "0.2.0";
 
@@ -20,6 +18,8 @@ rustPlatform.buildRustPackage rec {
   useFetchCargoVendor = true;
 
   doCheck = false;
+
+  __structuredAttrs = true;
 
   passthru.updateScriptVersion = "stable";
 

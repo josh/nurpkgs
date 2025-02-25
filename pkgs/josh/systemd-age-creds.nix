@@ -19,6 +19,7 @@ let
       rev = "343b0b5e3e903305686b409389089039a505a7e0";
       hash = "sha256-jeeek+AD3crEj8JUE+qViOgSMFyoG7LYPI8iUx3SPKA=";
     };
+
     vendorHash = null;
 
     env.CGO_ENABLED = 0;

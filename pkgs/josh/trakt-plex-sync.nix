@@ -6,11 +6,8 @@
 }:
 let
   trakt-plex-sync = python3Packages.buildPythonApplication rec {
-    __structuredAttrs = true;
-
     pname = "trakt-plex-sync";
     version = "0.1.0-unstable-2025-02-08";
-    pyproject = true;
 
     src = fetchFromGitHub {
       owner = "josh";
@@ -18,6 +15,9 @@ let
       rev = "50f03d76c3b6442fec018b412c4805a555ea4e16";
       hash = "sha256-1TV6pD9RPKi68Ca67rrT5IpFzobeQrzTWT+WlPJMIhk=";
     };
+
+    pyproject = true;
+    __structuredAttrs = true;
 
     build-system = with python3Packages; [
       hatchling

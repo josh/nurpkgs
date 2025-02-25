@@ -6,11 +6,8 @@
 }:
 let
   imdb-data = python3Packages.buildPythonApplication rec {
-    __structuredAttrs = true;
-
     pname = "imdb-data";
     version = "0.1.0-unstable-2025-02-14";
-    pyproject = true;
 
     src = fetchFromGitHub {
       owner = "josh";
@@ -18,6 +15,9 @@ let
       rev = "7d75fc966688c168ed5656594ab885552b4219c0";
       hash = "sha256-J2zHlBkjjj52ht43w9zQwZ3Kqm44FQF9DYKFMSUxxkE=";
     };
+
+    pyproject = true;
+    __structuredAttrs = true;
 
     build-system = with python3Packages; [
       hatchling

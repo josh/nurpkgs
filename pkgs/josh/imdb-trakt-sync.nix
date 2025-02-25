@@ -6,11 +6,8 @@
 }:
 let
   imdb-trakt-sync = python3Packages.buildPythonApplication rec {
-    __structuredAttrs = true;
-
     pname = "imdb-trakt-sync";
     version = "0.1.0-unstable-2025-02-08";
-    pyproject = true;
 
     src = fetchFromGitHub {
       owner = "josh";
@@ -18,6 +15,9 @@ let
       rev = "e00366f9cc31a89041773bebd997946d09b61796";
       hash = "sha256-KoPOlVwBL1S/7JiMdz83do7qy/hapbYsUA3gMo8z7U8=";
     };
+
+    pyproject = true;
+    __structuredAttrs = true;
 
     build-system = with python3Packages; [
       hatchling

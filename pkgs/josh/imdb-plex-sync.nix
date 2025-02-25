@@ -6,11 +6,8 @@
 }:
 let
   imdb-plex-sync = python3Packages.buildPythonApplication rec {
-    __structuredAttrs = true;
-
     pname = "imdb-plex-sync";
     version = "0.1.0-unstable-2024-12-28";
-    pyproject = true;
 
     src = fetchFromGitHub {
       owner = "josh";
@@ -18,6 +15,9 @@ let
       rev = "dc9421e09acc73c78c875744947a4afa6dba1c98";
       hash = "sha256-5gNh+Y1edtWkMW1oTY9qeVl1QSDXfnubot4+xj2XQsE=";
     };
+
+    pyproject = true;
+    __structuredAttrs = true;
 
     build-system = with python3Packages; [
       hatchling

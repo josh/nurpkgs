@@ -7,11 +7,8 @@
 }:
 let
   gh-audit = python3Packages.buildPythonApplication rec {
-    __structuredAttrs = true;
-
     pname = "gh-audit";
     version = "0.1.2-unstable-2025-02-24";
-    pyproject = true;
 
     src = fetchFromGitHub {
       owner = "josh";
@@ -19,6 +16,9 @@ let
       rev = "6651bf266623a88c275e1bc5b9d60ecc9fce41c8";
       hash = "sha256-e3+mhxvPIH4kouy4pxF6kBAn8QW7SJjywL4SeQhEM/M=";
     };
+
+    pyproject = true;
+    __structuredAttrs = true;
 
     build-system = with python3Packages; [
       setuptools

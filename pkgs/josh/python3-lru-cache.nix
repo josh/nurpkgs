@@ -4,11 +4,8 @@
   fetchFromGitHub,
 }:
 python3Packages.buildPythonPackage rec {
-  __structuredAttrs = true;
-
   pname = "lru-cache";
   version = "1.0.1";
-  pyproject = true;
 
   src = fetchFromGitHub {
     owner = "josh";
@@ -16,6 +13,9 @@ python3Packages.buildPythonPackage rec {
     rev = "v${version}";
     hash = "sha256-CYBSoBLNa29NPHwgmaYaegMzsJF0Jndik/rYwVTKdVk=";
   };
+
+  pyproject = true;
+  __structuredAttrs = true;
 
   build-system = with python3Packages; [
     hatchling

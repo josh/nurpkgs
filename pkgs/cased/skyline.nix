@@ -6,11 +6,8 @@
 }:
 let
   skyline = python3Packages.buildPythonApplication rec {
-    __structuredAttrs = true;
-
     pname = "skyline";
     version = "0-unstable-2025-02-03";
-    pyproject = true;
 
     src = fetchFromGitHub {
       owner = "cased";
@@ -18,6 +15,9 @@ let
       rev = "d30f51d6e64abea50aad26ad3d8e021c1156e245";
       hash = "sha256-UybG20V15ry+WhX7N3Cj9dMH0f+mfCVENqHAb2BACwM=";
     };
+
+    pyproject = true;
+    __structuredAttrs = true;
 
     build-system = with python3Packages; [
       hatchling
