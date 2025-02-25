@@ -1,11 +1,3 @@
-final: _prev:
-let
-  inherit (final) lib;
-  pkgs = lib.filesystem.packagesFromDirectoryRecursive {
-    inherit (final) callPackage;
-    directory = ./pkgs;
-  };
-in
-{
-  nur.repos.josh = pkgs;
+final: _prev: {
+  nur.repos.josh = import ./default.nix { pkgs = final; };
 }

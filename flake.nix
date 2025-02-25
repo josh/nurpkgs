@@ -24,19 +24,22 @@
       ];
       inherit (nixpkgs) lib;
       eachSystem = lib.genAttrs systems;
+      eachPkgs = f: eachSystem (system: f nixpkgs.legacyPackages.${system});
 
-      treefmt-nix = eachSystem (system: import ./internal/treefmt.nix nixpkgs.legacyPackages.${system});
+      treefmt-nix = eachPkgs (import ./internal/treefmt.nix);
     in
     {
-      overlays.default = import ./overlay.nix;
+      overlays.default = final: _prev: {
+        nur.repos.josh = import ./default.nix { pkgs = final; };
+      };
 
-      packages = eachSystem (
-        system:
+      packages = eachPkgs (
+        pkgs:
         let
           isAvailable = _: pkg: pkg.meta.available;
-          pkgs = nixpkgs.legacyPackages.${system}.extend self.overlays.default;
+          nurpkgs = import ./default.nix { inherit pkgs; };
           availablePkgs = lib.attrsets.filterAttrs isAvailable (
-            builtins.removeAttrs pkgs.nur.repos.josh [ "nodePackages" ]
+            builtins.removeAttrs nurpkgs [ "nodePackages" ]
           );
         in
         availablePkgs
