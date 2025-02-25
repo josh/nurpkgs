@@ -7,11 +7,8 @@
 }:
 let
   wikidata-rdf-patch = python3Packages.buildPythonApplication rec {
-    __structuredAttrs = true;
-
     pname = "wikidata-rdf-patch";
     version = "0.1.1";
-    pyproject = true;
 
     src = fetchFromGitHub {
       owner = "josh";
@@ -19,6 +16,9 @@ let
       rev = "v${version}";
       hash = "sha256-ol3hjD3er6XTuSIRk04DKNb+IU3S0ynOTC6yrTI7jDY=";
     };
+
+    pyproject = true;
+    __structuredAttrs = true;
 
     build-system = with python3Packages; [
       setuptools

@@ -7,14 +7,14 @@ let
   source = nur.repos.josh.mcp-servers-source;
 
   mcp-server-git = python3Packages.buildPythonPackage rec {
-    __structuredAttrs = true;
-
     pname = "mcp-server-git";
     inherit (source) version;
-    pyproject = true;
 
     src = source;
     sourceRoot = "${source.name}/src/git";
+
+    pyproject = true;
+    __structuredAttrs = true;
 
     build-system = [ python3Packages.hatchling ];
 

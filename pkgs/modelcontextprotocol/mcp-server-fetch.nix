@@ -13,14 +13,14 @@ let
   );
 
   mcp-server-fetch = python3Packages.buildPythonPackage rec {
-    __structuredAttrs = true;
-
     pname = "mcp-server-fetch";
     inherit (source) version;
-    pyproject = true;
 
     src = source;
     sourceRoot = "${source.name}/src/fetch";
+
+    pyproject = true;
+    __structuredAttrs = true;
 
     build-system = [ python3Packages.hatchling ];
 

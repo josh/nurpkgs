@@ -9,10 +9,12 @@ let
   mcp-server-time = python3Packages.buildPythonPackage rec {
     pname = "mcp-server-time";
     inherit (source) version;
-    pyproject = true;
 
     src = source;
     sourceRoot = "${source.name}/src/time";
+
+    pyproject = true;
+    __structuredAttrs = true;
 
     build-system = [ python3Packages.hatchling ];
 

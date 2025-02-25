@@ -5,9 +5,7 @@
   nix-update-script,
 }:
 stdenvNoCC.mkDerivation rec {
-  __structuredAttrs = true;
-
-  name = "modelcontextprotocol-source";
+  pname = "modelcontextprotocol-source";
   version = src.tag;
 
   src = fetchFromGitHub {
@@ -16,6 +14,8 @@ stdenvNoCC.mkDerivation rec {
     tag = "2025.2.12";
     hash = "sha256-XKlgTdK3fQ6Z+bB7ZIGHTw8xHW9bT8vp6BFVNspHcd8=";
   };
+
+  __structuredAttrs = true;
 
   buildCommand = ''
     cp -r $src $out
