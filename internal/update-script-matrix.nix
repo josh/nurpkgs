@@ -10,15 +10,12 @@ let
       let
         pkg = pkgs.${name};
       in
-      if !(builtins.hasAttr "updateScriptVersion" pkg) then
+      if !(builtins.hasAttr "updateScript" pkg) then
         null
       else if !pkg.meta.available then
         null
       else
-        {
-          "attr" = name;
-          "version" = pkg.passthru.updateScriptVersion;
-        }
+        { "attr" = name; }
     ) (builtins.attrNames pkgs)
   );
 

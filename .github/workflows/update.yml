@@ -75,13 +75,16 @@ jobs:
           git config --global user.name '${{ steps.app-token.outputs.app-slug }}[bot]'
           git config --global user.email '${{ steps.get-user-id.outputs.user-id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com'
 
-      - name: Build nix-update
+      - name: Build update-script
         run: |
-          nix build --no-link nixpkgs#nix-update
+          nix build --file ./internal/update-script.nix
+        env:
+          FLAKE_URI: ${{ github.workspace }}
+          UPDATE_NIX_ATTR_PATH: ${{ matrix.attr }}
 
-      - name: Run nix-update
+      - name: Run update-script
         run: |
-          nix run nixpkgs#nix-update -- --flake --commit ${{ matrix.attr }} --version=${{ matrix.version }}
+          ./result
 
       - name: Git status
         id: git-status
