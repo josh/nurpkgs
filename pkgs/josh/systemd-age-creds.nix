@@ -32,12 +32,6 @@ let
 
     nativeBuildInputs = [ age ];
 
-    # TODO: Annotate slow tests upstream and just skip those here.
-    # https://github.com/NixOS/nixpkgs/blob/7401f56/doc/languages-frameworks/go.section.md#L254
-    # checkFlags = [ "-run=^Test(Simple|Fast)$" ];
-    # checkFlags = [ "-skip=^Test(Slow)$" ];
-    doCheck = false;
-
     meta = {
       description = "Load age encrypted credentials in systemd units";
       mainProgram = "systemd-age-creds";
