@@ -8,13 +8,13 @@
 let
   imdb-plex-sync = python3Packages.buildPythonApplication rec {
     pname = "imdb-plex-sync";
-    version = "0.1.0-unstable-2024-12-28";
+    version = "0.1.0-unstable-2025-02-08";
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "imdb-plex-sync";
-      rev = "dc9421e09acc73c78c875744947a4afa6dba1c98";
-      hash = "sha256-5gNh+Y1edtWkMW1oTY9qeVl1QSDXfnubot4+xj2XQsE=";
+      rev = "4b2c55012e8e53e228a34d2b6aa4281fab627642";
+      hash = "sha256-0YxwGK5jlW21rQ62VT50MLGqKZspT9HsY+lnM1tzMeQ=";
     };
 
     pyproject = true;
