@@ -8,13 +8,13 @@
 let
   skyline = python3Packages.buildPythonApplication rec {
     pname = "skyline";
-    version = "0-unstable-2025-02-03";
+    version = "0-unstable-2025-02-04";
 
     src = fetchFromGitHub {
       owner = "cased";
       repo = "skyline";
-      rev = "d30f51d6e64abea50aad26ad3d8e021c1156e245";
-      hash = "sha256-UybG20V15ry+WhX7N3Cj9dMH0f+mfCVENqHAb2BACwM=";
+      rev = "ac30b0a84f2cbf1039035063fa8f466ab3f0ba65";
+      hash = "sha256-60nBO1HRWHvw3LSWkLJWm2u9cs53kN0fVdDAOmq2Nzc=";
     };
 
     pyproject = true;
