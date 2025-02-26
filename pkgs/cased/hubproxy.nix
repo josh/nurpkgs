@@ -8,13 +8,13 @@
 let
   hubproxy = buildGoModule rec {
     pname = "hubproxy";
-    version = "0-unstable-2025-02-25";
+    version = "0-unstable-2025-02-26";
 
     src = fetchFromGitHub {
       owner = "cased";
       repo = "hubproxy";
-      rev = "56b1ead9a392ba373ee8ae5be61920da4438e58c";
-      hash = "sha256-vskDUAS1kIyJ0afziI+9mQBgaKxpMR36o1SVvtmN0sI=";
+      rev = "efebdb3a44f30edbc1846e56e032d7cbe79609f5";
+      hash = "sha256-Rws6Jkv2lnaRRyYMy8x+IbtsItK1RBC4OuVRIl2YvQo=";
     };
 
     vendorHash = "sha256-q6Lv803D0QuACG9zN08BKTwh6AYiQow92VAWe3H5LjQ=";
