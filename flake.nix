@@ -38,9 +38,7 @@
         let
           isAvailable = _: pkg: pkg.meta.available;
           nurpkgs = import ./default.nix { inherit pkgs; };
-          availablePkgs = lib.attrsets.filterAttrs isAvailable (
-            builtins.removeAttrs nurpkgs [ "nodePackages" ]
-          );
+          availablePkgs = lib.attrsets.filterAttrs isAvailable nurpkgs;
         in
         availablePkgs
       );

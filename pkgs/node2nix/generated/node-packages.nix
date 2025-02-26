@@ -395,13 +395,13 @@ let
         sha512 = "A9+lCBZoaMJlVKcRBz2YByCG+Cp2t6nAnMnNba+XiWxnj6r4JUFqfsgwocMBZU9LPtdxC6wB56ySYpc7LQIoJg==";
       };
     };
-    "@swc/core-1.10.18" = {
+    "@swc/core-1.11.1" = {
       name = "_at_swc_slash_core";
       packageName = "@swc/core";
-      version = "1.10.18";
+      version = "1.11.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/core/-/core-1.10.18.tgz";
-        sha512 = "IUWKD6uQYGRy8w2X9EZrtYg1O3SCijlHbCXzMaHQYc1X7yjijQh4H3IVL9ssZZyVp2ZDfQZu4bD5DWxxvpyjvg==";
+        url = "https://registry.npmjs.org/@swc/core/-/core-1.11.1.tgz";
+        sha512 = "67+lBHZ1lAJQKoOhBHl9DE2iugPYAulRVArZjoF+DnIY3G9wLXCXxw5It0IaCnzvJVvUPxGmr0rHViXKBDP5Vg==";
       };
     };
     "@swc/counter-0.1.3" = {
@@ -431,13 +431,13 @@ let
         sha512 = "NZghLaQvF3eFdj2DUjGkpwaunbZYaRcxciHINnwA4n3FrLAI8hKFOBqs2wkcOiLQfWkIdfuG6gBkNFrkPNji5g==";
       };
     };
-    "@swc/wasm-1.10.18" = {
+    "@swc/wasm-1.11.1" = {
       name = "_at_swc_slash_wasm";
       packageName = "@swc/wasm";
-      version = "1.10.18";
+      version = "1.11.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.10.18.tgz";
-        sha512 = "TgoMYjQ2/9UfUaw7WuKj7Svew6kaNOqkjV4nKoc2tf34e+7GxL2KPoXvM2b1RkPxNocv85glcQpS9KMk8FqpBA==";
+        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.11.1.tgz";
+        sha512 = "aRryQ3F1idNnro4BwJKU1fkmMHK7zPhSGDBXXQcG9GAsHpuLHZwqNnrh4+Qn7V1OjSjCO5OVmCEJMrJ27rBDXw==";
       };
     };
     "@tsconfig/node10-1.0.11" = {
@@ -2105,13 +2105,13 @@ let
         sha512 = "P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==";
       };
     };
-    "tailwindcss-4.0.8" = {
+    "tailwindcss-4.0.9" = {
       name = "tailwindcss";
       packageName = "tailwindcss";
-      version = "4.0.8";
+      version = "4.0.9";
       src = fetchurl {
-        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.0.8.tgz";
-        sha512 = "Me7N5CKR+D2A1xdWA5t5+kjjT7bwnxZOE6/yDI/ixJdJokszsn2n++mdU5yJwrsTpqFX2B9ZNMBJDwcqk9C9lw==";
+        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.0.9.tgz";
+        sha512 = "12laZu+fv1ONDRoNR9ipTOpUD7RN9essRVkX36sjxuRUInpN7hIiHN4lBd/SIFjbISvnXzp8h/hXzmU8SQQYhw==";
       };
     };
     "tailwindcss-animate-1.0.7" = {
@@ -2372,10 +2372,10 @@ in
   "@anthropic-ai/claude-code" = nodeEnv.buildNodePackage {
     name = "_at_anthropic-ai_slash_claude-code";
     packageName = "@anthropic-ai/claude-code";
-    version = "0.2.8";
+    version = "0.2.14";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-0.2.8.tgz";
-      sha512 = "HUWSdB42W7ePUkvWSUb4PVUeHRv6pbeTCZYOeOZFmaErhmqkKXhVcUmtJQIsyOTt45yL/FGWM+aLeVSJznsqvg==";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-0.2.14.tgz";
+      sha512 = "p729wIUq9/K/TecpE64nzWKEZJ1qddn20eQg1nUoMdEQtwWjwWYiecwJ6lDxCmNRWr0ukC7ovu0Kgtmh+uOPYg==";
     };
     buildInputs = globalBuildInputs;
     meta = {
@@ -2477,11 +2477,11 @@ in
       sources."@radix-ui/react-use-size-1.1.0"
       sources."@radix-ui/react-visually-hidden-1.1.2"
       sources."@radix-ui/rect-1.1.0"
-      sources."@swc/core-1.10.18"
+      sources."@swc/core-1.11.1"
       sources."@swc/counter-0.1.3"
       sources."@swc/helpers-0.5.15"
       sources."@swc/types-0.1.18"
-      sources."@swc/wasm-1.10.18"
+      sources."@swc/wasm-1.11.1"
       sources."@tsconfig/node10-1.0.11"
       sources."@tsconfig/node12-1.0.11"
       sources."@tsconfig/node14-1.0.3"
@@ -2683,7 +2683,7 @@ in
       sources."strip-ansi-6.0.1"
       sources."supports-color-8.1.1"
       sources."tailwind-merge-2.6.0"
-      sources."tailwindcss-4.0.8"
+      sources."tailwindcss-4.0.9"
       sources."tailwindcss-animate-1.0.7"
       sources."toidentifier-1.0.1"
       sources."tree-kill-1.2.2"
