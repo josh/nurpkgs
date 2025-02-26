@@ -32,9 +32,6 @@ let
       sseclient-py
     ];
 
-    passthru.updateScriptVersion = "branch";
-    passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
-
     meta = {
       description = "The missing automation for creating GitHub Apps";
       homepage = "https://github.com/cased/skyline";
@@ -50,6 +47,9 @@ skyline.overrideAttrs (
     skyline = finalAttrs.finalPackage;
   in
   {
+    passthru.updateScriptVersion = "branch";
+    passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+
     passthru.tests = {
       help =
         runCommand "test-skyline-help"

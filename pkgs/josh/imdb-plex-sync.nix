@@ -29,9 +29,6 @@ let
       plexapi
     ];
 
-    passthru.updateScriptVersion = "branch";
-    passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
-
     meta = {
       description = "Sync IMDb watchlist to Plex watchlist";
       homepage = "https://github.com/josh/imdb-plex-sync";
@@ -47,6 +44,9 @@ imdb-plex-sync.overrideAttrs (
     imdb-plex-sync = finalAttrs.finalPackage;
   in
   {
+    passthru.updateScriptVersion = "branch";
+    passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+
     passthru.tests = {
       # TODO: Add --version test
 
