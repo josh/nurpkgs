@@ -2,6 +2,7 @@
   lib,
   python3Packages,
   fetchFromGitHub,
+  nix-update-script,
 }:
 python3Packages.buildPythonPackage rec {
   pname = "lru-cache";
@@ -24,6 +25,7 @@ python3Packages.buildPythonPackage rec {
   nativeCheckInputs = [ python3Packages.pytestCheckHook ];
 
   passthru.updateScriptVersion = "stable";
+  passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   meta = {
     homepage = "https://github.com/josh/lru-cache-python";

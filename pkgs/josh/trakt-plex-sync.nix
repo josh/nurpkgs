@@ -3,6 +3,7 @@
   fetchFromGitHub,
   python3Packages,
   nur,
+  nix-update-script,
 }:
 let
   trakt-plex-sync = python3Packages.buildPythonApplication rec {
@@ -41,6 +42,7 @@ in
 trakt-plex-sync.overrideAttrs (
   _finalAttrs: _previousAttrs: {
     passthru.updateScriptVersion = "branch";
+    passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
     passthru.tests = {
       # TODO: Add --version test

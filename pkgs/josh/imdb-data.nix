@@ -3,6 +3,7 @@
   fetchFromGitHub,
   python3Packages,
   runCommand,
+  nix-update-script,
 }:
 let
   imdb-data = python3Packages.buildPythonApplication rec {
@@ -45,6 +46,7 @@ imdb-data.overrideAttrs (
   in
   {
     passthru.updateScriptVersion = "branch";
+    passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
     passthru.tests = {
       # TODO: Add --version test

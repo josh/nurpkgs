@@ -3,6 +3,7 @@
   fetchFromGitHub,
   python3Packages,
   runCommand,
+  nix-update-script,
 }:
 let
   skyline = python3Packages.buildPythonApplication rec {
@@ -32,6 +33,7 @@ let
     ];
 
     passthru.updateScriptVersion = "branch";
+    passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
     meta = {
       description = "The missing automation for creating GitHub Apps";

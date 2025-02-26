@@ -2,6 +2,7 @@
   lib,
   fetchFromGitHub,
   python3Packages,
+  nix-update-script,
 }:
 python3Packages.buildPythonPackage rec {
   __structuredAttrs = true;
@@ -29,6 +30,7 @@ python3Packages.buildPythonPackage rec {
   ];
 
   passthru.updateScriptVersion = "stable";
+  passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   meta = {
     description = "Write and execute jq programs with the help of LLM";

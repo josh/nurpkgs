@@ -3,6 +3,7 @@
   fetchFromGitHub,
   python3Packages,
   runCommand,
+  nix-update-script,
 }:
 let
   gametrack-data = python3Packages.buildPythonApplication rec {
@@ -39,6 +40,7 @@ gametrack-data.overrideAttrs (
   in
   {
     passthru.updateScriptVersion = "stable";
+    passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
     passthru.tests = {
       # TODO: Add --version test

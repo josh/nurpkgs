@@ -2,6 +2,7 @@
   lib,
   fetchFromGitHub,
   rustPlatform,
+  nix-update-script,
 }:
 rustPlatform.buildRustPackage rec {
   pname = "macos-defaults";
@@ -22,6 +23,7 @@ rustPlatform.buildRustPackage rec {
   __structuredAttrs = true;
 
   passthru.updateScriptVersion = "stable";
+  passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   meta = {
     description = "A tool for managing macOS defaults declaratively via YAML files.";

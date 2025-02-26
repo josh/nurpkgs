@@ -12,6 +12,7 @@
   notmuch,
   buildNoDefaultFeatures ? false,
   buildFeatures ? [ ],
+  nix-update-script,
 }:
 rustPlatform.buildRustPackage rec {
   __structuredAttrs = true;
@@ -67,6 +68,7 @@ rustPlatform.buildRustPackage rec {
     '';
 
   passthru.updateScriptVersion = "branch";
+  passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
   meta = rec {
     description = "CLI to manage emails";

@@ -4,6 +4,7 @@
   python3Packages,
   runCommand,
   testers,
+  nix-update-script,
 }:
 let
   gh-audit = python3Packages.buildPythonApplication rec {
@@ -48,6 +49,7 @@ gh-audit.overrideAttrs (
   in
   {
     passthru.updateScriptVersion = "branch";
+    passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
     passthru.tests = {
       version = testers.testVersion {

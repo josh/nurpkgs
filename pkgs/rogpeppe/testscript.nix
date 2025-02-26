@@ -2,6 +2,7 @@
   lib,
   buildGoModule,
   fetchFromGitHub,
+  nix-update-script,
 }:
 buildGoModule {
   pname = "testscript";
@@ -23,6 +24,7 @@ buildGoModule {
   doCheck = false;
 
   passthru.updateScriptVersion = "stable";
+  passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   meta = {
     description = "Provides a shell-like test environment that is very nicely tuned for testing Go CLI commands";
