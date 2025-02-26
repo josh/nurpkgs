@@ -84,7 +84,7 @@ jobs:
 
       - name: Run update-script
         run: |
-          ./result
+          ./result/bin/update-${{ matrix.attr }}
 
       - name: Git status
         id: git-status

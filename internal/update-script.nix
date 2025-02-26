@@ -20,7 +20,7 @@ let
   );
   updateCommand = lib.strings.escapeShellArgs (updateScriptArgs ++ [ "--commit" ]);
 in
-pkgs.writeShellScriptBin "update-${pname}" ''
+pkgs.writeShellScriptBin "update-${attr}" ''
   set -o xtrace
   UPDATE_NIX_NAME=${name} UPDATE_NIX_PNAME=${pname} UPDATE_NIX_OLD_VERSION=${version} UPDATE_NIX_ATTR_PATH=${attr} ${updateCommand}
 ''
