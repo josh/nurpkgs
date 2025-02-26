@@ -8,14 +8,14 @@ python3Packages.buildPythonPackage rec {
   __structuredAttrs = true;
 
   pname = "llm-anthropic";
-  version = "0.14";
+  version = "0.14.1";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "simonw";
     repo = "llm-anthropic";
     tag = version;
-    hash = "sha256-T9TajSdps8uJaaLq7fHj+sAfOZHjkAtBsXm+2w1RTqY=";
+    hash = "sha256-tKgcag8sBJA4QWunaFyZxkZH0mtc0SS17104YuX1Kac=";
   };
 
   build-system = [
