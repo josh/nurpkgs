@@ -24,7 +24,6 @@ python3Packages.buildPythonPackage rec {
 
   nativeCheckInputs = [ python3Packages.pytestCheckHook ];
 
-  passthru.updateScriptVersion = "stable";
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   meta = {

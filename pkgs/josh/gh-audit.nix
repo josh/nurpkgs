@@ -48,7 +48,6 @@ gh-audit.overrideAttrs (
     stable-version = "${builtins.elemAt version-parts 0}.${builtins.elemAt version-parts 1}.${builtins.elemAt version-parts 2}";
   in
   {
-    passthru.updateScriptVersion = "branch";
     passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
     passthru.tests = {

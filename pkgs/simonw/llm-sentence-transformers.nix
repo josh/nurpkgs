@@ -31,7 +31,6 @@ python3Packages.buildPythonPackage rec {
     "llm_sentence_transformers"
   ];
 
-  passthru.updateScriptVersion = "stable";
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   meta = {

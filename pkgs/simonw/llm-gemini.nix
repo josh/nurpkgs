@@ -32,7 +32,6 @@ python3Packages.buildPythonPackage rec {
     "llm_gemini"
   ];
 
-  passthru.updateScriptVersion = "stable";
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   meta = {

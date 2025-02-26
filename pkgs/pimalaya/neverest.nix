@@ -67,7 +67,6 @@ rustPlatform.buildRustPackage rec {
       installShellCompletion "$out"/share/completions/neverest.{bash,fish,zsh}
     '';
 
-  passthru.updateScriptVersion = "branch";
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
   meta = rec {

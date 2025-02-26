@@ -47,7 +47,6 @@ restic-age-key.overrideAttrs (
     restic-age-key = finalAttrs.finalPackage;
   in
   {
-    passthru.updateScriptVersion = "branch";
     passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
     passthru.tests = {

@@ -29,7 +29,6 @@ python3Packages.buildPythonPackage rec {
     "llm_llamafile"
   ];
 
-  passthru.updateScriptVersion = "stable";
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   meta = {

@@ -26,7 +26,6 @@ python3Packages.buildPythonPackage rec {
     python3Packages.tiktoken
   ];
 
-  passthru.updateScriptVersion = "stable";
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   meta = {

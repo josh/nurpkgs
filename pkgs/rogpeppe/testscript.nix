@@ -23,7 +23,6 @@ buildGoModule {
 
   doCheck = false;
 
-  passthru.updateScriptVersion = "stable";
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   meta = {

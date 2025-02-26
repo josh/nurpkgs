@@ -41,7 +41,6 @@ let
 in
 trakt-plex-sync.overrideAttrs (
   _finalAttrs: _previousAttrs: {
-    passthru.updateScriptVersion = "branch";
     passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
     passthru.tests = {

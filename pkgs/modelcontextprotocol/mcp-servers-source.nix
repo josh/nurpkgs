@@ -21,7 +21,6 @@ stdenvNoCC.mkDerivation rec {
     cp -r $src $out
   '';
 
-  passthru.updateScriptVersion = "stable";
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   meta = {

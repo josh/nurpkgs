@@ -46,7 +46,6 @@ wikidata-rdf-patch.overrideAttrs (
     wikidata-rdf-patch = finalAttrs.finalPackage;
   in
   {
-    passthru.updateScriptVersion = "stable";
     passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
     passthru.tests = {

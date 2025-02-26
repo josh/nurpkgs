@@ -31,7 +31,6 @@ python3Packages.buildPythonPackage rec {
     "llm_anthropic"
   ];
 
-  passthru.updateScriptVersion = "stable";
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   meta = {
