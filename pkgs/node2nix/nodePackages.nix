@@ -4,6 +4,7 @@
   callPackage,
   symlinkJoin,
   writeShellScript,
+  deadnix,
   git,
   nix,
   nixfmt-rfc-style,
@@ -18,6 +19,7 @@ let
   packageNamesFile = builtins.toFile "node-packages.json" (builtins.toJSON packageNames);
 
   runtimePath = lib.strings.makeBinPath [
+    deadnix
     git
     nix
     nixfmt-rfc-style
@@ -34,6 +36,7 @@ let
     pushd pkgs/node2nix/generated
     node2nix --input ${packageNamesFile} --composition /dev/null --node-env /dev/null
     nixfmt node-packages.nix
+    deadnix --edit node-packages.nix
     git add node-packages.nix
     popd
 
