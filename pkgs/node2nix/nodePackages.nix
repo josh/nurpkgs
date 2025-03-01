@@ -29,7 +29,7 @@ let
       set -o xtrace
       pushd pkgs/node2nix/generated
       node2nix --input ${packageNamesFile} --composition /dev/null --node-env /dev/null
-      nixfmt *.nix
+      nixfmt node-packages.nix
       popd
       nix fmt
       git add pkgs/node2nix/generated
