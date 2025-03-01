@@ -1,4 +1,5 @@
 {
+  path,
   lib,
   callPackage,
   symlinkJoin,
@@ -27,7 +28,7 @@ let
     text = ''
       set -o xtrace
       pushd pkgs/node2nix/generated
-      node2nix --input ${packageNamesFile} --composition /dev/null
+      node2nix --input ${packageNamesFile} --composition /dev/null --node-env /dev/null
       nixfmt *.nix
       popd
       nix fmt
@@ -36,7 +37,7 @@ let
     '';
   };
 
-  nodeEnv = callPackage ./generated/node-env.nix { };
+  nodeEnv = callPackage "${path}/pkgs/development/node-packages/node-env.nix" { };
 
   nodePackages = callPackage ./generated/node-packages.nix {
     inherit nodeEnv;
