@@ -4,9 +4,10 @@
   callPackage,
   symlinkJoin,
   writeShellScript,
+  git,
   nix,
-  node2nix,
   nixfmt-rfc-style,
+  node2nix,
 }:
 let
   packageNames = [
@@ -17,9 +18,10 @@ let
   packageNamesFile = builtins.toFile "node-packages.json" (builtins.toJSON packageNames);
 
   runtimePath = lib.strings.makeBinPath [
+    git
     nix
-    node2nix
     nixfmt-rfc-style
+    node2nix
   ];
 
   updateScript = writeShellScript "update-node-packages" ''
