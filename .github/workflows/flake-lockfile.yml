@@ -28,28 +28,14 @@ jobs:
       - uses: DeterminateSystems/nix-installer-action@main
         if: steps.changed.outputs.only_lock_changed == 'true'
 
-      - name: Get base SHA derivation path
+      - name: Compare head and base flake packages
         if: steps.changed.outputs.only_lock_changed == 'true'
         run: |
-          set -o pipefail
-          nix eval --json "$FLAKE_URI#packages" | jq >base.json
-        env:
-          FLAKE_URI: "github:${{ github.event.pull_request.base.repo.full_name }}/${{ github.event.pull_request.base.sha }}"
-
-      - name: Get head SHA derivation path
-        if: steps.changed.outputs.only_lock_changed == 'true'
-        run: |
-          set -o pipefail
-          nix eval --json "$FLAKE_URI#packages" | jq >head.json
-        env:
-          FLAKE_URI: "github:${{ github.event.pull_request.head.repo.full_name }}/${{ github.event.pull_request.head.sha }}"
-
-      - name: Compare head and base derivation paths
-        if: steps.changed.outputs.only_lock_changed == 'true'
-        run: |
-          if cmp -s base.json head.json; then
-            echo "::error file=flake.lock::flake.lock changes produced the same derivation output"
+          nix build github:josh/nixbits#nix-flake-diff-packages
+          if ! ./result/bin/nix-flake-diff-packages "$BASE_FLAKE" "$HEAD_FLAKE"; then
+            echo "::error file=flake.lock::flake.lock changes produced the same package output"
             exit 1
-          else
-            diff base.json head.json || true
           fi
+        env:
+          BASE_FLAKE: "github:${{ github.event.pull_request.base.repo.full_name }}/${{ github.event.pull_request.base.sha }}"
+          HEAD_FLAKE: "github:${{ github.event.pull_request.head.repo.full_name }}/${{ github.event.pull_request.head.sha }}"
