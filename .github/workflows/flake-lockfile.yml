@@ -24,14 +24,7 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number }}
           GH_TOKEN: ${{ github.token }}
 
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
       - uses: DeterminateSystems/nix-installer-action@main
-        with:
-          extra-conf: |
-            accept-flake-config = true
 
       - name: Write all packages expression
         run: |
@@ -39,8 +32,7 @@ jobs:
         env:
           NIX_EXPR: |
             let
-              ref = builtins.getEnv "REF";
-              flake = builtins.getFlake "git+file://${{ github.workspace }}?ref=${ref}";
+              flake = builtins.getFlake (builtins.getEnv "FLAKE_URI");
             in
             derivation {
               __structuredAttrs = true;
@@ -58,7 +50,7 @@ jobs:
           echo -n "path=" >>"$GITHUB_OUTPUT"
           nix eval --read-only --raw --file ./all-packages.nix | tee -a "$GITHUB_OUTPUT"
         env:
-          REF: ${{ github.event.pull_request.base.sha }}
+          FLAKE_URI: "github:${{ github.event.pull_request.base.repo.full_name }}?ref=${{ github.event.pull_request.base.ref }}"
 
       - name: Get head SHA derivation path
         id: head-drv
@@ -68,10 +60,10 @@ jobs:
           echo -n "path=" >>"$GITHUB_OUTPUT"
           nix eval --read-only --raw --file ./all-packages.nix | tee -a "$GITHUB_OUTPUT"
         env:
-          REF: ${{ github.event.pull_request.head.sha }}
+          FLAKE_URI: "github:${{ github.event.pull_request.head.repo.full_name }}?ref=${{ github.event.pull_request.head.ref }}"
 
       - name: Compare head and base derivation paths
         if: steps.changed.outputs.only_lock_changed == 'true' && steps.base-drv.outputs.path == steps.head-drv.outputs.path
         run: |
-          echo "::warning file=flake.lock::flake.lock changes produced the same derivation output"
+          echo "::error file=flake.lock::flake.lock changes produced the same derivation output"
           exit 1
