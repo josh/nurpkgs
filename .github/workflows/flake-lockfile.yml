@@ -11,6 +11,19 @@ jobs:
     runs-on: ubuntu-24.04
 
     steps:
+      - name: Check changed files
+        id: changed
+        run: |
+          files=$(gh pr diff "$PR_NUMBER" --name-only)
+          if [ "$files" = "flake.lock" ]; then
+            echo "only_lock_changed=true" | tee -a "$GITHUB_OUTPUT"
+          else
+            echo "only_lock_changed=false" | tee -a "$GITHUB_OUTPUT"
+          fi
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          GH_TOKEN: ${{ github.token }}
+
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -19,19 +32,6 @@ jobs:
         with:
           extra-conf: |
             accept-flake-config = true
-
-      - name: Check changed files
-        id: changed
-        run: |
-          paths=$(git diff --name-only "$BASE_SHA...$HEAD_SHA")
-          if [ "$paths" = "flake.lock" ]; then
-            echo "only_lock_changed=true" | tee -a "$GITHUB_OUTPUT"
-          else
-            echo "only_lock_changed=false" | tee -a "$GITHUB_OUTPUT"
-          fi
-        env:
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
-          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
 
       - name: Write all packages expression
         run: |
