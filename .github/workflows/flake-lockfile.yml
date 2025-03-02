@@ -51,7 +51,7 @@ jobs:
           echo -n "path=" >>"$GITHUB_OUTPUT"
           nix eval --read-only --raw --file ./all-packages.nix | tee -a "$GITHUB_OUTPUT"
         env:
-          FLAKE_URI: "github:${{ github.event.pull_request.base.repo.full_name }}?ref=${{ github.event.pull_request.base.ref }}"
+          FLAKE_URI: "github:${{ github.event.pull_request.base.repo.full_name }}?rev=${{ github.event.pull_request.base.sha }}"
 
       - name: Get head SHA derivation path
         id: head-drv
@@ -61,7 +61,7 @@ jobs:
           echo -n "path=" >>"$GITHUB_OUTPUT"
           nix eval --read-only --raw --file ./all-packages.nix | tee -a "$GITHUB_OUTPUT"
         env:
-          FLAKE_URI: "github:${{ github.event.pull_request.head.repo.full_name }}?ref=${{ github.event.pull_request.head.ref }}"
+          FLAKE_URI: "github:${{ github.event.pull_request.head.repo.full_name }}?rev=${{ github.event.pull_request.head.sha }}"
 
       - name: Compare head and base derivation paths
         if: steps.changed.outputs.only_lock_changed == 'true' && steps.base-drv.outputs.path == steps.head-drv.outputs.path
