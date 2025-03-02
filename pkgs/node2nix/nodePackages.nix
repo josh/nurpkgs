@@ -40,7 +40,7 @@ let
     git add node-packages.nix
     popd
 
-    git commit --message "Update node2nix packages"
+    git commit --message "Update node2nix packages" || true
   '';
 
   nodeEnv = callPackage "${path}/pkgs/development/node-packages/node-env.nix" { };
