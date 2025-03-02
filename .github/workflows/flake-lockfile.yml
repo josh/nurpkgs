@@ -26,45 +26,30 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number }}
 
       - uses: DeterminateSystems/nix-installer-action@main
-
-      - name: Write all packages expression
-        run: |
-          echo "$NIX_EXPR" >all-packages.nix
-        env:
-          NIX_EXPR: |
-            let
-              flake = builtins.getFlake (builtins.getEnv "FLAKE_URI");
-            in
-            derivation {
-              __structuredAttrs = true;
-              name = "all-packages";
-              system = "x86_64-linux";
-              builder = "/bin/sh";
-              inherit (flake.outputs) packages;
-            }
+        if: steps.changed.outputs.only_lock_changed == 'true'
 
       - name: Get base SHA derivation path
-        id: base-drv
         if: steps.changed.outputs.only_lock_changed == 'true'
         run: |
           set -o pipefail
-          echo -n "path=" >>"$GITHUB_OUTPUT"
-          nix eval --raw --file ./all-packages.nix | tee -a "$GITHUB_OUTPUT"
+          nix eval --json "$FLAKE_URI#packages" | jq >base.json
         env:
-          FLAKE_URI: "github:${{ github.event.pull_request.base.repo.full_name }}?rev=${{ github.event.pull_request.base.sha }}"
+          FLAKE_URI: "github:${{ github.event.pull_request.base.repo.full_name }}/${{ github.event.pull_request.base.sha }}"
 
       - name: Get head SHA derivation path
-        id: head-drv
         if: steps.changed.outputs.only_lock_changed == 'true'
         run: |
           set -o pipefail
-          echo -n "path=" >>"$GITHUB_OUTPUT"
-          nix eval --raw --file ./all-packages.nix | tee -a "$GITHUB_OUTPUT"
+          nix eval --json "$FLAKE_URI#packages" | jq >head.json
         env:
-          FLAKE_URI: "github:${{ github.event.pull_request.head.repo.full_name }}?rev=${{ github.event.pull_request.head.sha }}"
+          FLAKE_URI: "github:${{ github.event.pull_request.head.repo.full_name }}/${{ github.event.pull_request.head.sha }}"
 
       - name: Compare head and base derivation paths
-        if: steps.changed.outputs.only_lock_changed == 'true' && steps.base-drv.outputs.path == steps.head-drv.outputs.path
+        if: steps.changed.outputs.only_lock_changed == 'true'
         run: |
-          echo "::error file=flake.lock::flake.lock changes produced the same derivation output"
-          exit 1
+          if cmp -s base.json head.json; then
+            echo "::error file=flake.lock::flake.lock changes produced the same derivation output"
+            exit 1
+          else
+            diff base.json head.json || true
+          fi
