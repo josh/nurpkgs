@@ -27,6 +27,9 @@ jobs:
 
       - uses: DeterminateSystems/nix-installer-action@main
         if: steps.changed.outputs.only_lock_changed == 'true'
+        with:
+          extra-conf: |
+            accept-flake-config = true
 
       - name: Compare head and base flake packages
         if: steps.changed.outputs.only_lock_changed == 'true'
