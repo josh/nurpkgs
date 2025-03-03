@@ -476,13 +476,13 @@ let
         sha512 = "vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==";
       };
     };
-    "@types/node-22.13.8" = {
+    "@types/node-22.13.9" = {
       name = "_at_types_slash_node";
       packageName = "@types/node";
-      version = "22.13.8";
+      version = "22.13.9";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/node/-/node-22.13.8.tgz";
-        sha512 = "G3EfaZS+iOGYWLLRCEAXdWK9my08oHNZ+FHluRiggIYJPOXzhOiDgpVCUHaUvyIC5/fj7C/p637jdzC666AOKQ==";
+        url = "https://registry.npmjs.org/@types/node/-/node-22.13.9.tgz";
+        sha512 = "acBjXdRJ3A6Pb3tqnw9HZmyR3Fiol3aGxRCK1x3d+6CDAMjl7I649wpSd+yNURCjbOUGu9tqtLKnTGxmK6CyGw==";
       };
     };
     "@types/react-19.0.10" = {
@@ -683,13 +683,13 @@ let
         sha512 = "Sp1ablJ0ivDkSzjcaJdxEunN5/XvksFJ2sMBFfq6x0ryhQV/2b/KwFe21cMpmHtPOSij8K99/wSfoEuTObmuMQ==";
       };
     };
-    "call-bound-1.0.3" = {
+    "call-bound-1.0.4" = {
       name = "call-bound";
       packageName = "call-bound";
-      version = "1.0.3";
+      version = "1.0.4";
       src = fetchurl {
-        url = "https://registry.npmjs.org/call-bound/-/call-bound-1.0.3.tgz";
-        sha512 = "YTd+6wGlNlPxSuri7Y6X8tY2dmm12UMH66RpKMhiX6rsk5wXXnYgbUcOt8kiS31/AjfoTOvCsE+w8nZQLQnzHA==";
+        url = "https://registry.npmjs.org/call-bound/-/call-bound-1.0.4.tgz";
+        sha512 = "+ys997U96po4Kx/ABpBCqhA9EuxJaQWDQg7295H4hBphv3IZg0boBKuwYpt4YXp6MZ5AmZQnU/tyMTlRpaSejg==";
       };
     };
     "chalk-4.1.2" = {
@@ -2486,7 +2486,7 @@ in
       sources."@tsconfig/node12-1.0.11"
       sources."@tsconfig/node14-1.0.3"
       sources."@tsconfig/node16-1.0.4"
-      sources."@types/node-22.13.8"
+      sources."@types/node-22.13.9"
       sources."@types/react-19.0.10"
       sources."@types/react-dom-19.0.4"
       sources."accepts-2.0.0"
@@ -2511,7 +2511,7 @@ in
       sources."bufferutil-4.0.9"
       sources."bytes-3.1.2"
       sources."call-bind-apply-helpers-1.0.2"
-      sources."call-bound-1.0.3"
+      sources."call-bound-1.0.4"
       (
         sources."chalk-4.1.2"
         // {
