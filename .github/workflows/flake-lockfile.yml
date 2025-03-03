@@ -31,10 +31,14 @@ jobs:
           extra-conf: |
             accept-flake-config = true
 
-      - name: Compare head and base flake packages
+      - name: Build nix-flake-diff-packages
         if: steps.changed.outputs.only_lock_changed == 'true'
         run: |
           nix build github:josh/nixbits#nix-flake-diff-packages
+
+      - name: Compare head and base flake packages
+        if: steps.changed.outputs.only_lock_changed == 'true'
+        run: |
           if ! ./result/bin/nix-flake-diff-packages "$BASE_FLAKE" "$HEAD_FLAKE"; then
             echo "::error file=flake.lock::flake.lock changes produced the same package output"
             exit 1
