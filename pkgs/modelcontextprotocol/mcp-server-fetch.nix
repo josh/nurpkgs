@@ -6,12 +6,6 @@
 let
   source = nur.repos.josh.mcp-servers-source;
 
-  readabilipy' = python3Packages.readabilipy.overrideAttrs (
-    _finalAttrs: previousAttrs: {
-      disabledTests = previousAttrs.disabledTests ++ [ "test_have_node_5" ];
-    }
-  );
-
   mcp-server-fetch = python3Packages.buildPythonPackage rec {
     pname = "mcp-server-fetch";
     inherit (source) version;
@@ -28,7 +22,7 @@ let
       python3Packages.markdownify
       python3Packages.mcp
       python3Packages.protego
-      readabilipy'
+      python3Packages.readabilipy
       python3Packages.requests
     ];
 
