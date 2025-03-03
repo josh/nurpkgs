@@ -10,16 +10,16 @@
 let
   restic-age-key = buildGoModule {
     pname = "restic-age-key";
-    version = "0-unstable-2025-02-24";
+    version = "0-unstable-2025-03-03";
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "restic-age-key";
-      rev = "db6ebf6b3fbc0eba34842f677cad7b69587fe591";
-      hash = "sha256-n8x7WUfdUiY3vzAraFjDD5UVYjJcfjmbNZrDlal04A8=";
+      rev = "276e61ee4bdf0924a6e64c0aa25b395635050cc5";
+      hash = "sha256-fqevY0wsVbuVR4+Zhr/WAyAunN09pStwl8Lx7TWlXjo=";
     };
 
-    vendorHash = "sha256-LlU2QYt/d1gP2tTMR5N7qzEUQ8KCezbUoVApbE6r8Bg=";
+    vendorHash = "sha256-W1IlUl+s4/wDv4V/EIvo4fmYyNa/CCbIwpcJ5KHmtvk=";
 
     env.CGO_ENABLED = 0;
     ldflags = [
