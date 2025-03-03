@@ -39,7 +39,7 @@ jobs:
       - name: Compare head and base flake packages
         if: steps.changed.outputs.only_lock_changed == 'true'
         run: |
-          if ! ./result/bin/nix-flake-diff-packages "$BASE_FLAKE" "$HEAD_FLAKE"; then
+          if ./result/bin/nix-flake-diff-packages "$BASE_FLAKE" "$HEAD_FLAKE"; then
             echo "::error file=flake.lock::flake.lock changes produced the same package output"
             exit 1
           fi
