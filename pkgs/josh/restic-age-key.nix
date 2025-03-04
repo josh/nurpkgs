@@ -15,8 +15,8 @@ let
     src = fetchFromGitHub {
       owner = "josh";
       repo = "restic-age-key";
-      rev = "33151a105f564dbc048b372597f73e046b43a001";
-      hash = "sha256-CtDpf08BYbHmrrEnGBjJBhjX7UTwnwqBvJuQkJtwW6I=";
+      rev = "d6c7154add276bdc3dd3e936a96da0001772cc2e";
+      hash = "sha256-0DiLeKULzkvkPJfc/nF0/JnK6IcfOhCDBd4IzMfDD7Y=";
     };
 
     vendorHash = "sha256-CgAlKL+pdFxIJiQYuK53LN+7wdJXc+8vfTLoHoHD9rA=";
