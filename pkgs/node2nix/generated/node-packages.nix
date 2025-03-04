@@ -395,13 +395,13 @@ let
         sha512 = "A9+lCBZoaMJlVKcRBz2YByCG+Cp2t6nAnMnNba+XiWxnj6r4JUFqfsgwocMBZU9LPtdxC6wB56ySYpc7LQIoJg==";
       };
     };
-    "@swc/core-1.11.5" = {
+    "@swc/core-1.11.7" = {
       name = "_at_swc_slash_core";
       packageName = "@swc/core";
-      version = "1.11.5";
+      version = "1.11.7";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/core/-/core-1.11.5.tgz";
-        sha512 = "EVY7zfpehxhTZXOfy508gb3D78ihoGGmvyiTWtlBPjgIaidP1Xw0naHMD78CWiFlZmeDjKXJufGtsEGOnZdmNA==";
+        url = "https://registry.npmjs.org/@swc/core/-/core-1.11.7.tgz";
+        sha512 = "ICuzjyfz8Hh3U16Mb21uCRJeJd/lUgV999GjgvPhJSISM1L8GDSB5/AMNcwuGs7gFywTKI4vAeeXWyCETUXHAg==";
       };
     };
     "@swc/counter-0.1.3" = {
@@ -431,13 +431,13 @@ let
         sha512 = "WkAZaAfj44kh/UFdAQcrMP1I0nwRqpt27u+08LMBYMqmQfwwMofYoMh/48NGkMMRfC4ynpfwRbJuu8ErfNloeA==";
       };
     };
-    "@swc/wasm-1.11.5" = {
+    "@swc/wasm-1.11.7" = {
       name = "_at_swc_slash_wasm";
       packageName = "@swc/wasm";
-      version = "1.11.5";
+      version = "1.11.7";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.11.5.tgz";
-        sha512 = "JOrAK5QmssWgEmzcte/otPdGioTupCPELNXGiyxEyRrSJrJRP8CbJ5azDyuYsHMlFrcMQwGdT691fu/YmCvcAQ==";
+        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.11.7.tgz";
+        sha512 = "OS11ClTQFldQJRX1RRsT3B3MQVplAdMthXH6ha7WCNAsoP3Rtzq/MUJ7LpkBIUV9Ty8Xk5lPzfeRNscFQ6sFEw==";
       };
     };
     "@tsconfig/node10-1.0.11" = {
@@ -2372,10 +2372,10 @@ in
   "@anthropic-ai/claude-code" = nodeEnv.buildNodePackage {
     name = "_at_anthropic-ai_slash_claude-code";
     packageName = "@anthropic-ai/claude-code";
-    version = "0.2.29";
+    version = "0.2.30";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-0.2.29.tgz";
-      sha512 = "4lZbbg+Qqz+mY3SLKcUYjnOd6/PIB+SQh7ICVIXFYGB1zOB4mVfiY7l2nBt67iw+Rxko2wGJAfg6gPM57S/Q/g==";
+      url = "https://registry.npmjs.org/@anthropic-ai/claude-code/-/claude-code-0.2.30.tgz";
+      sha512 = "dX0CNMRpbJ3ZrIPuDzCowAdn5P0CZsa8ncBHOHt9WbqFy7y1wMbgUacJbGB41AgKp9YC7QD0C3G4nhfjW9onUA==";
     };
     buildInputs = globalBuildInputs;
     meta = {
@@ -2477,11 +2477,11 @@ in
       sources."@radix-ui/react-use-size-1.1.0"
       sources."@radix-ui/react-visually-hidden-1.1.2"
       sources."@radix-ui/rect-1.1.0"
-      sources."@swc/core-1.11.5"
+      sources."@swc/core-1.11.7"
       sources."@swc/counter-0.1.3"
       sources."@swc/helpers-0.5.15"
       sources."@swc/types-0.1.19"
-      sources."@swc/wasm-1.11.5"
+      sources."@swc/wasm-1.11.7"
       sources."@tsconfig/node10-1.0.11"
       sources."@tsconfig/node12-1.0.11"
       sources."@tsconfig/node14-1.0.3"
