@@ -12,7 +12,6 @@
 }:
 let
   packageNames = [
-    "@anthropic-ai/claude-code"
     "@modelcontextprotocol/inspector"
     "@modelcontextprotocol/server-filesystem"
   ];
