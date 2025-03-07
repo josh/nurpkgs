@@ -395,13 +395,13 @@ let
         sha512 = "A9+lCBZoaMJlVKcRBz2YByCG+Cp2t6nAnMnNba+XiWxnj6r4JUFqfsgwocMBZU9LPtdxC6wB56ySYpc7LQIoJg==";
       };
     };
-    "@swc/core-1.11.7" = {
+    "@swc/core-1.11.8" = {
       name = "_at_swc_slash_core";
       packageName = "@swc/core";
-      version = "1.11.7";
+      version = "1.11.8";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/core/-/core-1.11.7.tgz";
-        sha512 = "ICuzjyfz8Hh3U16Mb21uCRJeJd/lUgV999GjgvPhJSISM1L8GDSB5/AMNcwuGs7gFywTKI4vAeeXWyCETUXHAg==";
+        url = "https://registry.npmjs.org/@swc/core/-/core-1.11.8.tgz";
+        sha512 = "UAL+EULxrc0J73flwYHfu29mO8CONpDJiQv1QPDXsyCvDUcEhqAqUROVTgC+wtJCFFqMQdyr4stAA5/s0KSOmA==";
       };
     };
     "@swc/counter-0.1.3" = {
@@ -431,13 +431,13 @@ let
         sha512 = "WkAZaAfj44kh/UFdAQcrMP1I0nwRqpt27u+08LMBYMqmQfwwMofYoMh/48NGkMMRfC4ynpfwRbJuu8ErfNloeA==";
       };
     };
-    "@swc/wasm-1.11.7" = {
+    "@swc/wasm-1.11.8" = {
       name = "_at_swc_slash_wasm";
       packageName = "@swc/wasm";
-      version = "1.11.7";
+      version = "1.11.8";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.11.7.tgz";
-        sha512 = "OS11ClTQFldQJRX1RRsT3B3MQVplAdMthXH6ha7WCNAsoP3Rtzq/MUJ7LpkBIUV9Ty8Xk5lPzfeRNscFQ6sFEw==";
+        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.11.8.tgz";
+        sha512 = "CydeVWiFXJIwyCep1Xr2BYFlzfqU3ibyDo43sE7DgpIhRXRa1X6tGfiV8xHkXbVqCzVKhA7weiRKJle5LTgSow==";
       };
     };
     "@tsconfig/node10-1.0.11" = {
@@ -2105,13 +2105,13 @@ let
         sha512 = "P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==";
       };
     };
-    "tailwindcss-4.0.11" = {
+    "tailwindcss-4.0.12" = {
       name = "tailwindcss";
       packageName = "tailwindcss";
-      version = "4.0.11";
+      version = "4.0.12";
       src = fetchurl {
-        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.0.11.tgz";
-        sha512 = "GZ6+tNwieqvpFLZfx2tkZpfOMAK7iumbOJOLmd6v8AcYuHbjUb+cmDRu6l+rFkIqarh5FfLbCSRJhegcVdoPng==";
+        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.0.12.tgz";
+        sha512 = "bT0hJo91FtncsAMSsMzUkoo/iEU0Xs5xgFgVC9XmdM9bw5MhZuQFjPNl6wxAE0SiQF/YTZJa+PndGWYSDtuxAg==";
       };
     };
     "tailwindcss-animate-1.0.7" = {
@@ -2462,11 +2462,11 @@ in
       sources."@radix-ui/react-use-size-1.1.0"
       sources."@radix-ui/react-visually-hidden-1.1.2"
       sources."@radix-ui/rect-1.1.0"
-      sources."@swc/core-1.11.7"
+      sources."@swc/core-1.11.8"
       sources."@swc/counter-0.1.3"
       sources."@swc/helpers-0.5.15"
       sources."@swc/types-0.1.19"
-      sources."@swc/wasm-1.11.7"
+      sources."@swc/wasm-1.11.8"
       sources."@tsconfig/node10-1.0.11"
       sources."@tsconfig/node12-1.0.11"
       sources."@tsconfig/node14-1.0.3"
@@ -2676,7 +2676,7 @@ in
       sources."strip-ansi-6.0.1"
       sources."supports-color-8.1.1"
       sources."tailwind-merge-2.6.0"
-      sources."tailwindcss-4.0.11"
+      sources."tailwindcss-4.0.12"
       sources."tailwindcss-animate-1.0.7"
       sources."toidentifier-1.0.1"
       sources."tree-kill-1.2.2"
