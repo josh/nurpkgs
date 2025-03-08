@@ -5,7 +5,7 @@
 }:
 xdg-ninja.overrideAttrs (
   _finalAttrs: _previousAttrs: {
-    version = "0.1.0";
+    version = "0.2.0.2-unstable-2025-02-23";
 
     src = fetchFromGitHub {
       owner = "b3nj5m1n";
