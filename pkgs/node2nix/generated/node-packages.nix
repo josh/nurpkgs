@@ -476,13 +476,13 @@ let
         sha512 = "vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==";
       };
     };
-    "@types/node-22.13.9" = {
+    "@types/node-22.13.10" = {
       name = "_at_types_slash_node";
       packageName = "@types/node";
-      version = "22.13.9";
+      version = "22.13.10";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/node/-/node-22.13.9.tgz";
-        sha512 = "acBjXdRJ3A6Pb3tqnw9HZmyR3Fiol3aGxRCK1x3d+6CDAMjl7I649wpSd+yNURCjbOUGu9tqtLKnTGxmK6CyGw==";
+        url = "https://registry.npmjs.org/@types/node/-/node-22.13.10.tgz";
+        sha512 = "I6LPUvlRH+O6VRUqYOcMudhaIdUVWfsjnZavnsraHvpBwaEyMN29ry+0UVJhImYL16xsscu0aske3yA+uPOWfw==";
       };
     };
     "@types/react-19.0.10" = {
@@ -2471,7 +2471,7 @@ in
       sources."@tsconfig/node12-1.0.11"
       sources."@tsconfig/node14-1.0.3"
       sources."@tsconfig/node16-1.0.4"
-      sources."@types/node-22.13.9"
+      sources."@types/node-22.13.10"
       sources."@types/react-19.0.10"
       sources."@types/react-dom-19.0.4"
       (
