@@ -8,14 +8,14 @@ python3Packages.buildPythonPackage rec {
   __structuredAttrs = true;
 
   pname = "llm-gemini";
-  version = "0.12";
+  version = "0.14";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "simonw";
     repo = "llm-gemini";
     tag = version;
-    hash = "sha256-U9JFGwHeWKQ37gFWo3t0jnZfjDHEvgC8Yc3V3icIEq0=";
+    hash = "sha256-EQrYDN6QZMC6vxDNC4oKGGX/Q0GEw9ImHy+qG3zQ/7U=";
   };
 
   build-system = [
