@@ -5,6 +5,7 @@
   nix-update-script,
   runCommand,
   age,
+  jq,
   restic,
 }:
 let
@@ -29,6 +30,7 @@ let
 
     nativeCheckInputs = [
       age
+      jq
       restic
     ];
 
