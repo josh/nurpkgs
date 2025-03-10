@@ -14,7 +14,7 @@ let
 in
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "iterm2-shell-integration";
-  version = "0.2.0";
+  version = "0-unstable-2025-02-24";
 
   src = fetchFromGitHub {
     owner = "gnachman";
