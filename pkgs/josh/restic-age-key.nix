@@ -1,7 +1,9 @@
 {
   lib,
+  stdenvNoCC,
   buildGoModule,
   fetchFromGitHub,
+  makeWrapper,
   nix-update-script,
   runCommand,
   age,
@@ -9,7 +11,7 @@
   restic,
 }:
 let
-  restic-age-key = buildGoModule {
+  unwrapped = buildGoModule {
     pname = "restic-age-key";
     version = "0-unstable-2025-03-11";
 
@@ -42,8 +44,27 @@ let
       mainProgram = "restic-age-key";
     };
   };
+
+  wrapped = stdenvNoCC.mkDerivation rec {
+    inherit (unwrapped) pname version meta;
+
+    __structuredAttrs = true;
+
+    nativeBuildInputs = [ makeWrapper ];
+
+    makeWrapperArgs = [
+      "--prefix"
+      "PATH"
+      ":"
+      "${age}/bin"
+    ];
+
+    buildCommand = ''
+      makeWrapper ${unwrapped}/bin/restic-age-key $out/bin/restic-age-key "''${makeWrapperArgs[@]}"
+    '';
+  };
 in
-restic-age-key.overrideAttrs (
+wrapped.overrideAttrs (
   finalAttrs: _previousAttrs:
   let
     restic-age-key = finalAttrs.finalPackage;
