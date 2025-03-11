@@ -1,9 +1,7 @@
 {
   lib,
-  stdenvNoCC,
   buildGoModule,
   fetchFromGitHub,
-  makeWrapper,
   nix-update-script,
   runCommand,
   age,
@@ -11,15 +9,15 @@
   restic,
 }:
 let
-  unwrapped = buildGoModule {
+  restic-age-key = buildGoModule {
     pname = "restic-age-key";
     version = "0-unstable-2025-03-11";
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "restic-age-key";
-      rev = "35f2c3b092c911abdbb87ecd0661f5721ae9b3ce";
-      hash = "sha256-rExRXD3AAPuxwW4gwWIKqKQp4Aa3hybK2EDXd5xoH+g=";
+      rev = "f533bb47fe39d9c47b1182a17152efa10be491e2";
+      hash = "sha256-dCOJfKohsr8kH+QafyyG7S1cfti2mHBQx+Tvjeye6Mo=";
     };
 
     vendorHash = "sha256-CgAlKL+pdFxIJiQYuK53LN+7wdJXc+8vfTLoHoHD9rA=";
@@ -44,32 +42,18 @@ let
       mainProgram = "restic-age-key";
     };
   };
-
-  wrapped = stdenvNoCC.mkDerivation rec {
-    inherit (unwrapped) pname version meta;
-
-    __structuredAttrs = true;
-
-    nativeBuildInputs = [ makeWrapper ];
-
-    makeWrapperArgs = [
-      "--prefix"
-      "PATH"
-      ":"
-      "${age}/bin"
-    ];
-
-    buildCommand = ''
-      makeWrapper ${unwrapped}/bin/restic-age-key $out/bin/restic-age-key "''${makeWrapperArgs[@]}"
-    '';
-  };
 in
-wrapped.overrideAttrs (
-  finalAttrs: _previousAttrs:
+restic-age-key.overrideAttrs (
+  finalAttrs: previousAttrs:
   let
     restic-age-key = finalAttrs.finalPackage;
   in
   {
+    ldflags = previousAttrs.ldflags ++ [
+      "-X main.Version=${finalAttrs.version}"
+      "-X main.AgeBin=${lib.getExe age}"
+    ];
+
     passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
     passthru.tests = {
