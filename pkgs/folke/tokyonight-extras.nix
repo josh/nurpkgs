@@ -6,7 +6,7 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "tokyonight-extras";
-  version = "0.0.0";
+  version = "4.11.0-unstable-2025-02-18";
 
   src = fetchFromGitHub {
     owner = "folke";
