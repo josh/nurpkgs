@@ -2168,13 +2168,13 @@ let
         sha512 = "P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==";
       };
     };
-    "tailwindcss-4.0.13" = {
+    "tailwindcss-4.0.14" = {
       name = "tailwindcss";
       packageName = "tailwindcss";
-      version = "4.0.13";
+      version = "4.0.14";
       src = fetchurl {
-        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.0.13.tgz";
-        sha512 = "gbvFrB0fOsTv/OugXWi2PtflJ4S6/ctu6Mmn3bCftmLY/6xRsQVEJPgIIpABwpZ52DpONkCA3bEj5b54MHxF2Q==";
+        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.0.14.tgz";
+        sha512 = "92YT2dpt671tFiHH/e1ok9D987N9fHD5VWoly1CdPD/Cd1HMglvZwP3nx2yTj2lbXDAHt8QssZkxTLCCTNL+xw==";
       };
     };
     "tailwindcss-animate-1.0.7" = {
@@ -2742,7 +2742,7 @@ in
       sources."strip-ansi-6.0.1"
       sources."supports-color-8.1.1"
       sources."tailwind-merge-2.6.0"
-      sources."tailwindcss-4.0.13"
+      sources."tailwindcss-4.0.14"
       sources."tailwindcss-animate-1.0.7"
       sources."toidentifier-1.0.1"
       sources."tree-kill-1.2.2"
