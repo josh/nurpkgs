@@ -764,13 +764,13 @@ let
         sha512 = "eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==";
       };
     };
-    "cmdk-1.0.4" = {
+    "cmdk-1.1.0" = {
       name = "cmdk";
       packageName = "cmdk";
-      version = "1.0.4";
+      version = "1.1.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/cmdk/-/cmdk-1.0.4.tgz";
-        sha512 = "AnsjfHyHpQ/EFeAnG216WY7A5LiYCoZzCSygiLvfXC3H3LFGCprErteUcszaVluGOhuOTbJS3jWHrSDYPBBygg==";
+        url = "https://registry.npmjs.org/cmdk/-/cmdk-1.1.0.tgz";
+        sha512 = "kJTwfCTJYECDkoFWIszsYufE6o22iHUm0RwBhDSrQpkDOVtn0QThsCsTZIsVlYr6wJTi44FhyG2WbSwyBwq/yA==";
       };
     };
     "color-convert-2.0.1" = {
@@ -2285,15 +2285,6 @@ let
         sha512 = "Fedw0aZvkhynoPYlA5WXrMCAMm+nSWdZt6lzJQ7Ok8S6Q+VsHmHpRWndVRJ8Be0ZbkfPc5LRYH+5XrzXcEeLRQ==";
       };
     };
-    "use-sync-external-store-1.4.0" = {
-      name = "use-sync-external-store";
-      packageName = "use-sync-external-store";
-      version = "1.4.0";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/use-sync-external-store/-/use-sync-external-store-1.4.0.tgz";
-        sha512 = "9WXSPC5fMv61vaupRkCKCxsPxBocVnwakBEkMIHHpkTTg6icbJtg6jzgtLDm4bl3cSHAca52rYWih0k4K3PfHw==";
-      };
-    };
     "utf-8-validate-6.0.5" = {
       name = "utf-8-validate";
       packageName = "utf-8-validate";
@@ -2581,7 +2572,7 @@ in
       sources."class-variance-authority-0.7.1"
       sources."cliui-8.0.1"
       sources."clsx-2.1.1"
-      sources."cmdk-1.0.4"
+      sources."cmdk-1.1.0"
       sources."color-convert-2.0.1"
       sources."color-name-1.1.4"
       sources."concat-map-0.0.1"
@@ -2754,7 +2745,6 @@ in
       sources."unpipe-1.0.0"
       sources."use-callback-ref-1.3.3"
       sources."use-sidecar-1.1.3"
-      sources."use-sync-external-store-1.4.0"
       sources."utf-8-validate-6.0.5"
       sources."utils-merge-1.0.1"
       sources."v8-compile-cache-lib-3.0.1"
