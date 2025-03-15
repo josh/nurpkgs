@@ -764,13 +764,13 @@ let
         sha512 = "eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==";
       };
     };
-    "cmdk-1.1.0" = {
+    "cmdk-1.1.1" = {
       name = "cmdk";
       packageName = "cmdk";
-      version = "1.1.0";
+      version = "1.1.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/cmdk/-/cmdk-1.1.0.tgz";
-        sha512 = "kJTwfCTJYECDkoFWIszsYufE6o22iHUm0RwBhDSrQpkDOVtn0QThsCsTZIsVlYr6wJTi44FhyG2WbSwyBwq/yA==";
+        url = "https://registry.npmjs.org/cmdk/-/cmdk-1.1.1.tgz";
+        sha512 = "Vsv7kFaXm+ptHDMZ7izaRsP70GgrW9NBNGswt9OZaVBLlE0SNpDq8eu/VGXyF9r7M0azK3Wy7OlYXsuyYLFzHg==";
       };
     };
     "color-convert-2.0.1" = {
@@ -2420,13 +2420,13 @@ let
         sha512 = "lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==";
       };
     };
-    "zod-to-json-schema-3.24.3" = {
+    "zod-to-json-schema-3.24.4" = {
       name = "zod-to-json-schema";
       packageName = "zod-to-json-schema";
-      version = "3.24.3";
+      version = "3.24.4";
       src = fetchurl {
-        url = "https://registry.npmjs.org/zod-to-json-schema/-/zod-to-json-schema-3.24.3.tgz";
-        sha512 = "HIAfWdYIt1sssHfYZFCXp4rU1w2r8hVVXYIlmoa0r0gABLs5di3RCqPU5DDROogVz1pAdYBaz7HK5n9pSUNs3A==";
+        url = "https://registry.npmjs.org/zod-to-json-schema/-/zod-to-json-schema-3.24.4.tgz";
+        sha512 = "0uNlcvgabyrni9Ag8Vghj21drk7+7tp7VTwwR7KxxXXc/3pbXz2PHlDgj3cICahgF1kHm4dExBFj7BXrZJXzig==";
       };
     };
   };
@@ -2572,7 +2572,7 @@ in
       sources."class-variance-authority-0.7.1"
       sources."cliui-8.0.1"
       sources."clsx-2.1.1"
-      sources."cmdk-1.1.0"
+      sources."cmdk-1.1.1"
       sources."color-convert-2.0.1"
       sources."color-name-1.1.4"
       sources."concat-map-0.0.1"
@@ -2757,7 +2757,7 @@ in
       sources."yargs-parser-21.1.1"
       sources."yn-3.1.1"
       sources."zod-3.24.2"
-      sources."zod-to-json-schema-3.24.3"
+      sources."zod-to-json-schema-3.24.4"
     ];
     buildInputs = globalBuildInputs;
     meta = {
@@ -2856,7 +2856,7 @@ in
         }
       )
       sources."zod-3.24.2"
-      sources."zod-to-json-schema-3.24.3"
+      sources."zod-to-json-schema-3.24.4"
     ];
     buildInputs = globalBuildInputs;
     meta = {
