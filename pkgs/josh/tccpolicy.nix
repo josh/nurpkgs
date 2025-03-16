@@ -54,13 +54,13 @@ let
 in
 swiftPackages.stdenv.mkDerivation (finalAttrs: {
   pname = "tccpolicy";
-  version = "0.0.0";
+  version = "0-unstable-2025-03-16";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "tccpolicy";
-    rev = "d2a8b75f6c8e6be6f97fdf576764474e5dfa0b9c";
-    hash = "sha256-5hMgkAYQ95+xdFyVzq0bU857ovEoGkH/TX5BkOfC9Dk=";
+    rev = "d24f722d8c46df7bcfa5a422f867a6f281dd289f";
+    hash = "sha256-3aAD+1k0g6XWbOWINxktKayKHNWVydzOM0kjJW6e+ug=";
   };
 
   nativeBuildInputs = [
@@ -75,9 +75,6 @@ swiftPackages.stdenv.mkDerivation (finalAttrs: {
   postPatch = ''
     substituteInPlace Sources/**/*.swift \
       --replace "import SQLite3" "import CSQLite"
-
-    substituteInPlace Package.resolved \
-      --replace '"version" : 3' '"version" : 2'
   '';
 
   configurePhase = ''
