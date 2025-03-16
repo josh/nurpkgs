@@ -20,7 +20,7 @@ permissions:
 
 jobs:
   matrix:
-    runs-on: ${{ github.event.inputs.runner || 'ubuntu-24.04' }}
+    runs-on: ${{ github.event.inputs.runner || 'macos-15' }}
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
@@ -41,7 +41,7 @@ jobs:
   update:
     name: update-${{ matrix.attr }}
     needs: matrix
-    runs-on: ${{ github.event.inputs.runner || 'ubuntu-24.04' }}
+    runs-on: ${{ github.event.inputs.runner || 'macos-15' }}
     concurrency:
       group: git-push-update-${{ matrix.attr }}
       cancel-in-progress: false
