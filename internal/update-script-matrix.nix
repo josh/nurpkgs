@@ -2,7 +2,8 @@
 let
   system = builtins.currentSystem;
   flake = builtins.getFlake (builtins.getEnv "FLAKE_URI");
-  pkgs = flake.packages.${system};
+  pkgs = import flake.inputs.nixpkgs { inherit system; };
+  packages = import "${flake}/default.nix" { inherit pkgs; };
 
   runnerOS =
     pkg:
@@ -22,7 +23,7 @@ let
     builtins.map (
       name:
       let
-        pkg = pkgs.${name};
+        pkg = packages.${name};
         os = runnerOS pkg;
       in
       if (builtins.hasAttr "updateScript" pkg) && (os != null) then
@@ -32,7 +33,7 @@ let
         }
       else
         null
-    ) (builtins.attrNames pkgs)
+    ) (builtins.attrNames packages)
   );
 
   matrix = {
