@@ -4,18 +4,34 @@ let
   flake = builtins.getFlake (builtins.getEnv "FLAKE_URI");
   pkgs = flake.packages.${system};
 
+  runnerOS =
+    pkg:
+    let
+      platforms = pkg.meta.platforms or [ ];
+    in
+    if builtins.elem "x86_64-linux" platforms then
+      "ubuntu-24.04"
+    else if builtins.elem "aarch64-linux" platforms then
+      "ubuntu-24.04-arm"
+    else if builtins.elem "aarch64-darwin" platforms then
+      "macos-15"
+    else
+      null;
+
   commands = builtins.filter (x: x != null) (
     builtins.map (
       name:
       let
         pkg = pkgs.${name};
+        os = runnerOS pkg;
       in
-      if !(builtins.hasAttr "updateScript" pkg) then
-        null
-      else if !pkg.meta.available then
-        null
+      if (builtins.hasAttr "updateScript" pkg) && (os != null) then
+        {
+          "attr" = name;
+          "os" = os;
+        }
       else
-        { "attr" = name; }
+        null
     ) (builtins.attrNames pkgs)
   );
 

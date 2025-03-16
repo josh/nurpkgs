@@ -4,23 +4,13 @@ on:
   schedule:
     - cron: "0 19 * * *" # 11am PST
   workflow_dispatch:
-    inputs:
-      runner:
-        description: "Runner OS"
-        required: true
-        type: choice
-        default: "ubuntu-24.04"
-        options:
-          - "ubuntu-24.04"
-          - "ubuntu-24.04-arm"
-          - "macos-15"
 
 permissions:
   contents: write
 
 jobs:
   matrix:
-    runs-on: ${{ github.event.inputs.runner || 'macos-15' }}
+    runs-on: ubuntu-24.04
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
@@ -41,7 +31,7 @@ jobs:
   update:
     name: update-${{ matrix.attr }}
     needs: matrix
-    runs-on: ${{ github.event.inputs.runner || 'macos-15' }}
+    runs-on: ${{ matrix.os }}
     concurrency:
       group: git-push-update-${{ matrix.attr }}
       cancel-in-progress: false
