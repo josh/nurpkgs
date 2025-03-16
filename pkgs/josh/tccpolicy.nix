@@ -59,8 +59,8 @@ swiftPackages.stdenv.mkDerivation (finalAttrs: {
   src = fetchFromGitHub {
     owner = "josh";
     repo = "tccpolicy";
-    rev = "9a85252c782a7c062067f3f7e0c2543df765ab7d";
-    hash = "sha256-W0/4S9LluA1YvjHXSyEBh5di03MTc1SBjCWLSz9AwZQ=";
+    rev = "14a81534e7271af9ca8d172fa483c6e2d36e9bac";
+    hash = "sha256-iOMpmiYm/pmAXr4Tur9OKf5aJXfAIiJN60wtWk/O2JU=";
   };
 
   nativeBuildInputs = [
