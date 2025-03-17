@@ -11,13 +11,13 @@
 let
   systemd-age-creds = buildGoModule rec {
     pname = "systemd-age-creds";
-    version = "0.1.0-unstable-2025-03-10";
+    version = "0.1.0-unstable-2025-03-17";
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "systemd-age-creds";
-      rev = "0d98581cd42fbbb6404e0e378414f096211ef833";
-      hash = "sha256-ZLGY0e/5l5WccxEoFJANAh7ceZOm23VN3LJCkJT0i5g=";
+      rev = "077e83fefc7d0c2aaffa6db4fabe47b3585575c7";
+      hash = "sha256-Z6BIGlKfZDIE4FMOh3Tq0uMiEtfPoJ56Y8zzBpoKu0o=";
     };
 
     vendorHash = null;
