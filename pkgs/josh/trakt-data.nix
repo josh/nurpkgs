@@ -8,7 +8,7 @@
 let
   trakt-data = python3Packages.buildPythonApplication rec {
     pname = "trakt-data";
-    version = "0.0.0";
+    version = "0-unstable-2025-03-19";
 
     src = fetchFromGitHub {
       owner = "josh";
