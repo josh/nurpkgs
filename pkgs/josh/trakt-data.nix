@@ -26,6 +26,7 @@ let
 
     dependencies = with python3Packages; [
       click
+      prometheus-client
       requests
     ];
 
