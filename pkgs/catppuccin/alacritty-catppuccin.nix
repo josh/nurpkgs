@@ -6,7 +6,7 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "alacritty-catppuccin";
-  version = "0.0.0";
+  version = "yaml-unstable-2024-10-28";
 
   src = fetchFromGitHub {
     owner = "catppuccin";
