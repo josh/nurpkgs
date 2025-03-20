@@ -6,7 +6,7 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "alacritty-rose-pine";
-  version = "0.0.0";
+  version = "0-unstable-2023-07-13";
 
   src = fetchFromGitHub {
     owner = "rose-pine";
