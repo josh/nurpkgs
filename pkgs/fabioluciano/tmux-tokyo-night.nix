@@ -22,5 +22,6 @@ tmuxPlugins.mkTmuxPlugin {
     homepage = "https://github.com/fabioluciano/tmux-tokyo-night";
     description = "A Tokyo Night tmux theme directly inspired from Tokyo Night vim theme";
     license = lib.licenses.mit;
+    platforms = lib.platforms.unix;
   };
 }
