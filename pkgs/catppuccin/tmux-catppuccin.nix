@@ -7,7 +7,7 @@
 tmuxPlugins.mkTmuxPlugin {
   pluginName = "catppuccin";
   rtpFilePath = "catppuccin.tmux";
-  version = "2.1.2";
+  version = "2.1.3";
 
   src = fetchFromGitHub {
     owner = "catppuccin";
