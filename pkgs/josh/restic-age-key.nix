@@ -7,17 +7,18 @@
   age,
   jq,
   restic,
+  tinyxxd,
 }:
 let
   restic-age-key = buildGoModule {
     pname = "restic-age-key";
-    version = "0-unstable-2025-03-13";
+    version = "0-unstable-2025-03-25";
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "restic-age-key";
-      rev = "8472fc76ce03f24bc0ff76895a53d27579785df7";
-      hash = "sha256-dUmKZ4W4Afw0QAH9HY1kiwop/W0bYN6dlSdknj0P3yc=";
+      rev = "1424aa7963f96c9aade6acb0787f18c669ac4c05";
+      hash = "sha256-2QJaVmXmTMW2oKXqV/X1RUIZDEPTiurodg9g8n0twHA=";
     };
 
     vendorHash = "sha256-LxBY+22Q5qHgQmzkS59Ngk2bznhCFAr++SLiCWPTGKE=";
@@ -32,6 +33,7 @@ let
       age
       jq
       restic
+      tinyxxd
     ];
 
     meta = {
