@@ -7,6 +7,7 @@
   age,
   jq,
   restic,
+  tinyxxd,
 }:
 let
   restic-age-key = buildGoModule {
@@ -32,6 +33,7 @@ let
       age
       jq
       restic
+      tinyxxd
     ];
 
     meta = {
