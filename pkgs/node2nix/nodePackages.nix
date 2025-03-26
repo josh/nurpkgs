@@ -59,4 +59,5 @@ symlinkJoin {
   passthru = nodePackages' // {
     inherit updateScript;
   };
+  meta.platforms = lib.platforms.all;
 }
