@@ -14,7 +14,6 @@ let
   packageNames = [
     "@modelcontextprotocol/inspector"
     "@modelcontextprotocol/server-filesystem"
-    "defuddle-cli"
   ];
   packageNamesFile = builtins.toFile "node-packages.json" (builtins.toJSON packageNames);
 
