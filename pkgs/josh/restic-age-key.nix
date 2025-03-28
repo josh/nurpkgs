@@ -12,13 +12,13 @@
 let
   restic-age-key = buildGoModule {
     pname = "restic-age-key";
-    version = "0-unstable-2025-03-25";
+    version = "0-unstable-2025-03-28";
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "restic-age-key";
-      rev = "a4f911cf4afe3ff67e462eb27e2884bd12c91ebd";
-      hash = "sha256-AiQp8EEpEtrVBOSwj//A7TF2sek8B5dJTLwCx7hcVW4=";
+      rev = "cf94400875364b3e34f3b683bad59efedcf32068";
+      hash = "sha256-VqtYT0ewFizuPsoXkDQUfz1vgkuBhLnQSL+D+AZlGcc=";
     };
 
     vendorHash = "sha256-LxBY+22Q5qHgQmzkS59Ngk2bznhCFAr++SLiCWPTGKE=";
