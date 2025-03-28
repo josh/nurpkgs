@@ -25,6 +25,7 @@ python3Packages.buildPythonPackage rec {
 
   dependencies = [
     python3Packages.sentence-transformers
+    python3Packages.einops
   ];
 
   pythonImportsCheck = [
