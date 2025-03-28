@@ -1970,13 +1970,13 @@ let
         sha512 = "VqpjJZKadQB/PEbEwvFdO43Ax5dFBZ2UECszz8bQ7pi7wt//PWe1P6MN7eCnjsatYtBT6EuiClbjSWP2WrIoTw==";
       };
     };
-    "serve-static-2.1.0" = {
+    "serve-static-2.2.0" = {
       name = "serve-static";
       packageName = "serve-static";
-      version = "2.1.0";
+      version = "2.2.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/serve-static/-/serve-static-2.1.0.tgz";
-        sha512 = "A3We5UfEjG8Z7VkDv6uItWw6HY2bBSBJT1KtVESn6EOoOr2jAxNhxWCLY3jDE2WcuHXByWju74ck3ZgLwL8xmA==";
+        url = "https://registry.npmjs.org/serve-static/-/serve-static-2.2.0.tgz";
+        sha512 = "61g9pCh0Vnh7IutZjtLGGpTA355+OPn2TyDv/6ivP2h/AdAVX9azsoxmg2/M6nZeQZNYBEwIcsne1mJd9oQItQ==";
       };
     };
     "setprototypeof-1.2.0" = {
@@ -2693,7 +2693,7 @@ in
           ];
         }
       )
-      sources."serve-static-2.1.0"
+      sources."serve-static-2.2.0"
       sources."setprototypeof-1.2.0"
       sources."shebang-command-2.0.0"
       sources."shebang-regex-3.0.0"
@@ -2755,10 +2755,10 @@ in
   "@modelcontextprotocol/server-filesystem" = nodeEnv.buildNodePackage {
     name = "_at_modelcontextprotocol_slash_server-filesystem";
     packageName = "@modelcontextprotocol/server-filesystem";
-    version = "2025.1.14";
+    version = "2025.3.28";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@modelcontextprotocol/server-filesystem/-/server-filesystem-2025.1.14.tgz";
-      sha512 = "WjJYa2OAAf0fpslyxjzJK3JUeEk10IaDukLOc4NSoJtNptvJONd4NMC6U3Xr04VOb++2iNfM7Vp6Ac7o94Pv6g==";
+      url = "https://registry.npmjs.org/@modelcontextprotocol/server-filesystem/-/server-filesystem-2025.3.28.tgz";
+      sha512 = "1AMqM0EZnF7n6L5njMASDR12ppyvtj89HinePbvB8UtT5JKWQ6LJJcbsTYIt/gerFNssf17gH5qXvqSM+eCQSg==";
     };
     dependencies = [
       sources."@isaacs/cliui-8.0.2"
