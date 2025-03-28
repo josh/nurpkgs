@@ -8,14 +8,14 @@ python3Packages.buildPythonPackage rec {
   __structuredAttrs = true;
 
   pname = "llm-sentence-transformers";
-  version = "0.3";
+  version = "0.3.1";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "simonw";
     repo = "llm-sentence-transformers";
     tag = version;
-    hash = "sha256-FM0ZI5oJCOEruS+EtiUxEvvldynFLSu0vOZHcVgaQws=";
+    hash = "sha256-kW03agLbe0qzcC3JGMbapxUJgJIptYgBigGyRdzV7wI=";
   };
 
   build-system = [
@@ -25,6 +25,7 @@ python3Packages.buildPythonPackage rec {
 
   dependencies = [
     python3Packages.sentence-transformers
+    python3Packages.einops
   ];
 
   pythonImportsCheck = [
