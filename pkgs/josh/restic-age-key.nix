@@ -17,11 +17,11 @@ let
     src = fetchFromGitHub {
       owner = "josh";
       repo = "restic-age-key";
-      rev = "4b5975fc4be71c364df4e3a3854216962ea8ce1e";
-      hash = "sha256-lpgkYLIIADDdpa/w89Z0KlK7Jt1wP30pcIQn8JCG6F0=";
+      rev = "f7ce2dec6f7f7e230a112399054897ceeccd198c";
+      hash = "sha256-Ra12FuL7B1IuRmwA/cPuny/g4OwoJw9WOXdrU6Ixm0o=";
     };
 
-    vendorHash = "sha256-LxBY+22Q5qHgQmzkS59Ngk2bznhCFAr++SLiCWPTGKE=";
+    vendorHash = "sha256-IbKHyumasjXU06jNdGMzl8Q9cSGvm2i0stVs6AMzMAE=";
 
     env.CGO_ENABLED = 0;
     ldflags = [
