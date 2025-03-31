@@ -854,6 +854,15 @@ let
         sha512 = "6DnInpx7SJ2AK3+CTUE/ZM0vWTUboZCegxhC2xiIydHR9jNuTAASBrfEpHhiGOZw/nX51bHt6YQl8jsGo4y/0w==";
       };
     };
+    "cookie-0.7.2" = {
+      name = "cookie";
+      packageName = "cookie";
+      version = "0.7.2";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/cookie/-/cookie-0.7.2.tgz";
+        sha512 = "yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==";
+      };
+    };
     "cookie-signature-1.0.6" = {
       name = "cookie-signature";
       packageName = "cookie-signature";
@@ -915,15 +924,6 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/debug/-/debug-2.6.9.tgz";
         sha512 = "bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==";
-      };
-    };
-    "debug-4.3.6" = {
-      name = "debug";
-      packageName = "debug";
-      version = "4.3.6";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/debug/-/debug-4.3.6.tgz";
-        sha512 = "O/09Bd4Z1fBrU4VzkhFqVgpPzaGbw6Sm9FEkBT1A/YBXQFGuuSxa1dN2nxgxS34JmKXqYx8CZAwEVoJFImUXIg==";
       };
     };
     "debug-4.4.0" = {
@@ -1124,13 +1124,13 @@ let
         sha512 = "28HqgMZAmih1Czt9ny7qr6ek2qddF4FclbMzwhCREB6OFfH+rXAnuNCwo1/wFvrtbgsQDb4kSbX9de9lFbrXnA==";
       };
     };
-    "express-5.0.1" = {
+    "express-5.1.0" = {
       name = "express";
       packageName = "express";
-      version = "5.0.1";
+      version = "5.1.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/express/-/express-5.0.1.tgz";
-        sha512 = "ORF7g6qGnD+YtUG9yx4DFoqCShNMmUKiXuT5oWMHiOvt/4WFbHC6yCwQMTSBMno7AqntNCAzzcnnjowRkTL9eQ==";
+        url = "https://registry.npmjs.org/express/-/express-5.1.0.tgz";
+        sha512 = "DT9ck5YIRU+8GYzzU5kT3eHGA5iL+1Zd0EutOmTE9Dtk+Tvuzd23VBU+ec7HPNSTxXYO55gPV/hq4pSBJDjFpA==";
       };
     };
     "express-rate-limit-7.5.0" = {
@@ -1581,15 +1581,6 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz";
         sha512 = "Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==";
-      };
-    };
-    "ms-2.1.2" = {
-      name = "ms";
-      packageName = "ms";
-      version = "2.1.2";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/ms/-/ms-2.1.2.tgz";
-        sha512 = "sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==";
       };
     };
     "ms-2.1.3" = {
@@ -2448,6 +2439,7 @@ in
             sources."accepts-1.3.8"
             sources."body-parser-1.20.3"
             sources."content-disposition-0.5.4"
+            sources."cookie-0.7.1"
             sources."cookie-signature-1.0.6"
             sources."debug-2.6.9"
             sources."encodeurl-1.0.2"
@@ -2469,6 +2461,7 @@ in
             sources."ms-2.0.0"
             sources."negotiator-0.6.3"
             sources."path-to-regexp-0.1.12"
+            sources."qs-6.13.0"
             sources."raw-body-2.5.2"
             sources."send-0.19.0"
             (
@@ -2539,15 +2532,7 @@ in
       sources."aria-hidden-1.2.4"
       sources."array-flatten-1.1.1"
       sources."balanced-match-1.0.2"
-      (
-        sources."body-parser-2.2.0"
-        // {
-          dependencies = [
-            sources."debug-4.4.0"
-            sources."qs-6.14.0"
-          ];
-        }
-      )
+      sources."body-parser-2.2.0"
       sources."brace-expansion-1.1.11"
       sources."bufferutil-4.0.9"
       sources."bytes-3.1.2"
@@ -2571,20 +2556,13 @@ in
       sources."concurrently-9.1.2"
       sources."content-disposition-1.0.0"
       sources."content-type-1.0.5"
-      sources."cookie-0.7.1"
+      sources."cookie-0.7.2"
       sources."cookie-signature-1.2.2"
       sources."cors-2.8.5"
       sources."create-require-1.1.1"
       sources."cross-spawn-7.0.6"
       sources."csstype-3.1.3"
-      (
-        sources."debug-4.3.6"
-        // {
-          dependencies = [
-            sources."ms-2.1.2"
-          ];
-        }
-      )
+      sources."debug-4.4.0"
       sources."depd-2.0.0"
       sources."destroy-1.2.0"
       sources."detect-node-es-1.1.0"
@@ -2601,16 +2579,9 @@ in
       sources."etag-1.8.1"
       sources."eventsource-3.0.6"
       sources."eventsource-parser-3.0.1"
-      sources."express-5.0.1"
+      sources."express-5.1.0"
       sources."express-rate-limit-7.5.0"
-      (
-        sources."finalhandler-2.1.0"
-        // {
-          dependencies = [
-            sources."debug-4.4.0"
-          ];
-        }
-      )
+      sources."finalhandler-2.1.0"
       sources."forwarded-0.2.0"
       sources."fresh-2.0.0"
       sources."function-bind-1.1.2"
@@ -2656,7 +2627,7 @@ in
       sources."pkce-challenge-4.1.0"
       sources."prismjs-1.30.0"
       sources."proxy-addr-2.0.7"
-      sources."qs-6.13.0"
+      sources."qs-6.14.0"
       sources."range-parser-1.2.1"
       sources."raw-body-3.0.0"
       sources."react-18.3.1"
@@ -2667,14 +2638,7 @@ in
       sources."react-style-singleton-2.2.3"
       sources."react-toastify-10.0.6"
       sources."require-directory-2.1.1"
-      (
-        sources."router-2.2.0"
-        // {
-          dependencies = [
-            sources."debug-4.4.0"
-          ];
-        }
-      )
+      sources."router-2.2.0"
       sources."rxjs-7.8.2"
       sources."safe-buffer-5.2.1"
       sources."safer-buffer-2.1.2"
@@ -2702,14 +2666,7 @@ in
       sources."side-channel-list-1.0.0"
       sources."side-channel-map-1.0.1"
       sources."side-channel-weakmap-1.0.2"
-      (
-        sources."spawn-rx-5.1.2"
-        // {
-          dependencies = [
-            sources."debug-4.4.0"
-          ];
-        }
-      )
+      sources."spawn-rx-5.1.2"
       sources."statuses-2.0.1"
       sources."string-width-4.2.3"
       sources."strip-ansi-6.0.1"
