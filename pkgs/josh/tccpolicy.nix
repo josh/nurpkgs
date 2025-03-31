@@ -104,7 +104,8 @@ swiftPackages.stdenv.mkDerivation (finalAttrs: {
           nativeBuildInputs = [ finalAttrs.finalPackage ];
         }
         ''
-          tccpolicy --help >$out
+          tccpolicy --help
+          touch $out
         '';
   };
 
