@@ -422,13 +422,13 @@ let
         sha512 = "A9+lCBZoaMJlVKcRBz2YByCG+Cp2t6nAnMnNba+XiWxnj6r4JUFqfsgwocMBZU9LPtdxC6wB56ySYpc7LQIoJg==";
       };
     };
-    "@swc/core-1.11.13" = {
+    "@swc/core-1.11.16" = {
       name = "_at_swc_slash_core";
       packageName = "@swc/core";
-      version = "1.11.13";
+      version = "1.11.16";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/core/-/core-1.11.13.tgz";
-        sha512 = "9BXdYz12Wl0zWmZ80PvtjBWeg2ncwJ9L5WJzjhN6yUTZWEV/AwAdVdJnIEp4pro3WyKmAaMxcVOSbhuuOZco5g==";
+        url = "https://registry.npmjs.org/@swc/core/-/core-1.11.16.tgz";
+        sha512 = "wgjrJqVUss8Lxqilg0vkiE0tkEKU3mZkoybQM1Ehy+PKWwwB6lFAwKi20cAEFlSSWo8jFR8hRo19ZELAoLDowg==";
       };
     };
     "@swc/counter-0.1.3" = {
@@ -449,22 +449,22 @@ let
         sha512 = "JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==";
       };
     };
-    "@swc/types-0.1.20" = {
+    "@swc/types-0.1.21" = {
       name = "_at_swc_slash_types";
       packageName = "@swc/types";
-      version = "0.1.20";
+      version = "0.1.21";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/types/-/types-0.1.20.tgz";
-        sha512 = "/rlIpxwKrhz4BIplXf6nsEHtqlhzuNN34/k3kMAXH4/lvVoA3cdq+60aqVNnyvw2uITEaCi0WV3pxBe4dQqoXQ==";
+        url = "https://registry.npmjs.org/@swc/types/-/types-0.1.21.tgz";
+        sha512 = "2YEtj5HJVbKivud9N4bpPBAyZhj4S2Ipe5LkUG94alTpr7in/GU/EARgPAd3BwU+YOmFVJC2+kjqhGRi3r0ZpQ==";
       };
     };
-    "@swc/wasm-1.11.13" = {
+    "@swc/wasm-1.11.16" = {
       name = "_at_swc_slash_wasm";
       packageName = "@swc/wasm";
-      version = "1.11.13";
+      version = "1.11.16";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.11.13.tgz";
-        sha512 = "R3cpgAX/mxoPH9zNCwmWGOqtvQ9obRpf97Kw8FJu0HUsEcEG766ozxFgfzE9p4IwK7pKOvzYR+szDtIXlOQwdQ==";
+        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.11.16.tgz";
+        sha512 = "V8Vb45xemcS1Ma1tN8qNTVKHxaBWpnbU79eFi3uBs2XUprllhJkjXLdW4dupO/+MzirEP5/pCSDwUMupSFa34Q==";
       };
     };
     "@tsconfig/node10-1.0.11" = {
@@ -503,13 +503,13 @@ let
         sha512 = "vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==";
       };
     };
-    "@types/node-22.13.14" = {
+    "@types/node-22.13.17" = {
       name = "_at_types_slash_node";
       packageName = "@types/node";
-      version = "22.13.14";
+      version = "22.13.17";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/node/-/node-22.13.14.tgz";
-        sha512 = "Zs/Ollc1SJ8nKUAgc7ivOEdIBM8JAKgrqqUYi2J997JuKO7/tpQC+WCetQ1sypiKCQWHdvdg9wBNpUPEWZae7w==";
+        url = "https://registry.npmjs.org/@types/node/-/node-22.13.17.tgz";
+        sha512 = "nAJuQXoyPj04uLgu+obZcSmsfOenUg6DxPKogeUy6yNCFwWaj5sBF8/G/pNo8EtBJjAfSVgfIlugR/BCOleO+g==";
       };
     };
     "@types/prismjs-1.26.5" = {
@@ -2150,13 +2150,13 @@ let
         sha512 = "P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==";
       };
     };
-    "tailwindcss-4.0.17" = {
+    "tailwindcss-4.1.0" = {
       name = "tailwindcss";
       packageName = "tailwindcss";
-      version = "4.0.17";
+      version = "4.1.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.0.17.tgz";
-        sha512 = "OErSiGzRa6rLiOvaipsDZvLMSpsBZ4ysB4f0VKGXUrjw2jfkJRd6kjRKV2+ZmTCNvwtvgdDam5D7w6WXsdLJZw==";
+        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.0.tgz";
+        sha512 = "vBYstoFnvUZCDxaauNGQQEvJNQgCd1vSMDRYuZZMH1xRRcTboOk1rJrW5yFkEabU9X6Yx1C4LQ+QvPOvQj4Daw==";
       };
     };
     "tailwindcss-animate-1.0.7" = {
@@ -2510,16 +2510,16 @@ in
       sources."@radix-ui/react-use-size-1.1.0"
       sources."@radix-ui/react-visually-hidden-1.1.2"
       sources."@radix-ui/rect-1.1.0"
-      sources."@swc/core-1.11.13"
+      sources."@swc/core-1.11.16"
       sources."@swc/counter-0.1.3"
       sources."@swc/helpers-0.5.15"
-      sources."@swc/types-0.1.20"
-      sources."@swc/wasm-1.11.13"
+      sources."@swc/types-0.1.21"
+      sources."@swc/wasm-1.11.16"
       sources."@tsconfig/node10-1.0.11"
       sources."@tsconfig/node12-1.0.11"
       sources."@tsconfig/node14-1.0.3"
       sources."@tsconfig/node16-1.0.4"
-      sources."@types/node-22.13.14"
+      sources."@types/node-22.13.17"
       sources."@types/prismjs-1.26.5"
       sources."@types/react-19.0.12"
       sources."@types/react-dom-19.0.4"
@@ -2672,7 +2672,7 @@ in
       sources."strip-ansi-6.0.1"
       sources."supports-color-8.1.1"
       sources."tailwind-merge-2.6.0"
-      sources."tailwindcss-4.0.17"
+      sources."tailwindcss-4.1.0"
       sources."tailwindcss-animate-1.0.7"
       sources."toidentifier-1.0.1"
       sources."tree-kill-1.2.2"
