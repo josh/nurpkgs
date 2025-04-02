@@ -89,22 +89,22 @@ let
         sha512 = "3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==";
       };
     };
-    "@modelcontextprotocol/inspector-client-0.7.0" = {
+    "@modelcontextprotocol/inspector-client-0.8.0" = {
       name = "_at_modelcontextprotocol_slash_inspector-client";
       packageName = "@modelcontextprotocol/inspector-client";
-      version = "0.7.0";
+      version = "0.8.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-client/-/inspector-client-0.7.0.tgz";
-        sha512 = "8wfFDUhJ7ZgP2lgwqHcwYy1GyVYxkn403Gg8LuQaBl27PkxiJHsfhL/KDRXFJ2pEoE0jeRBqq7jTWwGymkFH5w==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-client/-/inspector-client-0.8.0.tgz";
+        sha512 = "lw3RN/teDoKNKOgMqI0yl3F0EKqT2mkTsFGKH7M83HpT5saUHL1PW6CY0t6VvUB78L8nUFhgb9bLZdDNBUvezg==";
       };
     };
-    "@modelcontextprotocol/inspector-server-0.7.0" = {
+    "@modelcontextprotocol/inspector-server-0.8.0" = {
       name = "_at_modelcontextprotocol_slash_inspector-server";
       packageName = "@modelcontextprotocol/inspector-server";
-      version = "0.7.0";
+      version = "0.8.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-server/-/inspector-server-0.7.0.tgz";
-        sha512 = "2VeqTUJhVYebxzcJdv1GL0UgxMw5kOlhU+vJD0ch3OxOyHkTUM4eVe+a2p3VOCLkNW+DZuhc2x8WXARgXuiXNg==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-server/-/inspector-server-0.8.0.tgz";
+        sha512 = "vjEpeRL83f5Nb2DofYyOCbfkQUFujYAOwzpqiKpTO4qlWWh8nAYBlnmcnhvCdvF0SnQeKS4N+6dtmb/8stNM8g==";
       };
     };
     "@modelcontextprotocol/sdk-0.5.0" = {
@@ -521,22 +521,22 @@ let
         sha512 = "AUZTa7hQ2KY5L7AmtSiqxlhWxb4ina0yd8hNbl4TWuqnv/pFP0nDMb3YrfSBf4hJVGLh2YEIBfKaBW/9UEl6IQ==";
       };
     };
-    "@types/react-19.0.12" = {
+    "@types/react-19.1.0" = {
       name = "_at_types_slash_react";
       packageName = "@types/react";
-      version = "19.0.12";
+      version = "19.1.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/react/-/react-19.0.12.tgz";
-        sha512 = "V6Ar115dBDrjbtXSrS+/Oruobc+qVbbUxDFC1RSbRqLt5SYvxxyIDrSC85RWml54g+jfNeEMZhEj7wW07ONQhA==";
+        url = "https://registry.npmjs.org/@types/react/-/react-19.1.0.tgz";
+        sha512 = "UaicktuQI+9UKyA4njtDOGBD/67t8YEBt2xdfqu8+gP9hqPUPsiXlNPcpS2gVdjmis5GKPG3fCxbQLVgxsQZ8w==";
       };
     };
-    "@types/react-dom-19.0.4" = {
+    "@types/react-dom-19.1.1" = {
       name = "_at_types_slash_react-dom";
       packageName = "@types/react-dom";
-      version = "19.0.4";
+      version = "19.1.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/react-dom/-/react-dom-19.0.4.tgz";
-        sha512 = "4fSQ8vWFkg+TGhePfUzVmat3eC14TXYSsiiDSLI0dVLsrm9gZFABjPy/Qu6TKgl1tq1Bu1yDsuQgY3A3DOjCcg==";
+        url = "https://registry.npmjs.org/@types/react-dom/-/react-dom-19.1.1.tgz";
+        sha512 = "jFf/woGTVTjUJsl2O7hcopJ1r0upqoq/vIOoCj0yLh3RIXxWcljlpuZ+vEBRXsymD1jhfeJrlyTy/S1UW+4y1w==";
       };
     };
     "accepts-1.3.8" = {
@@ -2150,13 +2150,13 @@ let
         sha512 = "P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==";
       };
     };
-    "tailwindcss-4.1.0" = {
+    "tailwindcss-4.1.1" = {
       name = "tailwindcss";
       packageName = "tailwindcss";
-      version = "4.1.0";
+      version = "4.1.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.0.tgz";
-        sha512 = "vBYstoFnvUZCDxaauNGQQEvJNQgCd1vSMDRYuZZMH1xRRcTboOk1rJrW5yFkEabU9X6Yx1C4LQ+QvPOvQj4Daw==";
+        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.1.tgz";
+        sha512 = "QNbdmeS979Efzim2g/bEvfuh+fTcIdp1y7gA+sb6OYSW74rt7Cr7M78AKdf6HqWT3d5AiTb7SwTT3sLQxr4/qw==";
       };
     };
     "tailwindcss-animate-1.0.7" = {
@@ -2417,10 +2417,10 @@ in
   "@modelcontextprotocol/inspector" = nodeEnv.buildNodePackage {
     name = "_at_modelcontextprotocol_slash_inspector";
     packageName = "@modelcontextprotocol/inspector";
-    version = "0.7.0";
+    version = "0.8.0";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-0.7.0.tgz";
-      sha512 = "gRrCxAf9NwJzOhCds21puUiMoM/ezfIHt9LwA3HkKAI/jnxM+yRcpZfcHnZoKkYTvmtYCgcL4kqR3UsWayMamg==";
+      url = "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-0.8.0.tgz";
+      sha512 = "IcnBlwZiTI5sTtIeSXHqecljtAd3gaQ6vnlyN9MeoCIA5uzu2KpvvpBFe8xj4uPt1Mwhufty6n3PC3pspddZIA==";
     };
     dependencies = [
       sources."@cspotcode/source-map-support-0.8.1"
@@ -2431,9 +2431,9 @@ in
       sources."@jridgewell/resolve-uri-3.1.2"
       sources."@jridgewell/sourcemap-codec-1.5.0"
       sources."@jridgewell/trace-mapping-0.3.9"
-      sources."@modelcontextprotocol/inspector-client-0.7.0"
+      sources."@modelcontextprotocol/inspector-client-0.8.0"
       (
-        sources."@modelcontextprotocol/inspector-server-0.7.0"
+        sources."@modelcontextprotocol/inspector-server-0.8.0"
         // {
           dependencies = [
             sources."accepts-1.3.8"
@@ -2521,8 +2521,8 @@ in
       sources."@tsconfig/node16-1.0.4"
       sources."@types/node-22.13.17"
       sources."@types/prismjs-1.26.5"
-      sources."@types/react-19.0.12"
-      sources."@types/react-dom-19.0.4"
+      sources."@types/react-19.1.0"
+      sources."@types/react-dom-19.1.1"
       sources."accepts-2.0.0"
       sources."acorn-8.14.1"
       sources."acorn-walk-8.3.4"
@@ -2672,7 +2672,7 @@ in
       sources."strip-ansi-6.0.1"
       sources."supports-color-8.1.1"
       sources."tailwind-merge-2.6.0"
-      sources."tailwindcss-4.1.0"
+      sources."tailwindcss-4.1.1"
       sources."tailwindcss-animate-1.0.7"
       sources."toidentifier-1.0.1"
       sources."tree-kill-1.2.2"
