@@ -503,13 +503,13 @@ let
         sha512 = "vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==";
       };
     };
-    "@types/node-22.13.17" = {
+    "@types/node-22.14.0" = {
       name = "_at_types_slash_node";
       packageName = "@types/node";
-      version = "22.13.17";
+      version = "22.14.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/node/-/node-22.13.17.tgz";
-        sha512 = "nAJuQXoyPj04uLgu+obZcSmsfOenUg6DxPKogeUy6yNCFwWaj5sBF8/G/pNo8EtBJjAfSVgfIlugR/BCOleO+g==";
+        url = "https://registry.npmjs.org/@types/node/-/node-22.14.0.tgz";
+        sha512 = "Kmpl+z84ILoG+3T/zQFyAJsU6EPTmOCj8/2+83fSN6djd6I4o7uOuGIH6vq3PrjY5BGitSbFuMN18j3iknubbA==";
       };
     };
     "@types/prismjs-1.26.5" = {
@@ -2231,13 +2231,13 @@ let
         sha512 = "aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==";
       };
     };
-    "undici-types-6.20.0" = {
+    "undici-types-6.21.0" = {
       name = "undici-types";
       packageName = "undici-types";
-      version = "6.20.0";
+      version = "6.21.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/undici-types/-/undici-types-6.20.0.tgz";
-        sha512 = "Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==";
+        url = "https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz";
+        sha512 = "iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==";
       };
     };
     "unpipe-1.0.0" = {
@@ -2519,7 +2519,7 @@ in
       sources."@tsconfig/node12-1.0.11"
       sources."@tsconfig/node14-1.0.3"
       sources."@tsconfig/node16-1.0.4"
-      sources."@types/node-22.13.17"
+      sources."@types/node-22.14.0"
       sources."@types/prismjs-1.26.5"
       sources."@types/react-19.1.0"
       sources."@types/react-dom-19.1.1"
@@ -2680,7 +2680,7 @@ in
       sources."tslib-2.8.1"
       sources."type-is-2.0.1"
       sources."typescript-5.8.2"
-      sources."undici-types-6.20.0"
+      sources."undici-types-6.21.0"
       sources."unpipe-1.0.0"
       sources."use-callback-ref-1.3.3"
       sources."use-sidecar-1.1.3"
