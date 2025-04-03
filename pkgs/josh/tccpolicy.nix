@@ -1,6 +1,5 @@
 {
   lib,
-  writers,
   writeText,
   fetchFromGitHub,
   runCommand,
@@ -11,39 +10,6 @@
   nix-update-script,
 }:
 let
-  swift-argument-parser = fetchFromGitHub {
-    owner = "apple";
-    repo = "swift-argument-parser";
-    rev = "41982a3656a71c768319979febd796c6fd111d5c";
-    sha256 = "sha256-TRaJG8ikzuQQjH3ERfuYNKPty3qI3ziC/9v96pvlvRs=";
-  };
-
-  workspaceState = writers.writeJSON "workspace-state.json" {
-    object = {
-      artifacts = [ ];
-      dependencies = [
-        {
-          basedOn = null;
-          packageRef = {
-            identity = "swift-argument-parser";
-            kind = "remoteSourceControl";
-            location = "https://github.com/apple/swift-argument-parser";
-            name = "swift-argument-parser";
-          };
-          state = {
-            checkoutState = {
-              revision = "41982a3656a71c768319979febd796c6fd111d5c";
-              version = "1.5.0";
-            };
-            name = "sourceControlCheckout";
-          };
-          subpath = "swift-argument-parser";
-        }
-      ];
-    };
-    version = 6;
-  };
-
   sqliteModuleMap = writeText "CSQLite.modulemap" ''
     module CSQLite [system] {
       header "${sqlite.dev}/include/sqlite3.h"
@@ -74,13 +40,7 @@ swiftPackages.stdenv.mkDerivation (finalAttrs: {
 
   postPatch = ''
     substituteInPlace Sources/**/*.swift \
-      --replace "import SQLite3" "import CSQLite"
-  '';
-
-  configurePhase = ''
-    mkdir -p .build/checkouts
-    install -m 0600 ${workspaceState} .build/workspace-state.json
-    ln -s ${swift-argument-parser} .build/checkouts/swift-argument-parser
+      --replace-quiet "import SQLite3" "import CSQLite"
   '';
 
   swiftpmFlags = [
