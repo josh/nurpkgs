@@ -8,13 +8,13 @@ python3Packages.buildPythonPackage rec {
   __structuredAttrs = true;
 
   pname = "nixmcp";
-  version = "0.2.3";
+  version = "0.3.1";
 
   src = fetchFromGitHub {
     owner = "utensils";
     repo = "nixmcp";
     tag = "v${version}";
-    hash = "sha256-QLUNrNl4Ja/W+cOOn2i87PRKHMrH6BRKYlf2skj9maw=";
+    hash = "sha256-vQMgQHhIVjLLDvIpvblGeFcaAxw90Xgl5gOa7+zgJv4=";
   };
 
   build-system = [
