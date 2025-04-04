@@ -89,22 +89,22 @@ let
         sha512 = "3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==";
       };
     };
-    "@modelcontextprotocol/inspector-client-0.8.0" = {
+    "@modelcontextprotocol/inspector-client-0.8.1" = {
       name = "_at_modelcontextprotocol_slash_inspector-client";
       packageName = "@modelcontextprotocol/inspector-client";
-      version = "0.8.0";
+      version = "0.8.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-client/-/inspector-client-0.8.0.tgz";
-        sha512 = "lw3RN/teDoKNKOgMqI0yl3F0EKqT2mkTsFGKH7M83HpT5saUHL1PW6CY0t6VvUB78L8nUFhgb9bLZdDNBUvezg==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-client/-/inspector-client-0.8.1.tgz";
+        sha512 = "4bqUvH4KGtn1eZXhu5siHgbQ0R+ni8eGEt2x5hZhUx1gkzC8gt/qYwMUgkUOBiA90+MbFRSck52vxFQDRaA3Yg==";
       };
     };
-    "@modelcontextprotocol/inspector-server-0.8.0" = {
+    "@modelcontextprotocol/inspector-server-0.8.1" = {
       name = "_at_modelcontextprotocol_slash_inspector-server";
       packageName = "@modelcontextprotocol/inspector-server";
-      version = "0.8.0";
+      version = "0.8.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-server/-/inspector-server-0.8.0.tgz";
-        sha512 = "vjEpeRL83f5Nb2DofYyOCbfkQUFujYAOwzpqiKpTO4qlWWh8nAYBlnmcnhvCdvF0SnQeKS4N+6dtmb/8stNM8g==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-server/-/inspector-server-0.8.1.tgz";
+        sha512 = "VKbPWOC6/rb5W1Yz+CI4zsRrqG9LU2MZO/keqyVIdwVEKEi9Oty4aOULUmZocBRWU3rZ99JNthQRlD4vJEpdPQ==";
       };
     };
     "@modelcontextprotocol/sdk-0.5.0" = {
@@ -339,6 +339,24 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/@radix-ui/react-tabs/-/react-tabs-1.1.3.tgz";
         sha512 = "9mFyI30cuRDImbmFF6O2KUJdgEOsGh9Vmx9x/Dh9tOhL7BngmQPQfwW4aejKm5OHpfWIdmeV6ySyuxoOGjtNng==";
+      };
+    };
+    "@radix-ui/react-toast-1.2.6" = {
+      name = "_at_radix-ui_slash_react-toast";
+      packageName = "@radix-ui/react-toast";
+      version = "1.2.6";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@radix-ui/react-toast/-/react-toast-1.2.6.tgz";
+        sha512 = "gN4dpuIVKEgpLn1z5FhzT9mYRUitbfZq9XqN/7kkBMUgFTzTG8x/KszWJugJXHcwxckY8xcKDZPz7kG3o6DsUA==";
+      };
+    };
+    "@radix-ui/react-tooltip-1.1.8" = {
+      name = "_at_radix-ui_slash_react-tooltip";
+      packageName = "@radix-ui/react-tooltip";
+      version = "1.1.8";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@radix-ui/react-tooltip/-/react-tooltip-1.1.8.tgz";
+        sha512 = "YAA2cu48EkJZdAMHC0dqo9kialOcRStbtiY4nJPaht7Ptrhcvpo+eDChaM6BIs8kL6a8Z5l5poiqLnXcNduOkA==";
       };
     };
     "@radix-ui/react-use-callback-ref-1.1.0" = {
@@ -1862,15 +1880,6 @@ let
         sha512 = "b6jSvxvVnyptAiLjbkWLE/lOnR4lfTtDAl+eUC7RZy+QQWc6wRzIV2CE6xBuMmDxc2qIihtDCZD5NPOFl7fRBQ==";
       };
     };
-    "react-toastify-10.0.6" = {
-      name = "react-toastify";
-      packageName = "react-toastify";
-      version = "10.0.6";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/react-toastify/-/react-toastify-10.0.6.tgz";
-        sha512 = "yYjp+omCDf9lhZcrZHKbSq7YMuK0zcYkDFTzfRFgTXkTFHZ1ToxwAonzA4JI5CxA91JpjFLmwEsZEgfYfOqI1A==";
-      };
-    };
     "require-directory-2.1.1" = {
       name = "require-directory";
       packageName = "require-directory";
@@ -2150,13 +2159,13 @@ let
         sha512 = "P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==";
       };
     };
-    "tailwindcss-4.1.2" = {
+    "tailwindcss-4.1.3" = {
       name = "tailwindcss";
       packageName = "tailwindcss";
-      version = "4.1.2";
+      version = "4.1.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.2.tgz";
-        sha512 = "VCsK+fitIbQF7JlxXaibFhxrPq4E2hDcG8apzHUdWFMCQWD8uLdlHg4iSkZ53cgLCCcZ+FZK7vG8VjvLcnBgKw==";
+        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.3.tgz";
+        sha512 = "2Q+rw9vy1WFXu5cIxlvsabCwhU2qUwodGq03ODhLJ0jW4ek5BUtoCsnLB0qG+m8AHgEsSJcJGDSDe06FXlP74g==";
       };
     };
     "tailwindcss-animate-1.0.7" = {
@@ -2417,10 +2426,10 @@ in
   "@modelcontextprotocol/inspector" = nodeEnv.buildNodePackage {
     name = "_at_modelcontextprotocol_slash_inspector";
     packageName = "@modelcontextprotocol/inspector";
-    version = "0.8.0";
+    version = "0.8.1";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-0.8.0.tgz";
-      sha512 = "IcnBlwZiTI5sTtIeSXHqecljtAd3gaQ6vnlyN9MeoCIA5uzu2KpvvpBFe8xj4uPt1Mwhufty6n3PC3pspddZIA==";
+      url = "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-0.8.1.tgz";
+      sha512 = "BbrzF+1ebkkCmVQHFpulAJmaugim+gXikAP8kc/+L4/UMh7tR6ZmTCyP8TpyU9duGcaRbmmtmdifscyRsIQMZA==";
     };
     dependencies = [
       sources."@cspotcode/source-map-support-0.8.1"
@@ -2431,9 +2440,9 @@ in
       sources."@jridgewell/resolve-uri-3.1.2"
       sources."@jridgewell/sourcemap-codec-1.5.0"
       sources."@jridgewell/trace-mapping-0.3.9"
-      sources."@modelcontextprotocol/inspector-client-0.8.0"
+      sources."@modelcontextprotocol/inspector-client-0.8.1"
       (
-        sources."@modelcontextprotocol/inspector-server-0.8.0"
+        sources."@modelcontextprotocol/inspector-server-0.8.1"
         // {
           dependencies = [
             sources."accepts-1.3.8"
@@ -2501,6 +2510,8 @@ in
       sources."@radix-ui/react-select-2.1.6"
       sources."@radix-ui/react-slot-1.1.2"
       sources."@radix-ui/react-tabs-1.1.3"
+      sources."@radix-ui/react-toast-1.2.6"
+      sources."@radix-ui/react-tooltip-1.1.8"
       sources."@radix-ui/react-use-callback-ref-1.1.0"
       sources."@radix-ui/react-use-controllable-state-1.1.0"
       sources."@radix-ui/react-use-escape-keydown-1.1.0"
@@ -2636,7 +2647,6 @@ in
       sources."react-remove-scroll-bar-2.3.8"
       sources."react-simple-code-editor-0.14.1"
       sources."react-style-singleton-2.2.3"
-      sources."react-toastify-10.0.6"
       sources."require-directory-2.1.1"
       sources."router-2.2.0"
       sources."rxjs-7.8.2"
@@ -2672,7 +2682,7 @@ in
       sources."strip-ansi-6.0.1"
       sources."supports-color-8.1.1"
       sources."tailwind-merge-2.6.0"
-      sources."tailwindcss-4.1.2"
+      sources."tailwindcss-4.1.3"
       sources."tailwindcss-animate-1.0.7"
       sources."toidentifier-1.0.1"
       sources."tree-kill-1.2.2"
