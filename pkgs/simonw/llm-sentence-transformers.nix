@@ -39,8 +39,5 @@ python3Packages.buildPythonPackage rec {
     homepage = "https://github.com/simonw/llm-sentence-transformers";
     changelog = "https://github.com/simonw/llm-sentence-transformers/releases/tag/${version}";
     license = lib.licenses.asl20;
-
-    # https://github.com/NixOS/nixpkgs/commit/4b309c8
-    inherit (python3Packages.sentence-transformers.meta) badPlatforms;
   };
 }
