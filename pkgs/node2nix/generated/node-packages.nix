@@ -116,6 +116,15 @@ let
         sha512 = "RXgulUX6ewvxjAG0kOpLMEdXXWkzWgaoCGaA2CwNW7cQCIphjpJhjpHSiaPdVCnisjRF/0Cm9KWHUuIoeiAblQ==";
       };
     };
+    "@modelcontextprotocol/sdk-1.0.1" = {
+      name = "_at_modelcontextprotocol_slash_sdk";
+      packageName = "@modelcontextprotocol/sdk";
+      version = "1.0.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.0.1.tgz";
+        sha512 = "slLdFaxQJ9AlRg+hw28iiTtGvShAOgOKXcD0F91nUcRYiOMuS9ZBYjcdNZRXW9G5JQ511GRTdUy1zQVZDpJ+4w==";
+      };
+    };
     "@modelcontextprotocol/sdk-1.9.0" = {
       name = "_at_modelcontextprotocol_slash_sdk";
       packageName = "@modelcontextprotocol/sdk";
@@ -2827,6 +2836,40 @@ in
     buildInputs = globalBuildInputs;
     meta = {
       description = "MCP server for filesystem access";
+      homepage = "https://modelcontextprotocol.io";
+      license = "MIT";
+    };
+    production = true;
+    bypassCache = true;
+    reconstructLock = true;
+  };
+  "@modelcontextprotocol/server-memory" = nodeEnv.buildNodePackage {
+    name = "_at_modelcontextprotocol_slash_server-memory";
+    packageName = "@modelcontextprotocol/server-memory";
+    version = "0.6.2";
+    src = fetchurl {
+      url = "https://registry.npmjs.org/@modelcontextprotocol/server-memory/-/server-memory-0.6.2.tgz";
+      sha512 = "vPxBic0DCWqyuxTwhD60dIGiukarx4HemjG/baiuI7ZOgPfG/6VYQ/QCXKUJbSO9/4RFtSFwzow8hgBMCl8mgQ==";
+    };
+    dependencies = [
+      sources."@modelcontextprotocol/sdk-1.0.1"
+      sources."bytes-3.1.2"
+      sources."content-type-1.0.5"
+      sources."depd-2.0.0"
+      sources."http-errors-2.0.0"
+      sources."iconv-lite-0.6.3"
+      sources."inherits-2.0.4"
+      sources."raw-body-3.0.0"
+      sources."safer-buffer-2.1.2"
+      sources."setprototypeof-1.2.0"
+      sources."statuses-2.0.1"
+      sources."toidentifier-1.0.1"
+      sources."unpipe-1.0.0"
+      sources."zod-3.24.2"
+    ];
+    buildInputs = globalBuildInputs;
+    meta = {
+      description = "MCP server for enabling memory for Claude through a knowledge graph";
       homepage = "https://modelcontextprotocol.io";
       license = "MIT";
     };
