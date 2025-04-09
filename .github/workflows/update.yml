@@ -52,14 +52,6 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
 
-      - uses: actions/checkout@v4
-        with:
-          token: ${{ steps.app-token.outputs.token }}
-
-      - name: Checkout new branch
-        run: |
-          git checkout -B "update-${{ matrix.attr }}"
-
       - uses: DeterminateSystems/nix-installer-action@main
         with:
           extra-conf: |
@@ -69,6 +61,10 @@ jobs:
         with:
           name: josh
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app-token.outputs.token }}
 
       - name: Configure git commit author
         run: |
@@ -85,34 +81,5 @@ jobs:
       - name: Run update-script
         run: |
           ./result/bin/update-${{ matrix.attr }}
-
-      - name: Git status
-        id: git-status
-        run: |
-          count=$(git rev-list "origin/$GITHUB_REF_NAME..HEAD" --count)
-          echo "count=$count" >>"$GITHUB_OUTPUT"
-
-      - name: Push changes
-        if: steps.git-status.outputs.count != 0
-        run: git push -f origin "update-${{ matrix.attr }}"
-
-      - name: Create PR
-        if: steps.git-status.outputs.count != 0
-        id: create-pr
-        continue-on-error: true
-        run: |
-          echo -n "url=" >"$GITHUB_OUTPUT"
-          gh pr create \
-            --base "${{ github.ref_name }}" \
-            --head "update-${{ matrix.attr }}" \
-            --title "Update ${{ matrix.attr }}" \
-            --fill-verbose | tee -a "$GITHUB_OUTPUT"
-        env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
-
-      - name: Enable auto-merge
-        if: steps.git-status.outputs.count != 0 && steps.create-pr.outcome == 'success'
-        run: |
-          gh pr merge --merge --auto "${{ steps.create-pr.outputs.url }}"
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
