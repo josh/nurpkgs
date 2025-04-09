@@ -557,13 +557,13 @@ let
         sha512 = "UaicktuQI+9UKyA4njtDOGBD/67t8YEBt2xdfqu8+gP9hqPUPsiXlNPcpS2gVdjmis5GKPG3fCxbQLVgxsQZ8w==";
       };
     };
-    "@types/react-dom-19.1.1" = {
+    "@types/react-dom-19.1.2" = {
       name = "_at_types_slash_react-dom";
       packageName = "@types/react-dom";
-      version = "19.1.1";
+      version = "19.1.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/react-dom/-/react-dom-19.1.1.tgz";
-        sha512 = "jFf/woGTVTjUJsl2O7hcopJ1r0upqoq/vIOoCj0yLh3RIXxWcljlpuZ+vEBRXsymD1jhfeJrlyTy/S1UW+4y1w==";
+        url = "https://registry.npmjs.org/@types/react-dom/-/react-dom-19.1.2.tgz";
+        sha512 = "XGJkWF41Qq305SKWEILa1O8vzhb3aOo3ogBlSmiqNko/WmRb6QIaweuZCXjKygVDXpzXb5wyxKTSOsmkuqj+Qw==";
       };
     };
     "accepts-1.3.8" = {
@@ -2558,7 +2558,7 @@ in
       sources."@types/node-22.14.0"
       sources."@types/prismjs-1.26.5"
       sources."@types/react-19.1.0"
-      sources."@types/react-dom-19.1.1"
+      sources."@types/react-dom-19.1.2"
       sources."accepts-2.0.0"
       sources."acorn-8.14.1"
       sources."acorn-walk-8.3.4"
