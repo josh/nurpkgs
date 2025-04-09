@@ -71,15 +71,10 @@ jobs:
           git config --global user.name '${{ steps.app-token.outputs.app-slug }}[bot]'
           git config --global user.email '${{ steps.get-user-id.outputs.user-id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com'
 
-      - name: Build update-script
+      - name: Run update-script
         run: |
-          nix build --file ./internal/update-script.nix
+          nix run --file ./internal/update-script.nix
         env:
           FLAKE_URI: ${{ github.workspace }}
           UPDATE_NIX_ATTR_PATH: ${{ matrix.attr }}
-
-      - name: Run update-script
-        run: |
-          ./result/bin/update-${{ matrix.attr }}
-        env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
