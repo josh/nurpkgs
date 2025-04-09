@@ -9,16 +9,16 @@
 let
   defuddle = buildNpmPackage {
     pname = "defuddle";
-    version = "0.3.2";
+    version = "0.6.0";
 
     src = fetchFromGitHub {
       owner = "kepano";
       repo = "defuddle-cli";
-      tag = "0.1.4";
-      hash = "sha256-3ekQyiSbD83nmBSWnILhXdC67CP8jxUCUGNOJhg7MPE=";
+      tag = "0.6.0";
+      hash = "sha256-XU/7ka4EWeLLQNrD6w2EpgQBPjo7wIO/JjWboIF6lzM=";
     };
 
-    npmDepsHash = "sha256-y1WmU2H0Qk6HGMjTv58ix6SD+iG5NGEVVXJ16YYEBIw=";
+    npmDepsHash = "sha256-pd8o35CI4G6XTam19A4Bw38VK5xeprIVZH+qaJUWbYU=";
 
     meta = {
       description = "Command line utility to extract clean html, markdown and metadata from web pages";
