@@ -9,35 +9,16 @@ permissions:
   contents: write
 
 jobs:
-  matrix:
-    runs-on: ubuntu-24.04
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: DeterminateSystems/nix-installer-action@main
-        with:
-          extra-conf: |
-            accept-flake-config = true
-
-      - id: set-matrix
-        name: Generate package matrix
-        run: |
-          nix eval --raw --file ./internal/update-script-matrix.nix | tee "$GITHUB_OUTPUT"
-        env:
-          FLAKE_URI: ${{ github.workspace }}
-
   update:
-    name: update-${{ matrix.attr }}
-    needs: matrix
-    runs-on: ${{ matrix.os }}
-    concurrency:
-      group: git-push-update-${{ matrix.attr }}
-      cancel-in-progress: false
     strategy:
       fail-fast: false
-      matrix: ${{fromJSON(needs.matrix.outputs.matrix)}}
+      matrix:
+        os:
+          - "ubuntu-24.04"
+          # - "ubuntu-24.04-arm"
+          - "macos-15"
+
+    runs-on: ${{ matrix.os }}
 
     steps:
       - uses: actions/create-github-app-token@v2
@@ -62,6 +43,13 @@ jobs:
           name: josh
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
 
+      - id: attrs
+        name: Get package attributes to update
+        run: |
+          nix eval --raw --file ./internal/update-script-attrs.nix | tee "$GITHUB_OUTPUT"
+        env:
+          FLAKE_URI: ${{ github.workspace }}
+
       - uses: actions/checkout@v4
         with:
           token: ${{ steps.app-token.outputs.token }}
@@ -73,8 +61,11 @@ jobs:
 
       - name: Run update-script
         run: |
-          nix run --file ./internal/update-script.nix
+          echo "$UPDATE_NIX_ATTRS" | jq --raw-output '.[]' | while read -r attr; do
+            printf "\n\n==== Updating %s ====\n" "$attr" >&2
+            UPDATE_NIX_ATTR_PATH="$attr" nix run --file ./internal/update-script.nix
+          done
         env:
           FLAKE_URI: ${{ github.workspace }}
-          UPDATE_NIX_ATTR_PATH: ${{ matrix.attr }}
+          UPDATE_NIX_ATTRS: ${{ steps.attrs.outputs.attrs }}
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
