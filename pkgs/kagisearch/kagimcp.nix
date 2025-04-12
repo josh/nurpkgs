@@ -7,7 +7,7 @@
 }:
 python3Packages.buildPythonPackage rec {
   pname = "kagimcp";
-  version = "0.0.0";
+  version = "0-unstable-2025-04-03";
   pyproject = true;
 
   src = fetchFromGitHub {
