@@ -33,5 +33,6 @@ python3Packages.buildPythonPackage rec {
     description = "A Model Context Protocol (MCP) server for Kagi search & other tools";
     homepage = "https://github.com/kagisearch/kagimcp";
     license = lib.licenses.mit;
+    mainProgram = "kagimcp";
   };
 }
