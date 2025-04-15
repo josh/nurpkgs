@@ -6,7 +6,7 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "rose-pine-kitty";
-  version = "0-unstable-2023-09-01";
+  version = "0-unstable-2023-09-02";
 
   src = fetchFromGitHub {
     owner = "rose-pine";
