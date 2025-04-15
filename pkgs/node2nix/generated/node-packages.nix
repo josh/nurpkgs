@@ -89,22 +89,22 @@ let
         sha512 = "3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==";
       };
     };
-    "@modelcontextprotocol/inspector-client-0.8.2" = {
+    "@modelcontextprotocol/inspector-client-0.9.0" = {
       name = "_at_modelcontextprotocol_slash_inspector-client";
       packageName = "@modelcontextprotocol/inspector-client";
-      version = "0.8.2";
+      version = "0.9.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-client/-/inspector-client-0.8.2.tgz";
-        sha512 = "eqsrA4eOXBadVTU8qFr2IYnxyY97+DfMDhl9LYuEHMIuEWjRObNGI/H3JFwDFpCkV4GOgWSBjfdIQ5yzUy7LKA==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-client/-/inspector-client-0.9.0.tgz";
+        sha512 = "D5zLY0mVfewwCtRU3JdBKqopB1GG+1uDEeSVK6N8EeY/9ZU6OUkSER12J4vt/dXX00ZAAgoDqx/US7mDXa19zw==";
       };
     };
-    "@modelcontextprotocol/inspector-server-0.8.2" = {
+    "@modelcontextprotocol/inspector-server-0.9.0" = {
       name = "_at_modelcontextprotocol_slash_inspector-server";
       packageName = "@modelcontextprotocol/inspector-server";
-      version = "0.8.2";
+      version = "0.9.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-server/-/inspector-server-0.8.2.tgz";
-        sha512 = "1gSgWAO20nT8YSdNi/3b4czELYWoc+Sur5+v2tX9ru1UIXQ10y3YMGDtmxm1hd3U5SXkuzeg6toXQyGTzcvvAQ==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-server/-/inspector-server-0.9.0.tgz";
+        sha512 = "GJPE3K78FLBbBpL/TXKxSflbW0eDiy6uJ4/QcB14YpHctm672ThMwen5EDl/mZU8MXCk7vGhVPmjiys1Uoit2Q==";
       };
     };
     "@modelcontextprotocol/sdk-0.5.0" = {
@@ -537,15 +537,6 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/@types/node/-/node-22.14.1.tgz";
         sha512 = "u0HuPQwe/dHrItgHHpmw3N2fYCR6x4ivMNbPHRkBVP4CvN+kiRrKHWk3i8tXiO/joPwXLMYvF9TTF0eqgHIuOw==";
-      };
-    };
-    "@types/prismjs-1.26.5" = {
-      name = "_at_types_slash_prismjs";
-      packageName = "@types/prismjs";
-      version = "1.26.5";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/@types/prismjs/-/prismjs-1.26.5.tgz";
-        sha512 = "AUZTa7hQ2KY5L7AmtSiqxlhWxb4ina0yd8hNbl4TWuqnv/pFP0nDMb3YrfSBf4hJVGLh2YEIBfKaBW/9UEl6IQ==";
       };
     };
     "@types/react-19.1.2" = {
@@ -2444,10 +2435,10 @@ in
   "@modelcontextprotocol/inspector" = nodeEnv.buildNodePackage {
     name = "_at_modelcontextprotocol_slash_inspector";
     packageName = "@modelcontextprotocol/inspector";
-    version = "0.8.2";
+    version = "0.9.0";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-0.8.2.tgz";
-      sha512 = "ewowTh84QVUrVnIVJLx5Jhh2yJrgWa/LrcVlNhtm8Y2Uk2bgW0y0catXyeyR6dqqyDadMXq1hbPRq0Lo1zPFnQ==";
+      url = "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-0.9.0.tgz";
+      sha512 = "8sHdPGuGVldHqIbqyB0TKdrtm6AQjTMH7x2gTromdsZX3J8AStOW75Pe6b9GeIobI5DzlU1JkYKJMBEWHhq8LA==";
     };
     dependencies = [
       sources."@cspotcode/source-map-support-0.8.1"
@@ -2458,9 +2449,9 @@ in
       sources."@jridgewell/resolve-uri-3.1.2"
       sources."@jridgewell/sourcemap-codec-1.5.0"
       sources."@jridgewell/trace-mapping-0.3.9"
-      sources."@modelcontextprotocol/inspector-client-0.8.2"
+      sources."@modelcontextprotocol/inspector-client-0.9.0"
       (
-        sources."@modelcontextprotocol/inspector-server-0.8.2"
+        sources."@modelcontextprotocol/inspector-server-0.9.0"
         // {
           dependencies = [
             sources."accepts-1.3.8"
@@ -2556,7 +2547,6 @@ in
       sources."@tsconfig/node14-1.0.3"
       sources."@tsconfig/node16-1.0.4"
       sources."@types/node-22.14.1"
-      sources."@types/prismjs-1.26.5"
       sources."@types/react-19.1.2"
       sources."@types/react-dom-19.1.2"
       sources."accepts-2.0.0"
