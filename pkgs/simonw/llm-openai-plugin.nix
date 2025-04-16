@@ -8,14 +8,14 @@ python3Packages.buildPythonPackage rec {
   __structuredAttrs = true;
 
   pname = "llm-openai-plugin";
-  version = "0.2.1";
+  version = "0.3";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "simonw";
     repo = "llm-openai-plugin";
     tag = version;
-    hash = "sha256-enL30xEEw5P1WadYfepsYudrLDUFiMLreElleQoQ0ao=";
+    hash = "sha256-WpaxXJQXz9vkqtlQbi4NxLnX5j4UDLdQXwCEhDwkvm4=";
   };
 
   build-system = [
