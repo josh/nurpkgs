@@ -13,8 +13,8 @@ let
     src = fetchFromGitHub {
       owner = "cased";
       repo = "hubproxy";
-      rev = "7c2476faa6ca62888f9720b32b3acd33e5622490";
-      hash = "sha256-gl2gkQ7HFT+rZCIMciD8TfPwdf22bhByX1wcmZdB3Kc=";
+      rev = "fdf633ab493f7e8478b4f5e740b11091f7e935b6";
+      hash = "sha256-Kzj+4SGDpADwBL9SBOT1Kmu8aagRzPBB1fsSgI7jpyQ=";
     };
 
     vendorHash = "sha256-4mWu1OP1YxqeGNnjRe9W+T63ZAIh+p7xX7ICx5bAW0M=";
