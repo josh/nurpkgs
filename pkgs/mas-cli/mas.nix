@@ -1,6 +1,6 @@
 { fetchurl, mas }:
 mas.overrideAttrs (
-  finalAttrs: previousAttrs: {
+  finalAttrs: _previousAttrs: {
     version = "2.1.0";
     src = fetchurl {
       url = "https://github.com/mas-cli/mas/releases/download/v${finalAttrs.version}/mas-${finalAttrs.version}.pkg";
