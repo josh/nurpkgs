@@ -323,13 +323,13 @@ let
         sha512 = "/J/FhLdK0zVcILOwt5g+dH4KnkonCtkVJsa2G6JmvbbtZfBEI1gMsO3QMjseL4F/SwfAMt1Vc/0XKYKq+xJ1sw==";
       };
     };
-    "@radix-ui/react-roving-focus-1.1.6" = {
+    "@radix-ui/react-roving-focus-1.1.7" = {
       name = "_at_radix-ui_slash_react-roving-focus";
       packageName = "@radix-ui/react-roving-focus";
-      version = "1.1.6";
+      version = "1.1.7";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@radix-ui/react-roving-focus/-/react-roving-focus-1.1.6.tgz";
-        sha512 = "D2ReXCuIueKf5L2f1ks/wTj3bWck1SvK1pjLmEHPbwksS1nOHBsvgY0b9Hypt81FczqBqSyLHQxn/vbsQ0gDHw==";
+        url = "https://registry.npmjs.org/@radix-ui/react-roving-focus/-/react-roving-focus-1.1.7.tgz";
+        sha512 = "C6oAg451/fQT3EGbWHbCQjYTtbyjNO1uzQgMzwyivcHT3GKNEmu1q3UuREhN+HzHAVtv3ivMVK08QlC+PkYw9Q==";
       };
     };
     "@radix-ui/react-select-2.2.2" = {
@@ -350,13 +350,13 @@ let
         sha512 = "ujc+V6r0HNDviYqIK3rW4ffgYiZ8g5DEHrGJVk4x7kTlLXRDILnKX9vAUYeIsLOoDpDJ0ujpqMkjH4w2ofuo6w==";
       };
     };
-    "@radix-ui/react-tabs-1.1.7" = {
+    "@radix-ui/react-tabs-1.1.8" = {
       name = "_at_radix-ui_slash_react-tabs";
       packageName = "@radix-ui/react-tabs";
-      version = "1.1.7";
+      version = "1.1.8";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@radix-ui/react-tabs/-/react-tabs-1.1.7.tgz";
-        sha512 = "sawt4HkD+6haVGjYOC3BMIiCumBpqTK6o407n6zN/6yReed2EN7bXyykNrpqg+xCfudpBUZg7Y2cJBd/x/iybA==";
+        url = "https://registry.npmjs.org/@radix-ui/react-tabs/-/react-tabs-1.1.8.tgz";
+        sha512 = "4iUaN9SYtG+/E+hJ7jRks/Nv90f+uAsRHbLYA6BcA9EsR6GNWgsvtS4iwU2SP0tOZfDGAyqIT0yz7ckgohEIFA==";
       };
     };
     "@radix-ui/react-toast-1.2.10" = {
@@ -2255,10 +2255,10 @@ in
       sources."@radix-ui/react-portal-1.1.6"
       sources."@radix-ui/react-presence-1.1.3"
       sources."@radix-ui/react-primitive-2.1.0"
-      sources."@radix-ui/react-roving-focus-1.1.6"
+      sources."@radix-ui/react-roving-focus-1.1.7"
       sources."@radix-ui/react-select-2.2.2"
       sources."@radix-ui/react-slot-1.2.0"
-      sources."@radix-ui/react-tabs-1.1.7"
+      sources."@radix-ui/react-tabs-1.1.8"
       sources."@radix-ui/react-toast-1.2.10"
       sources."@radix-ui/react-tooltip-1.2.3"
       sources."@radix-ui/react-use-callback-ref-1.1.1"
