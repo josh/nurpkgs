@@ -17,6 +17,11 @@ python3Packages.buildPythonPackage rec {
     hash = "sha256-Y9nyYj6qGFnt/PlwAbiVV9zR4JthqKoxrSvNwBxzpds=";
   };
 
+  postPatch = ''
+    substituteInPlace pyproject.toml \
+      --replace-fail 'pydantic~=2.10.3' 'pydantic'
+  '';
+
   build-system = [
     python3Packages.hatchling
   ];
