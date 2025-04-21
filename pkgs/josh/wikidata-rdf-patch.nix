@@ -9,13 +9,13 @@
 let
   wikidata-rdf-patch = python3Packages.buildPythonApplication rec {
     pname = "wikidata-rdf-patch";
-    version = "0.1.1";
+    version = "0.1.2";
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "wikidata-rdf-patch";
       rev = "v${version}";
-      hash = "sha256-ol3hjD3er6XTuSIRk04DKNb+IU3S0ynOTC6yrTI7jDY=";
+      hash = "sha256-dAiMab3yzMiI/dacDn+wXjkUEU3oeYRczkgYjQJFZAE=";
     };
 
     pyproject = true;
