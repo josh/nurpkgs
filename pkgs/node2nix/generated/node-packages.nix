@@ -134,13 +134,13 @@ let
         sha512 = "slLdFaxQJ9AlRg+hw28iiTtGvShAOgOKXcD0F91nUcRYiOMuS9ZBYjcdNZRXW9G5JQ511GRTdUy1zQVZDpJ+4w==";
       };
     };
-    "@modelcontextprotocol/sdk-1.10.1" = {
+    "@modelcontextprotocol/sdk-1.10.2" = {
       name = "_at_modelcontextprotocol_slash_sdk";
       packageName = "@modelcontextprotocol/sdk";
-      version = "1.10.1";
+      version = "1.10.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.10.1.tgz";
-        sha512 = "xNYdFdkJqEfIaTVP1gPKoEvluACHZsHZegIoICX8DM1o6Qf3G5u2BQJHmgd0n4YgRPqqK/u1ujQvrgAxxSJT9w==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.10.2.tgz";
+        sha512 = "rb6AMp2DR4SN+kc6L1ta2NCpApyA9WYNx3CrTSZvGxq9wH71bRur+zRqPfg0vQ9mjywR7qZdX2RGHOPq3ss+tA==";
       };
     };
     "@radix-ui/number-1.1.1" = {
@@ -170,13 +170,13 @@ let
         sha512 = "qz+fxrqgNxG0dYew5l7qR3c7wdgRu1XVUHGnGYX7rg5HM4p9SWaRmJwfgR3J0SgyUKayLmzQIun+N6rWRgiRKw==";
       };
     };
-    "@radix-ui/react-checkbox-1.2.2" = {
+    "@radix-ui/react-checkbox-1.2.3" = {
       name = "_at_radix-ui_slash_react-checkbox";
       packageName = "@radix-ui/react-checkbox";
-      version = "1.2.2";
+      version = "1.2.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@radix-ui/react-checkbox/-/react-checkbox-1.2.2.tgz";
-        sha512 = "pMxzQLK+m/tkDRXJg7VUjRx6ozsBdzNLOV4vexfVBU57qT2Gvf4cw2gKKhOohJxjadQ+WcUXCKosTIxcZzi03A==";
+        url = "https://registry.npmjs.org/@radix-ui/react-checkbox/-/react-checkbox-1.2.3.tgz";
+        sha512 = "pHVzDYsnaDmBlAuwim45y3soIN8H4R7KbkSVirGhXO+R/kO2OLCe0eucUEbddaTcdMHHdzcIGHtZSMSQlA+apw==";
       };
     };
     "@radix-ui/react-collection-1.1.4" = {
@@ -206,13 +206,13 @@ let
         sha512 = "jCi/QKUM2r1Ju5a3J64TH2A5SpKAgh0LpknyqdQ4m6DCV0xJ2HG1xARRwNGPQfi1SLdLWZ1OJz6F4OMBBNiGJA==";
       };
     };
-    "@radix-ui/react-dialog-1.1.10" = {
+    "@radix-ui/react-dialog-1.1.11" = {
       name = "_at_radix-ui_slash_react-dialog";
       packageName = "@radix-ui/react-dialog";
-      version = "1.1.10";
+      version = "1.1.11";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@radix-ui/react-dialog/-/react-dialog-1.1.10.tgz";
-        sha512 = "m6pZb0gEM5uHPSb+i2nKKGQi/HMSVjARMsLMWQfKDP+eJ6B+uqryHnXhpnohTWElw+vEcMk/o4wJODtdRKHwqg==";
+        url = "https://registry.npmjs.org/@radix-ui/react-dialog/-/react-dialog-1.1.11.tgz";
+        sha512 = "yI7S1ipkP5/+99qhSI6nthfo/tR6bL6Zgxi/+1UO6qPa6UeM6nlafWcQ65vB4rU2XjgjMfMhI3k9Y5MztA62VQ==";
       };
     };
     "@radix-ui/react-direction-1.1.1" = {
@@ -278,13 +278,13 @@ let
         sha512 = "wy3dqizZnZVV4ja0FNnUhIWNwWdoldXrneEyUcVtLYDAt8ovGS4ridtMAOGgXBBIfggL4BOveVWsjXDORdGEQg==";
       };
     };
-    "@radix-ui/react-popover-1.1.10" = {
+    "@radix-ui/react-popover-1.1.11" = {
       name = "_at_radix-ui_slash_react-popover";
       packageName = "@radix-ui/react-popover";
-      version = "1.1.10";
+      version = "1.1.11";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@radix-ui/react-popover/-/react-popover-1.1.10.tgz";
-        sha512 = "IZN7b3sXqajiPsOzKuNJBSP9obF4MX5/5UhTgWNofw4r1H+eATWb0SyMlaxPD/kzA4vadFgy1s7Z1AEJ6WMyHQ==";
+        url = "https://registry.npmjs.org/@radix-ui/react-popover/-/react-popover-1.1.11.tgz";
+        sha512 = "yFMfZkVA5G3GJnBgb2PxrrcLKm1ZLWXrbYVgdyTl//0TYEIHS9LJbnyz7WWcZ0qCq7hIlJZpRtxeSeIG5T5oJw==";
       };
     };
     "@radix-ui/react-popper-1.2.4" = {
@@ -305,13 +305,13 @@ let
         sha512 = "XmsIl2z1n/TsYFLIdYam2rmFwf9OC/Sh2avkbmVMDuBZIe7hSpM0cYnWPAo7nHOVx8zTuwDZGByfcqLdnzp3Vw==";
       };
     };
-    "@radix-ui/react-presence-1.1.3" = {
+    "@radix-ui/react-presence-1.1.4" = {
       name = "_at_radix-ui_slash_react-presence";
       packageName = "@radix-ui/react-presence";
-      version = "1.1.3";
+      version = "1.1.4";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@radix-ui/react-presence/-/react-presence-1.1.3.tgz";
-        sha512 = "IrVLIhskYhH3nLvtcBLQFZr61tBG7wx7O3kEmdzcYwRGAEBmBicGGL7ATzNgruYJ3xBTbuzEEq9OXJM3PAX3tA==";
+        url = "https://registry.npmjs.org/@radix-ui/react-presence/-/react-presence-1.1.4.tgz";
+        sha512 = "ueDqRbdc4/bkaQT3GIpLQssRlFgWaL/U2z/S31qRwwLWoxHLgry3SIfCwhxeQNbirEUXFa+lq3RL3oBYXtcmIA==";
       };
     };
     "@radix-ui/react-primitive-2.1.0" = {
@@ -350,31 +350,31 @@ let
         sha512 = "ujc+V6r0HNDviYqIK3rW4ffgYiZ8g5DEHrGJVk4x7kTlLXRDILnKX9vAUYeIsLOoDpDJ0ujpqMkjH4w2ofuo6w==";
       };
     };
-    "@radix-ui/react-tabs-1.1.8" = {
+    "@radix-ui/react-tabs-1.1.9" = {
       name = "_at_radix-ui_slash_react-tabs";
       packageName = "@radix-ui/react-tabs";
-      version = "1.1.8";
+      version = "1.1.9";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@radix-ui/react-tabs/-/react-tabs-1.1.8.tgz";
-        sha512 = "4iUaN9SYtG+/E+hJ7jRks/Nv90f+uAsRHbLYA6BcA9EsR6GNWgsvtS4iwU2SP0tOZfDGAyqIT0yz7ckgohEIFA==";
+        url = "https://registry.npmjs.org/@radix-ui/react-tabs/-/react-tabs-1.1.9.tgz";
+        sha512 = "KIjtwciYvquiW/wAFkELZCVnaNLBsYNhTNcvl+zfMAbMhRkcvNuCLXDDd22L0j7tagpzVh/QwbFpwAATg7ILPw==";
       };
     };
-    "@radix-ui/react-toast-1.2.10" = {
+    "@radix-ui/react-toast-1.2.11" = {
       name = "_at_radix-ui_slash_react-toast";
       packageName = "@radix-ui/react-toast";
-      version = "1.2.10";
+      version = "1.2.11";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@radix-ui/react-toast/-/react-toast-1.2.10.tgz";
-        sha512 = "lVe1mQL8Di8KPQp62CDaLgttqyUGTchPuwDiCnaZz40HGxngJKB/fOJCHYxHZh2p1BtcuiPOYOKrxTVEmrnV5A==";
+        url = "https://registry.npmjs.org/@radix-ui/react-toast/-/react-toast-1.2.11.tgz";
+        sha512 = "Ed2mlOmT+tktOsu2NZBK1bCSHh/uqULu1vWOkpQTVq53EoOuZUZw7FInQoDB3uil5wZc2oe0XN9a7uVZB7/6AQ==";
       };
     };
-    "@radix-ui/react-tooltip-1.2.3" = {
+    "@radix-ui/react-tooltip-1.2.4" = {
       name = "_at_radix-ui_slash_react-tooltip";
       packageName = "@radix-ui/react-tooltip";
-      version = "1.2.3";
+      version = "1.2.4";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@radix-ui/react-tooltip/-/react-tooltip-1.2.3.tgz";
-        sha512 = "0KX7jUYFA02np01Y11NWkk6Ip6TqMNmD4ijLelYAzeIndl2aVeltjJFJ2gwjNa1P8U/dgjQ+8cr9Y3Ni+ZNoRA==";
+        url = "https://registry.npmjs.org/@radix-ui/react-tooltip/-/react-tooltip-1.2.4.tgz";
+        sha512 = "DyW8VVeeMSSLFvAmnVnCwvI3H+1tpJFHT50r+tdOoMse9XqYDBCcyux8u3G2y+LOpt7fPQ6KKH0mhs+ce1+Z5w==";
       };
     };
     "@radix-ui/react-use-callback-ref-1.1.1" = {
@@ -2228,7 +2228,7 @@ in
       sources."@modelcontextprotocol/inspector-client-0.10.2"
       sources."@modelcontextprotocol/inspector-server-0.10.2"
       (
-        sources."@modelcontextprotocol/sdk-1.10.1"
+        sources."@modelcontextprotocol/sdk-1.10.2"
         // {
           dependencies = [
             sources."pkce-challenge-5.0.0"
@@ -2238,11 +2238,11 @@ in
       sources."@radix-ui/number-1.1.1"
       sources."@radix-ui/primitive-1.1.2"
       sources."@radix-ui/react-arrow-1.1.4"
-      sources."@radix-ui/react-checkbox-1.2.2"
+      sources."@radix-ui/react-checkbox-1.2.3"
       sources."@radix-ui/react-collection-1.1.4"
       sources."@radix-ui/react-compose-refs-1.1.2"
       sources."@radix-ui/react-context-1.1.2"
-      sources."@radix-ui/react-dialog-1.1.10"
+      sources."@radix-ui/react-dialog-1.1.11"
       sources."@radix-ui/react-direction-1.1.1"
       sources."@radix-ui/react-dismissable-layer-1.1.7"
       sources."@radix-ui/react-focus-guards-1.1.2"
@@ -2250,17 +2250,17 @@ in
       sources."@radix-ui/react-icons-1.3.2"
       sources."@radix-ui/react-id-1.1.1"
       sources."@radix-ui/react-label-2.1.4"
-      sources."@radix-ui/react-popover-1.1.10"
+      sources."@radix-ui/react-popover-1.1.11"
       sources."@radix-ui/react-popper-1.2.4"
       sources."@radix-ui/react-portal-1.1.6"
-      sources."@radix-ui/react-presence-1.1.3"
+      sources."@radix-ui/react-presence-1.1.4"
       sources."@radix-ui/react-primitive-2.1.0"
       sources."@radix-ui/react-roving-focus-1.1.7"
       sources."@radix-ui/react-select-2.2.2"
       sources."@radix-ui/react-slot-1.2.0"
-      sources."@radix-ui/react-tabs-1.1.8"
-      sources."@radix-ui/react-toast-1.2.10"
-      sources."@radix-ui/react-tooltip-1.2.3"
+      sources."@radix-ui/react-tabs-1.1.9"
+      sources."@radix-ui/react-toast-1.2.11"
+      sources."@radix-ui/react-tooltip-1.2.4"
       sources."@radix-ui/react-use-callback-ref-1.1.1"
       sources."@radix-ui/react-use-controllable-state-1.2.2"
       sources."@radix-ui/react-use-effect-event-0.0.2"
