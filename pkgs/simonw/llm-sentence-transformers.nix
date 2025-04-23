@@ -8,14 +8,14 @@ python3Packages.buildPythonPackage rec {
   __structuredAttrs = true;
 
   pname = "llm-sentence-transformers";
-  version = "0.3.1";
+  version = "0.3.2";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "simonw";
     repo = "llm-sentence-transformers";
     tag = version;
-    hash = "sha256-kW03agLbe0qzcC3JGMbapxUJgJIptYgBigGyRdzV7wI=";
+    hash = "sha256-FDDMItKFEYEptiL3EHKgKVxClqRU9RaM3uD3xP0F4OM=";
   };
 
   build-system = [
