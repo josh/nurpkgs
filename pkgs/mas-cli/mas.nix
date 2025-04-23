@@ -1,4 +1,5 @@
 { fetchurl, mas }:
+assert mas.version != "2.1.0";
 mas.overrideAttrs (
   finalAttrs: _previousAttrs: {
     version = "2.1.0";
