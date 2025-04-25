@@ -548,13 +548,13 @@ let
         sha512 = "vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==";
       };
     };
-    "@types/node-22.14.1" = {
+    "@types/node-22.15.2" = {
       name = "_at_types_slash_node";
       packageName = "@types/node";
-      version = "22.14.1";
+      version = "22.15.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/node/-/node-22.14.1.tgz";
-        sha512 = "u0HuPQwe/dHrItgHHpmw3N2fYCR6x4ivMNbPHRkBVP4CvN+kiRrKHWk3i8tXiO/joPwXLMYvF9TTF0eqgHIuOw==";
+        url = "https://registry.npmjs.org/@types/node/-/node-22.15.2.tgz";
+        sha512 = "uKXqKN9beGoMdBfcaTY1ecwz6ctxuJAcUlwE55938g0ZJ8lRxwAZqRz2AJ4pzpt5dHdTPMB863UZ0ESiFUcP7A==";
       };
     };
     "@types/react-19.1.2" = {
@@ -2280,7 +2280,7 @@ in
       sources."@tsconfig/node12-1.0.11"
       sources."@tsconfig/node14-1.0.3"
       sources."@tsconfig/node16-1.0.4"
-      sources."@types/node-22.14.1"
+      sources."@types/node-22.15.2"
       sources."@types/react-19.1.2"
       sources."@types/react-dom-19.1.2"
       (
@@ -2610,10 +2610,10 @@ in
   "@modelcontextprotocol/server-memory" = nodeEnv.buildNodePackage {
     name = "_at_modelcontextprotocol_slash_server-memory";
     packageName = "@modelcontextprotocol/server-memory";
-    version = "0.6.2";
+    version = "2025.4.25";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@modelcontextprotocol/server-memory/-/server-memory-0.6.2.tgz";
-      sha512 = "vPxBic0DCWqyuxTwhD60dIGiukarx4HemjG/baiuI7ZOgPfG/6VYQ/QCXKUJbSO9/4RFtSFwzow8hgBMCl8mgQ==";
+      url = "https://registry.npmjs.org/@modelcontextprotocol/server-memory/-/server-memory-2025.4.25.tgz";
+      sha512 = "n6qZVRj3uHpysZVn3Q0IKqIPwQkVZVkcIfE65WRJkiSG4/Xli1xaVh+qOH4duXGC4a9I82391jsl9OdeQFlZuA==";
     };
     dependencies = [
       sources."@modelcontextprotocol/sdk-1.0.1"
