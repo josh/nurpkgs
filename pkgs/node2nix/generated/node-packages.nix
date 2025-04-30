@@ -566,13 +566,13 @@ let
         sha512 = "oxLPMytKchWGbnQM9O7D67uPa9paTNxO7jVoNMXgkkErULBPhPARCfkKL9ytcIJJRGjbsVwW4ugJzyFFvm/Tiw==";
       };
     };
-    "@types/react-dom-19.1.2" = {
+    "@types/react-dom-19.1.3" = {
       name = "_at_types_slash_react-dom";
       packageName = "@types/react-dom";
-      version = "19.1.2";
+      version = "19.1.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/react-dom/-/react-dom-19.1.2.tgz";
-        sha512 = "XGJkWF41Qq305SKWEILa1O8vzhb3aOo3ogBlSmiqNko/WmRb6QIaweuZCXjKygVDXpzXb5wyxKTSOsmkuqj+Qw==";
+        url = "https://registry.npmjs.org/@types/react-dom/-/react-dom-19.1.3.tgz";
+        sha512 = "rJXC08OG0h3W6wDMFxQrZF00Kq6qQvw0djHRdzl3U5DnIERz0MRce3WVc7IS6JYBwtaP/DwYtRRjVlvivNveKg==";
       };
     };
     "accepts-2.0.0" = {
@@ -1961,13 +1961,13 @@ let
         sha512 = "P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==";
       };
     };
-    "tailwindcss-4.1.4" = {
+    "tailwindcss-4.1.5" = {
       name = "tailwindcss";
       packageName = "tailwindcss";
-      version = "4.1.4";
+      version = "4.1.5";
       src = fetchurl {
-        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.4.tgz";
-        sha512 = "1ZIUqtPITFbv/DxRmDr5/agPqJwF69d24m9qmM1939TJehgY539CtzeZRjbLt5G6fSy/7YqqYsfvoTEw9xUI2A==";
+        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.5.tgz";
+        sha512 = "nYtSPfWGDiWgCkwQG/m+aX83XCwf62sBgg3bIlNiiOcggnS1x3uVRDAuyelBFL+vJdOPPCGElxv9DjHJjRHiVA==";
       };
     };
     "tailwindcss-animate-1.0.7" = {
@@ -2282,7 +2282,7 @@ in
       sources."@tsconfig/node16-1.0.4"
       sources."@types/node-22.15.3"
       sources."@types/react-19.1.2"
-      sources."@types/react-dom-19.1.2"
+      sources."@types/react-dom-19.1.3"
       (
         sources."accepts-2.0.0"
         // {
@@ -2464,7 +2464,7 @@ in
       sources."strip-ansi-6.0.1"
       sources."supports-color-8.1.1"
       sources."tailwind-merge-2.6.0"
-      sources."tailwindcss-4.1.4"
+      sources."tailwindcss-4.1.5"
       sources."tailwindcss-animate-1.0.7"
       sources."toidentifier-1.0.1"
       sources."tree-kill-1.2.2"
