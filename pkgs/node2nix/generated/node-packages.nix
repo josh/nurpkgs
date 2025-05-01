@@ -89,31 +89,31 @@ let
         sha512 = "3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==";
       };
     };
-    "@modelcontextprotocol/inspector-cli-0.10.2" = {
+    "@modelcontextprotocol/inspector-cli-0.11.0" = {
       name = "_at_modelcontextprotocol_slash_inspector-cli";
       packageName = "@modelcontextprotocol/inspector-cli";
-      version = "0.10.2";
+      version = "0.11.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-cli/-/inspector-cli-0.10.2.tgz";
-        sha512 = "PE5U1py8lj2TjgB705H6ENl/khQAjEskQ+HzfqGhYZ2xXO9DC7meJahbxa8NyEh5vLXweKc0Inj3tLtGpL88uQ==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-cli/-/inspector-cli-0.11.0.tgz";
+        sha512 = "ptf7JyotRHFjNTdCPPqiErNaV/hx4BylyyP4p+EUpHm5PR0V3VZyTWP4/X2zegd6vbq3x5VQq9iyNacA9Cd4xg==";
       };
     };
-    "@modelcontextprotocol/inspector-client-0.10.2" = {
+    "@modelcontextprotocol/inspector-client-0.11.0" = {
       name = "_at_modelcontextprotocol_slash_inspector-client";
       packageName = "@modelcontextprotocol/inspector-client";
-      version = "0.10.2";
+      version = "0.11.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-client/-/inspector-client-0.10.2.tgz";
-        sha512 = "gZfdkhtLEVjQslzKyyxTppm4iV2psuw6hkTtx+RULEopj+0dwE3mX4Ddl4uGcrz6eNv0bj/u7DE6azISIHSGXA==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-client/-/inspector-client-0.11.0.tgz";
+        sha512 = "vBMslBlHmN846rmUx+TugcRqQ2R6wIDjJDx7XIWNE9ZAl16s4qJL7TE3r4ws5lqQYe8mIPQWbz+SwM7X1htxCQ==";
       };
     };
-    "@modelcontextprotocol/inspector-server-0.10.2" = {
+    "@modelcontextprotocol/inspector-server-0.11.0" = {
       name = "_at_modelcontextprotocol_slash_inspector-server";
       packageName = "@modelcontextprotocol/inspector-server";
-      version = "0.10.2";
+      version = "0.11.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-server/-/inspector-server-0.10.2.tgz";
-        sha512 = "VXXMIdOlzyZ0eGG22glkfMH1cWOoHqrgEN6QvFaleXvRSaCp5WVe3M2gLXOyHRFVHimrDWKsGB0NjeXxb6xYuw==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-server/-/inspector-server-0.11.0.tgz";
+        sha512 = "r+XdRxlL+ymeOLWFu/NsNNqPXz5sLGCMBrTUA/ihoYXOErL1/NFHqpmzUZ7xAvqAAw5ipm0kmXu6mMtMgaRiGw==";
       };
     };
     "@modelcontextprotocol/sdk-0.5.0" = {
@@ -134,13 +134,13 @@ let
         sha512 = "slLdFaxQJ9AlRg+hw28iiTtGvShAOgOKXcD0F91nUcRYiOMuS9ZBYjcdNZRXW9G5JQ511GRTdUy1zQVZDpJ+4w==";
       };
     };
-    "@modelcontextprotocol/sdk-1.10.2" = {
+    "@modelcontextprotocol/sdk-1.11.0" = {
       name = "_at_modelcontextprotocol_slash_sdk";
       packageName = "@modelcontextprotocol/sdk";
-      version = "1.10.2";
+      version = "1.11.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.10.2.tgz";
-        sha512 = "rb6AMp2DR4SN+kc6L1ta2NCpApyA9WYNx3CrTSZvGxq9wH71bRur+zRqPfg0vQ9mjywR7qZdX2RGHOPq3ss+tA==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.11.0.tgz";
+        sha512 = "k/1pb70eD638anoi0e8wUGAlbMJXyvdV4p62Ko+EZ7eBe1xMx8Uhak1R5DgfoofsK5IBBnRwsYGTaLZl+6/+RQ==";
       };
     };
     "@radix-ui/number-1.1.1" = {
@@ -2210,10 +2210,10 @@ in
   "@modelcontextprotocol/inspector" = nodeEnv.buildNodePackage {
     name = "_at_modelcontextprotocol_slash_inspector";
     packageName = "@modelcontextprotocol/inspector";
-    version = "0.10.2";
+    version = "0.11.0";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-0.10.2.tgz";
-      sha512 = "P/ag1MJz7mdOpmlE5OUozehzw0AYDi1cuXUctcPBpNvbufpnmmIwpD79I0lN41ydH1vnH4c8MTork75KWmP/hQ==";
+      url = "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-0.11.0.tgz";
+      sha512 = "84du4k3WIQUh9WwIkqN9LQZ90QXii2pJQeoTlT21ctgmEHckf/7n1AP3bNG393Y36i3Nunhcxahz6Cre4jXZKQ==";
     };
     dependencies = [
       sources."@cspotcode/source-map-support-0.8.1"
@@ -2224,11 +2224,11 @@ in
       sources."@jridgewell/resolve-uri-3.1.2"
       sources."@jridgewell/sourcemap-codec-1.5.0"
       sources."@jridgewell/trace-mapping-0.3.9"
-      sources."@modelcontextprotocol/inspector-cli-0.10.2"
-      sources."@modelcontextprotocol/inspector-client-0.10.2"
-      sources."@modelcontextprotocol/inspector-server-0.10.2"
+      sources."@modelcontextprotocol/inspector-cli-0.11.0"
+      sources."@modelcontextprotocol/inspector-client-0.11.0"
+      sources."@modelcontextprotocol/inspector-server-0.11.0"
       (
-        sources."@modelcontextprotocol/sdk-1.10.2"
+        sources."@modelcontextprotocol/sdk-1.11.0"
         // {
           dependencies = [
             sources."pkce-challenge-5.0.0"
