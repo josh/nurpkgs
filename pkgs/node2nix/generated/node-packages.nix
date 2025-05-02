@@ -17,22 +17,22 @@ let
         sha512 = "IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==";
       };
     };
-    "@floating-ui/core-1.6.9" = {
+    "@floating-ui/core-1.7.0" = {
       name = "_at_floating-ui_slash_core";
       packageName = "@floating-ui/core";
-      version = "1.6.9";
+      version = "1.7.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@floating-ui/core/-/core-1.6.9.tgz";
-        sha512 = "uMXCuQ3BItDUbAMhIXw7UPXRfAlOAvZzdK9BWpE60MCn+Svt3aLn9jsPTi/WNGlRUu2uI0v5S7JiIUsbsvh3fw==";
+        url = "https://registry.npmjs.org/@floating-ui/core/-/core-1.7.0.tgz";
+        sha512 = "FRdBLykrPPA6P76GGGqlex/e7fbe0F1ykgxHYNXQsH/iTEtjMj/f9bpY5oQqbjt5VgZvgz/uKXbGuROijh3VLA==";
       };
     };
-    "@floating-ui/dom-1.6.13" = {
+    "@floating-ui/dom-1.7.0" = {
       name = "_at_floating-ui_slash_dom";
       packageName = "@floating-ui/dom";
-      version = "1.6.13";
+      version = "1.7.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@floating-ui/dom/-/dom-1.6.13.tgz";
-        sha512 = "umqzocjDgNRGTuO7Q8CU32dkHkECqI8ZdMZ5Swb6QAM0t5rnlrN3lGo1hdpscRd3WS8T6DKYK4ephgIH9iRh3w==";
+        url = "https://registry.npmjs.org/@floating-ui/dom/-/dom-1.7.0.tgz";
+        sha512 = "lGTor4VlXcesUMh1cupTUTDoCxMb0V6bm3CnxHzQcw8Eaf1jQbgQX4i02fYgT0vJ82tb5MZ4CZk1LRGkktJCzg==";
       };
     };
     "@floating-ui/react-dom-2.1.2" = {
@@ -2217,8 +2217,8 @@ in
     };
     dependencies = [
       sources."@cspotcode/source-map-support-0.8.1"
-      sources."@floating-ui/core-1.6.9"
-      sources."@floating-ui/dom-1.6.13"
+      sources."@floating-ui/core-1.7.0"
+      sources."@floating-ui/dom-1.7.0"
       sources."@floating-ui/react-dom-2.1.2"
       sources."@floating-ui/utils-0.2.9"
       sources."@jridgewell/resolve-uri-3.1.2"
