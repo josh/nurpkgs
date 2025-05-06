@@ -13,8 +13,8 @@ let
     src = fetchFromGitHub {
       owner = "josh";
       repo = "trakt-data";
-      rev = "1bb4d3a5c09645e784b2ddfe284af71aa1fa5bcb";
-      hash = "sha256-ajpuiT0V5s8PUwvIXZVeXnMFPnIpvdqd3CSslzZQCxE=";
+      rev = "118230abde953f30dfaa6fc9c5856f633ab2de28";
+      hash = "sha256-zPWlqQ2PYsf226F9I/iUWULM2kyFOtGPNnFV+UexjA0=";
     };
 
     pyproject = true;
