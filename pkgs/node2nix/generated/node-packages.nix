@@ -134,13 +134,13 @@ let
         sha512 = "slLdFaxQJ9AlRg+hw28iiTtGvShAOgOKXcD0F91nUcRYiOMuS9ZBYjcdNZRXW9G5JQ511GRTdUy1zQVZDpJ+4w==";
       };
     };
-    "@modelcontextprotocol/sdk-1.11.0" = {
+    "@modelcontextprotocol/sdk-1.11.1" = {
       name = "_at_modelcontextprotocol_slash_sdk";
       packageName = "@modelcontextprotocol/sdk";
-      version = "1.11.0";
+      version = "1.11.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.11.0.tgz";
-        sha512 = "k/1pb70eD638anoi0e8wUGAlbMJXyvdV4p62Ko+EZ7eBe1xMx8Uhak1R5DgfoofsK5IBBnRwsYGTaLZl+6/+RQ==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.11.1.tgz";
+        sha512 = "9LfmxKTb1v+vUS1/emSk1f5ePmTLkb9Le9AxOB5T0XM59EUumwcS45z05h7aiZx3GI0Bl7mjb3FMEglYj+acuQ==";
       };
     };
     "@radix-ui/number-1.1.1" = {
@@ -548,13 +548,13 @@ let
         sha512 = "vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==";
       };
     };
-    "@types/node-22.15.15" = {
+    "@types/node-22.15.17" = {
       name = "_at_types_slash_node";
       packageName = "@types/node";
-      version = "22.15.15";
+      version = "22.15.17";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/node/-/node-22.15.15.tgz";
-        sha512 = "R5muMcZob3/Jjchn5LcO8jdKwSCbzqmPB6ruBxMcf9kbxtniZHP327s6C37iOfuw8mbKK3cAQa7sEl7afLrQ8A==";
+        url = "https://registry.npmjs.org/@types/node/-/node-22.15.17.tgz";
+        sha512 = "wIX2aSZL5FE+MR0JlvF87BNVrtFWf6AE6rxSE9X7OwnVvoyCQjpzSRJ+M87se/4QCkCiebQAqrJ0y6fwIyi7nw==";
       };
     };
     "@types/react-19.1.3" = {
@@ -2228,7 +2228,7 @@ in
       sources."@modelcontextprotocol/inspector-client-0.11.0"
       sources."@modelcontextprotocol/inspector-server-0.11.0"
       (
-        sources."@modelcontextprotocol/sdk-1.11.0"
+        sources."@modelcontextprotocol/sdk-1.11.1"
         // {
           dependencies = [
             sources."pkce-challenge-5.0.0"
@@ -2280,7 +2280,7 @@ in
       sources."@tsconfig/node12-1.0.11"
       sources."@tsconfig/node14-1.0.3"
       sources."@tsconfig/node16-1.0.4"
-      sources."@types/node-22.15.15"
+      sources."@types/node-22.15.17"
       sources."@types/react-19.1.3"
       sources."@types/react-dom-19.1.3"
       (
