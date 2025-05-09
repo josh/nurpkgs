@@ -1061,13 +1061,13 @@ let
         sha512 = "aIL5Fx7mawVa300al2BnEE4iNvo1qETxLrPI/o05L7z6go7fCw1J6EQmbK4FmJ2AS7kgVF/KEZWufBfdClMcPg==";
       };
     };
-    "eventsource-3.0.6" = {
+    "eventsource-3.0.7" = {
       name = "eventsource";
       packageName = "eventsource";
-      version = "3.0.6";
+      version = "3.0.7";
       src = fetchurl {
-        url = "https://registry.npmjs.org/eventsource/-/eventsource-3.0.6.tgz";
-        sha512 = "l19WpE2m9hSuyP06+FbuUUf1G+R0SFLrtQfbRb9PRr+oimOfxQhgGCbVaXg5IvZyyTThJsxh6L/srkMiCeBPDA==";
+        url = "https://registry.npmjs.org/eventsource/-/eventsource-3.0.7.tgz";
+        sha512 = "CRT1WTyuQoD771GW56XEZFQ/ZoSfWid1alKGDYMmkt2yl8UXrVR4pspqWNEcqKvVIzg6PAltWjxcSSPrboA4iA==";
       };
     };
     "eventsource-parser-3.0.1" = {
@@ -1961,13 +1961,13 @@ let
         sha512 = "P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==";
       };
     };
-    "tailwindcss-4.1.5" = {
+    "tailwindcss-4.1.6" = {
       name = "tailwindcss";
       packageName = "tailwindcss";
-      version = "4.1.5";
+      version = "4.1.6";
       src = fetchurl {
-        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.5.tgz";
-        sha512 = "nYtSPfWGDiWgCkwQG/m+aX83XCwf62sBgg3bIlNiiOcggnS1x3uVRDAuyelBFL+vJdOPPCGElxv9DjHJjRHiVA==";
+        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.6.tgz";
+        sha512 = "j0cGLTreM6u4OWzBeLBpycK0WIh8w7kSwcUsQZoGLHZ7xDTdM69lN64AgoIEEwFi0tnhs4wSykUa5YWxAzgFYg==";
       };
     };
     "tailwindcss-animate-1.0.7" = {
@@ -2351,7 +2351,7 @@ in
       sources."escalade-3.2.0"
       sources."escape-html-1.0.3"
       sources."etag-1.8.1"
-      sources."eventsource-3.0.6"
+      sources."eventsource-3.0.7"
       sources."eventsource-parser-3.0.1"
       (
         sources."express-5.1.0"
@@ -2464,7 +2464,7 @@ in
       sources."strip-ansi-6.0.1"
       sources."supports-color-8.1.1"
       sources."tailwind-merge-2.6.0"
-      sources."tailwindcss-4.1.5"
+      sources."tailwindcss-4.1.6"
       sources."tailwindcss-animate-1.0.7"
       sources."toidentifier-1.0.1"
       sources."tree-kill-1.2.2"
