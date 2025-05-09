@@ -9,7 +9,7 @@
 let
   defuddle = buildNpmPackage {
     pname = "defuddle";
-    version = "0.6.2";
+    version = "0.6.3";
 
     src = fetchFromGitHub {
       owner = "kepano";
