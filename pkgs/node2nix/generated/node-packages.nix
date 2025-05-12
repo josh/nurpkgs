@@ -134,13 +134,13 @@ let
         sha512 = "slLdFaxQJ9AlRg+hw28iiTtGvShAOgOKXcD0F91nUcRYiOMuS9ZBYjcdNZRXW9G5JQ511GRTdUy1zQVZDpJ+4w==";
       };
     };
-    "@modelcontextprotocol/sdk-1.11.1" = {
+    "@modelcontextprotocol/sdk-1.11.2" = {
       name = "_at_modelcontextprotocol_slash_sdk";
       packageName = "@modelcontextprotocol/sdk";
-      version = "1.11.1";
+      version = "1.11.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.11.1.tgz";
-        sha512 = "9LfmxKTb1v+vUS1/emSk1f5ePmTLkb9Le9AxOB5T0XM59EUumwcS45z05h7aiZx3GI0Bl7mjb3FMEglYj+acuQ==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.11.2.tgz";
+        sha512 = "H9vwztj5OAqHg9GockCQC06k1natgcxWQSRpQcPJf6i5+MWBzfKkRtxGbjQf0X2ihii0ffLZCRGbYV2f2bjNCQ==";
       };
     };
     "@radix-ui/number-1.1.1" = {
@@ -566,13 +566,13 @@ let
         sha512 = "dLWQ+Z0CkIvK1J8+wrDPwGxEYFA4RAyHoZPxHVGspYmFVnwGSNT24cGIhFJrtfRnWVuW8X7NO52gCXmhkVUWGQ==";
       };
     };
-    "@types/react-dom-19.1.3" = {
+    "@types/react-dom-19.1.4" = {
       name = "_at_types_slash_react-dom";
       packageName = "@types/react-dom";
-      version = "19.1.3";
+      version = "19.1.4";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/react-dom/-/react-dom-19.1.3.tgz";
-        sha512 = "rJXC08OG0h3W6wDMFxQrZF00Kq6qQvw0djHRdzl3U5DnIERz0MRce3WVc7IS6JYBwtaP/DwYtRRjVlvivNveKg==";
+        url = "https://registry.npmjs.org/@types/react-dom/-/react-dom-19.1.4.tgz";
+        sha512 = "WxYAszDYgsMV31OVyoG4jbAgJI1Gw0Xq9V19zwhy6+hUUJlJIdZ3r/cbdmTqFv++SktQkZ/X+46yGFxp5XJBEg==";
       };
     };
     "accepts-2.0.0" = {
@@ -2228,7 +2228,7 @@ in
       sources."@modelcontextprotocol/inspector-client-0.11.0"
       sources."@modelcontextprotocol/inspector-server-0.11.0"
       (
-        sources."@modelcontextprotocol/sdk-1.11.1"
+        sources."@modelcontextprotocol/sdk-1.11.2"
         // {
           dependencies = [
             sources."pkce-challenge-5.0.0"
@@ -2282,7 +2282,7 @@ in
       sources."@tsconfig/node16-1.0.4"
       sources."@types/node-22.15.17"
       sources."@types/react-19.1.3"
-      sources."@types/react-dom-19.1.3"
+      sources."@types/react-dom-19.1.4"
       (
         sources."accepts-2.0.0"
         // {
