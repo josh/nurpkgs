@@ -89,31 +89,31 @@ let
         sha512 = "3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==";
       };
     };
-    "@modelcontextprotocol/inspector-cli-0.11.0" = {
+    "@modelcontextprotocol/inspector-cli-0.12.0" = {
       name = "_at_modelcontextprotocol_slash_inspector-cli";
       packageName = "@modelcontextprotocol/inspector-cli";
-      version = "0.11.0";
+      version = "0.12.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-cli/-/inspector-cli-0.11.0.tgz";
-        sha512 = "ptf7JyotRHFjNTdCPPqiErNaV/hx4BylyyP4p+EUpHm5PR0V3VZyTWP4/X2zegd6vbq3x5VQq9iyNacA9Cd4xg==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-cli/-/inspector-cli-0.12.0.tgz";
+        sha512 = "0sMKYqn2Dp3RwJPz/Ukz4FhRN8JNNTniCyOuzuCnb2r5ogLvi6eBaU0CQa2SnE33fFH9HFSOLSI3nHg7SzRJcQ==";
       };
     };
-    "@modelcontextprotocol/inspector-client-0.11.0" = {
+    "@modelcontextprotocol/inspector-client-0.12.0" = {
       name = "_at_modelcontextprotocol_slash_inspector-client";
       packageName = "@modelcontextprotocol/inspector-client";
-      version = "0.11.0";
+      version = "0.12.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-client/-/inspector-client-0.11.0.tgz";
-        sha512 = "vBMslBlHmN846rmUx+TugcRqQ2R6wIDjJDx7XIWNE9ZAl16s4qJL7TE3r4ws5lqQYe8mIPQWbz+SwM7X1htxCQ==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-client/-/inspector-client-0.12.0.tgz";
+        sha512 = "JJ6R6aXTNlhw1JxbURjP7vfS6EvR4d55qT2BAyyvIXO2Q54EhTsClusY99cEymegYuIbhQBd/jHNwgerdpLKow==";
       };
     };
-    "@modelcontextprotocol/inspector-server-0.11.0" = {
+    "@modelcontextprotocol/inspector-server-0.12.0" = {
       name = "_at_modelcontextprotocol_slash_inspector-server";
       packageName = "@modelcontextprotocol/inspector-server";
-      version = "0.11.0";
+      version = "0.12.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-server/-/inspector-server-0.11.0.tgz";
-        sha512 = "r+XdRxlL+ymeOLWFu/NsNNqPXz5sLGCMBrTUA/ihoYXOErL1/NFHqpmzUZ7xAvqAAw5ipm0kmXu6mMtMgaRiGw==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-server/-/inspector-server-0.12.0.tgz";
+        sha512 = "DEnfWwZFGJgXH5DoBaKPK92xfPtUtdM/dpWPuoMVXPln0KwCoIQnMP9aDo0tiWoNP+b6AjxHLTDn4zATtWx0WA==";
       };
     };
     "@modelcontextprotocol/sdk-0.5.0" = {
@@ -557,22 +557,22 @@ let
         sha512 = "wIX2aSZL5FE+MR0JlvF87BNVrtFWf6AE6rxSE9X7OwnVvoyCQjpzSRJ+M87se/4QCkCiebQAqrJ0y6fwIyi7nw==";
       };
     };
-    "@types/react-19.1.3" = {
+    "@types/react-19.1.4" = {
       name = "_at_types_slash_react";
       packageName = "@types/react";
-      version = "19.1.3";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/@types/react/-/react-19.1.3.tgz";
-        sha512 = "dLWQ+Z0CkIvK1J8+wrDPwGxEYFA4RAyHoZPxHVGspYmFVnwGSNT24cGIhFJrtfRnWVuW8X7NO52gCXmhkVUWGQ==";
-      };
-    };
-    "@types/react-dom-19.1.4" = {
-      name = "_at_types_slash_react-dom";
-      packageName = "@types/react-dom";
       version = "19.1.4";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/react-dom/-/react-dom-19.1.4.tgz";
-        sha512 = "WxYAszDYgsMV31OVyoG4jbAgJI1Gw0Xq9V19zwhy6+hUUJlJIdZ3r/cbdmTqFv++SktQkZ/X+46yGFxp5XJBEg==";
+        url = "https://registry.npmjs.org/@types/react/-/react-19.1.4.tgz";
+        sha512 = "EB1yiiYdvySuIITtD5lhW4yPyJ31RkJkkDw794LaQYrxCSaQV/47y5o1FMC4zF9ZyjUjzJMZwbovEnT5yHTW6g==";
+      };
+    };
+    "@types/react-dom-19.1.5" = {
+      name = "_at_types_slash_react-dom";
+      packageName = "@types/react-dom";
+      version = "19.1.5";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/@types/react-dom/-/react-dom-19.1.5.tgz";
+        sha512 = "CMCjrWucUBZvohgZxkjd6S9h0nZxXjzus6yDfUb+xLxYM7VvjKNH1tQrE9GWLql1XoOP4/Ds3bwFqShHUYraGg==";
       };
     };
     "accepts-2.0.0" = {
@@ -2210,10 +2210,10 @@ in
   "@modelcontextprotocol/inspector" = nodeEnv.buildNodePackage {
     name = "_at_modelcontextprotocol_slash_inspector";
     packageName = "@modelcontextprotocol/inspector";
-    version = "0.11.0";
+    version = "0.12.0";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-0.11.0.tgz";
-      sha512 = "84du4k3WIQUh9WwIkqN9LQZ90QXii2pJQeoTlT21ctgmEHckf/7n1AP3bNG393Y36i3Nunhcxahz6Cre4jXZKQ==";
+      url = "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-0.12.0.tgz";
+      sha512 = "OsoN8ZKdDL/HLC7UHz5RnDlQWwfdofCCm+tvXZepGfZ7QoqmQsnpkiy27hkNTSUJfxpHueOId89Xg5NuUOd6wA==";
     };
     dependencies = [
       sources."@cspotcode/source-map-support-0.8.1"
@@ -2224,9 +2224,9 @@ in
       sources."@jridgewell/resolve-uri-3.1.2"
       sources."@jridgewell/sourcemap-codec-1.5.0"
       sources."@jridgewell/trace-mapping-0.3.9"
-      sources."@modelcontextprotocol/inspector-cli-0.11.0"
-      sources."@modelcontextprotocol/inspector-client-0.11.0"
-      sources."@modelcontextprotocol/inspector-server-0.11.0"
+      sources."@modelcontextprotocol/inspector-cli-0.12.0"
+      sources."@modelcontextprotocol/inspector-client-0.12.0"
+      sources."@modelcontextprotocol/inspector-server-0.12.0"
       (
         sources."@modelcontextprotocol/sdk-1.11.2"
         // {
@@ -2281,8 +2281,8 @@ in
       sources."@tsconfig/node14-1.0.3"
       sources."@tsconfig/node16-1.0.4"
       sources."@types/node-22.15.17"
-      sources."@types/react-19.1.3"
-      sources."@types/react-dom-19.1.4"
+      sources."@types/react-19.1.4"
+      sources."@types/react-dom-19.1.5"
       (
         sources."accepts-2.0.0"
         // {
