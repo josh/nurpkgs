@@ -548,13 +548,13 @@ let
         sha512 = "vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==";
       };
     };
-    "@types/node-22.15.17" = {
+    "@types/node-22.15.18" = {
       name = "_at_types_slash_node";
       packageName = "@types/node";
-      version = "22.15.17";
+      version = "22.15.18";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/node/-/node-22.15.17.tgz";
-        sha512 = "wIX2aSZL5FE+MR0JlvF87BNVrtFWf6AE6rxSE9X7OwnVvoyCQjpzSRJ+M87se/4QCkCiebQAqrJ0y6fwIyi7nw==";
+        url = "https://registry.npmjs.org/@types/node/-/node-22.15.18.tgz";
+        sha512 = "v1DKRfUdyW+jJhZNEI1PYy29S2YRxMV5AOO/x/SjKmW0acCIOqmbj6Haf9eHAhsPmrhlHSxEhv/1WszcLWV4cg==";
       };
     };
     "@types/react-19.1.4" = {
@@ -908,13 +908,13 @@ let
         sha512 = "M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==";
       };
     };
-    "debug-4.4.0" = {
+    "debug-4.4.1" = {
       name = "debug";
       packageName = "debug";
-      version = "4.4.0";
+      version = "4.4.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/debug/-/debug-4.4.0.tgz";
-        sha512 = "6WTZ/IxCY/T6BALoZHaE4ctp9xm+Z5kY/pzYaCHRFeyVhojxlrm+46y68HA6hr0TcwEssoxNiDEUJQjfPZ/RYA==";
+        url = "https://registry.npmjs.org/debug/-/debug-4.4.1.tgz";
+        sha512 = "KcKCqiftBJcZr++7ykoDIEwSa3XWowTfNPo92BYxjXiyYEVrUQh2aLyhxBCwww+heortUFxEJYcRzosstTEBYQ==";
       };
     };
     "depd-2.0.0" = {
@@ -1070,13 +1070,13 @@ let
         sha512 = "CRT1WTyuQoD771GW56XEZFQ/ZoSfWid1alKGDYMmkt2yl8UXrVR4pspqWNEcqKvVIzg6PAltWjxcSSPrboA4iA==";
       };
     };
-    "eventsource-parser-3.0.1" = {
+    "eventsource-parser-3.0.2" = {
       name = "eventsource-parser";
       packageName = "eventsource-parser";
-      version = "3.0.1";
+      version = "3.0.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/eventsource-parser/-/eventsource-parser-3.0.1.tgz";
-        sha512 = "VARTJ9CYeuQYb0pZEPbzi740OWFgpHe7AYJ2WFZVnUDUQp5Dk2yJUgF36YsZ81cOyxT0QxmXD2EQpapAouzWVA==";
+        url = "https://registry.npmjs.org/eventsource-parser/-/eventsource-parser-3.0.2.tgz";
+        sha512 = "6RxOBZ/cYgd8usLwsEl+EC09Au/9BcmCKYF2/xbml6DNczf7nv0MQb+7BA2F+li6//I+28VNlQR37XfQtcAJuA==";
       };
     };
     "express-5.1.0" = {
@@ -2280,7 +2280,7 @@ in
       sources."@tsconfig/node12-1.0.11"
       sources."@tsconfig/node14-1.0.3"
       sources."@tsconfig/node16-1.0.4"
-      sources."@types/node-22.15.17"
+      sources."@types/node-22.15.18"
       sources."@types/react-19.1.4"
       sources."@types/react-dom-19.1.5"
       (
@@ -2337,7 +2337,7 @@ in
       sources."create-require-1.1.1"
       sources."cross-spawn-7.0.6"
       sources."csstype-3.1.3"
-      sources."debug-4.4.0"
+      sources."debug-4.4.1"
       sources."depd-2.0.0"
       sources."detect-node-es-1.1.0"
       sources."diff-4.0.2"
@@ -2352,7 +2352,7 @@ in
       sources."escape-html-1.0.3"
       sources."etag-1.8.1"
       sources."eventsource-3.0.7"
-      sources."eventsource-parser-3.0.1"
+      sources."eventsource-parser-3.0.2"
       (
         sources."express-5.1.0"
         // {
