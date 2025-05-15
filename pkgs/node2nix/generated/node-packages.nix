@@ -134,13 +134,13 @@ let
         sha512 = "slLdFaxQJ9AlRg+hw28iiTtGvShAOgOKXcD0F91nUcRYiOMuS9ZBYjcdNZRXW9G5JQ511GRTdUy1zQVZDpJ+4w==";
       };
     };
-    "@modelcontextprotocol/sdk-1.11.2" = {
+    "@modelcontextprotocol/sdk-1.11.3" = {
       name = "_at_modelcontextprotocol_slash_sdk";
       packageName = "@modelcontextprotocol/sdk";
-      version = "1.11.2";
+      version = "1.11.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.11.2.tgz";
-        sha512 = "H9vwztj5OAqHg9GockCQC06k1natgcxWQSRpQcPJf6i5+MWBzfKkRtxGbjQf0X2ihii0ffLZCRGbYV2f2bjNCQ==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.11.3.tgz";
+        sha512 = "rmOWVRUbUJD7iSvJugjUbFZshTAuJ48MXoZ80Osx1GM0K/H1w7rSEvmw8m6vdWxNASgtaHIhAgre4H/E9GJiYQ==";
       };
     };
     "@radix-ui/number-1.1.1" = {
@@ -1961,13 +1961,13 @@ let
         sha512 = "P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==";
       };
     };
-    "tailwindcss-4.1.6" = {
+    "tailwindcss-4.1.7" = {
       name = "tailwindcss";
       packageName = "tailwindcss";
-      version = "4.1.6";
+      version = "4.1.7";
       src = fetchurl {
-        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.6.tgz";
-        sha512 = "j0cGLTreM6u4OWzBeLBpycK0WIh8w7kSwcUsQZoGLHZ7xDTdM69lN64AgoIEEwFi0tnhs4wSykUa5YWxAzgFYg==";
+        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.7.tgz";
+        sha512 = "kr1o/ErIdNhTz8uzAYL7TpaUuzKIE6QPQ4qmSdxnoX/lo+5wmUHQA6h3L5yIqEImSRnAAURDirLu/BgiXGPAhg==";
       };
     };
     "tailwindcss-animate-1.0.7" = {
@@ -2228,7 +2228,7 @@ in
       sources."@modelcontextprotocol/inspector-client-0.12.0"
       sources."@modelcontextprotocol/inspector-server-0.12.0"
       (
-        sources."@modelcontextprotocol/sdk-1.11.2"
+        sources."@modelcontextprotocol/sdk-1.11.3"
         // {
           dependencies = [
             sources."pkce-challenge-5.0.0"
@@ -2464,7 +2464,7 @@ in
       sources."strip-ansi-6.0.1"
       sources."supports-color-8.1.1"
       sources."tailwind-merge-2.6.0"
-      sources."tailwindcss-4.1.6"
+      sources."tailwindcss-4.1.7"
       sources."tailwindcss-animate-1.0.7"
       sources."toidentifier-1.0.1"
       sources."tree-kill-1.2.2"
