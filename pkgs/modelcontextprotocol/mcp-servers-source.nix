@@ -11,8 +11,8 @@ stdenvNoCC.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "modelcontextprotocol";
     repo = "servers";
-    tag = "2025.3.28";
-    hash = "sha256-6362x1vFLDMvcPNeS91juO/nZB51el48zOamIQrSeZw=";
+    tag = "2025.5.12";
+    hash = "sha256-wBXyljj9Wqro/BEdl+qa60GUzdRIJV1FLfbu8eayW1Y=";
   };
 
   __structuredAttrs = true;
