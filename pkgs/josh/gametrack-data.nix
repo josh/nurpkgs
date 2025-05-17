@@ -8,13 +8,13 @@
 let
   gametrack-data = python3Packages.buildPythonApplication rec {
     pname = "gametrack-data";
-    version = "1.0.2";
+    version = "1.1.0";
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "gametrack-data";
       rev = "v${version}";
-      hash = "sha256-nb87ieMXJV+VmcvODrd/AcpquPmPlabftRip1kwaOcc=";
+      hash = "sha256-aUlDpoSzhKZgN5f/78cJmaEjq1CqUTuUX0PJIA7DUaM=";
     };
 
     pyproject = true;
