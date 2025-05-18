@@ -656,13 +656,13 @@ let
         sha512 = "58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==";
       };
     };
-    "aria-hidden-1.2.4" = {
+    "aria-hidden-1.2.5" = {
       name = "aria-hidden";
       packageName = "aria-hidden";
-      version = "1.2.4";
+      version = "1.2.5";
       src = fetchurl {
-        url = "https://registry.npmjs.org/aria-hidden/-/aria-hidden-1.2.4.tgz";
-        sha512 = "y+CcFFwelSXpLZk/7fMB2mUbGtX9lKycf1MWJ7CaTIERyitVlyQx6C+sxcROU2BAJ24OiZyK+8wj2i8AlBoS3A==";
+        url = "https://registry.npmjs.org/aria-hidden/-/aria-hidden-1.2.5.tgz";
+        sha512 = "N+u63/2br5AG+OSrk0rIgFOYPSEYlkD7Yk5fq3LDole6QDIAbAFpbchE5fhBiUdRV2Fa8pWAaXvy+VK/maBeTA==";
       };
     };
     "balanced-match-1.0.2" = {
@@ -744,6 +744,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/call-bound/-/call-bound-1.0.4.tgz";
         sha512 = "+ys997U96po4Kx/ABpBCqhA9EuxJaQWDQg7295H4hBphv3IZg0boBKuwYpt4YXp6MZ5AmZQnU/tyMTlRpaSejg==";
+      };
+    };
+    "caniuse-lite-1.0.30001718" = {
+      name = "caniuse-lite";
+      packageName = "caniuse-lite";
+      version = "1.0.30001718";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001718.tgz";
+        sha512 = "AflseV1ahcSunK53NfEs9gFWgOEmzr0f+kaMFA4xiLZlr9Hzt7HxcSpIFcnNCUkz6R6dWKa54rUz3HUmI3nVcw==";
       };
     };
     "chalk-4.1.2" = {
@@ -1700,13 +1709,13 @@ let
         sha512 = "5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==";
       };
     };
-    "react-remove-scroll-2.6.3" = {
+    "react-remove-scroll-2.7.0" = {
       name = "react-remove-scroll";
       packageName = "react-remove-scroll";
-      version = "2.6.3";
+      version = "2.7.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/react-remove-scroll/-/react-remove-scroll-2.6.3.tgz";
-        sha512 = "pnAi91oOk8g8ABQKGF5/M9qxmmOPxaAnopyTHYfqYEwJhyFrbbBtHuSgtKEoH0jpcxx5o3hXqH1mNd9/Oi+8iQ==";
+        url = "https://registry.npmjs.org/react-remove-scroll/-/react-remove-scroll-2.7.0.tgz";
+        sha512 = "sGsQtcjMqdQyijAHytfGEELB8FufGbfXIsvUTe+NLx1GDRJCXtCFLBLUI1eyZCKXXvbEU2C6gai0PZKoIE9Vbg==";
       };
     };
     "react-remove-scroll-bar-2.3.8" = {
@@ -2343,7 +2352,7 @@ in
       sources."ansi-regex-5.0.1"
       sources."ansi-styles-4.3.0"
       sources."arg-4.1.3"
-      sources."aria-hidden-1.2.4"
+      sources."aria-hidden-1.2.5"
       sources."balanced-match-1.0.2"
       (
         sources."body-parser-2.2.0"
@@ -2358,6 +2367,7 @@ in
       sources."bytes-3.0.0"
       sources."call-bind-apply-helpers-1.0.2"
       sources."call-bound-1.0.4"
+      sources."caniuse-lite-1.0.30001718"
       (
         sources."chalk-4.1.2"
         // {
@@ -2470,7 +2480,7 @@ in
       )
       sources."react-18.3.1"
       sources."react-dom-18.3.1"
-      sources."react-remove-scroll-2.6.3"
+      sources."react-remove-scroll-2.7.0"
       sources."react-remove-scroll-bar-2.3.8"
       sources."react-simple-code-editor-0.14.1"
       sources."react-style-singleton-2.2.3"
