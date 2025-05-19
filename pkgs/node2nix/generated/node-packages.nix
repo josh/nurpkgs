@@ -548,13 +548,13 @@ let
         sha512 = "vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==";
       };
     };
-    "@types/node-22.15.18" = {
+    "@types/node-22.15.19" = {
       name = "_at_types_slash_node";
       packageName = "@types/node";
-      version = "22.15.18";
+      version = "22.15.19";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/node/-/node-22.15.18.tgz";
-        sha512 = "v1DKRfUdyW+jJhZNEI1PYy29S2YRxMV5AOO/x/SjKmW0acCIOqmbj6Haf9eHAhsPmrhlHSxEhv/1WszcLWV4cg==";
+        url = "https://registry.npmjs.org/@types/node/-/node-22.15.19.tgz";
+        sha512 = "3vMNr4TzNQyjHcRZadojpRaD9Ofr6LsonZAoQ+HMUa/9ORTPoxVIw0e0mpqWpdjj8xybyCM+oKOUH2vwFu/oEw==";
       };
     };
     "@types/react-19.1.4" = {
@@ -656,13 +656,13 @@ let
         sha512 = "58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==";
       };
     };
-    "aria-hidden-1.2.5" = {
+    "aria-hidden-1.2.6" = {
       name = "aria-hidden";
       packageName = "aria-hidden";
-      version = "1.2.5";
+      version = "1.2.6";
       src = fetchurl {
-        url = "https://registry.npmjs.org/aria-hidden/-/aria-hidden-1.2.5.tgz";
-        sha512 = "N+u63/2br5AG+OSrk0rIgFOYPSEYlkD7Yk5fq3LDole6QDIAbAFpbchE5fhBiUdRV2Fa8pWAaXvy+VK/maBeTA==";
+        url = "https://registry.npmjs.org/aria-hidden/-/aria-hidden-1.2.6.tgz";
+        sha512 = "ik3ZgC9dY/lYVVM++OISsaYDeg1tb0VtP5uL3ouh1koGOaUMDPpbFIei4JkFimWUFPn90sbMNMXQAIVOlnYKJA==";
       };
     };
     "balanced-match-1.0.2" = {
@@ -744,15 +744,6 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/call-bound/-/call-bound-1.0.4.tgz";
         sha512 = "+ys997U96po4Kx/ABpBCqhA9EuxJaQWDQg7295H4hBphv3IZg0boBKuwYpt4YXp6MZ5AmZQnU/tyMTlRpaSejg==";
-      };
-    };
-    "caniuse-lite-1.0.30001718" = {
-      name = "caniuse-lite";
-      packageName = "caniuse-lite";
-      version = "1.0.30001718";
-      src = fetchurl {
-        url = "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001718.tgz";
-        sha512 = "AflseV1ahcSunK53NfEs9gFWgOEmzr0f+kaMFA4xiLZlr9Hzt7HxcSpIFcnNCUkz6R6dWKa54rUz3HUmI3nVcw==";
       };
     };
     "chalk-4.1.2" = {
@@ -2240,13 +2231,13 @@ let
         sha512 = "Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==";
       };
     };
-    "zod-3.24.4" = {
+    "zod-3.25.3" = {
       name = "zod";
       packageName = "zod";
-      version = "3.24.4";
+      version = "3.25.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/zod/-/zod-3.24.4.tgz";
-        sha512 = "OdqJE9UDRPwWsrHjLN2F8bPxvwJBK22EHLWtanu0LSYr5YqzsaaW3RMgmjwr8Rypg5k+meEJdSPXJZXE/yqOMg==";
+        url = "https://registry.npmjs.org/zod/-/zod-3.25.3.tgz";
+        sha512 = "VGZqnyYNrl8JpEJRZaFPqeVNIuqgXNu4cXZ5cOb6zEUO1OxKbRnWB4UdDIXMmiERWncs0yDQukssHov8JUxykQ==";
       };
     };
     "zod-to-json-schema-3.24.5" = {
@@ -2334,7 +2325,7 @@ in
       sources."@tsconfig/node12-1.0.11"
       sources."@tsconfig/node14-1.0.3"
       sources."@tsconfig/node16-1.0.4"
-      sources."@types/node-22.15.18"
+      sources."@types/node-22.15.19"
       sources."@types/react-19.1.4"
       sources."@types/react-dom-19.1.5"
       (
@@ -2352,7 +2343,7 @@ in
       sources."ansi-regex-5.0.1"
       sources."ansi-styles-4.3.0"
       sources."arg-4.1.3"
-      sources."aria-hidden-1.2.5"
+      sources."aria-hidden-1.2.6"
       sources."balanced-match-1.0.2"
       (
         sources."body-parser-2.2.0"
@@ -2367,7 +2358,6 @@ in
       sources."bytes-3.0.0"
       sources."call-bind-apply-helpers-1.0.2"
       sources."call-bound-1.0.4"
-      sources."caniuse-lite-1.0.30001718"
       (
         sources."chalk-4.1.2"
         // {
@@ -2555,7 +2545,7 @@ in
       sources."yargs-17.7.2"
       sources."yargs-parser-21.1.1"
       sources."yn-3.1.1"
-      sources."zod-3.24.4"
+      sources."zod-3.25.3"
       sources."zod-to-json-schema-3.24.5"
     ];
     buildInputs = globalBuildInputs;
@@ -2654,7 +2644,7 @@ in
           ];
         }
       )
-      sources."zod-3.24.4"
+      sources."zod-3.25.3"
       sources."zod-to-json-schema-3.24.5"
     ];
     buildInputs = globalBuildInputs;
@@ -2689,7 +2679,7 @@ in
       sources."statuses-2.0.1"
       sources."toidentifier-1.0.1"
       sources."unpipe-1.0.0"
-      sources."zod-3.24.4"
+      sources."zod-3.25.3"
     ];
     buildInputs = globalBuildInputs;
     meta = {
