@@ -13,6 +13,11 @@ let
     src = source;
     sourceRoot = "${source.name}/src/fetch";
 
+    postPatch = ''
+      substituteInPlace pyproject.toml \
+        --replace-fail 'httpx<0.28' 'httpx'
+    '';
+
     pyproject = true;
     __structuredAttrs = true;
 
