@@ -467,13 +467,13 @@ let
         sha512 = "HPwpGIzkl28mWyZqG52jiqDJ12waP11Pa1lGoiyUkIEuMLBP0oeK/C89esbXrxsky5we7dfd8U58nm0SgAWpVw==";
       };
     };
-    "@swc/core-1.11.24" = {
+    "@swc/core-1.11.29" = {
       name = "_at_swc_slash_core";
       packageName = "@swc/core";
-      version = "1.11.24";
+      version = "1.11.29";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/core/-/core-1.11.24.tgz";
-        sha512 = "MaQEIpfcEMzx3VWWopbofKJvaraqmL6HbLlw2bFZ7qYqYw3rkhM0cQVEgyzbHtTWwCwPMFZSC2DUbhlZgrMfLg==";
+        url = "https://registry.npmjs.org/@swc/core/-/core-1.11.29.tgz";
+        sha512 = "g4mThMIpWbNhV8G2rWp5a5/Igv8/2UFRJx2yImrLGMgrDDYZIopqZ/z0jZxDgqNA1QDx93rpwNF7jGsxVWcMlA==";
       };
     };
     "@swc/counter-0.1.3" = {
@@ -503,13 +503,13 @@ let
         sha512 = "2YEtj5HJVbKivud9N4bpPBAyZhj4S2Ipe5LkUG94alTpr7in/GU/EARgPAd3BwU+YOmFVJC2+kjqhGRi3r0ZpQ==";
       };
     };
-    "@swc/wasm-1.11.24" = {
+    "@swc/wasm-1.11.29" = {
       name = "_at_swc_slash_wasm";
       packageName = "@swc/wasm";
-      version = "1.11.24";
+      version = "1.11.29";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.11.24.tgz";
-        sha512 = "8Eo70Ns3BUboUaHfHhDfT/e0gA92+qpHggnb8oio+bfESMXBkmBdkQIln8TI27axKGc7uWz9M82kC8k9FJFq0w==";
+        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.11.29.tgz";
+        sha512 = "FirHVrjDsaLICll/iXJzK99TbIbMfYiAGLV6Cbc3W29Q/QFCeiO0tpHObXXdTiJgV2tHIsuwRfCaSYNwyrRDDg==";
       };
     };
     "@tsconfig/node10-1.0.11" = {
@@ -557,13 +557,13 @@ let
         sha512 = "EV/37Td6c+MgKAbkcLG6vqZ2zEYHD7bvSrzqqs2RIhbA6w3x+Dqz8MZM3sP6kGTeLrdoOgKZe+Xja7tUB2DNkQ==";
       };
     };
-    "@types/react-19.1.4" = {
+    "@types/react-19.1.5" = {
       name = "_at_types_slash_react";
       packageName = "@types/react";
-      version = "19.1.4";
+      version = "19.1.5";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/react/-/react-19.1.4.tgz";
-        sha512 = "EB1yiiYdvySuIITtD5lhW4yPyJ31RkJkkDw794LaQYrxCSaQV/47y5o1FMC4zF9ZyjUjzJMZwbovEnT5yHTW6g==";
+        url = "https://registry.npmjs.org/@types/react/-/react-19.1.5.tgz";
+        sha512 = "piErsCVVbpMMT2r7wbawdZsq4xMvIAhQuac2gedQHysu1TZYEigE6pnFfgZT+/jQnrRuF5r+SHzuehFjfRjr4g==";
       };
     };
     "@types/react-dom-19.1.5" = {
@@ -2231,13 +2231,13 @@ let
         sha512 = "Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==";
       };
     };
-    "zod-3.25.13" = {
+    "zod-3.25.17" = {
       name = "zod";
       packageName = "zod";
-      version = "3.25.13";
+      version = "3.25.17";
       src = fetchurl {
-        url = "https://registry.npmjs.org/zod/-/zod-3.25.13.tgz";
-        sha512 = "Q8mvk2iWi7rTDfpQBsu4ziE7A6AxgzJ5hzRyRYQkoV3A3niYsXVwDaP1Kbz3nWav6S+VZ6k2OznFn8ZyDHvIrg==";
+        url = "https://registry.npmjs.org/zod/-/zod-3.25.17.tgz";
+        sha512 = "8hQzQ/kMOIFbwOgPrm9Sf9rtFHpFUMy4HvN0yEB0spw14aYi0uT5xG5CE2DB9cd51GWNsz+DNO7se1kztHMKnw==";
       };
     };
     "zod-to-json-schema-3.24.5" = {
@@ -2316,17 +2316,17 @@ in
       sources."@radix-ui/react-use-size-1.1.1"
       sources."@radix-ui/react-visually-hidden-1.2.3"
       sources."@radix-ui/rect-1.1.1"
-      sources."@swc/core-1.11.24"
+      sources."@swc/core-1.11.29"
       sources."@swc/counter-0.1.3"
       sources."@swc/helpers-0.5.17"
       sources."@swc/types-0.1.21"
-      sources."@swc/wasm-1.11.24"
+      sources."@swc/wasm-1.11.29"
       sources."@tsconfig/node10-1.0.11"
       sources."@tsconfig/node12-1.0.11"
       sources."@tsconfig/node14-1.0.3"
       sources."@tsconfig/node16-1.0.4"
       sources."@types/node-22.15.21"
-      sources."@types/react-19.1.4"
+      sources."@types/react-19.1.5"
       sources."@types/react-dom-19.1.5"
       (
         sources."accepts-2.0.0"
@@ -2545,7 +2545,7 @@ in
       sources."yargs-17.7.2"
       sources."yargs-parser-21.1.1"
       sources."yn-3.1.1"
-      sources."zod-3.25.13"
+      sources."zod-3.25.17"
       sources."zod-to-json-schema-3.24.5"
     ];
     buildInputs = globalBuildInputs;
@@ -2644,7 +2644,7 @@ in
           ];
         }
       )
-      sources."zod-3.25.13"
+      sources."zod-3.25.17"
       sources."zod-to-json-schema-3.24.5"
     ];
     buildInputs = globalBuildInputs;
@@ -2679,7 +2679,7 @@ in
       sources."statuses-2.0.1"
       sources."toidentifier-1.0.1"
       sources."unpipe-1.0.0"
-      sources."zod-3.25.13"
+      sources."zod-3.25.17"
     ];
     buildInputs = globalBuildInputs;
     meta = {
