@@ -32,22 +32,24 @@ let
   };
 in
 mcp-server-git.overrideAttrs (
-  finalAttrs: _previousAttrs:
+  finalAttrs: previousAttrs:
   let
     mcp-server-git = finalAttrs.finalPackage;
   in
   {
-    passthru.tests = {
-      help =
-        runCommand "test-mcp-server-git-help"
-          {
-            __structuredAttrs = true;
-            nativeBuildInputs = [ mcp-server-git ];
-          }
-          ''
-            mcp-server-git --help
-            touch $out
-          '';
+    passthru = previousAttrs.passthru // {
+      tests = {
+        help =
+          runCommand "test-mcp-server-git-help"
+            {
+              __structuredAttrs = true;
+              nativeBuildInputs = [ mcp-server-git ];
+            }
+            ''
+              mcp-server-git --help
+              touch $out
+            '';
+      };
     };
   }
 )

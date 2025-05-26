@@ -40,12 +40,14 @@ let
   };
 in
 trakt-plex-sync.overrideAttrs (
-  _finalAttrs: _previousAttrs: {
-    passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+  _finalAttrs: previousAttrs: {
+    passthru = previousAttrs.passthru // {
+      updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
-    passthru.tests = {
-      # TODO: Add --version test
-      # TODO: Add --help test
+      tests = {
+        # TODO: Add --version test
+        # TODO: Add --help test
+      };
     };
   }
 )

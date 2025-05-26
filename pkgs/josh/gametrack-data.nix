@@ -34,26 +34,28 @@ let
   };
 in
 gametrack-data.overrideAttrs (
-  finalAttrs: _previousAttrs:
+  finalAttrs: previousAttrs:
   let
     gametrack-data = finalAttrs.finalPackage;
   in
   {
-    passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
+    passthru = previousAttrs.passthru // {
+      updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
-    passthru.tests = {
-      # TODO: Add --version test
+      tests = {
+        # TODO: Add --version test
 
-      help =
-        runCommand "test-gametrack-data-help"
-          {
-            __structuredAttrs = true;
-            nativeBuildInputs = [ gametrack-data ];
-          }
-          ''
-            gametrack-data --help
-            touch $out
-          '';
+        help =
+          runCommand "test-gametrack-data-help"
+            {
+              __structuredAttrs = true;
+              nativeBuildInputs = [ gametrack-data ];
+            }
+            ''
+              gametrack-data --help
+              touch $out
+            '';
+      };
     };
   }
 )

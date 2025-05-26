@@ -41,31 +41,33 @@ let
   };
 in
 gh-audit.overrideAttrs (
-  finalAttrs: _previousAttrs:
+  finalAttrs: previousAttrs:
   let
     gh-audit = finalAttrs.finalPackage;
     version-parts = lib.versions.splitVersion finalAttrs.version;
     stable-version = "${builtins.elemAt version-parts 0}.${builtins.elemAt version-parts 1}.${builtins.elemAt version-parts 2}";
   in
   {
-    passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+    passthru = previousAttrs.passthru // {
+      updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
-    passthru.tests = {
-      version = testers.testVersion {
-        package = gh-audit;
-        version = stable-version;
+      tests = {
+        version = testers.testVersion {
+          package = gh-audit;
+          version = stable-version;
+        };
+
+        help =
+          runCommand "test-gh-audit-help"
+            {
+              __structuredAttrs = true;
+              nativeBuildInputs = [ gh-audit ];
+            }
+            ''
+              gh-audit --help
+              touch $out
+            '';
       };
-
-      help =
-        runCommand "test-gh-audit-help"
-          {
-            __structuredAttrs = true;
-            nativeBuildInputs = [ gh-audit ];
-          }
-          ''
-            gh-audit --help
-            touch $out
-          '';
     };
   }
 )

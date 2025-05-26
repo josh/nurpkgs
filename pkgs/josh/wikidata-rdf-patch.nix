@@ -41,29 +41,31 @@ let
   };
 in
 wikidata-rdf-patch.overrideAttrs (
-  finalAttrs: _previousAttrs:
+  finalAttrs: previousAttrs:
   let
     wikidata-rdf-patch = finalAttrs.finalPackage;
   in
   {
-    passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
+    passthru = previousAttrs.passthru // {
+      updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
-    passthru.tests = {
-      version = testers.testVersion {
-        package = wikidata-rdf-patch;
-        inherit (finalAttrs) version;
+      tests = {
+        version = testers.testVersion {
+          package = wikidata-rdf-patch;
+          inherit (finalAttrs) version;
+        };
+
+        help =
+          runCommand "test-wikidata-rdf-patch-help"
+            {
+              __structuredAttrs = true;
+              nativeBuildInputs = [ wikidata-rdf-patch ];
+            }
+            ''
+              wikidata-rdf-patch --help
+              touch $out
+            '';
       };
-
-      help =
-        runCommand "test-wikidata-rdf-patch-help"
-          {
-            __structuredAttrs = true;
-            nativeBuildInputs = [ wikidata-rdf-patch ];
-          }
-          ''
-            wikidata-rdf-patch --help
-            touch $out
-          '';
     };
   }
 )

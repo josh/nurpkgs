@@ -39,26 +39,28 @@ let
   };
 in
 imdb-plex-sync.overrideAttrs (
-  finalAttrs: _previousAttrs:
+  finalAttrs: previousAttrs:
   let
     imdb-plex-sync = finalAttrs.finalPackage;
   in
   {
-    passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+    passthru = previousAttrs.passthru // {
+      updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
-    passthru.tests = {
-      # TODO: Add --version test
+      tests = {
+        # TODO: Add --version test
 
-      help =
-        runCommand "test-imdb-plex-sync-help"
-          {
-            __structuredAttrs = true;
-            nativeBuildInputs = [ imdb-plex-sync ];
-          }
-          ''
-            imdb-plex-sync --help
-            touch $out
-          '';
+        help =
+          runCommand "test-imdb-plex-sync-help"
+            {
+              __structuredAttrs = true;
+              nativeBuildInputs = [ imdb-plex-sync ];
+            }
+            ''
+              imdb-plex-sync --help
+              touch $out
+            '';
+      };
     };
   }
 )

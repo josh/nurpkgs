@@ -39,22 +39,24 @@ let
   };
 in
 mcp-server-fetch.overrideAttrs (
-  finalAttrs: _previousAttrs:
+  finalAttrs: previousAttrs:
   let
     mcp-server-fetch = finalAttrs.finalPackage;
   in
   {
-    passthru.tests = {
-      help =
-        runCommand "test-mcp-server-fetch-help"
-          {
-            __structuredAttrs = true;
-            nativeBuildInputs = [ mcp-server-fetch ];
-          }
-          ''
-            mcp-server-fetch --help
-            touch $out
-          '';
+    passthru = previousAttrs.passthru // {
+      tests = {
+        help =
+          runCommand "test-mcp-server-fetch-help"
+            {
+              __structuredAttrs = true;
+              nativeBuildInputs = [ mcp-server-fetch ];
+            }
+            ''
+              mcp-server-fetch --help
+              touch $out
+            '';
+      };
     };
   }
 )

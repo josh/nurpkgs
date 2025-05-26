@@ -6,7 +6,7 @@
   nix-update-script,
 }:
 let
-  trakt-data = python3Packages.buildPythonApplication rec {
+  trakt-data = python3Packages.buildPythonApplication {
     pname = "trakt-data";
     version = "0-unstable-2025-05-20";
 
@@ -40,26 +40,28 @@ let
   };
 in
 trakt-data.overrideAttrs (
-  finalAttrs: _previousAttrs:
+  finalAttrs: previousAttrs:
   let
     trakt-data = finalAttrs.finalPackage;
   in
   {
-    passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+    passthru = previousAttrs.passthru // {
+      updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
-    passthru.tests = {
-      # TODO: Add --version test
+      tests = {
+        # TODO: Add --version test
 
-      help =
-        runCommand "test-trakt-data-help"
-          {
-            __structuredAttrs = true;
-            nativeBuildInputs = [ trakt-data ];
-          }
-          ''
-            trakt-data --help
-            touch $out
-          '';
+        help =
+          runCommand "test-trakt-data-help"
+            {
+              __structuredAttrs = true;
+              nativeBuildInputs = [ trakt-data ];
+            }
+            ''
+              trakt-data --help
+              touch $out
+            '';
+      };
     };
   }
 )

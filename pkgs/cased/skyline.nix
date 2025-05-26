@@ -42,24 +42,26 @@ let
   };
 in
 skyline.overrideAttrs (
-  finalAttrs: _previousAttrs:
+  finalAttrs: previousAttrs:
   let
     skyline = finalAttrs.finalPackage;
   in
   {
-    passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+    passthru = previousAttrs.passthru // {
+      updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
-    passthru.tests = {
-      help =
-        runCommand "test-skyline-help"
-          {
-            __structuredAttrs = true;
-            nativeBuildInputs = [ skyline ];
-          }
-          ''
-            skyline --help
-            touch $out
-          '';
+      tests = {
+        help =
+          runCommand "test-skyline-help"
+            {
+              __structuredAttrs = true;
+              nativeBuildInputs = [ skyline ];
+            }
+            ''
+              skyline --help
+              touch $out
+            '';
+      };
     };
   }
 )

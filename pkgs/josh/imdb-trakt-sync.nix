@@ -39,26 +39,28 @@ let
   };
 in
 imdb-trakt-sync.overrideAttrs (
-  finalAttrs: _previousAttrs:
+  finalAttrs: previousAttrs:
   let
     imdb-trakt-sync = finalAttrs.finalPackage;
   in
   {
-    passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+    passthru = previousAttrs.passthru // {
+      updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
-    passthru.tests = {
-      # TODO: Add --version test
+      tests = {
+        # TODO: Add --version test
 
-      help =
-        runCommand "test-imdb-trakt-sync-help"
-          {
-            __structuredAttrs = true;
-            nativeBuildInputs = [ imdb-trakt-sync ];
-          }
-          ''
-            imdb-trakt-sync --help
-            touch $out
-          '';
+        help =
+          runCommand "test-imdb-trakt-sync-help"
+            {
+              __structuredAttrs = true;
+              nativeBuildInputs = [ imdb-trakt-sync ];
+            }
+            ''
+              imdb-trakt-sync --help
+              touch $out
+            '';
+      };
     };
   }
 )

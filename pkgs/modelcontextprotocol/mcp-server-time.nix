@@ -6,7 +6,7 @@
 let
   source = nur.repos.josh.mcp-servers-source;
 
-  mcp-server-time = python3Packages.buildPythonPackage rec {
+  mcp-server-time = python3Packages.buildPythonPackage {
     pname = "mcp-server-time";
     inherit (source) version;
 
@@ -31,22 +31,24 @@ let
   };
 in
 mcp-server-time.overrideAttrs (
-  finalAttrs: _previousAttrs:
+  finalAttrs: previousAttrs:
   let
     mcp-server-time = finalAttrs.finalPackage;
   in
   {
-    passthru.tests = {
-      help =
-        runCommand "test-mcp-server-time-help"
-          {
-            __structuredAttrs = true;
-            nativeBuildInputs = [ mcp-server-time ];
-          }
-          ''
-            mcp-server-time --help
-            touch $out
-          '';
+    passthru = previousAttrs.passthru // {
+      tests = {
+        help =
+          runCommand "test-mcp-server-time-help"
+            {
+              __structuredAttrs = true;
+              nativeBuildInputs = [ mcp-server-time ];
+            }
+            ''
+              mcp-server-time --help
+              touch $out
+            '';
+      };
     };
   }
 )

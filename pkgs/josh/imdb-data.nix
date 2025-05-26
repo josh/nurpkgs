@@ -40,26 +40,28 @@ let
   };
 in
 imdb-data.overrideAttrs (
-  finalAttrs: _previousAttrs:
+  finalAttrs: previousAttrs:
   let
     imdb-data = finalAttrs.finalPackage;
   in
   {
-    passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+    passthru = previousAttrs.passthru // {
+      updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
-    passthru.tests = {
-      # TODO: Add --version test
+      tests = {
+        # TODO: Add --version test
 
-      help =
-        runCommand "test-imdb-data-help"
-          {
-            __structuredAttrs = true;
-            nativeBuildInputs = [ imdb-data ];
-          }
-          ''
-            imdb-data --help
-            touch $out
-          '';
+        help =
+          runCommand "test-imdb-data-help"
+            {
+              __structuredAttrs = true;
+              nativeBuildInputs = [ imdb-data ];
+            }
+            ''
+              imdb-data --help
+              touch $out
+            '';
+      };
     };
   }
 )
