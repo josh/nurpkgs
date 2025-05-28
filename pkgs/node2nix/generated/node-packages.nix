@@ -548,13 +548,13 @@ let
         sha512 = "vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==";
       };
     };
-    "@types/node-22.15.23" = {
+    "@types/node-22.15.24" = {
       name = "_at_types_slash_node";
       packageName = "@types/node";
-      version = "22.15.23";
+      version = "22.15.24";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/node/-/node-22.15.23.tgz";
-        sha512 = "7Ec1zaFPF4RJ0eXu1YT/xgiebqwqoJz8rYPDi/O2BcZ++Wpt0Kq9cl0eg6NN6bYbPnR67ZLo7St5Q3UK0SnARw==";
+        url = "https://registry.npmjs.org/@types/node/-/node-22.15.24.tgz";
+        sha512 = "w9CZGm9RDjzTh/D+hFwlBJ3ziUaVw7oufKA3vOFSOZlzmW9AkZnfjPb+DLnrV6qtgL/LNmP0/2zBNCFHL3F0ng==";
       };
     };
     "@types/react-19.1.6" = {
@@ -2087,13 +2087,13 @@ let
         sha512 = "P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==";
       };
     };
-    "tailwindcss-4.1.7" = {
+    "tailwindcss-4.1.8" = {
       name = "tailwindcss";
       packageName = "tailwindcss";
-      version = "4.1.7";
+      version = "4.1.8";
       src = fetchurl {
-        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.7.tgz";
-        sha512 = "kr1o/ErIdNhTz8uzAYL7TpaUuzKIE6QPQ4qmSdxnoX/lo+5wmUHQA6h3L5yIqEImSRnAAURDirLu/BgiXGPAhg==";
+        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.8.tgz";
+        sha512 = "kjeW8gjdxasbmFKpVGrGd5T4i40mV5J2Rasw48QARfYeQ8YS9x02ON9SFWax3Qf616rt4Cp3nVNIj6Hd1mP3og==";
       };
     };
     "tailwindcss-animate-1.0.7" = {
@@ -2321,13 +2321,13 @@ let
         sha512 = "Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==";
       };
     };
-    "zod-3.25.30" = {
+    "zod-3.25.32" = {
       name = "zod";
       packageName = "zod";
-      version = "3.25.30";
+      version = "3.25.32";
       src = fetchurl {
-        url = "https://registry.npmjs.org/zod/-/zod-3.25.30.tgz";
-        sha512 = "VolhdEtu6TJr/fzGuHA/SZ5ixvXqA6ADOG9VRcQ3rdOKmF5hkmcJbyaQjUH5BgmpA9gej++zYRX7zjSmdReIwA==";
+        url = "https://registry.npmjs.org/zod/-/zod-3.25.32.tgz";
+        sha512 = "OSm2xTIRfW8CV5/QKgngwmQW/8aPfGdaQFlrGoErlgg/Epm7cjb6K6VEyExfe65a3VybUOnu381edLb0dfJl0g==";
       };
     };
     "zod-to-json-schema-3.24.5" = {
@@ -2415,7 +2415,7 @@ in
       sources."@tsconfig/node12-1.0.11"
       sources."@tsconfig/node14-1.0.3"
       sources."@tsconfig/node16-1.0.4"
-      sources."@types/node-22.15.23"
+      sources."@types/node-22.15.24"
       sources."@types/react-19.1.6"
       sources."@types/react-dom-19.1.5"
       (
@@ -2613,7 +2613,7 @@ in
       sources."strip-ansi-6.0.1"
       sources."supports-color-8.1.1"
       sources."tailwind-merge-2.6.0"
-      sources."tailwindcss-4.1.7"
+      sources."tailwindcss-4.1.8"
       sources."tailwindcss-animate-1.0.7"
       sources."toidentifier-1.0.1"
       sources."tree-kill-1.2.2"
@@ -2645,7 +2645,7 @@ in
       sources."yargs-17.7.2"
       sources."yargs-parser-21.1.1"
       sources."yn-3.1.1"
-      sources."zod-3.25.30"
+      sources."zod-3.25.32"
       sources."zod-to-json-schema-3.24.5"
     ];
     buildInputs = globalBuildInputs;
@@ -2744,7 +2744,7 @@ in
           ];
         }
       )
-      sources."zod-3.25.30"
+      sources."zod-3.25.32"
       sources."zod-to-json-schema-3.24.5"
     ];
     buildInputs = globalBuildInputs;
@@ -2779,7 +2779,7 @@ in
       sources."statuses-2.0.1"
       sources."toidentifier-1.0.1"
       sources."unpipe-1.0.0"
-      sources."zod-3.25.30"
+      sources."zod-3.25.32"
     ];
     buildInputs = globalBuildInputs;
     meta = {
