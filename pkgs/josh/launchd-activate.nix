@@ -14,8 +14,8 @@ swiftPackages.stdenv.mkDerivation (finalAttrs: {
   src = fetchFromGitHub {
     owner = "josh";
     repo = "launchd-activate";
-    rev = "91801954c45de355980be57c529a899514c31d5c";
-    hash = "sha256-kLi8ZwDl7/KkJYywdgOpxCi4drf6wDhuorX0oPyLE80=";
+    rev = "f060faf8eb9be0b360e679f158a74b736ed537d1";
+    hash = "sha256-BihFTFcUH1dWdFpSdWgFMoFGeuvo1sLmTmybgIEk5ak=";
   };
 
   nativeBuildInputs = [
