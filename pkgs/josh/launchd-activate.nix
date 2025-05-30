@@ -9,13 +9,13 @@
 }:
 swiftPackages.stdenv.mkDerivation (finalAttrs: {
   pname = "launchd-activate";
-  version = "0-unstable-2025-05-28";
+  version = "0-unstable-2025-05-30";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "launchd-activate";
-    rev = "3bd7aafa918844862c367c6eb43a585c64175801";
-    hash = "sha256-Eq955k0Z7nz65Vn5blcultTi9MXF6ioT5qCeh+F837o=";
+    rev = "91801954c45de355980be57c529a899514c31d5c";
+    hash = "sha256-kLi8ZwDl7/KkJYywdgOpxCi4drf6wDhuorX0oPyLE80=";
   };
 
   nativeBuildInputs = [
