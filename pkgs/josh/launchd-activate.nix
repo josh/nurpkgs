@@ -6,6 +6,7 @@
   swift,
   swiftpm,
   nix-update-script,
+  testers,
 }:
 swiftPackages.stdenv.mkDerivation (finalAttrs: {
   pname = "launchd-activate";
@@ -32,6 +33,11 @@ swiftPackages.stdenv.mkDerivation (finalAttrs: {
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
   passthru.tests = {
+    version = testers.testVersion {
+      package = finalAttrs.finalPackage;
+      version = "0.0.0";
+    };
+
     help =
       runCommand "test-launchd-activate-help"
         {
