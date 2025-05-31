@@ -5,6 +5,7 @@
   swiftPackages,
   swift,
   swiftpm,
+  coreutils,
   nix-update-script,
   testers,
 }:
@@ -24,6 +25,27 @@ swiftPackages.stdenv.mkDerivation (finalAttrs: {
     swiftpm
   ];
 
+  buildInputs = [
+    coreutils
+  ];
+
+  configurePhase = ''
+    runHook preConfigure
+
+    rm Sources/launchd-activate/Constants.swift
+
+    cat >Sources/launchd-activate/Constants.swift <<EOF
+    let VERSION = "$version"
+    let CP_PATH = "$(command -v cp || echo "/bin/cp")"
+    let LN_PATH = "$(command -v ln || echo "/bin/ln")"
+    let RM_PATH = "$(command -v rm || echo "/bin/rm")"
+    let SUDO_PATH = "$(command -v sudo || echo "/usr/bin/sudo")"
+    let LAUNCHCTL_PATH = "$(command -v launchctl || echo "/bin/launchctl")"
+    EOF
+
+    runHook postConfigure
+  '';
+
   installPhase = ''
     runHook preInstall
     install -Dm755 .build/release/launchd-activate $out/bin/launchd-activate
@@ -35,7 +57,7 @@ swiftPackages.stdenv.mkDerivation (finalAttrs: {
   passthru.tests = {
     version = testers.testVersion {
       package = finalAttrs.finalPackage;
-      version = "0.0.0";
+      inherit (finalAttrs) version;
     };
 
     help =
