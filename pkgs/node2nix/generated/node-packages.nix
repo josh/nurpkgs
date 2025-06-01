@@ -1781,13 +1781,13 @@ let
         sha512 = "5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==";
       };
     };
-    "react-remove-scroll-2.7.0" = {
+    "react-remove-scroll-2.7.1" = {
       name = "react-remove-scroll";
       packageName = "react-remove-scroll";
-      version = "2.7.0";
+      version = "2.7.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/react-remove-scroll/-/react-remove-scroll-2.7.0.tgz";
-        sha512 = "sGsQtcjMqdQyijAHytfGEELB8FufGbfXIsvUTe+NLx1GDRJCXtCFLBLUI1eyZCKXXvbEU2C6gai0PZKoIE9Vbg==";
+        url = "https://registry.npmjs.org/react-remove-scroll/-/react-remove-scroll-2.7.1.tgz";
+        sha512 = "HpMh8+oahmIdOuS5aFKKY6Pyog+FNaZV/XyJOq7b4YFwsFHe5yYfdbIalI4k3vU2nSDql7YskmUseHsRrJqIPA==";
       };
     };
     "react-remove-scroll-bar-2.3.8" = {
@@ -2321,13 +2321,13 @@ let
         sha512 = "Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==";
       };
     };
-    "zod-3.25.42" = {
+    "zod-3.25.46" = {
       name = "zod";
       packageName = "zod";
-      version = "3.25.42";
+      version = "3.25.46";
       src = fetchurl {
-        url = "https://registry.npmjs.org/zod/-/zod-3.25.42.tgz";
-        sha512 = "PcALTLskaucbeHc41tU/xfjfhcz8z0GdhhDcSgrCTmSazUuqnYqiXO63M0QUBVwpBlsLsNVn5qHSC5Dw3KZvaQ==";
+        url = "https://registry.npmjs.org/zod/-/zod-3.25.46.tgz";
+        sha512 = "IqRxcHEIjqLd4LNS/zKffB3Jzg3NwqJxQQ0Ns7pdrvgGkwQsEBdEQcOHaBVqvvZArShRzI39+aMST3FBGmTrLQ==";
       };
     };
     "zod-to-json-schema-3.24.5" = {
@@ -2569,7 +2569,7 @@ in
       )
       sources."react-18.3.1"
       sources."react-dom-18.3.1"
-      sources."react-remove-scroll-2.7.0"
+      sources."react-remove-scroll-2.7.1"
       sources."react-remove-scroll-bar-2.3.8"
       sources."react-simple-code-editor-0.14.1"
       sources."react-style-singleton-2.2.3"
@@ -2645,7 +2645,7 @@ in
       sources."yargs-17.7.2"
       sources."yargs-parser-21.1.1"
       sources."yn-3.1.1"
-      sources."zod-3.25.42"
+      sources."zod-3.25.46"
       sources."zod-to-json-schema-3.24.5"
     ];
     buildInputs = globalBuildInputs;
@@ -2744,7 +2744,7 @@ in
           ];
         }
       )
-      sources."zod-3.25.42"
+      sources."zod-3.25.46"
       sources."zod-to-json-schema-3.24.5"
     ];
     buildInputs = globalBuildInputs;
@@ -2779,7 +2779,7 @@ in
       sources."statuses-2.0.1"
       sources."toidentifier-1.0.1"
       sources."unpipe-1.0.0"
-      sources."zod-3.25.42"
+      sources."zod-3.25.46"
     ];
     buildInputs = globalBuildInputs;
     meta = {
