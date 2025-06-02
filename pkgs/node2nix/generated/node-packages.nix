@@ -17,31 +17,31 @@ let
         sha512 = "IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==";
       };
     };
-    "@floating-ui/core-1.7.0" = {
+    "@floating-ui/core-1.7.1" = {
       name = "_at_floating-ui_slash_core";
       packageName = "@floating-ui/core";
-      version = "1.7.0";
+      version = "1.7.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@floating-ui/core/-/core-1.7.0.tgz";
-        sha512 = "FRdBLykrPPA6P76GGGqlex/e7fbe0F1ykgxHYNXQsH/iTEtjMj/f9bpY5oQqbjt5VgZvgz/uKXbGuROijh3VLA==";
+        url = "https://registry.npmjs.org/@floating-ui/core/-/core-1.7.1.tgz";
+        sha512 = "azI0DrjMMfIug/ExbBaeDVJXcY0a7EPvPjb2xAJPa4HeimBX+Z18HK8QQR3jb6356SnDDdxx+hinMLcJEDdOjw==";
       };
     };
-    "@floating-ui/dom-1.7.0" = {
+    "@floating-ui/dom-1.7.1" = {
       name = "_at_floating-ui_slash_dom";
       packageName = "@floating-ui/dom";
-      version = "1.7.0";
+      version = "1.7.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@floating-ui/dom/-/dom-1.7.0.tgz";
-        sha512 = "lGTor4VlXcesUMh1cupTUTDoCxMb0V6bm3CnxHzQcw8Eaf1jQbgQX4i02fYgT0vJ82tb5MZ4CZk1LRGkktJCzg==";
+        url = "https://registry.npmjs.org/@floating-ui/dom/-/dom-1.7.1.tgz";
+        sha512 = "cwsmW/zyw5ltYTUeeYJ60CnQuPqmGwuGVhG9w0PRaRKkAyi38BT5CKrpIbb+jtahSwUl04cWzSx9ZOIxeS6RsQ==";
       };
     };
-    "@floating-ui/react-dom-2.1.2" = {
+    "@floating-ui/react-dom-2.1.3" = {
       name = "_at_floating-ui_slash_react-dom";
       packageName = "@floating-ui/react-dom";
-      version = "2.1.2";
+      version = "2.1.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@floating-ui/react-dom/-/react-dom-2.1.2.tgz";
-        sha512 = "06okr5cgPzMNBy+Ycse2A6udMi4bqwW/zgBF/rwjcNqWkyr82Mcg8b0vjX8OJpZFy/FKjJmw6wV7t44kK6kW7A==";
+        url = "https://registry.npmjs.org/@floating-ui/react-dom/-/react-dom-2.1.3.tgz";
+        sha512 = "huMBfiU9UnQ2oBwIhgzyIiSpVgvlDstU8CX0AF+wS+KzmYMs0J2a3GwuFHV1Lz+jlrQGeC1fF+Nv0QoumyV0bA==";
       };
     };
     "@floating-ui/utils-0.2.9" = {
@@ -1934,13 +1934,13 @@ let
         sha512 = "7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==";
       };
     };
-    "shell-quote-1.8.2" = {
+    "shell-quote-1.8.3" = {
       name = "shell-quote";
       packageName = "shell-quote";
-      version = "1.8.2";
+      version = "1.8.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/shell-quote/-/shell-quote-1.8.2.tgz";
-        sha512 = "AzqKpGKjrj7EM6rKVQEPpB288oCfnrEIuyoT9cyF4nmGa7V8Zk6f7RRqYisX8X9m+Q7bd632aZW4ky7EhbQztA==";
+        url = "https://registry.npmjs.org/shell-quote/-/shell-quote-1.8.3.tgz";
+        sha512 = "ObmnIF4hXNg1BqhnHmgbDETF8dLPCggZWBjkQfhZpbszZnYur5DUljTcCHii5LC3J5E0yeO/1LIMyH+UvHQgyw==";
       };
     };
     "side-channel-1.1.0" = {
@@ -2321,13 +2321,13 @@ let
         sha512 = "Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==";
       };
     };
-    "zod-3.25.46" = {
+    "zod-3.25.48" = {
       name = "zod";
       packageName = "zod";
-      version = "3.25.46";
+      version = "3.25.48";
       src = fetchurl {
-        url = "https://registry.npmjs.org/zod/-/zod-3.25.46.tgz";
-        sha512 = "IqRxcHEIjqLd4LNS/zKffB3Jzg3NwqJxQQ0Ns7pdrvgGkwQsEBdEQcOHaBVqvvZArShRzI39+aMST3FBGmTrLQ==";
+        url = "https://registry.npmjs.org/zod/-/zod-3.25.48.tgz";
+        sha512 = "0X1mz8FtgEIvaxGjdIImYpZEaZMrund9pGXm3M6vM7Reba0e2eI71KPjSCGXBfwKDPwPoywf6waUKc3/tFvX2Q==";
       };
     };
     "zod-to-json-schema-3.24.5" = {
@@ -2352,9 +2352,9 @@ in
     };
     dependencies = [
       sources."@cspotcode/source-map-support-0.8.1"
-      sources."@floating-ui/core-1.7.0"
-      sources."@floating-ui/dom-1.7.0"
-      sources."@floating-ui/react-dom-2.1.2"
+      sources."@floating-ui/core-1.7.1"
+      sources."@floating-ui/dom-1.7.1"
+      sources."@floating-ui/react-dom-2.1.3"
       sources."@floating-ui/utils-0.2.9"
       sources."@jridgewell/resolve-uri-3.1.2"
       sources."@jridgewell/sourcemap-codec-1.5.0"
@@ -2602,7 +2602,7 @@ in
       sources."setprototypeof-1.2.0"
       sources."shebang-command-2.0.0"
       sources."shebang-regex-3.0.0"
-      sources."shell-quote-1.8.2"
+      sources."shell-quote-1.8.3"
       sources."side-channel-1.1.0"
       sources."side-channel-list-1.0.0"
       sources."side-channel-map-1.0.1"
@@ -2645,7 +2645,7 @@ in
       sources."yargs-17.7.2"
       sources."yargs-parser-21.1.1"
       sources."yn-3.1.1"
-      sources."zod-3.25.46"
+      sources."zod-3.25.48"
       sources."zod-to-json-schema-3.24.5"
     ];
     buildInputs = globalBuildInputs;
@@ -2744,7 +2744,7 @@ in
           ];
         }
       )
-      sources."zod-3.25.46"
+      sources."zod-3.25.48"
       sources."zod-to-json-schema-3.24.5"
     ];
     buildInputs = globalBuildInputs;
@@ -2779,7 +2779,7 @@ in
       sources."statuses-2.0.1"
       sources."toidentifier-1.0.1"
       sources."unpipe-1.0.0"
-      sources."zod-3.25.46"
+      sources."zod-3.25.48"
     ];
     buildInputs = globalBuildInputs;
     meta = {
