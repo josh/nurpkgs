@@ -2006,6 +2006,15 @@ let
         sha512 = "RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==";
       };
     };
+    "statuses-2.0.2" = {
+      name = "statuses";
+      packageName = "statuses";
+      version = "2.0.2";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/statuses/-/statuses-2.0.2.tgz";
+        sha512 = "DvEy55V3DB7uknRo+4iOGT5fP1slR8wQohVdknigZPMpMstaKJQWhwiYBACJE3Ul2pTnATihhBYnRhZQHGBiRw==";
+      };
+    };
     "string-width-4.2.3" = {
       name = "string-width";
       packageName = "string-width";
@@ -2321,13 +2330,13 @@ let
         sha512 = "Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==";
       };
     };
-    "zod-3.25.55" = {
+    "zod-3.25.56" = {
       name = "zod";
       packageName = "zod";
-      version = "3.25.55";
+      version = "3.25.56";
       src = fetchurl {
-        url = "https://registry.npmjs.org/zod/-/zod-3.25.55.tgz";
-        sha512 = "219huNnkSLQnLsQ3uaRjXsxMrVm5C9W3OOpEVt2k5tvMKuA8nBSu38e0B//a+he9Iq2dvmk2VyYVlHqiHa4YBA==";
+        url = "https://registry.npmjs.org/zod/-/zod-3.25.56.tgz";
+        sha512 = "rd6eEF3BTNvQnR2e2wwolfTmUTnp70aUTqr0oaGbHifzC3BKJsoV+Gat8vxUMR1hwOKBs6El+qWehrHbCpW6SQ==";
       };
     };
     "zod-to-json-schema-3.24.5" = {
@@ -2519,7 +2528,14 @@ in
       sources."has-flag-4.0.0"
       sources."has-symbols-1.1.0"
       sources."hasown-2.0.2"
-      sources."http-errors-2.0.0"
+      (
+        sources."http-errors-2.0.0"
+        // {
+          dependencies = [
+            sources."statuses-2.0.1"
+          ];
+        }
+      )
       sources."iconv-lite-0.6.3"
       sources."inherits-2.0.4"
       sources."ipaddr.js-1.9.1"
@@ -2608,7 +2624,7 @@ in
       sources."side-channel-map-1.0.1"
       sources."side-channel-weakmap-1.0.2"
       sources."spawn-rx-5.1.2"
-      sources."statuses-2.0.1"
+      sources."statuses-2.0.2"
       sources."string-width-4.2.3"
       sources."strip-ansi-6.0.1"
       sources."supports-color-8.1.1"
@@ -2645,7 +2661,7 @@ in
       sources."yargs-17.7.2"
       sources."yargs-parser-21.1.1"
       sources."yn-3.1.1"
-      sources."zod-3.25.55"
+      sources."zod-3.25.56"
       sources."zod-to-json-schema-3.24.5"
     ];
     buildInputs = globalBuildInputs;
@@ -2744,7 +2760,7 @@ in
           ];
         }
       )
-      sources."zod-3.25.55"
+      sources."zod-3.25.56"
       sources."zod-to-json-schema-3.24.5"
     ];
     buildInputs = globalBuildInputs;
@@ -2779,7 +2795,7 @@ in
       sources."statuses-2.0.1"
       sources."toidentifier-1.0.1"
       sources."unpipe-1.0.0"
-      sources."zod-3.25.55"
+      sources."zod-3.25.56"
     ];
     buildInputs = globalBuildInputs;
     meta = {
