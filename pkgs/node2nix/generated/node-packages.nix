@@ -548,22 +548,22 @@ let
         sha512 = "vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==";
       };
     };
-    "@types/node-22.15.30" = {
+    "@types/node-24.0.0" = {
       name = "_at_types_slash_node";
       packageName = "@types/node";
-      version = "22.15.30";
+      version = "24.0.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/node/-/node-22.15.30.tgz";
-        sha512 = "6Q7lr06bEHdlfplU6YRbgG1SFBdlsfNC4/lX+SkhiTs0cpJkOElmWls8PxDFv4yY/xKb8Y6SO0OmSX4wgqTZbA==";
+        url = "https://registry.npmjs.org/@types/node/-/node-24.0.0.tgz";
+        sha512 = "yZQa2zm87aRVcqDyH5+4Hv9KYgSdgwX1rFnGvpbzMaC7YAljmhBET93TPiTd3ObwTL+gSpIzPKg5BqVxdCvxKg==";
       };
     };
-    "@types/react-19.1.6" = {
+    "@types/react-19.1.7" = {
       name = "_at_types_slash_react";
       packageName = "@types/react";
-      version = "19.1.6";
+      version = "19.1.7";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/react/-/react-19.1.6.tgz";
-        sha512 = "JeG0rEWak0N6Itr6QUx+X60uQmN+5t3j9r/OVDtWzFXKaj6kD1BwJzOksD0FF6iWxZlbE1kB0q9vtnU2ekqa1Q==";
+        url = "https://registry.npmjs.org/@types/react/-/react-19.1.7.tgz";
+        sha512 = "BnsPLV43ddr05N71gaGzyZ5hzkCmGwhMvYc8zmvI8Ci1bRkkDSzDDVfAXfN2tk748OwI7ediiPX6PfT9p0QGVg==";
       };
     };
     "@types/react-dom-19.1.6" = {
@@ -2168,13 +2168,13 @@ let
         sha512 = "p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==";
       };
     };
-    "undici-types-6.21.0" = {
+    "undici-types-7.8.0" = {
       name = "undici-types";
       packageName = "undici-types";
-      version = "6.21.0";
+      version = "7.8.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz";
-        sha512 = "iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==";
+        url = "https://registry.npmjs.org/undici-types/-/undici-types-7.8.0.tgz";
+        sha512 = "9UJ2xGDvQ43tYyVMpuHlsgApydB8ZKfVYTsLDhXkFL/6gfkp+U8xTGdh8pMJv1SpZna0zxG1DwsKZsreLbXBxw==";
       };
     };
     "unpipe-1.0.0" = {
@@ -2330,13 +2330,13 @@ let
         sha512 = "Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==";
       };
     };
-    "zod-3.25.56" = {
+    "zod-3.25.57" = {
       name = "zod";
       packageName = "zod";
-      version = "3.25.56";
+      version = "3.25.57";
       src = fetchurl {
-        url = "https://registry.npmjs.org/zod/-/zod-3.25.56.tgz";
-        sha512 = "rd6eEF3BTNvQnR2e2wwolfTmUTnp70aUTqr0oaGbHifzC3BKJsoV+Gat8vxUMR1hwOKBs6El+qWehrHbCpW6SQ==";
+        url = "https://registry.npmjs.org/zod/-/zod-3.25.57.tgz";
+        sha512 = "6tgzLuwVST5oLUxXTmBqoinKMd3JeesgbgseXeFasKKj8Q1FCZrHnbqJOyiEvr4cVAlbug+CgIsmJ8cl/pU5FA==";
       };
     };
     "zod-to-json-schema-3.24.5" = {
@@ -2424,8 +2424,8 @@ in
       sources."@tsconfig/node12-1.0.11"
       sources."@tsconfig/node14-1.0.3"
       sources."@tsconfig/node16-1.0.4"
-      sources."@types/node-22.15.30"
-      sources."@types/react-19.1.6"
+      sources."@types/node-24.0.0"
+      sources."@types/react-19.1.7"
       sources."@types/react-dom-19.1.6"
       (
         sources."accepts-2.0.0"
@@ -2645,7 +2645,7 @@ in
         }
       )
       sources."typescript-5.8.3"
-      sources."undici-types-6.21.0"
+      sources."undici-types-7.8.0"
       sources."unpipe-1.0.0"
       sources."uri-js-4.4.1"
       sources."use-callback-ref-1.3.3"
@@ -2661,7 +2661,7 @@ in
       sources."yargs-17.7.2"
       sources."yargs-parser-21.1.1"
       sources."yn-3.1.1"
-      sources."zod-3.25.56"
+      sources."zod-3.25.57"
       sources."zod-to-json-schema-3.24.5"
     ];
     buildInputs = globalBuildInputs;
@@ -2760,7 +2760,7 @@ in
           ];
         }
       )
-      sources."zod-3.25.56"
+      sources."zod-3.25.57"
       sources."zod-to-json-schema-3.24.5"
     ];
     buildInputs = globalBuildInputs;
@@ -2795,7 +2795,7 @@ in
       sources."statuses-2.0.1"
       sources."toidentifier-1.0.1"
       sources."unpipe-1.0.0"
-      sources."zod-3.25.56"
+      sources."zod-3.25.57"
     ];
     buildInputs = globalBuildInputs;
     meta = {
