@@ -467,13 +467,13 @@ let
         sha512 = "HPwpGIzkl28mWyZqG52jiqDJ12waP11Pa1lGoiyUkIEuMLBP0oeK/C89esbXrxsky5we7dfd8U58nm0SgAWpVw==";
       };
     };
-    "@swc/core-1.11.31" = {
+    "@swc/core-1.12.0" = {
       name = "_at_swc_slash_core";
       packageName = "@swc/core";
-      version = "1.11.31";
+      version = "1.12.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/core/-/core-1.11.31.tgz";
-        sha512 = "mAby9aUnKRjMEA7v8cVZS9Ah4duoRBnX7X6r5qrhTxErx+68MoY1TPrVwj/66/SWN3Bl+jijqAqoB8Qx0QE34A==";
+        url = "https://registry.npmjs.org/@swc/core/-/core-1.12.0.tgz";
+        sha512 = "/C0kiMHPY/HnLfqXYGMGxGck3A5Y3mqwxfv+EwHTPHGjAVRfHpWAEEBTSTF5C88vVY6CvwBEkhR2TX7t8Mahcw==";
       };
     };
     "@swc/counter-0.1.3" = {
@@ -494,22 +494,22 @@ let
         sha512 = "5IKx/Y13RsYd+sauPb2x+U/xZikHjolzfuDgTAl/Tdf3Q8rslRvC19NKDLgAJQ6wsqADk10ntlv08nPFw/gO/A==";
       };
     };
-    "@swc/types-0.1.22" = {
+    "@swc/types-0.1.23" = {
       name = "_at_swc_slash_types";
       packageName = "@swc/types";
-      version = "0.1.22";
+      version = "0.1.23";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/types/-/types-0.1.22.tgz";
-        sha512 = "D13mY/ZA4PPEFSy6acki9eBT/3WgjMoRqNcdpIvjaYLQ44Xk5BdaL7UkDxAh6Z9UOe7tCCp67BVmZCojYp9owg==";
+        url = "https://registry.npmjs.org/@swc/types/-/types-0.1.23.tgz";
+        sha512 = "u1iIVZV9Q0jxY+yM2vw/hZGDNudsN85bBpTqzAQ9rzkxW9D+e3aEM4Han+ow518gSewkXgjmEK0BD79ZcNVgPw==";
       };
     };
-    "@swc/wasm-1.11.31" = {
+    "@swc/wasm-1.12.0" = {
       name = "_at_swc_slash_wasm";
       packageName = "@swc/wasm";
-      version = "1.11.31";
+      version = "1.12.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.11.31.tgz";
-        sha512 = "Ey8+y7f14n687cgr69lomfClfaye0b6m2rRke0oQefIz9ZbSxuPt194jkN152WF7bJVYGx3BcgxpphjcjxUaDg==";
+        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.12.0.tgz";
+        sha512 = "Fgijrans0S8iAfnlvCnYSO2unIajR1bu7tt1y6BZvDVCFh9BQbq08XjJhOKfZy4V9SHFuYXpGxCXFdaL7LYBNg==";
       };
     };
     "@tsconfig/node10-1.0.11" = {
@@ -557,13 +557,13 @@ let
         sha512 = "yZQa2zm87aRVcqDyH5+4Hv9KYgSdgwX1rFnGvpbzMaC7YAljmhBET93TPiTd3ObwTL+gSpIzPKg5BqVxdCvxKg==";
       };
     };
-    "@types/react-19.1.7" = {
+    "@types/react-19.1.8" = {
       name = "_at_types_slash_react";
       packageName = "@types/react";
-      version = "19.1.7";
+      version = "19.1.8";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/react/-/react-19.1.7.tgz";
-        sha512 = "BnsPLV43ddr05N71gaGzyZ5hzkCmGwhMvYc8zmvI8Ci1bRkkDSzDDVfAXfN2tk748OwI7ediiPX6PfT9p0QGVg==";
+        url = "https://registry.npmjs.org/@types/react/-/react-19.1.8.tgz";
+        sha512 = "AwAfQ2Wa5bCx9WP8nZL2uMZWod7J7/JSplxbTmBQ5ms6QpqNYm672H0Vu9ZVKVngQ+ii4R/byguVEUZQyeg44g==";
       };
     };
     "@types/react-dom-19.1.6" = {
@@ -674,6 +674,15 @@ let
         sha512 = "3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==";
       };
     };
+    "balanced-match-3.0.1" = {
+      name = "balanced-match";
+      packageName = "balanced-match";
+      version = "3.0.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/balanced-match/-/balanced-match-3.0.1.tgz";
+        sha512 = "vjtV3hiLqYDNRoiAv0zC4QaGAMPomEoq83PRmYIofPswwZurCeWR5LByXm7SyoL0Zh5+2z0+HC7jG8gSZJUh0w==";
+      };
+    };
     "body-parser-2.2.0" = {
       name = "body-parser";
       packageName = "body-parser";
@@ -683,22 +692,31 @@ let
         sha512 = "02qvAaxv8tp7fBa/mw1ga98OGm+eCbqzJOKoRt70sLmfEEi+jyBYVTDGfCL/k06/4EMk/z01gCe7HoCH/f2LTg==";
       };
     };
-    "brace-expansion-1.1.11" = {
+    "brace-expansion-1.1.12" = {
       name = "brace-expansion";
       packageName = "brace-expansion";
-      version = "1.1.11";
+      version = "1.1.12";
       src = fetchurl {
-        url = "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.11.tgz";
-        sha512 = "iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==";
+        url = "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.12.tgz";
+        sha512 = "9T9UjW3r0UW5c1Q7GTwllptXwhvYmEzFhzMfZ9H7FQWt+uZePjZPjBP/W1ZEyZ1twGWom5/56TF4lPcqjnDHcg==";
       };
     };
-    "brace-expansion-2.0.1" = {
+    "brace-expansion-2.0.2" = {
       name = "brace-expansion";
       packageName = "brace-expansion";
-      version = "2.0.1";
+      version = "2.0.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.0.1.tgz";
-        sha512 = "XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==";
+        url = "https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.0.2.tgz";
+        sha512 = "Jt0vHyM+jmUBqojB7E1NIYadt0vI0Qxjxd2TErW94wDz+E2LAm5vKMXXwg6ZZBTHPuUlDgQHKXvjGBdfcF1ZDQ==";
+      };
+    };
+    "brace-expansion-4.0.1" = {
+      name = "brace-expansion";
+      packageName = "brace-expansion";
+      version = "4.0.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/brace-expansion/-/brace-expansion-4.0.1.tgz";
+        sha512 = "YClrbvTCXGe70pU2JiEiPLYXO9gQkyxYeKpJIQHVS/gOs6EWMQP2RYBwjFLNT322Ji8TOC3IMPfsYCedNpzKfA==";
       };
     };
     "bufferutil-4.0.9" = {
@@ -1511,13 +1529,13 @@ let
         sha512 = "xRc4oEhT6eaBpU1XF7AjpOFD+xQmXNB5OVKwp4tqCuBpHLS/ZbBDrc07mYTDqVMg6PfxUjjNp85O6Cd2Z/5HWA==";
       };
     };
-    "minimatch-10.0.1" = {
+    "minimatch-10.0.2" = {
       name = "minimatch";
       packageName = "minimatch";
-      version = "10.0.1";
+      version = "10.0.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/minimatch/-/minimatch-10.0.1.tgz";
-        sha512 = "ethXTt3SGGR+95gudmqJ1eNhRO7eGEGIgYA9vnPatK4/etz2MEVDno5GMCibdMTuBMyElzIlgxMna3K94XDIDQ==";
+        url = "https://registry.npmjs.org/minimatch/-/minimatch-10.0.2.tgz";
+        sha512 = "+9TJCIYXgZ2Dm5LxVCFsa8jOm+evMwXHFI0JM1XROmkfkpz8/iLLDh+TwSmyIBrs6C6Xu9294/fq8cBA+P6AqA==";
       };
     };
     "minimatch-3.1.2" = {
@@ -2096,13 +2114,13 @@ let
         sha512 = "P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==";
       };
     };
-    "tailwindcss-4.1.8" = {
+    "tailwindcss-4.1.9" = {
       name = "tailwindcss";
       packageName = "tailwindcss";
-      version = "4.1.8";
+      version = "4.1.9";
       src = fetchurl {
-        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.8.tgz";
-        sha512 = "kjeW8gjdxasbmFKpVGrGd5T4i40mV5J2Rasw48QARfYeQ8YS9x02ON9SFWax3Qf616rt4Cp3nVNIj6Hd1mP3og==";
+        url = "https://registry.npmjs.org/tailwindcss/-/tailwindcss-4.1.9.tgz";
+        sha512 = "anBZRcvfNMsQdHB9XSGzAtIQWlhs49uK75jfkwrqjRUbjt4d7q9RE1wR1xWyfYZhLFnFX4ahWp88Au2lcEw5IQ==";
       };
     };
     "tailwindcss-animate-1.0.7" = {
@@ -2330,13 +2348,13 @@ let
         sha512 = "Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==";
       };
     };
-    "zod-3.25.57" = {
+    "zod-3.25.61" = {
       name = "zod";
       packageName = "zod";
-      version = "3.25.57";
+      version = "3.25.61";
       src = fetchurl {
-        url = "https://registry.npmjs.org/zod/-/zod-3.25.57.tgz";
-        sha512 = "6tgzLuwVST5oLUxXTmBqoinKMd3JeesgbgseXeFasKKj8Q1FCZrHnbqJOyiEvr4cVAlbug+CgIsmJ8cl/pU5FA==";
+        url = "https://registry.npmjs.org/zod/-/zod-3.25.61.tgz";
+        sha512 = "fzfJgUw78LTNnHujj9re1Ov/JJQkRZZGDMcYqSx7Hp4rPOkKywaFHq0S6GoHeXs0wGNE/sIOutkXgnwzrVOGCQ==";
       };
     };
     "zod-to-json-schema-3.24.5" = {
@@ -2415,17 +2433,17 @@ in
       sources."@radix-ui/react-use-size-1.1.1"
       sources."@radix-ui/react-visually-hidden-1.2.3"
       sources."@radix-ui/rect-1.1.1"
-      sources."@swc/core-1.11.31"
+      sources."@swc/core-1.12.0"
       sources."@swc/counter-0.1.3"
       sources."@swc/helpers-0.5.17"
-      sources."@swc/types-0.1.22"
-      sources."@swc/wasm-1.11.31"
+      sources."@swc/types-0.1.23"
+      sources."@swc/wasm-1.12.0"
       sources."@tsconfig/node10-1.0.11"
       sources."@tsconfig/node12-1.0.11"
       sources."@tsconfig/node14-1.0.3"
       sources."@tsconfig/node16-1.0.4"
       sources."@types/node-24.0.0"
-      sources."@types/react-19.1.7"
+      sources."@types/react-19.1.8"
       sources."@types/react-dom-19.1.6"
       (
         sources."accepts-2.0.0"
@@ -2452,7 +2470,7 @@ in
           ];
         }
       )
-      sources."brace-expansion-1.1.11"
+      sources."brace-expansion-1.1.12"
       sources."bufferutil-4.0.9"
       sources."bundle-name-4.1.0"
       sources."bytes-3.0.0"
@@ -2629,7 +2647,7 @@ in
       sources."strip-ansi-6.0.1"
       sources."supports-color-8.1.1"
       sources."tailwind-merge-2.6.0"
-      sources."tailwindcss-4.1.8"
+      sources."tailwindcss-4.1.9"
       sources."tailwindcss-animate-1.0.7"
       sources."toidentifier-1.0.1"
       sources."tree-kill-1.2.2"
@@ -2661,7 +2679,7 @@ in
       sources."yargs-17.7.2"
       sources."yargs-parser-21.1.1"
       sources."yn-3.1.1"
-      sources."zod-3.25.57"
+      sources."zod-3.25.61"
       sources."zod-to-json-schema-3.24.5"
     ];
     buildInputs = globalBuildInputs;
@@ -2688,7 +2706,7 @@ in
       sources."ansi-regex-5.0.1"
       sources."ansi-styles-6.2.1"
       sources."balanced-match-1.0.2"
-      sources."brace-expansion-2.0.1"
+      sources."brace-expansion-2.0.2"
       sources."bytes-3.1.2"
       sources."color-convert-2.0.1"
       sources."color-name-1.1.4"
@@ -2714,7 +2732,15 @@ in
       sources."isexe-2.0.0"
       sources."jackspeak-3.4.3"
       sources."lru-cache-10.4.3"
-      sources."minimatch-10.0.1"
+      (
+        sources."minimatch-10.0.2"
+        // {
+          dependencies = [
+            sources."balanced-match-3.0.1"
+            sources."brace-expansion-4.0.1"
+          ];
+        }
+      )
       sources."minipass-7.1.2"
       sources."package-json-from-dist-1.0.1"
       sources."path-key-3.1.1"
@@ -2760,7 +2786,7 @@ in
           ];
         }
       )
-      sources."zod-3.25.57"
+      sources."zod-3.25.61"
       sources."zod-to-json-schema-3.24.5"
     ];
     buildInputs = globalBuildInputs;
@@ -2795,7 +2821,7 @@ in
       sources."statuses-2.0.1"
       sources."toidentifier-1.0.1"
       sources."unpipe-1.0.0"
-      sources."zod-3.25.57"
+      sources."zod-3.25.61"
     ];
     buildInputs = globalBuildInputs;
     meta = {
