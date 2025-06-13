@@ -107,31 +107,31 @@ let
         sha512 = "3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==";
       };
     };
-    "@modelcontextprotocol/inspector-cli-0.14.0" = {
+    "@modelcontextprotocol/inspector-cli-0.14.1" = {
       name = "_at_modelcontextprotocol_slash_inspector-cli";
       packageName = "@modelcontextprotocol/inspector-cli";
-      version = "0.14.0";
+      version = "0.14.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-cli/-/inspector-cli-0.14.0.tgz";
-        sha512 = "b9vCikgnq1ZnPz//sAMRRpAvLuK7tfiZSLQk2PhosmLUFXo9lo1dvpPRhqGAhP5L9IZUKx/+YyKusQsp7lPV0A==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-cli/-/inspector-cli-0.14.1.tgz";
+        sha512 = "PDXugYewCHnhfEmoMLczJ/rtniCJN9evFkJZVq9o1CVBHme578V3MIT7uk4ap/M6xM26+9OAixdbYp9Rf7V8VA==";
       };
     };
-    "@modelcontextprotocol/inspector-client-0.14.0" = {
+    "@modelcontextprotocol/inspector-client-0.14.1" = {
       name = "_at_modelcontextprotocol_slash_inspector-client";
       packageName = "@modelcontextprotocol/inspector-client";
-      version = "0.14.0";
+      version = "0.14.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-client/-/inspector-client-0.14.0.tgz";
-        sha512 = "mN7BtM32yS8T8WpHbmqxdRjqRsRCss63+TbDmOciMKUULNr5Mi4fIQc6v+TZjC6DsDa8hiSZ/v32ShuQlFwAzw==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-client/-/inspector-client-0.14.1.tgz";
+        sha512 = "nJym4J7R3xChNSDYBdfRyI/r4eS0uUl85/GQxIi4STnNJI6ajv6sicCWx5uRL74Ed5GFME9SS/xI3Tdm+aqtrg==";
       };
     };
-    "@modelcontextprotocol/inspector-server-0.14.0" = {
+    "@modelcontextprotocol/inspector-server-0.14.1" = {
       name = "_at_modelcontextprotocol_slash_inspector-server";
       packageName = "@modelcontextprotocol/inspector-server";
-      version = "0.14.0";
+      version = "0.14.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-server/-/inspector-server-0.14.0.tgz";
-        sha512 = "1t3j2aCygXZB7Oc8hBh+R+MJsjHNytUqoSVf4Glt7g8iqk4NtyS6vDrEepJ59YCp1JVgNqbi9/INBUF7JwReyg==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-server/-/inspector-server-0.14.1.tgz";
+        sha512 = "w9VTdqzHHYBOOQw0QJa2QB/tn6dTZsDSGO3d4a5BJile4It283Lw1xi1W1pMgNB+MTEG471disU/qJapqETK6A==";
       };
     };
     "@modelcontextprotocol/sdk-0.5.0" = {
@@ -152,13 +152,13 @@ let
         sha512 = "slLdFaxQJ9AlRg+hw28iiTtGvShAOgOKXcD0F91nUcRYiOMuS9ZBYjcdNZRXW9G5JQ511GRTdUy1zQVZDpJ+4w==";
       };
     };
-    "@modelcontextprotocol/sdk-1.12.1" = {
+    "@modelcontextprotocol/sdk-1.12.3" = {
       name = "_at_modelcontextprotocol_slash_sdk";
       packageName = "@modelcontextprotocol/sdk";
-      version = "1.12.1";
+      version = "1.12.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.12.1.tgz";
-        sha512 = "KG1CZhZfWg+u8pxeM/mByJDScJSrjjxLc8fwQqbsS8xCjBmQfMNEBTotYdNanKekepnfRI85GtgQlctLFpcYPw==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.12.3.tgz";
+        sha512 = "DyVYSOafBvk3/j1Oka4z5BWT8o4AFmoNyZY9pALOm7Lh3GZglR71Co4r4dEUoqDWdDazIZQHBe7J2Nwkg6gHgQ==";
       };
     };
     "@radix-ui/number-1.1.1" = {
@@ -2348,13 +2348,13 @@ let
         sha512 = "Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==";
       };
     };
-    "zod-3.25.63" = {
+    "zod-3.25.64" = {
       name = "zod";
       packageName = "zod";
-      version = "3.25.63";
+      version = "3.25.64";
       src = fetchurl {
-        url = "https://registry.npmjs.org/zod/-/zod-3.25.63.tgz";
-        sha512 = "3ttCkqhtpncYXfP0f6dsyabbYV/nEUW+Xlu89jiXbTBifUfjaSqXOG6JnQPLtqt87n7KAmnMqcjay6c0Wq0Vbw==";
+        url = "https://registry.npmjs.org/zod/-/zod-3.25.64.tgz";
+        sha512 = "hbP9FpSZf7pkS7hRVUrOjhwKJNyampPgtXKc3AN6DsWtoHsg2Sb4SQaS4Tcay380zSwd2VPo9G9180emBACp5g==";
       };
     };
     "zod-to-json-schema-3.24.5" = {
@@ -2372,10 +2372,10 @@ in
   "@modelcontextprotocol/inspector" = nodeEnv.buildNodePackage {
     name = "_at_modelcontextprotocol_slash_inspector";
     packageName = "@modelcontextprotocol/inspector";
-    version = "0.14.0";
+    version = "0.14.1";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-0.14.0.tgz";
-      sha512 = "dv0ATp+qtrbm8tku1Kdtqqf/h9mYt0xrBGuCMNJF5YKFzPUBG5nPaZOVSw5RyycsgvcWsPZe2YRdu0BCbFistw==";
+      url = "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-0.14.1.tgz";
+      sha512 = "F9Xd/06eCfeuHkFR+6sNGhGrKAfgXFmf9VDzw+hMMoeJM3ltOUSJh/fqCvvM6tGrxvb49uAF7dr/o5Dz+rVKxw==";
     };
     dependencies = [
       sources."@cspotcode/source-map-support-0.8.1"
@@ -2386,11 +2386,11 @@ in
       sources."@jridgewell/resolve-uri-3.1.2"
       sources."@jridgewell/sourcemap-codec-1.5.0"
       sources."@jridgewell/trace-mapping-0.3.9"
-      sources."@modelcontextprotocol/inspector-cli-0.14.0"
-      sources."@modelcontextprotocol/inspector-client-0.14.0"
-      sources."@modelcontextprotocol/inspector-server-0.14.0"
+      sources."@modelcontextprotocol/inspector-cli-0.14.1"
+      sources."@modelcontextprotocol/inspector-client-0.14.1"
+      sources."@modelcontextprotocol/inspector-server-0.14.1"
       (
-        sources."@modelcontextprotocol/sdk-1.12.1"
+        sources."@modelcontextprotocol/sdk-1.12.3"
         // {
           dependencies = [
             sources."pkce-challenge-5.0.0"
@@ -2679,7 +2679,7 @@ in
       sources."yargs-17.7.2"
       sources."yargs-parser-21.1.1"
       sources."yn-3.1.1"
-      sources."zod-3.25.63"
+      sources."zod-3.25.64"
       sources."zod-to-json-schema-3.24.5"
     ];
     buildInputs = globalBuildInputs;
@@ -2780,7 +2780,7 @@ in
           ];
         }
       )
-      sources."zod-3.25.63"
+      sources."zod-3.25.64"
       sources."zod-to-json-schema-3.24.5"
     ];
     buildInputs = globalBuildInputs;
@@ -2815,7 +2815,7 @@ in
       sources."statuses-2.0.1"
       sources."toidentifier-1.0.1"
       sources."unpipe-1.0.0"
-      sources."zod-3.25.63"
+      sources."zod-3.25.64"
     ];
     buildInputs = globalBuildInputs;
     meta = {
