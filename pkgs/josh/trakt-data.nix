@@ -8,13 +8,13 @@
 let
   trakt-data = python3Packages.buildPythonApplication {
     pname = "trakt-data";
-    version = "0-unstable-2025-06-09";
+    version = "0-unstable-2025-06-12";
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "trakt-data";
-      rev = "638e3971f35f00eaa27b7fbeb684523ece87e560";
-      hash = "sha256-ne8twKnHKwZPWVFnh11reVoFHQf3zlkR502MjKFcGpw=";
+      rev = "e7a50d1630b75792a29ff080a61148cc64d2c615";
+      hash = "sha256-c/olPqizLrKzSuMQJH+h/VUhOlanin3xMWkjkeL5X54=";
     };
 
     pyproject = true;
