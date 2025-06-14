@@ -107,31 +107,31 @@ let
         sha512 = "3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==";
       };
     };
-    "@modelcontextprotocol/inspector-cli-0.14.1" = {
+    "@modelcontextprotocol/inspector-cli-0.14.2" = {
       name = "_at_modelcontextprotocol_slash_inspector-cli";
       packageName = "@modelcontextprotocol/inspector-cli";
-      version = "0.14.1";
+      version = "0.14.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-cli/-/inspector-cli-0.14.1.tgz";
-        sha512 = "PDXugYewCHnhfEmoMLczJ/rtniCJN9evFkJZVq9o1CVBHme578V3MIT7uk4ap/M6xM26+9OAixdbYp9Rf7V8VA==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-cli/-/inspector-cli-0.14.2.tgz";
+        sha512 = "zOR5lNzrtWUYEAE1HpZFZKva5Y7fDspB8U4JK9LULXWzaVh1o9zvvKMRi+yVH+Uz5EtJ8+tG1Vi2yX74NUYnPg==";
       };
     };
-    "@modelcontextprotocol/inspector-client-0.14.1" = {
+    "@modelcontextprotocol/inspector-client-0.14.2" = {
       name = "_at_modelcontextprotocol_slash_inspector-client";
       packageName = "@modelcontextprotocol/inspector-client";
-      version = "0.14.1";
+      version = "0.14.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-client/-/inspector-client-0.14.1.tgz";
-        sha512 = "nJym4J7R3xChNSDYBdfRyI/r4eS0uUl85/GQxIi4STnNJI6ajv6sicCWx5uRL74Ed5GFME9SS/xI3Tdm+aqtrg==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-client/-/inspector-client-0.14.2.tgz";
+        sha512 = "TPT4fvnrbK7zOuRoeEyIJiz+EZ8kkWTn8XxEiL5tBR0UaEVDVQe2sLhucm7fT1DzRvoWXl4JBrDmon4+tDTs9g==";
       };
     };
-    "@modelcontextprotocol/inspector-server-0.14.1" = {
+    "@modelcontextprotocol/inspector-server-0.14.2" = {
       name = "_at_modelcontextprotocol_slash_inspector-server";
       packageName = "@modelcontextprotocol/inspector-server";
-      version = "0.14.1";
+      version = "0.14.2";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-server/-/inspector-server-0.14.1.tgz";
-        sha512 = "w9VTdqzHHYBOOQw0QJa2QB/tn6dTZsDSGO3d4a5BJile4It283Lw1xi1W1pMgNB+MTEG471disU/qJapqETK6A==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/inspector-server/-/inspector-server-0.14.2.tgz";
+        sha512 = "KdGYnYO/VbYtKnhUyK8SzXcpOyOCXyWUfMmGzsWOjMS+EBoh8fWLLFpJFHsJNeLewcyZU8JvX3V02xNFzWsINQ==";
       };
     };
     "@modelcontextprotocol/sdk-0.5.0" = {
@@ -2372,10 +2372,10 @@ in
   "@modelcontextprotocol/inspector" = nodeEnv.buildNodePackage {
     name = "_at_modelcontextprotocol_slash_inspector";
     packageName = "@modelcontextprotocol/inspector";
-    version = "0.14.1";
+    version = "0.14.2";
     src = fetchurl {
-      url = "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-0.14.1.tgz";
-      sha512 = "F9Xd/06eCfeuHkFR+6sNGhGrKAfgXFmf9VDzw+hMMoeJM3ltOUSJh/fqCvvM6tGrxvb49uAF7dr/o5Dz+rVKxw==";
+      url = "https://registry.npmjs.org/@modelcontextprotocol/inspector/-/inspector-0.14.2.tgz";
+      sha512 = "TZWSzKSdpAImviRchrJuaRLubSZWGGPToT4ns/T3S6BQ+CuXqcH5cUGYp+SrqNwlUIJkzjucFRTDme+T37GJeg==";
     };
     dependencies = [
       sources."@cspotcode/source-map-support-0.8.1"
@@ -2386,9 +2386,9 @@ in
       sources."@jridgewell/resolve-uri-3.1.2"
       sources."@jridgewell/sourcemap-codec-1.5.0"
       sources."@jridgewell/trace-mapping-0.3.9"
-      sources."@modelcontextprotocol/inspector-cli-0.14.1"
-      sources."@modelcontextprotocol/inspector-client-0.14.1"
-      sources."@modelcontextprotocol/inspector-server-0.14.1"
+      sources."@modelcontextprotocol/inspector-cli-0.14.2"
+      sources."@modelcontextprotocol/inspector-client-0.14.2"
+      sources."@modelcontextprotocol/inspector-server-0.14.2"
       (
         sources."@modelcontextprotocol/sdk-1.12.3"
         // {
