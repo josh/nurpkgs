@@ -566,13 +566,13 @@ let
         sha512 = "vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==";
       };
     };
-    "@types/node-24.0.1" = {
+    "@types/node-24.0.3" = {
       name = "_at_types_slash_node";
       packageName = "@types/node";
-      version = "24.0.1";
+      version = "24.0.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@types/node/-/node-24.0.1.tgz";
-        sha512 = "MX4Zioh39chHlDJbKmEgydJDS3tspMP/lnQC67G3SWsTnb9NeYVWOjkxpOSy4oMfPs4StcWHwBrvUb4ybfnuaw==";
+        url = "https://registry.npmjs.org/@types/node/-/node-24.0.3.tgz";
+        sha512 = "R4I/kzCYAdRLzfiCabn9hxWfbuHS573x+r0dJMkkzThEa7pbrcDWK+9zu3e7aBOouf+rQAciqPFMnxwr0aWgKg==";
       };
     };
     "@types/react-19.1.8" = {
@@ -2348,13 +2348,13 @@ let
         sha512 = "Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==";
       };
     };
-    "zod-3.25.64" = {
+    "zod-3.25.65" = {
       name = "zod";
       packageName = "zod";
-      version = "3.25.64";
+      version = "3.25.65";
       src = fetchurl {
-        url = "https://registry.npmjs.org/zod/-/zod-3.25.64.tgz";
-        sha512 = "hbP9FpSZf7pkS7hRVUrOjhwKJNyampPgtXKc3AN6DsWtoHsg2Sb4SQaS4Tcay380zSwd2VPo9G9180emBACp5g==";
+        url = "https://registry.npmjs.org/zod/-/zod-3.25.65.tgz";
+        sha512 = "kMyE2qsXK1p+TAvO7zsf5wMFiCejU3obrUDs9bR1q5CBKykfvp7QhhXrycUylMoOow0iEUSyjLlZZdCsHwSldQ==";
       };
     };
     "zod-to-json-schema-3.24.5" = {
@@ -2442,7 +2442,7 @@ in
       sources."@tsconfig/node12-1.0.11"
       sources."@tsconfig/node14-1.0.3"
       sources."@tsconfig/node16-1.0.4"
-      sources."@types/node-24.0.1"
+      sources."@types/node-24.0.3"
       sources."@types/react-19.1.8"
       sources."@types/react-dom-19.1.6"
       (
@@ -2679,7 +2679,7 @@ in
       sources."yargs-17.7.2"
       sources."yargs-parser-21.1.1"
       sources."yn-3.1.1"
-      sources."zod-3.25.64"
+      sources."zod-3.25.65"
       sources."zod-to-json-schema-3.24.5"
     ];
     buildInputs = globalBuildInputs;
@@ -2780,7 +2780,7 @@ in
           ];
         }
       )
-      sources."zod-3.25.64"
+      sources."zod-3.25.65"
       sources."zod-to-json-schema-3.24.5"
     ];
     buildInputs = globalBuildInputs;
@@ -2815,7 +2815,7 @@ in
       sources."statuses-2.0.1"
       sources."toidentifier-1.0.1"
       sources."unpipe-1.0.0"
-      sources."zod-3.25.64"
+      sources."zod-3.25.65"
     ];
     buildInputs = globalBuildInputs;
     meta = {
