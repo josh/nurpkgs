@@ -9,13 +9,13 @@
 let
   prometheus-github-exporter = buildGoModule {
     pname = "prometheus-github-exporter";
-    version = "0.1.0-unstable-2025-06-16";
+    version = "0.1.1-unstable-2025-06-17";
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "github_exporter";
-      rev = "d1a568b35b1f9611ec758925fa22ffdc4cb9a775";
-      hash = "sha256-8bhD+YwLSnfh9IUbEVHBTx3/jDzUGKNQD+81ogXMy5E=";
+      rev = "e9da90b8ca1a4805f67487a39fb2d0feab505b46";
+      hash = "sha256-hctRdBo+VDLO2s/m1yYDpHCvyezQ02npGoUfSxAsycM=";
     };
 
     vendorHash = "sha256-5oSLFHTvZTZ402ufXIiYIgXEk9nzMkUoRY1vyWKRC7w=";
