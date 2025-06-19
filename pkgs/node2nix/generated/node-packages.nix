@@ -152,13 +152,13 @@ let
         sha512 = "slLdFaxQJ9AlRg+hw28iiTtGvShAOgOKXcD0F91nUcRYiOMuS9ZBYjcdNZRXW9G5JQ511GRTdUy1zQVZDpJ+4w==";
       };
     };
-    "@modelcontextprotocol/sdk-1.12.3" = {
+    "@modelcontextprotocol/sdk-1.13.0" = {
       name = "_at_modelcontextprotocol_slash_sdk";
       packageName = "@modelcontextprotocol/sdk";
-      version = "1.12.3";
+      version = "1.13.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.12.3.tgz";
-        sha512 = "DyVYSOafBvk3/j1Oka4z5BWT8o4AFmoNyZY9pALOm7Lh3GZglR71Co4r4dEUoqDWdDazIZQHBe7J2Nwkg6gHgQ==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.13.0.tgz";
+        sha512 = "P5FZsXU0kY881F6Hbk9GhsYx02/KgWK1DYf7/tyE/1lcFKhDYPQR9iYjhQXJn+Sg6hQleMo3DB7h7+p4wgp2Lw==";
       };
     };
     "@radix-ui/number-1.1.1" = {
@@ -485,13 +485,13 @@ let
         sha512 = "HPwpGIzkl28mWyZqG52jiqDJ12waP11Pa1lGoiyUkIEuMLBP0oeK/C89esbXrxsky5we7dfd8U58nm0SgAWpVw==";
       };
     };
-    "@swc/core-1.12.1" = {
+    "@swc/core-1.12.3" = {
       name = "_at_swc_slash_core";
       packageName = "@swc/core";
-      version = "1.12.1";
+      version = "1.12.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/core/-/core-1.12.1.tgz";
-        sha512 = "aKXdDTqxTVFl/bKQZ3EQUjEMBEoF6JBv29moMZq0kbVO43na6u/u+3Vcbhbrh+A2N0X5OL4RaveuWfAjEgOmeA==";
+        url = "https://registry.npmjs.org/@swc/core/-/core-1.12.3.tgz";
+        sha512 = "c4NeXW8P3gPqcFwtm+4aH+F2Cj5KJLMiLaKhSj3mpv19glq+jmekomdktAw/VHyjsXlsmouOeNWrk8rVlkCRsg==";
       };
     };
     "@swc/counter-0.1.3" = {
@@ -521,13 +521,13 @@ let
         sha512 = "u1iIVZV9Q0jxY+yM2vw/hZGDNudsN85bBpTqzAQ9rzkxW9D+e3aEM4Han+ow518gSewkXgjmEK0BD79ZcNVgPw==";
       };
     };
-    "@swc/wasm-1.12.1" = {
+    "@swc/wasm-1.12.3" = {
       name = "_at_swc_slash_wasm";
       packageName = "@swc/wasm";
-      version = "1.12.1";
+      version = "1.12.3";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.12.1.tgz";
-        sha512 = "2QNgxBTylbWCeCt3tpktImqBWkV5jA48uMPIrPJq4tQGQLSBdYEg+I3K1fE9lUOl2qQte0jigmg9D/+JdAP+mA==";
+        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.12.3.tgz";
+        sha512 = "1+uy0R9eCeybG8mZbFYRjYm8whBRbjSa0RL8nEjSso7pWjRE1exfb1ImzVBkg3+z+LZ1YeYk+BtU6Am9VlQ7yg==";
       };
     };
     "@tsconfig/node10-1.0.11" = {
@@ -2390,7 +2390,7 @@ in
       sources."@modelcontextprotocol/inspector-client-0.14.3"
       sources."@modelcontextprotocol/inspector-server-0.14.3"
       (
-        sources."@modelcontextprotocol/sdk-1.12.3"
+        sources."@modelcontextprotocol/sdk-1.13.0"
         // {
           dependencies = [
             sources."pkce-challenge-5.0.0"
@@ -2433,11 +2433,11 @@ in
       sources."@radix-ui/react-use-size-1.1.1"
       sources."@radix-ui/react-visually-hidden-1.2.3"
       sources."@radix-ui/rect-1.1.1"
-      sources."@swc/core-1.12.1"
+      sources."@swc/core-1.12.3"
       sources."@swc/counter-0.1.3"
       sources."@swc/helpers-0.5.17"
       sources."@swc/types-0.1.23"
-      sources."@swc/wasm-1.12.1"
+      sources."@swc/wasm-1.12.3"
       sources."@tsconfig/node10-1.0.11"
       sources."@tsconfig/node12-1.0.11"
       sources."@tsconfig/node14-1.0.3"
