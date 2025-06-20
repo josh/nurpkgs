@@ -485,13 +485,13 @@ let
         sha512 = "HPwpGIzkl28mWyZqG52jiqDJ12waP11Pa1lGoiyUkIEuMLBP0oeK/C89esbXrxsky5we7dfd8U58nm0SgAWpVw==";
       };
     };
-    "@swc/core-1.12.3" = {
+    "@swc/core-1.12.4" = {
       name = "_at_swc_slash_core";
       packageName = "@swc/core";
-      version = "1.12.3";
+      version = "1.12.4";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/core/-/core-1.12.3.tgz";
-        sha512 = "c4NeXW8P3gPqcFwtm+4aH+F2Cj5KJLMiLaKhSj3mpv19glq+jmekomdktAw/VHyjsXlsmouOeNWrk8rVlkCRsg==";
+        url = "https://registry.npmjs.org/@swc/core/-/core-1.12.4.tgz";
+        sha512 = "hn30ebV4njAn0NAUM+3a0qCF+MJgqTNSrfA/hUAbC6TVjOQy2OYGQwkUvCu/V7S2+rZxrUsTpKOnZ7qqECZV9Q==";
       };
     };
     "@swc/counter-0.1.3" = {
@@ -521,13 +521,13 @@ let
         sha512 = "u1iIVZV9Q0jxY+yM2vw/hZGDNudsN85bBpTqzAQ9rzkxW9D+e3aEM4Han+ow518gSewkXgjmEK0BD79ZcNVgPw==";
       };
     };
-    "@swc/wasm-1.12.3" = {
+    "@swc/wasm-1.12.4" = {
       name = "_at_swc_slash_wasm";
       packageName = "@swc/wasm";
-      version = "1.12.3";
+      version = "1.12.4";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.12.3.tgz";
-        sha512 = "1+uy0R9eCeybG8mZbFYRjYm8whBRbjSa0RL8nEjSso7pWjRE1exfb1ImzVBkg3+z+LZ1YeYk+BtU6Am9VlQ7yg==";
+        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.12.4.tgz";
+        sha512 = "si7uIV69NvLh2uA6lfLJZMIRJfELD2Dq2dwG9wEZsMOgPA1z3oUmkG/v1itMSbGJSyInae8EcmuFzutikvZTOQ==";
       };
     };
     "@tsconfig/node10-1.0.11" = {
@@ -2433,11 +2433,11 @@ in
       sources."@radix-ui/react-use-size-1.1.1"
       sources."@radix-ui/react-visually-hidden-1.2.3"
       sources."@radix-ui/rect-1.1.1"
-      sources."@swc/core-1.12.3"
+      sources."@swc/core-1.12.4"
       sources."@swc/counter-0.1.3"
       sources."@swc/helpers-0.5.17"
       sources."@swc/types-0.1.23"
-      sources."@swc/wasm-1.12.3"
+      sources."@swc/wasm-1.12.4"
       sources."@tsconfig/node10-1.0.11"
       sources."@tsconfig/node12-1.0.11"
       sources."@tsconfig/node14-1.0.3"
