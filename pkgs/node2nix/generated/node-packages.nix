@@ -485,13 +485,13 @@ let
         sha512 = "HPwpGIzkl28mWyZqG52jiqDJ12waP11Pa1lGoiyUkIEuMLBP0oeK/C89esbXrxsky5we7dfd8U58nm0SgAWpVw==";
       };
     };
-    "@swc/core-1.12.4" = {
+    "@swc/core-1.12.5" = {
       name = "_at_swc_slash_core";
       packageName = "@swc/core";
-      version = "1.12.4";
+      version = "1.12.5";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/core/-/core-1.12.4.tgz";
-        sha512 = "hn30ebV4njAn0NAUM+3a0qCF+MJgqTNSrfA/hUAbC6TVjOQy2OYGQwkUvCu/V7S2+rZxrUsTpKOnZ7qqECZV9Q==";
+        url = "https://registry.npmjs.org/@swc/core/-/core-1.12.5.tgz";
+        sha512 = "KxA0PHHIuUBmQ/Oi+xFpVzILj2Oo37sTtftCbyowQlyx5YOknEOw1kLpas5hMcpznXgFyAWbpK71xQps4INPgA==";
       };
     };
     "@swc/counter-0.1.3" = {
@@ -521,13 +521,13 @@ let
         sha512 = "u1iIVZV9Q0jxY+yM2vw/hZGDNudsN85bBpTqzAQ9rzkxW9D+e3aEM4Han+ow518gSewkXgjmEK0BD79ZcNVgPw==";
       };
     };
-    "@swc/wasm-1.12.4" = {
+    "@swc/wasm-1.12.5" = {
       name = "_at_swc_slash_wasm";
       packageName = "@swc/wasm";
-      version = "1.12.4";
+      version = "1.12.5";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.12.4.tgz";
-        sha512 = "si7uIV69NvLh2uA6lfLJZMIRJfELD2Dq2dwG9wEZsMOgPA1z3oUmkG/v1itMSbGJSyInae8EcmuFzutikvZTOQ==";
+        url = "https://registry.npmjs.org/@swc/wasm/-/wasm-1.12.5.tgz";
+        sha512 = "3s9RTMAogTUv8ao5janfeHofvvswgxcFsOj7My1fwegeoJ1zUldKmRKnU59A52kVdMfO62gXbIOscPJAdEttng==";
       };
     };
     "@tsconfig/node10-1.0.11" = {
@@ -1151,13 +1151,13 @@ let
         sha512 = "DT9ck5YIRU+8GYzzU5kT3eHGA5iL+1Zd0EutOmTE9Dtk+Tvuzd23VBU+ec7HPNSTxXYO55gPV/hq4pSBJDjFpA==";
       };
     };
-    "express-rate-limit-7.5.0" = {
+    "express-rate-limit-7.5.1" = {
       name = "express-rate-limit";
       packageName = "express-rate-limit";
-      version = "7.5.0";
+      version = "7.5.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/express-rate-limit/-/express-rate-limit-7.5.0.tgz";
-        sha512 = "eB5zbQh5h+VenMPM3fh+nw1YExi5nMr6HUCR62ELSP11huvxm/Uir1H1QEyTkk5QX6A58pX6NmaTMceKZ0Eodg==";
+        url = "https://registry.npmjs.org/express-rate-limit/-/express-rate-limit-7.5.1.tgz";
+        sha512 = "7iN8iPMDzOMHPUYllBEsQdWVB6fPDMPqwjBaFrgr4Jgr/+okjvzAy+UHlYYL/Vs0OsOrMkwS6PJDkFlJwoxUnw==";
       };
     };
     "fast-deep-equal-3.1.3" = {
@@ -2433,11 +2433,11 @@ in
       sources."@radix-ui/react-use-size-1.1.1"
       sources."@radix-ui/react-visually-hidden-1.2.3"
       sources."@radix-ui/rect-1.1.1"
-      sources."@swc/core-1.12.4"
+      sources."@swc/core-1.12.5"
       sources."@swc/counter-0.1.3"
       sources."@swc/helpers-0.5.17"
       sources."@swc/types-0.1.23"
-      sources."@swc/wasm-1.12.4"
+      sources."@swc/wasm-1.12.5"
       sources."@tsconfig/node10-1.0.11"
       sources."@tsconfig/node12-1.0.11"
       sources."@tsconfig/node14-1.0.3"
@@ -2531,7 +2531,7 @@ in
           ];
         }
       )
-      sources."express-rate-limit-7.5.0"
+      sources."express-rate-limit-7.5.1"
       sources."fast-deep-equal-3.1.3"
       sources."fast-json-stable-stringify-2.1.0"
       sources."finalhandler-2.1.0"
