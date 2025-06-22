@@ -854,13 +854,13 @@ let
         sha512 = "/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==";
       };
     };
-    "concurrently-9.1.2" = {
+    "concurrently-9.2.0" = {
       name = "concurrently";
       packageName = "concurrently";
-      version = "9.1.2";
+      version = "9.2.0";
       src = fetchurl {
-        url = "https://registry.npmjs.org/concurrently/-/concurrently-9.1.2.tgz";
-        sha512 = "H9MWcoPsYddwbOGM6difjVwVZHl63nwMEwDJG/L7VGtuaJhb12h2caPG2tVPWs7emuYix252iGfqOyrz1GczTQ==";
+        url = "https://registry.npmjs.org/concurrently/-/concurrently-9.2.0.tgz";
+        sha512 = "IsB/fiXTupmagMW4MNp2lx2cdSN2FfZq78vF90LBB+zZHArbIQZjQtzXCiXnvTxCZSvXanTqFLWBjw2UkLx1SQ==";
       };
     };
     "content-disposition-0.5.2" = {
@@ -2492,7 +2492,7 @@ in
       sources."color-name-1.1.4"
       sources."commander-13.1.0"
       sources."concat-map-0.0.1"
-      sources."concurrently-9.1.2"
+      sources."concurrently-9.2.0"
       sources."content-disposition-0.5.2"
       sources."content-type-1.0.5"
       sources."cookie-0.7.2"
