@@ -152,13 +152,13 @@ let
         sha512 = "slLdFaxQJ9AlRg+hw28iiTtGvShAOgOKXcD0F91nUcRYiOMuS9ZBYjcdNZRXW9G5JQ511GRTdUy1zQVZDpJ+4w==";
       };
     };
-    "@modelcontextprotocol/sdk-1.13.0" = {
+    "@modelcontextprotocol/sdk-1.13.1" = {
       name = "_at_modelcontextprotocol_slash_sdk";
       packageName = "@modelcontextprotocol/sdk";
-      version = "1.13.0";
+      version = "1.13.1";
       src = fetchurl {
-        url = "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.13.0.tgz";
-        sha512 = "P5FZsXU0kY881F6Hbk9GhsYx02/KgWK1DYf7/tyE/1lcFKhDYPQR9iYjhQXJn+Sg6hQleMo3DB7h7+p4wgp2Lw==";
+        url = "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.13.1.tgz";
+        sha512 = "8q6+9aF0yA39/qWT/uaIj6zTpC+Qu07DnN/lb9mjoquCJsAh6l3HyYqc9O3t2j7GilseOQOQimLg7W3By6jqvg==";
       };
     };
     "@radix-ui/number-1.1.1" = {
@@ -2390,7 +2390,7 @@ in
       sources."@modelcontextprotocol/inspector-client-0.14.3"
       sources."@modelcontextprotocol/inspector-server-0.14.3"
       (
-        sources."@modelcontextprotocol/sdk-1.13.0"
+        sources."@modelcontextprotocol/sdk-1.13.1"
         // {
           dependencies = [
             sources."pkce-challenge-5.0.0"
