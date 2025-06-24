@@ -24,7 +24,6 @@
       ];
       inherit (nixpkgs) lib;
       eachSystem = lib.genAttrs systems;
-      eachPkgs = f: eachSystem (system: f nixpkgs.legacyPackages.${system});
 
       treefmt-nix = eachSystem (import ./internal/treefmt.nix);
     in
@@ -33,9 +32,10 @@
         nur.repos.josh = import ./default.nix { pkgs = final; };
       };
 
-      packages = eachPkgs (
-        pkgs:
+      packages = eachSystem (
+        system:
         let
+          pkgs = nixpkgs.legacyPackages.${system};
           isAvailable = _: pkg: pkg.meta.available;
           nurpkgs = import ./default.nix { inherit pkgs; };
           availablePkgs = lib.attrsets.filterAttrs isAvailable nurpkgs;
@@ -44,10 +44,10 @@
       );
 
       formatter = eachSystem (system: treefmt-nix.${system}.wrapper);
-      checks = eachPkgs (
-        pkgs:
+      checks = eachSystem (
+        system:
         let
-          inherit (pkgs) system;
+          pkgs = nixpkgs.legacyPackages.${system};
           buildPkg = pkg: pkgs.runCommand "${pkg.name}-build" { nativeBuildInputs = [ pkg ]; } "touch $out";
           addAttrsetPrefix = prefix: lib.attrsets.concatMapAttrs (n: v: { "${prefix}${n}" = v; });
           localTests = lib.attrsets.concatMapAttrs (
