@@ -24,6 +24,33 @@
       ];
       inherit (nixpkgs) lib;
       eachSystem = lib.genAttrs systems;
+      addAttrsetPrefix = prefix: lib.attrsets.concatMapAttrs (n: v: { "${prefix}${n}" = v; });
+
+      mkPackages =
+        pkgs:
+        let
+          nurpkgs = import ./default.nix { inherit pkgs; };
+        in
+        lib.attrsets.filterAttrs (_: pkg: pkg.meta.available) nurpkgs;
+
+      mkChecks =
+        name: pkgs:
+        let
+          buildCheckPkg =
+            pkg: pkgs.runCommand "${pkg.name}-${name}-build" { nativeBuildInputs = [ pkg ]; } "touch $out";
+        in
+        lib.attrsets.concatMapAttrs (
+          pkgName: pkg:
+          if (builtins.hasAttr "tests" pkg) then
+            (
+              {
+                "${pkgName}-${name}-build" = buildCheckPkg pkg;
+              }
+              // (addAttrsetPrefix "${pkgName}-${name}-tests-" pkg.tests)
+            )
+          else
+            { "${pkgName}-${name}-build" = buildCheckPkg pkg; }
+        ) (mkPackages pkgs);
 
       treefmt-nix = eachSystem (import ./internal/treefmt.nix);
     in
@@ -32,36 +59,15 @@
         nur.repos.josh = import ./default.nix { pkgs = final; };
       };
 
-      packages = eachSystem (
-        system:
-        let
-          pkgs = nixpkgs.legacyPackages.${system};
-          isAvailable = _: pkg: pkg.meta.available;
-          nurpkgs = import ./default.nix { inherit pkgs; };
-          availablePkgs = lib.attrsets.filterAttrs isAvailable nurpkgs;
-        in
-        availablePkgs
-      );
+      packages = eachSystem (system: mkPackages nixpkgs.legacyPackages.${system});
 
       formatter = eachSystem (system: treefmt-nix.${system}.wrapper);
       checks = eachSystem (
         system:
-        let
-          pkgs = nixpkgs.legacyPackages.${system};
-          buildPkg = pkg: pkgs.runCommand "${pkg.name}-build" { nativeBuildInputs = [ pkg ]; } "touch $out";
-          addAttrsetPrefix = prefix: lib.attrsets.concatMapAttrs (n: v: { "${prefix}${n}" = v; });
-          localTests = lib.attrsets.concatMapAttrs (
-            pkgName: pkg:
-            if (builtins.hasAttr "tests" pkg) then
-              ({ "${pkgName}-build" = buildPkg pkg; } // (addAttrsetPrefix "${pkgName}-tests-" pkg.tests))
-            else
-              { "${pkgName}-build" = buildPkg pkg; }
-          ) self.packages.${system};
-        in
         {
           formatting = treefmt-nix.${system}.check self;
         }
-        // localTests
+        // (mkChecks "unstable" nixpkgs.legacyPackages.${system})
       );
     };
 }
