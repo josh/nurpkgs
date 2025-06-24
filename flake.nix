@@ -17,6 +17,10 @@
   outputs =
     { self, nixpkgs }:
     let
+      internal-inputs = builtins.mapAttrs (
+        _name: node: builtins.getFlake (builtins.flakeRefToString node.locked)
+      ) (builtins.fromJSON (builtins.readFile ./internal/flake.lock)).nodes;
+
       systems = [
         "aarch64-darwin"
         "aarch64-linux"
@@ -67,7 +71,8 @@
         {
           formatting = treefmt-nix.${system}.check self;
         }
-        // (mkChecks "unstable" nixpkgs.legacyPackages.${system})
+        // (mkChecks "stable" internal-inputs.nixpkgs-stable.legacyPackages.${system})
+        // (mkChecks "unstable" internal-inputs.nixpkgs-unstable.legacyPackages.${system})
       );
     };
 }
