@@ -26,7 +26,7 @@
       eachSystem = lib.genAttrs systems;
       eachPkgs = f: eachSystem (system: f nixpkgs.legacyPackages.${system});
 
-      treefmt-nix = eachPkgs (import ./internal/treefmt.nix);
+      treefmt-nix = eachSystem (import ./internal/treefmt.nix);
     in
     {
       overlays.default = final: _prev: {
