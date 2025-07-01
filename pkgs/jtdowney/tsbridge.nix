@@ -13,7 +13,7 @@ buildGoModule (finalAttrs: {
   src = fetchFromGitHub {
     owner = "jtdowney";
     repo = "tsbridge";
-    rev = "v${finalAttrs.version}";
+    tag = "v${finalAttrs.version}";
     hash = "sha256-COhW8hfaE3L2S42OZfGiWxunY1nW0OKYyzm2u6r34cM=";
   };
 
