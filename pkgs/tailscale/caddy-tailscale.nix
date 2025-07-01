@@ -7,7 +7,7 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "caddy-tailscale";
-  version = "0.0.0";
+  version = "0-unstable-2025-05-08";
 
   src = fetchFromGitHub {
     owner = "tailscale";
