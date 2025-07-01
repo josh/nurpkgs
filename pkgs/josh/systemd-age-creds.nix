@@ -10,12 +10,12 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "systemd-age-creds";
-  version = "0.2.1-unstable-2025-06-18";
+  version = "0.2.1";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "systemd-age-creds";
-    rev = "a9670948827a4cfbd7bf72ae2eab4fea453a2f5a";
+    tag = "v${finalAttrs.version}";
     hash = "sha256-BjNJE2Kjc93nqg0NRbj3sf20/9yWa/fZLZQEAtCAr8I=";
   };
 
@@ -31,7 +31,7 @@ buildGoModule (finalAttrs: {
 
   nativeBuildInputs = [ age ];
 
-  passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+  passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   passthru.tests = {
     version =
