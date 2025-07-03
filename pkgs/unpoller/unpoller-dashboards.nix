@@ -2,7 +2,6 @@
   lib,
   stdenvNoCC,
   fetchFromGitHub,
-  nix-update-script,
 }:
 stdenvNoCC.mkDerivation {
   pname = "unpoller-dashboards";
@@ -24,7 +23,7 @@ stdenvNoCC.mkDerivation {
     runHook postInstall
   '';
 
-  passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+  # passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
   meta = {
     description = "UniFi Poller Grafana Dashboards";
