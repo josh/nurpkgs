@@ -83,6 +83,5 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     homepage = "https://github.com/johnwarne/reddit-top-rss";
     license = lib.licenses.mit;
     platforms = lib.platforms.all;
-    mainProgram = "reddit-top-rss";
   };
 })
