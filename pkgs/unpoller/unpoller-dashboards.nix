@@ -6,7 +6,7 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "unpoller-dashboards";
-  version = "2.0.0";
+  version = "0-unstable-2024-12-27";
 
   src = fetchFromGitHub {
     owner = "unpoller";
