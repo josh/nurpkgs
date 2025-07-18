@@ -3,7 +3,6 @@
   fetchFromGitHub,
   python3Packages,
   runCommand,
-  nix-update-script,
 }:
 let
   tmdb-index = python3Packages.buildPythonApplication {
