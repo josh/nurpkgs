@@ -4,7 +4,7 @@
   python3Packages,
   runCommand,
   testers,
-  nix-update-script,
+# nix-update-script,
 }:
 let
   wikidata-rdf-patch = python3Packages.buildPythonApplication rec {
@@ -49,7 +49,7 @@ wikidata-rdf-patch.overrideAttrs (
   in
   {
     passthru = previousAttrs.passthru // {
-      updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
+      # updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
       tests = {
         version = testers.testVersion {
