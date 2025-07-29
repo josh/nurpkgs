@@ -23,6 +23,7 @@ buildGoModule (finalAttrs: {
   ldflags = [
     "-s"
     "-w"
+    "-X main.Version=${finalAttrs.version}"
   ];
 
   postInstall = ''
