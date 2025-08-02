@@ -13,8 +13,8 @@ buildGoModule (finalAttrs: {
   src = fetchFromGitHub {
     owner = "josh";
     repo = "tailscale_exporter";
-    rev = "87d12e6ed12781cca1ea5d81210ac9e03f25986a";
-    hash = "sha256-VZEdRMPnNTQr4aG7pchR1X7qJhqsaAY4SFoBx3m+N3k=";
+    rev = "8691cbe7ac5669afbd7b463e75ef6e06f4c5dbb5";
+    hash = "sha256-WOZm04dvxheiRocNJtdrUYeBFTNiZwZ6HUauRoR5EbA=";
   };
 
   vendorHash = "sha256-JbqQu2WSfnWLulXchEyXKpmLmDlyZ8RMrDSJM4BYWVA=";
