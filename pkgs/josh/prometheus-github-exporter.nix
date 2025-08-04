@@ -13,18 +13,19 @@ buildGoModule (finalAttrs: {
   src = fetchFromGitHub {
     owner = "josh";
     repo = "github_exporter";
-    tag = "v${finalAttrs.version}";
-    hash = "sha256-o53yNnUOSNR7yz16a7V1yF+ZaBrtmHXfCyNVQNC4dow=";
+    rev = "bd1b395d7feed6fe53a19dc38da76e9e845b0380";
+    hash = "sha256-JJvm6s4XEcGoHq4tWj70Atf+LzXc8cNlaB0nGnC0gpQ=";
   };
 
-  vendorHash = "sha256-XoPS4oYYPxgbO7a54xH3gdG11adWlYmKe8IuGPtQdHc=";
+  vendorHash = "sha256-iYCPQS2L6kbiELTUREHSm7mCGGVFS1yrJQKrTDwKdV0=";
 
   env.CGO_ENABLED = 0;
   ldflags = [
     "-s"
     "-w"
+    "-X main.Version=${finalAttrs.version}"
   ];
-  passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
+  passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
   passthru.tests = {
     version = testers.testVersion {
