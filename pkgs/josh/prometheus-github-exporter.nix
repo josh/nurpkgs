@@ -13,8 +13,8 @@ buildGoModule (finalAttrs: {
   src = fetchFromGitHub {
     owner = "josh";
     repo = "github_exporter";
-    rev = "b0efefd9ff3523de25741eb17ab72f01d76fabce";
-    hash = "sha256-HMc1nsT8neIbn1ApskIEC/+0L0nu76CBaZyKCLUuP7k=";
+    rev = "4de664ea49c0ba8847bee51d2fd943f6e9eaa9eb";
+    hash = "sha256-89WavbUJwFWW+f0buUvFQzp4HRSOFCa0sO8AXAl0ILI=";
   };
 
   vendorHash = "sha256-6JOi1tu9IZhwEikgdSdLvbl9awmYTxqlcSVWHfs7Sqg=";
