@@ -8,7 +8,7 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "prometheus-github-exporter";
-  version = "1.0.0";
+  version = "1.0.0-unstable-2025-08-04";
 
   src = fetchFromGitHub {
     owner = "josh";
