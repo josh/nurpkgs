@@ -25,6 +25,12 @@ buildGoModule (finalAttrs: {
     "-w"
     "-X main.Version=${finalAttrs.version}"
   ];
+
+  postInstall = ''
+    substituteInPlace ./systemd/*.service --replace-fail /usr/bin/github_exporter $out/bin/github_exporter
+    install -D --mode=0444 --target-directory $out/lib/systemd/system ./systemd/*
+  '';
+
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
   passthru.tests = {
