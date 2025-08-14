@@ -7,13 +7,13 @@
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "upvote-rss";
-  version = "1.3.0";
+  version = "1.4.0";
 
   src = fetchFromGitHub {
     owner = "johnwarne";
     repo = "upvote-rss";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-w5Sx59wVdpR9TqahIfLBcyEthrnAh2EE8rSjFmnvpDs=";
+    hash = "sha256-dk4lDgEH/Mb2tXdK1QBtmAWMCifdC0x2ova7GK8OUC4=";
   };
 
   nativeCheckInputs = [ php ];
