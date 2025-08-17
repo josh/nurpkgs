@@ -8,13 +8,13 @@ rustPlatform.buildRustPackage {
   __structuredAttrs = true;
 
   pname = "histutils";
-  version = "0-unstable-2025-08-16";
+  version = "0-unstable-2025-08-17";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "histutils";
-    rev = "ea4cfe095768839415f9a54b709050b2381f3b20";
-    hash = "sha256-pYoAjIcPkajc7G8B32cL+ZyeyITSH4AJlPPMrP+flcw=";
+    rev = "89227c1047d7aff4284aa3c2eae029e06b289cd6";
+    hash = "sha256-eArPWbbk2l/Oo7oJbUGh5UDPYBakFJh/5bLJ34EAOUM=";
   };
 
   cargoHash = "sha256-qefQqJmgufN+ituYISGh3W7aZd17xhhZDx/jl2X+v2U=";
