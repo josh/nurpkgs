@@ -13,8 +13,8 @@ rustPlatform.buildRustPackage {
   src = fetchFromGitHub {
     owner = "josh";
     repo = "histutils";
-    rev = "89227c1047d7aff4284aa3c2eae029e06b289cd6";
-    hash = "sha256-eArPWbbk2l/Oo7oJbUGh5UDPYBakFJh/5bLJ34EAOUM=";
+    rev = "618fb00ce984119213753120e6e0c05588354019";
+    hash = "sha256-QY6bhXYewMuzL1mDS2rZEDIpK11lYIfeGA51VCk4XeY=";
   };
 
   cargoHash = "sha256-qefQqJmgufN+ituYISGh3W7aZd17xhhZDx/jl2X+v2U=";
