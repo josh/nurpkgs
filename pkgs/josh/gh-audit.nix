@@ -9,13 +9,13 @@
 let
   gh-audit = python3Packages.buildPythonApplication rec {
     pname = "gh-audit";
-    version = "0.1.3-unstable-2025-07-23";
+    version = "0.1.3-unstable-2025-08-18";
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "gh-audit";
-      rev = "2b2ed53f14f86c914bc1b50c757321b233f87d1a";
-      hash = "sha256-uR/gX56bNrvWJHp8ItxsissTuH4sJTzt7X/8AhxgxU4=";
+      rev = "a5bfaaab8119e1fb48d8feeb5bb6172873deeaf0";
+      hash = "sha256-zE/6XrMnsL884dWFljVmQ/o2YH+lvW7ch2K49T3iydI=";
     };
 
     pyproject = true;
