@@ -3,6 +3,7 @@
   fetchFromGitHub,
   python3Packages,
   runCommand,
+  nix-update-script,
 }:
 let
   tmdb-index = python3Packages.buildPythonApplication {
@@ -12,8 +13,8 @@ let
     src = fetchFromGitHub {
       owner = "josh";
       repo = "tmdb-index";
-      rev = "6e641f59b32c1332e78ed2d87bdd577727d68b71";
-      hash = "sha256-xUFz0/shxe1yCm6KAdOgLFGB35DnNUue4uG1+SzqxUc=";
+      rev = "f6fc6b1283c09240804094a2b7e291e898ca5e77";
+      hash = "sha256-vkwnog+/z/LlVS7S7qQGs31X96sBwYgEAeGwnfV54kk=";
     };
 
     pyproject = true;
@@ -34,6 +35,8 @@ let
       license = lib.licenses.mit;
       platforms = lib.platforms.all;
       mainProgram = "tmdb-index";
+      # FIXME: Broken on nixos-25.05
+      broken = python3Packages.polars.version == "1.27.1";
     };
   };
 in
@@ -44,7 +47,7 @@ tmdb-index.overrideAttrs (
   in
   {
     passthru = previousAttrs.passthru // {
-      # updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+      updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
       tests = {
         help =
