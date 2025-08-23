@@ -6,7 +6,7 @@
   nix-update-script,
 }:
 let
-  imdb-plex-sync = python3Packages.buildPythonApplication rec {
+  imdb-plex-sync = python3Packages.buildPythonApplication {
     pname = "imdb-plex-sync";
     version = "0.1.1-unstable-2025-08-16";
 
@@ -18,7 +18,6 @@ let
     };
 
     pyproject = true;
-    __structuredAttrs = true;
 
     build-system = with python3Packages; [
       hatchling
@@ -26,7 +25,7 @@ let
 
     dependencies = with python3Packages; [
       click
-      plexapi
+      polars
     ];
 
     meta = {
@@ -48,8 +47,6 @@ imdb-plex-sync.overrideAttrs (
       updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
       tests = {
-        # TODO: Add --version test
-
         help =
           runCommand "test-imdb-plex-sync-help"
             {
