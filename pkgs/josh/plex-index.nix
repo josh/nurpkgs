@@ -13,8 +13,8 @@ let
     src = fetchFromGitHub {
       owner = "josh";
       repo = "plex-index";
-      rev = "9efddfcf2c19155cee7ba09a36dbeef9cddbb3da";
-      hash = "sha256-cNGwxoa/aqTri2M6sx0wU41n7oSqVpIfsnSIWoDFy2Q=";
+      rev = "73399657b27e282efbb72c87432c744a7f2e3055";
+      hash = "sha256-2lPMfFuEG8LlvYtC+S0az1mr/t/LGV0OrXEhtguErD0=";
     };
 
     pyproject = true;
