@@ -13,7 +13,7 @@
   notmuch,
   buildNoDefaultFeatures ? false,
   buildFeatures ? [ ],
-  nix-update-script,
+# nix-update-script,
 }:
 rustPlatform.buildRustPackage rec {
   __structuredAttrs = true;
@@ -67,7 +67,7 @@ rustPlatform.buildRustPackage rec {
     installShellCompletion "$out"/share/completions/neverest.{bash,fish,zsh}
   '';
 
-  passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+  # passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
   meta = rec {
     description = "CLI to manage emails";
