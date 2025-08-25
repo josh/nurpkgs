@@ -6,4 +6,11 @@ let
   };
   pkgs = import nixpkgs { inherit system; };
 in
-pkgs.callPackage ./neverest.nix { }
+(pkgs.callPackage ./neverest.nix { }).overrideAttrs (previousAttrs: {
+  passthru = previousAttrs.passthru // {
+    updateScript = null;
+  };
+  meta = previousAttrs.meta // {
+    broken = false;
+  };
+})
