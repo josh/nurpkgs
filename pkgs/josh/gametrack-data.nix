@@ -40,7 +40,7 @@ gametrack-data.overrideAttrs (
   in
   {
     passthru = previousAttrs.passthru // {
-      updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
+      updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
       tests = {
         # TODO: Add --version test
