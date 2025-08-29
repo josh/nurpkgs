@@ -34,10 +34,10 @@ buildGoModule (finalAttrs: {
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
   passthru.tests = {
-    # version = testers.testVersion {
-    #   package = finalAttrs.finalPackage;
-    #   inherit (finalAttrs) version;
-    # };
+    version = testers.testVersion {
+      package = finalAttrs.finalPackage;
+      inherit (finalAttrs) version;
+    };
 
     help = runCommand "test-wait4tailscale-help" { nativeBuildInputs = [ finalAttrs.finalPackage ]; } ''
       wait4tailscale --help
