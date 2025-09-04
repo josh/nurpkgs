@@ -13,8 +13,10 @@ let
 in
 pkg
 // {
+  updateScript = null;
   passthru = pkg.passthru // {
-    updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+    # updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+    updateScript = null;
   };
   meta = pkg.meta // {
     position = "${./terraform-provider-github.nix}:17";
