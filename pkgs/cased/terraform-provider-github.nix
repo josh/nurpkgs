@@ -3,22 +3,25 @@ let
   pkg = terraform-providers.mkProvider {
     owner = "cased";
     repo = "terraform-provider-github";
-    rev = "9826ea55be7b673c0f3d8513f3ba5ae097b91916";
-    hash = "sha256-ITnpR4JMWrkFjfxEK62TgujXHVL7kiA8J5ziytAeTAQ=";
+    version = "0-unstable-2025-09-04";
+    rev = "ea1734e7900a4a77fa04eba811f2cf773e8cc848";
+    hash = "sha256-fSIKYTnp6JB7Mf6C0D7EI2+UUA9SFNraPaLo5/J0G0A=";
     vendorHash = null;
     provider-source-address = "registry.terraform.io/cased/github";
     homepage = "https://github.com/cased/terraform-provider-github";
     spdx = "MIT";
   };
 in
-pkg
-// {
-  updateScript = null;
-  passthru = pkg.passthru // {
-    # updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
-    updateScript = null;
-  };
-  meta = pkg.meta // {
-    position = "${./terraform-provider-github.nix}:17";
-  };
-}
+pkg.overrideAttrs (
+  _finalAttrs: previousAttrs: {
+    passthru = previousAttrs.passthru // {
+      updateScript = nix-update-script {
+        extraArgs = [
+          "--version=branch"
+          "--override-filename"
+          "pkgs/cased/terraform-provider-github.nix"
+        ];
+      };
+    };
+  }
+)
