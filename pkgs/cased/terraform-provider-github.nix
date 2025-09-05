@@ -4,8 +4,8 @@ let
     owner = "cased";
     repo = "terraform-provider-github";
     version = "0-unstable-2025-09-04";
-    rev = "7f0daa022a6939c9e5498cda21777f9210123ce3";
-    hash = "sha256-KvmAY3gIv/21wedheW2AOxvlje/y9ev0oJKpekuvL38=";
+    rev = "a333f2314471cb41cf6244b6f79b0c6b19e92fe4";
+    hash = "sha256-IRdx0iWBYvX6+qLmulAPD+Z4nZ5Pus2fSqO29QvHL0o=";
     vendorHash = null;
     provider-source-address = "registry.terraform.io/cased/github";
     homepage = "https://github.com/cased/terraform-provider-github";
