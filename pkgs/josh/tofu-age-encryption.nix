@@ -28,9 +28,6 @@ buildGoModule (finalAttrs: {
     "-X main.AgeProgram=${lib.getExe age}"
   ];
 
-  # TODO: Fix running go tests in nix sandbox
-  doCheck = false;
-
   nativeCheckInputs = [
     age
     opentofu
@@ -55,5 +52,6 @@ buildGoModule (finalAttrs: {
     license = lib.licenses.mit;
     platforms = lib.platforms.all;
     mainProgram = "tofu-age-encryption";
+    broken = lib.strings.versionOlder opentofu.version "1.10.0";
   };
 })
