@@ -9,7 +9,7 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "tofu-age-encryption";
-  version = "0.0.0";
+  version = "0-unstable-2025-09-06";
 
   src = fetchFromGitHub {
     owner = "josh";
