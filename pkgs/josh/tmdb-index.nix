@@ -35,8 +35,7 @@ let
       license = lib.licenses.mit;
       platforms = lib.platforms.all;
       mainProgram = "tmdb-index";
-      # FIXME: Broken on nixos-25.05
-      broken = python3Packages.polars.version == "1.27.1";
+      broken = lib.strings.versionOlder python3Packages.polars.version "1.30";
     };
   };
 in
