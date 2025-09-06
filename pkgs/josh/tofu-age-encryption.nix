@@ -28,9 +28,6 @@ buildGoModule (finalAttrs: {
     "-X main.AgeProgram=${lib.getExe age}"
   ];
 
-  # TODO: Fix running go tests in nix sandbox
-  doCheck = false;
-
   nativeCheckInputs = [
     age
     opentofu
