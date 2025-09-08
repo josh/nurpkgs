@@ -14,8 +14,8 @@ buildGoModule (finalAttrs: {
   src = fetchFromGitHub {
     owner = "josh";
     repo = "tofu-age-encryption";
-    rev = "a63878fb13fe083c7bac6c981954c5feaa450ca2";
-    hash = "sha256-9NLSX3+X2tbQ6UVBAdbONhusNZMjUCWEwpdA8nJhFNQ=";
+    rev = "ee54fd23cf76130c8910db931922c10b349eca6d";
+    hash = "sha256-er/yDOohZDRCH6EQfDbBPKupTgz40Gr9hZicoSH2q6c=";
   };
 
   vendorHash = "sha256-OEXvKQ/dBxhz6/pbQNDYIjBf3O0x36ZE3Se/FqEgYRg=";
