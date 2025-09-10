@@ -10,13 +10,13 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "tofu-age-encryption";
-  version = "0-unstable-2025-09-10";
+  version = "0.1.0-unstable-2025-09-10";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "tofu-age-encryption";
-    rev = "1963e6b083d723f5e0502b805b8fa20aa8cabd61";
-    hash = "sha256-10+rfDebcNS1EZujNA65uD2uDdhhY3mRwhHUbn1sIiY=";
+    rev = "b116c0c21ccf339db68c5246c97cb4473962345e";
+    hash = "sha256-MiLP83MRy3npOV+eXEHcG0v4pHBmpYFqRleHBKYKnzs=";
   };
 
   vendorHash = "sha256-OEXvKQ/dBxhz6/pbQNDYIjBf3O0x36ZE3Se/FqEgYRg=";
