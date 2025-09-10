@@ -5,6 +5,7 @@
   nix-update-script,
   testers,
   age,
+  jq,
   opentofu,
 }:
 buildGoModule (finalAttrs: {
@@ -30,6 +31,7 @@ buildGoModule (finalAttrs: {
 
   nativeCheckInputs = [
     age
+    jq
     opentofu
   ];
 
