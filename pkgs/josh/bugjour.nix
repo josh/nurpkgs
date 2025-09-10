@@ -11,8 +11,8 @@ buildGoModule {
   src = fetchFromGitHub {
     owner = "josh";
     repo = "bugjour";
-    rev = "64d284c95e20c3fe98160086ff1b06c5051d8e45";
-    hash = "sha256-1uu7N9KyvEcFYsmjDcau0JlAWi6XhQxHNnoH+U8oyFs=";
+    rev = "016ebb32e24cb3f5d6299c341cee57effff7b7cf";
+    hash = "sha256-/ED83qRQ0aFbilB+Cl/sVClUqVkWqdyCprvARGs6eFQ=";
   };
 
   vendorHash = "sha256-4V3cIgEN8WkHHrPz9SRshoiu0C+NHR0Xov1FZ06Q9XI=";
