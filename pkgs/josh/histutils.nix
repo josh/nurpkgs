@@ -6,16 +6,16 @@
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "histutils";
-  version = "0.1.0";
+  version = "1.0.0";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "histutils";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-MY7rnX4SMMHCrbAkQt/YEfR3La3j8vg/fagZbHvuoGE=";
+    hash = "sha256-weI1boYTy8GihFIzqATvtU74qjx6oRU4b89B+2t5NbA=";
   };
 
-  cargoHash = "sha256-qefQqJmgufN+ituYISGh3W7aZd17xhhZDx/jl2X+v2U=";
+  cargoHash = "sha256-Lsw39XlcoiCDI4bhfx1caPQPxVXHVQ5auqHEIOIPI1Q=";
 
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
