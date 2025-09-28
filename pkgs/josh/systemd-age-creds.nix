@@ -10,13 +10,13 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "systemd-age-creds";
-  version = "1.1.0";
+  version = "1.2.0";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "systemd-age-creds";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-+pgTuWzfFGnwL58htlyN13nccffqiSAQlTjhIP+M6UA=";
+    hash = "sha256-BP+lUD1FW7u6jBjwQTsp+Nc2Mx8bIMm7ekS/OQahfZs=";
   };
 
   vendorHash = null;
