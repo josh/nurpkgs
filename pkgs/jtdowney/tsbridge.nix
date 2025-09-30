@@ -2,7 +2,6 @@
   lib,
   buildGoModule,
   fetchFromGitHub,
-  nix-update-script,
   runCommand,
   testers,
 }:
@@ -28,7 +27,7 @@ buildGoModule (finalAttrs: {
 
   doCheck = false;
 
-  passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
+  # passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   passthru.tests = {
     version = testers.testVersion {
@@ -36,12 +35,10 @@ buildGoModule (finalAttrs: {
       inherit (finalAttrs) version;
     };
 
-    help =
-      runCommand "test-systemd-age-creds-help" { nativeBuildInputs = [ finalAttrs.finalPackage ]; }
-        ''
-          tsbridge --help
-          touch $out
-        '';
+    help = runCommand "test-tsbridge-help" { nativeBuildInputs = [ finalAttrs.finalPackage ]; } ''
+      tsbridge --help
+      touch $out
+    '';
   };
 
   meta = {
