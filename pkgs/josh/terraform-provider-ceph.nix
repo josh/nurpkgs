@@ -4,8 +4,8 @@ let
     owner = "josh";
     repo = "terraform-provider-ceph";
     version = "0-unstable-2025-09-30";
-    rev = "d01a3cd66f36ded2a7ca6c4d5f88c8a305d9b5a3";
-    hash = "sha256-QabSBLMtsuo/z9tQ5DFza40kFCynXMWhzvsw0XW8Lgo=";
+    rev = "3e36e5f8db07c600944d943e9a1c914a02bfd5c5";
+    hash = "sha256-rN9l7/VuypAdCbD8PjIj0RWa7rULdNuAZx1aD7Ollrs=";
     vendorHash = "sha256-OxoOQSZkoCmI4xPBR8sK1l6ve31fU9HDVcGbnbUdp5k=";
     provider-source-address = "registry.terraform.io/josh/ceph";
     homepage = "https://github.com/josh/terraform-provider-ceph";
