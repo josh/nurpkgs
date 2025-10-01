@@ -6,13 +6,13 @@
 }:
 buildGoModule {
   pname = "bugjour";
-  version = "0-unstable-2025-09-15";
+  version = "0-unstable-2025-10-01";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "bugjour";
-    rev = "f78cdd9ef8f0150781dc8eb6acffd31009266ed7";
-    hash = "sha256-1VuJAMoinUOxW1K4UYfxh+SIwY70SSwITposuvIxQVA=";
+    rev = "0048495c2603645ea83e0552026b2ed07cb02cc4";
+    hash = "sha256-hYsLx71FE7TgnADIgW4uwpnVLEhWH/sf0cx6vkvj9Rc=";
   };
 
   vendorHash = "sha256-4V3cIgEN8WkHHrPz9SRshoiu0C+NHR0Xov1FZ06Q9XI=";
