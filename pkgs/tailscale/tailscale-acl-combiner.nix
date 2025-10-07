@@ -7,7 +7,7 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "tailscale-acl-combiner";
-  version = "0.0.0";
+  version = "0-unstable-2025-06-09";
 
   src = fetchFromGitHub {
     owner = "tailscale-dev";
