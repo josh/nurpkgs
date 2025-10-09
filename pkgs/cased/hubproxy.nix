@@ -7,16 +7,16 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "hubproxy";
-  version = "1.0.0-unstable-2025-06-08";
+  version = "1.0.0-unstable-2025-10-09";
 
   src = fetchFromGitHub {
     owner = "cased";
     repo = "hubproxy";
-    rev = "98d5b850eb695d4becbf5abad483a380a6f6da65";
-    hash = "sha256-H+Zm1rt8r3MOVJ2rf1UFTXO1BfW3tpj7oaDYcdK1Xag=";
+    rev = "48698ad20df97441ee65c8388f4cdc3a3b6bfdb1";
+    hash = "sha256-s3vHbOrSPWRrFoAQgeJQ+KEVGLST6zv2SdZfR9oDolo=";
   };
 
-  vendorHash = "sha256-uEsF3N8VctXoXpPohqFkbLpLAJX+65KMvUlTNNKRTXo=";
+  vendorHash = "sha256-xvccyZEIfKh/y1IVz5THcnrvaZ2f01KKk9lI9q2JkOI=";
 
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
