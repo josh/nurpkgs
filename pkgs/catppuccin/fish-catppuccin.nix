@@ -52,7 +52,7 @@ let
 in
 fishPlugins.buildFishPlugin {
   pname = "fish-catppuccin";
-  version = "0.0.0";
+  version = "0-unstable-2025-03-01";
 
   src = fetchFromGitHub {
     owner = "catppuccin";
