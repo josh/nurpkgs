@@ -3,10 +3,10 @@ let
   pkg = terraform-providers.mkProvider {
     owner = "josh";
     repo = "terraform-provider-ceph";
-    version = "0-unstable-2025-10-08";
-    rev = "1044ee656fd398ad779984b6608532dbe9a85413";
-    hash = "sha256-Cbc+k8DAxMGI+uAVi9sIBhzuGQnBRFtlObYdk2KL324=";
-    vendorHash = "sha256-qh1WsS/9C3jI6fyL06kyjLRtTBx3s8W04+tiJiSTMjM=";
+    version = "0-unstable-2025-10-09";
+    rev = "8edc82c111e9ffff756d0cd405cf7b92c55bb40b";
+    hash = "sha256-SIqejKZ5lVbn6CX6p2lZDTVHqzx/MbcjJNRIBt8NHqM=";
+    vendorHash = "sha256-I28FnUbD05GDWii8VTuQfwvF9nrCv/3QRnXqa+WuQmY=";
     provider-source-address = "registry.terraform.io/josh/ceph";
     homepage = "https://github.com/josh/terraform-provider-ceph";
     spdx = "MIT";
