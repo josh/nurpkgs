@@ -74,5 +74,6 @@ fishPlugins.buildFishPlugin {
     description = "Soothing pastel theme for the Fish Shell";
     homepage = "https://github.com/catppuccin/fish";
     license = lib.licenses.mit;
+    platforms = lib.platforms.all;
   };
 }
