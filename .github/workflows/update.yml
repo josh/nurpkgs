@@ -55,12 +55,14 @@ jobs:
       - id: attrs
         name: Get package attributes to update
         run: |
+          set -o pipefail
           nix eval --raw --file ./internal/update-script-attrs.nix | tee "$GITHUB_OUTPUT"
         env:
           FLAKE_URI: ${{ github.workspace }}
 
       - name: Run update-script
         run: |
+          set -o pipefail
           echo "$UPDATE_NIX_ATTRS" | jq --raw-output '.[]' | while read -r attr; do
             printf "\n\n==== Updating %s ====\n" "$attr" >&2
             UPDATE_NIX_ATTR_PATH="$attr" nix run --file ./internal/update-script.nix
