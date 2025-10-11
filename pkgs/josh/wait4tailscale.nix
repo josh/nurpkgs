@@ -2,19 +2,20 @@
   lib,
   buildGoModule,
   fetchFromGitHub,
+  coreutils,
   nix-update-script,
   runCommand,
   testers,
 }:
 buildGoModule (finalAttrs: {
   pname = "wait4tailscale";
-  version = "1.1.1";
+  version = "1.1.2";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "wait4tailscale";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-APnhesjCPBPb0/IuSC5jECdOXSHHr1MxqFwTpeyz3TM=";
+    hash = "sha256-KyXe8QmV6aH53oUrovGgGVal40dAcQBrEUymtK6w1V8";
   };
 
   vendorHash = "sha256-XBEF+agJ3t30UJufzFmkSuoNA5vpFA3Dsbz7Un+tObM=";
@@ -27,7 +28,9 @@ buildGoModule (finalAttrs: {
   ];
 
   postInstall = ''
-    substituteInPlace ./systemd/*.service --replace-fail /usr/bin/wait4tailscale $out/bin/wait4tailscale
+    substituteInPlace ./systemd/*.service \
+      --replace-fail /usr/bin/wait4tailscale $out/bin/wait4tailscale \
+      --replace-fail /usr/bin/rm ${coreutils}/bin/rm
     install -D --mode=0444 --target-directory $out/lib/systemd/system ./systemd/*
   '';
 
