@@ -9,13 +9,13 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "wait4tailscale";
-  version = "1.1.3";
+  version = "1.1.4";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "wait4tailscale";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-hhMsZsIPoUqEQcycxTt1+mfgEVpM3q/ylA5l2F8i7L0";
+    hash = "sha256-OhwYQfuN67Itr1OCmJz+a6eihIeFcDPGRsWOHDVG8Mc=";
   };
 
   vendorHash = "sha256-XBEF+agJ3t30UJufzFmkSuoNA5vpFA3Dsbz7Un+tObM=";
