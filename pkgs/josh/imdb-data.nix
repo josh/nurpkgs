@@ -13,8 +13,8 @@ let
     src = fetchFromGitHub {
       owner = "josh";
       repo = "imdb-data";
-      rev = "0b7a6d862d86e6f8c9e2cebccae028e976bb29d7";
-      hash = "sha256-aBqd4j45pMf9LZJFNUF2dg2F+FvULUaOnh51qZHHAOk=";
+      rev = "dea4392b0b6e1249a3f7f526464c7d70813d0655";
+      hash = "sha256-5JIJDrVmKO2le0KPdO1BXDbtvMhmYlNduTmSA4BmnUY=";
     };
 
     pyproject = true;
