@@ -4,7 +4,7 @@
   fetchFromGitHub,
   nix-update-script,
 }:
-tmuxPlugins.mkTmuxPlugin {
+tmuxPlugins.mkTmuxPlugin rec {
   pluginName = "tmux-tokyo-night";
   rtpFilePath = "tmux-tokyo-night.tmux";
   version = "1.11.0";
@@ -12,8 +12,8 @@ tmuxPlugins.mkTmuxPlugin {
   src = fetchFromGitHub {
     owner = "fabioluciano";
     repo = "tmux-tokyo-night";
-    rev = "5ce373040f893c3a0d1cb93dc1e8b2a25c94d3da";
-    hash = "sha256-9nDgiJptXIP+Hn9UY+QFMgoghw4HfTJ5TZq0f9KVOFg=";
+    tag = "v${version}";
+    hash = "sha256-WjDbunWmxbw/jjvc34ujOWif18POC3WVO1s+hk9SLg4=";
   };
 
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
