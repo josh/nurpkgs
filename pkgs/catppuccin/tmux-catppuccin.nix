@@ -4,7 +4,7 @@
   fetchFromGitHub,
   nix-update-script,
 }:
-tmuxPlugins.mkTmuxPlugin {
+tmuxPlugins.mkTmuxPlugin rec {
   pluginName = "catppuccin";
   rtpFilePath = "catppuccin.tmux";
   version = "2.1.3";
@@ -12,8 +12,8 @@ tmuxPlugins.mkTmuxPlugin {
   src = fetchFromGitHub {
     owner = "catppuccin";
     repo = "tmux";
-    rev = "2c4cb5a07a3e133ce6d5382db1ab541a0216ddc7";
-    hash = "sha256-vBYBvZrMGLpMU059a+Z4SEekWdQD0GrDqBQyqfkEHPg=";
+    tag = "v${version}";
+    hash = "sha256-Is0CQ1ZJMXIwpDjrI5MDNHJtq+R3jlNcd9NXQESUe2w=";
   };
 
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
