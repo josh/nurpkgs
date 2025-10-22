@@ -6,13 +6,13 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "tokyonight-extras";
-  version = "4.13.0-unstable-2025-10-19";
+  version = "4.13.0-unstable-2025-10-22";
 
   src = fetchFromGitHub {
     owner = "folke";
     repo = "tokyonight.nvim";
-    rev = "e63c42a42b11cd6225f009dd949b9ee0fccc15ef";
-    hash = "sha256-qCsArybob7k5CI2O8EwTMwAK2FTwyXROsLN/LT/vgDk=";
+    rev = "8734a4e9a9b03549337faf5a86637abd5e16721e";
+    hash = "sha256-uleLfq8Ynj7jd64JXvgeXd/7JdVsCgNka/URTystnug=";
   };
 
   installPhase = ''
