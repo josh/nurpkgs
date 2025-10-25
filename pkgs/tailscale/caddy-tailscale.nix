@@ -7,16 +7,16 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "caddy-tailscale";
-  version = "0-unstable-2025-09-15";
+  version = "0-unstable-2025-10-16";
 
   src = fetchFromGitHub {
     owner = "tailscale";
     repo = "caddy-tailscale";
-    rev = "32b202f0a9530858ffc25bb29daec98977923229";
-    hash = "sha256-OUPN7G3HJs8A4nP3yu5eVncqWZV4H2SX+FN8oWjpTGM=";
+    rev = "01d084e119cb2ddb49630edb89bb5c6d7c4e8bc0";
+    hash = "sha256-VTxRPTgJ9XE/JU91NQ7OoVLORfCsW8ditJw1Ml2VnfY=";
   };
 
-  vendorHash = "sha256-eed3AuRhRO66xFg+447xLv7otAHbzAUuhxMcNugZMOA=";
+  vendorHash = "sha256-5osC3IVuF7DG9WKsIMZ2rVjz/7PhldmAuTHdg9wy5/w=";
 
   env.CGO_ENABLED = 0;
   ldflags = [
