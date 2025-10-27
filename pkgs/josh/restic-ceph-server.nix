@@ -8,16 +8,16 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "restic-ceph-server";
-  version = "0.0.0";
+  version = "0-unstable-2025-10-23";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "restic-ceph-server";
-    rev = "6cd7837563c39bb40ca7c15295ec10a34b79b364";
-    hash = "sha256-J6viB449k7yWS6ke6VVH43UOnWpvdN8KESMhy4uTcAw=";
+    rev = "cf827a4354d4c11b42e8b859d6d3e0486039b396";
+    hash = "sha256-673RB1/KhfhINdOdHEoaV08dz/3ERq/VdBq/WYC6O1c=";
   };
 
-  vendorHash = "sha256-zBEeT1Ex/jhaNN0KTeW+OZreQVe2nzJKKyVXuK8Wg7o=";
+  vendorHash = "sha256-tWhP/YnSQ1vxQxxucjxQicXZHO3ON5OqAlHKyCy+cUM=";
 
   env.CGO_ENABLED = 1;
 
