@@ -7,13 +7,13 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "tailscale-acl-combiner";
-  version = "0-unstable-2025-06-09";
+  version = "0-unstable-2025-10-30";
 
   src = fetchFromGitHub {
     owner = "tailscale-dev";
     repo = "tailscale-acl-combiner";
-    rev = "0940cdda6881773ee0a4ad1f10fa3d3b4811c6ea";
-    hash = "sha256-/kSINU/TZUkxTCDexBft4IRRxThKjAZ39XsGs/pt1yQ=";
+    rev = "bed70ce838931e141f4f32add57bf6ebcba82449";
+    hash = "sha256-OsoPWc8vSnkkoU3AQL6rOWkn73gKdb7ifTPT7CKU1kQ=";
   };
 
   vendorHash = "sha256-kbhaEwWzLxKX4VmnbChrVn2L+0cMbyUWAnW4Ih9F4WU=";
