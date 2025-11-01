@@ -13,11 +13,11 @@ buildGoModule (finalAttrs: {
   src = fetchFromGitHub {
     owner = "josh";
     repo = "github_exporter";
-    rev = "3f4dbfd3d680481aa2117bc3757b0a343fe3f454";
-    hash = "sha256-tud49YJHZNW9lDXVvUyKmXcTeE2K+7Fuf6oPKtv54Ws=";
+    rev = "5773f358bc190f4fc320f192333e3a2804ac2195";
+    hash = "sha256-0GdQJEIy8t4cvGE13lMaFlTVGrlZRJBuu084/K1Uw3Y=";
   };
 
-  vendorHash = "sha256-zgP1rKbjo65ycVNIHNT+8IajtmTVxGUeb2WjAgs34yg=";
+  vendorHash = "sha256-UVKEIC0U6JnJFXa+dypuiFdwbopwoMzTXwK2HSlcf48=";
 
   env.CGO_ENABLED = 0;
   ldflags = [
