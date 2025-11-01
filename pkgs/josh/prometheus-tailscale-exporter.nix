@@ -13,11 +13,11 @@ buildGoModule (finalAttrs: {
   src = fetchFromGitHub {
     owner = "josh";
     repo = "tailscale_exporter";
-    rev = "4c5b01f1cc64d01a574607f9078e62b96d3b0449";
-    hash = "sha256-O3suKbTQs7Hq6KB/wPrekqlCmY9M9+u03npNgaGr2fg=";
+    rev = "05bb3ee830c38ca4a580a7ed1b92ef3907a7d48c";
+    hash = "sha256-I2t4R5TxfJ0ihdHmMdYqTOe9xk0MvU6Lxc8yVhlI4zc=";
   };
 
-  vendorHash = "sha256-LhEzcIBS/Q8euQ2DUFWJ1/MQd3v91pYVDtW/fMaMlJQ=";
+  vendorHash = "sha256-u7nVkpjBoHCnN+79qHwS1cmbEdeSHPFNrlcyvFCU3YU=";
 
   env.CGO_ENABLED = 0;
   ldflags = [
