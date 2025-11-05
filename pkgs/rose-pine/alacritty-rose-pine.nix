@@ -6,13 +6,13 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "alacritty-rose-pine";
-  version = "0-unstable-2025-10-13";
+  version = "0-unstable-2025-11-05";
 
   src = fetchFromGitHub {
     owner = "rose-pine";
     repo = "alacritty";
-    rev = "a3e3d92a6b09c50275974403b3fe049a3bcdf5a1";
-    hash = "sha256-5azVVXDEW8hJixouzaNIcr9Qj1MsKmWQpbw5tIj8wwU=";
+    rev = "a6f7c8245e5bba639befe52e1e025f84ba8b3ee5";
+    hash = "sha256-eVQjH5TrMLP9FdxIovnH9ulxTr6uw82Dt8PGGvpF94k=";
   };
 
   buildCommand = ''
