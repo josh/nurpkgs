@@ -8,7 +8,7 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "golink";
-  version = "1.0.0";
+  version = "1.0.0-unstable-2025-10-20";
 
   src = fetchFromGitHub {
     owner = "tailscale";
