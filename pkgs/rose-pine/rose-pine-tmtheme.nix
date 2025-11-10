@@ -6,20 +6,20 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "rose-pine-tmtheme";
-  version = "0-unstable-2025-11-05";
+  version = "0-unstable-2025-11-10";
 
   src = fetchFromGitHub {
     owner = "rose-pine";
     repo = "tm-theme";
-    rev = "e89481b166ceafd1d5418021b8775326d0c2c84f";
-    hash = "sha256-fKSuwzWqmnEZDO84XdKph5wVMiBlP2EjKSOpc/0T1yw=";
+    rev = "4027fadfe8796ba429e32d03e6ada177c934c834";
+    hash = "sha256-PfU4QwuE3t6QH1gPwUUKt8DFABJdCAFEz017PubXS10=";
   };
 
   installPhase = ''
     runHook preInstall
 
     mkdir -p $out/share/rose-pine/tmtheme
-    cp ./dist/themes/*.tmTheme $out/share/rose-pine/tmtheme/
+    cp ./dist/*.tmTheme $out/share/rose-pine/tmtheme/
 
     runHook postInstall
   '';
