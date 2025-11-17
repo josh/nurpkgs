@@ -2,7 +2,6 @@
   lib,
   buildGoModule,
   fetchFromGitHub,
-  nix-update-script,
   runCommand,
 }:
 buildGoModule (finalAttrs: {
@@ -28,7 +27,8 @@ buildGoModule (finalAttrs: {
     export HOME=$(mktemp -d)
   '';
 
-  passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+  # Disabled until nixpkgs 25.11 ships
+  # passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
   passthru.tests = {
     build-info =
