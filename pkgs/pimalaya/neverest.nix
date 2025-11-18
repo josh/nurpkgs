@@ -77,6 +77,8 @@ rustPlatform.buildRustPackage rec {
     license = lib.licenses.mit;
     platforms = lib.platforms.all;
     maintainers = with lib.maintainers; [ soywod ];
-    broken = rustc.version == "1.89.0" && src.rev == "cc5f5214d3bea064ed059116ac81e40a803faa7e";
+    broken =
+      (lib.strings.versionOlder "1.88.0" rustc.version)
+      && src.rev == "cc5f5214d3bea064ed059116ac81e40a803faa7e";
   };
 }
