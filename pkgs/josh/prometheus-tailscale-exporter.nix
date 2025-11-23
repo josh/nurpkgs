@@ -8,13 +8,13 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "prometheus-tailscale-exporter";
-  version = "1.0.1-unstable-2025-11-20";
+  version = "1.0.1-unstable-2025-11-23";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "tailscale_exporter";
-    rev = "1e0619675773c5ecfe771dfb3ea80546e06bb238";
-    hash = "sha256-BgahopiqQ/YgS2urYTeDKSTQN4q95zxmM820D7zzOLA=";
+    rev = "25dc7fe5d8b70ed288db848c3d28dc305b84813a";
+    hash = "sha256-HJkvA0CmAF//fpLLXJH6eKkujoWiFWKm5370MT3uBF0=";
   };
 
   vendorHash = "sha256-DYtmjOElvDXYuJAXIbHauf0SvwQC78GBFS65l/OslwU=";
