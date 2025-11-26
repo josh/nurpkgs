@@ -8,16 +8,16 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "golink";
-  version = "1.0.0-unstable-2025-10-20";
+  version = "1.0.0-unstable-2025-11-26";
 
   src = fetchFromGitHub {
     owner = "tailscale";
     repo = "golink";
-    rev = "42765dea97afa9f9f5ea167fb0df6f5372d78481";
-    hash = "sha256-M+EJsr6z05heKk6iuh3RWZS+9gAMBwG9IyryACVpOy0=";
+    rev = "6821994de926c565d3ef9fbf3cb0e0fcb780f4be";
+    hash = "sha256-4c9jCOfkKNRHJLXgOIcVcNSaw/XaiVaqesaLJn86wGA=";
   };
 
-  vendorHash = "sha256-NRA2JaRgcdlezziAyavdrYVGcIPqoPp6Fpfd3esvFT8=";
+  vendorHash = "sha256-ZNRwndYX+goaQMk6cluOHZTOvMd4rF4TkG5560dM6HI=";
 
   env.CGO_ENABLED = 0;
   ldflags = [
