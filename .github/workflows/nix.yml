@@ -26,7 +26,6 @@ jobs:
     steps:
       - uses: DeterminateSystems/determinate-nix-action@v3.13.2
         with:
-          determinate: true
           extra-conf: |
             accept-flake-config = true
             allow-import-from-derivation = false
