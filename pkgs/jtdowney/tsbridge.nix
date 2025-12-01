@@ -8,16 +8,16 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "tsbridge";
-  version = "0.12.0";
+  version = "0.12.3";
 
   src = fetchFromGitHub {
     owner = "jtdowney";
     repo = "tsbridge";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-1U6p0vUPI9hjKu+YQ9dD8QKh56TUIcPb9ZAMqC7oxF8=";
+    hash = "sha256-G8KDD9crv3b1hrA5r+gBGvV4Dn6rT6MEpf/c9S1FuII=";
   };
 
-  vendorHash = "sha256-2JyZY+Rr7x2/c68O4m3b3nN4/BUAS+IyrlR+wM1WbEE=";
+  vendorHash = "sha256-agNBqIHtWxpio1mK6jhYztEBXBR+D0rf+UgbKR81kaE=";
 
   env.CGO_ENABLED = 0;
   ldflags = [
