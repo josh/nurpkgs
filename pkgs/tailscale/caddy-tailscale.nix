@@ -3,6 +3,7 @@
   buildGoModule,
   fetchFromGitHub,
   runCommand,
+  nix-update-script,
 }:
 buildGoModule (finalAttrs: {
   pname = "caddy-tailscale";
@@ -27,8 +28,7 @@ buildGoModule (finalAttrs: {
     export HOME=$(mktemp -d)
   '';
 
-  # Disabled until nixpkgs 25.11 ships
-  # passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+  passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
   passthru.tests = {
     build-info =

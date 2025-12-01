@@ -3,6 +3,7 @@
   buildGoModule,
   fetchFromGitHub,
   runCommand,
+  nix-update-script,
   testers,
 }:
 buildGoModule (finalAttrs: {
@@ -27,7 +28,7 @@ buildGoModule (finalAttrs: {
 
   doCheck = false;
 
-  # passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
+  passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   passthru.tests = {
     version = testers.testVersion {
