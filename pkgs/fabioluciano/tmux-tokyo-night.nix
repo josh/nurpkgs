@@ -7,13 +7,13 @@
 tmuxPlugins.mkTmuxPlugin rec {
   pluginName = "tmux-tokyo-night";
   rtpFilePath = "tmux-tokyo-night.tmux";
-  version = "2.11.0";
+  version = "2.12.0";
 
   src = fetchFromGitHub {
     owner = "fabioluciano";
     repo = "tmux-tokyo-night";
     tag = "v${version}";
-    hash = "sha256-P4/YFOe9q4Y/SO4hsDw2TVtmjIxGFKIE+pIBhLdA0vI=";
+    hash = "sha256-VwJ8uRBKx1s0Bl688AF3YEBKNnRCN0caFrRmPLpZj+A=";
   };
 
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
