@@ -14,8 +14,8 @@ let
     src = fetchFromGitHub {
       owner = "josh";
       repo = "gh-audit";
-      rev = "079de5a851fcb4fdefaeded2955989de0603f531";
-      hash = "sha256-kaF0oo3WSXykcbW8+ASRYbUn1KkJKi/Adf/0QYXkTLU=";
+      rev = "5be1ea5641dd7c84fd366749eb1bca483e701edd";
+      hash = "sha256-Jh6XScY04rqokpJyWLaRIxTTI9rU4k6t69LMIpCga0o=";
     };
 
     pyproject = true;
