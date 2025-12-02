@@ -6,7 +6,7 @@
 }:
 buildGoModule {
   pname = "bugjour";
-  version = "0-unstable-2025-11-23";
+  version = "0.1.0";
 
   src = fetchFromGitHub {
     owner = "josh";
