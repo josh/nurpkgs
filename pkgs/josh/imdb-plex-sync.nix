@@ -8,7 +8,7 @@
 let
   imdb-plex-sync = python3Packages.buildPythonApplication {
     pname = "imdb-plex-sync";
-    version = "0.1.1-unstable-2025-12-01";
+    version = "0.2.0";
 
     src = fetchFromGitHub {
       owner = "josh";
