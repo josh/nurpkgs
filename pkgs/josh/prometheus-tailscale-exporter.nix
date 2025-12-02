@@ -31,7 +31,7 @@ buildGoModule (finalAttrs: {
     install -D --mode=0444 --target-directory $out/lib/systemd/system ./systemd/*
   '';
 
-  passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+  passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   passthru.tests = {
     version = testers.testVersion {
