@@ -8,7 +8,7 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "prometheus-tailscale-exporter";
-  version = "1.0.1-unstable-2025-12-01";
+  version = "1.0.2";
 
   src = fetchFromGitHub {
     owner = "josh";
