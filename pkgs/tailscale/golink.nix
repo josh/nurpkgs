@@ -8,13 +8,13 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "golink";
-  version = "1.0.0-unstable-2025-11-26";
+  version = "1.0.0-unstable-2025-12-08";
 
   src = fetchFromGitHub {
     owner = "tailscale";
     repo = "golink";
-    rev = "6821994de926c565d3ef9fbf3cb0e0fcb780f4be";
-    hash = "sha256-4c9jCOfkKNRHJLXgOIcVcNSaw/XaiVaqesaLJn86wGA=";
+    rev = "491554abd506a48221631bea0e014ca5c8f53fcd";
+    hash = "sha256-RPW2sQFaoQdSNPVg6cq94YVbf6SeBCuGnpjMIxtvpbM=";
   };
 
   vendorHash = "sha256-ZNRwndYX+goaQMk6cluOHZTOvMd4rF4TkG5560dM6HI=";
