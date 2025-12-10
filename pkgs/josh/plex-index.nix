@@ -8,13 +8,13 @@
 let
   plex-index = python3Packages.buildPythonApplication {
     pname = "plex-index";
-    version = "0-unstable-2025-12-02";
+    version = "0-unstable-2025-12-10";
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "plex-index";
-      rev = "11f961e59b6e41131aa6e67c0c0e02e911f18436";
-      hash = "sha256-/nTN0N4jtyPpw4+2NaOxoQjAC8d/56OhSB0WmeLI3TY=";
+      rev = "135c16094dc431e29ccdfa9077e25f0c88fff9ab";
+      hash = "sha256-K22TapdqDgmJk3EhPNKx0YhLrwhZ5R/1JZMkKVjkhYo=";
     };
 
     pyproject = true;
