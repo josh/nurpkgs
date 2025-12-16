@@ -13,8 +13,8 @@ buildGoModule (finalAttrs: {
   src = fetchFromGitHub {
     owner = "josh";
     repo = "restic-ceph-server";
-    rev = "dbf792ae5ca34b381a1b2d97c0cc468a5c753f6c";
-    hash = "sha256-40evGojEI8U71+k0+jcyiaY5qP5gTOy+O6EKS/xMXZc=";
+    rev = "e9570f6334ef26ea31a728d4cb7dfcfbeb385356";
+    hash = "sha256-SVDehDqE/fLBD9wz1ZcBjsoVyfSqHqBlxFmMasFzBfg=";
   };
 
   vendorHash = "sha256-Gyr2aSPTDuAusEL0wtrseHSL4/gnxgu5MvWL/WzkMcY=";
