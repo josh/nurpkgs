@@ -1,4 +1,5 @@
 {
+  lib,
   writeShellApplication,
   coreutils,
   curl,
@@ -30,4 +31,7 @@ writeShellApplication {
     git add "$filename"
     git commit --message "tailscale-operator-charts: $version"
   '';
+  meta = {
+    platforms = lib.platforms.all;
+  };
 }

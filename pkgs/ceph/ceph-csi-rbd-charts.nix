@@ -51,5 +51,6 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     description = "The ceph-csi-rbd chart adds rbd volume support to your cluster";
     homepage = "https://github.com/ceph/ceph-csi/tree/devel/charts/ceph-csi-rbd";
     license = lib.licenses.asl20;
+    platforms = lib.platforms.all;
   };
 })

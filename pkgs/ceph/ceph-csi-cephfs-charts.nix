@@ -51,5 +51,6 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     description = "The ceph-csi-cephfs chart adds cephFS volume support to your cluster.";
     homepage = "https://github.com/ceph/ceph-csi/tree/devel/charts/ceph-csi-cephfs";
     license = lib.licenses.asl20;
+    platforms = lib.platforms.all;
   };
 })

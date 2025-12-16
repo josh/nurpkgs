@@ -45,5 +45,6 @@ stdenvNoCC.mkDerivation {
     description = "A Helm chart for Tailscale Kubernetes operator";
     homepage = "https://github.com/tailscale/tailscale/tree/main/cmd/k8s-operator/deploy/chart";
     license = lib.licenses.bsd3;
+    platforms = lib.platforms.all;
   };
 }
