@@ -29,7 +29,7 @@ writeShellApplication {
     sed -i "s|url = \".*\";|url = \"$url\";|" "$filename"
     sed -i "s|sha256 = \".*\";|sha256 = \"$sha256\";|" "$filename"
     git add "$filename"
-    git commit --message "tailscale-operator-charts: $version"
+    git commit --message "tailscale-operator-charts: $version" || true
   '';
   meta = {
     platforms = lib.platforms.all;
