@@ -6,7 +6,7 @@
 }:
 buildGoModule {
   pname = "mqtt2nats";
-  version = "0.0.0";
+  version = "0-unstable-2025-12-17";
 
   src = fetchFromGitHub {
     owner = "josh";
