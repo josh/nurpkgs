@@ -11,8 +11,8 @@ buildGoModule {
   src = fetchFromGitHub {
     owner = "josh";
     repo = "mqtt2nats";
-    rev = "3097e131e1db931763317f55677a0c24d0d2a32b";
-    hash = "sha256-9hk/r7MOe3LFlAJIofByMb9Jx7Lgw0K1AxThmpvpGeY=";
+    rev = "83c83072e0ee796a0a8e35838c6780d458b3e988";
+    hash = "sha256-qOyjWG6YfecaGKnBuo1RqGkC0B3pz41b2fvvzMZ6ZGo=";
   };
 
   vendorHash = "sha256-ffS8wJrYy3yBnyHI8qmzhZhGc/ePCTgOP5qVPZ02CVs=";
