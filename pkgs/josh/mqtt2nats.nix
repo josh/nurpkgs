@@ -6,16 +6,16 @@
 }:
 buildGoModule {
   pname = "mqtt2nats";
-  version = "0-unstable-2025-12-17";
+  version = "0-unstable-2025-12-18";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "mqtt2nats";
-    rev = "f996c621f3e0f49a074417b91315f772b708d10d";
-    hash = "sha256-kRxW5uwp+pdsz08IwLxMykWgb47H9f8UXsgaIqNpgnE=";
+    rev = "770ee3bcd9c8c494379f640e675ef4542d55e2d6";
+    hash = "sha256-EJvIxzrTy2wevD+onnkSVqZBOCs/D0FOH8s53Y99dgU=";
   };
 
-  vendorHash = "sha256-ffS8wJrYy3yBnyHI8qmzhZhGc/ePCTgOP5qVPZ02CVs=";
+  vendorHash = "sha256-WPn4GHVRor4BEHStIhRaq3kmjKdZM3v9bkGkt259GCw=";
 
   ldflags = [
     "-s"
