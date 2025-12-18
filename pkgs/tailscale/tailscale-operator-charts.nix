@@ -8,11 +8,11 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "tailscale-operator-charts";
-  version = "1.92.3";
+  version = "1.92.4";
 
   src = fetchzip {
-    url = "https://pkgs.tailscale.com/helmcharts/tailscale-operator-1.92.3-1765984115-2df19b81b415a8e1523f42d292ba7e89e102dd33868c7d8773787826e3272d35.tgz";
-    sha256 = "09q66rlxnmrnmr498hx6vkm94p3pcr970igcf0zh9k533hzvgjkc";
+    url = "https://pkgs.tailscale.com/helmcharts/tailscale-operator-1.92.4-1766063251-a64828964ee38b79448a54e52f5d819da2295ed10856de0c89414aa2e1fc7dc3.tgz";
+    sha256 = "0wdl431h6s8rb32hkfkjnx5kvpvxfpmy7vqy05q0ral9m87xnp5q";
   };
 
   __structuredAttrs = true;
