@@ -64,13 +64,13 @@ jobs:
         run: |
           set -o pipefail
           exit_code=0
-          echo "$UPDATE_NIX_ATTRS" | jq --raw-output '.[]' | while read -r attr; do
+          while read -r attr; do
             printf "\n\n==== Updating %s ====\n" "$attr" >&2
             if ! UPDATE_NIX_ATTR_PATH="$attr" nix run --file ./internal/update-script.nix; then
               printf "ERROR: Update failed for %s\n" "$attr" >&2
               exit_code=1
             fi
-          done
+          done <<<"$(jq --raw-output '.[]' <<<"$UPDATE_NIX_ATTRS")"
           exit $exit_code
         env:
           FLAKE_URI: ${{ github.workspace }}
