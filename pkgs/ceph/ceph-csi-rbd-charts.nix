@@ -44,7 +44,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     "--url"
     "https://ceph.github.io/csi-charts"
     "--chart"
-    "cceph-csi-rbd"
+    "ceph-csi-rbd"
   ];
 
   meta = {
