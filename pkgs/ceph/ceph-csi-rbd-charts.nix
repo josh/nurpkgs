@@ -6,13 +6,13 @@
   yq,
   nur,
 }:
-stdenvNoCC.mkDerivation (finalAttrs: {
+stdenvNoCC.mkDerivation {
   pname = "ceph-csi-rbd-charts";
   version = "3.15.1";
 
   src = fetchzip {
-    url = "https://ceph.github.io/csi-charts/rbd/ceph-csi-rbd-${finalAttrs.version}.tgz";
-    sha256 = "sha256-tamZnUhi/mdWFqfT+LMkdp/LhxFpP+6pUQpBX73msZo=";
+    url = "https://ceph.github.io/csi-charts/rbd/ceph-csi-rbd-3.15.1.tgz";
+    sha256 = "16miwsymyh8aa6lywgv9263wp7vn4jrzilx72rb6gzk292frkadm";
   };
 
   __structuredAttrs = true;
@@ -48,9 +48,9 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   ];
 
   meta = {
-    description = "The ceph-csi-rbd chart adds rbd volume support to your cluster";
+    description = "Container Storage Interface (CSI) driver, provisioner, snapshotter, resizer and attacher for Ceph RBD";
     homepage = "https://github.com/ceph/ceph-csi/tree/devel/charts/ceph-csi-rbd";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;
   };
-})
+}
