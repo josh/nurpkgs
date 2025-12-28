@@ -22,20 +22,21 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
+  helmChartName = "ceph-csi-cephfs";
   helmArgs = [ ];
   helmValues = { };
 
   buildPhase = ''
     runHook preBuild
     yq --yaml-output '.helmValues' "$NIX_ATTRS_JSON_FILE" >values.yaml
-    helm template ceph-csi-cephfs "$src" --output-dir . --values values.yaml "''${helmArgs[@]}"
+    helm template "$helmChartName" "$src" --output-dir . --values values.yaml "''${helmArgs[@]}"
     runHook postBuild
   '';
 
   installPhase = ''
     runHook preInstall
     mkdir -p $out
-    cp -R ./ceph-csi-cephfs/templates/* $out
+    cp -R ./"$helmChartName"/* $out
     runHook postInstall
   '';
 
