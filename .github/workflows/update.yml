@@ -67,7 +67,7 @@ jobs:
           while read -r attr; do
             printf "\n\n==== Updating %s ====\n" "$attr" >&2
             if ! UPDATE_NIX_ATTR_PATH="$attr" nix run --file ./internal/update-script.nix; then
-              printf "ERROR: Update failed for %s\n" "$attr" >&2
+              echo "::error::Update failed for $attr" >&2
               exit_code=1
             fi
           done <<<"$(jq --raw-output '.[]' <<<"$UPDATE_NIX_ATTRS")"
