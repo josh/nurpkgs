@@ -39,7 +39,13 @@ stdenvNoCC.mkDerivation {
     runHook postInstall
   '';
 
-  passthru.updateScript = [ "${lib.getExe nur.repos.josh.tailscale-operator-charts-update-script}" ];
+  passthru.updateScript = [
+    "${lib.getExe nur.repos.josh.nixhelm-update}"
+    "--url"
+    "https://pkgs.tailscale.com/helmcharts"
+    "--chart"
+    "tailscale-operator"
+  ];
 
   meta = {
     description = "A Helm chart for Tailscale Kubernetes operator";

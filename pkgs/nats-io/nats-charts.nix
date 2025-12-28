@@ -40,10 +40,11 @@ stdenvNoCC.mkDerivation {
   '';
 
   passthru.updateScript = [
-    "${lib.getExe nur.repos.josh.update-helm-chart-script}"
+    "${lib.getExe nur.repos.josh.nixhelm-update}"
+    "--url"
     "https://nats-io.github.io/k8s/helm/charts"
+    "--chart"
     "nats"
-    "./pkgs/nats-io/nats-charts.nix"
   ];
 
   meta = {
