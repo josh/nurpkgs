@@ -48,7 +48,7 @@ stdenvNoCC.mkDerivation {
   ];
 
   meta = {
-    description = "NATS on Kubernetes with Helm Charts";
+    description = "A Helm chart for the NATS.io High Speed Cloud Native Distributed Communications Technology.";
     homepage = "https://github.com/nats-io/k8s/tree/main/helm/charts/nats";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;
