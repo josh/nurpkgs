@@ -19,6 +19,7 @@ NIX_PREFIX_URL_PATH = "@nix-prefetch-url@"
 @click.option("--nix-pname", envvar="UPDATE_NIX_PNAME")
 @click.option("--nix-old-version", envvar="UPDATE_NIX_OLD_VERSION")
 @click.option("--nix-attr-path", envvar="UPDATE_NIX_ATTR_PATH")
+@click.option("--commit", is_flag=True)
 @click.option("--dry-run", is_flag=True)
 def main(
     url: str,
@@ -27,6 +28,7 @@ def main(
     nix_pname: str | None,
     nix_old_version: str | None,
     nix_attr_path: str | None,
+    commit: bool,
     dry_run: bool,
 ):
     filename = None
@@ -106,8 +108,9 @@ def main(
         with open(filename, "w") as f:
             f.write(content)
 
-    git("add", filename, dry_run=dry_run)
-    git("commit", "--message", commit_message, dry_run=dry_run)
+    if commit:
+        git("add", filename, dry_run=dry_run)
+        git("commit", "--message", commit_message, dry_run=dry_run)
 
 
 def nix_prefetch_url(url: str, unpack: bool = False) -> str:
