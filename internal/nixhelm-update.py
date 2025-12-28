@@ -222,6 +222,7 @@ def nix_attr_filename(attr_path: str) -> str:
         NIX_PATH,
         "eval",
         "--raw",
+        "--impure",
         f".#packages.{system}.{attr_path}.meta.position",
     ]
     log_cmd(cmd)

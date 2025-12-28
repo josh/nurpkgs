@@ -59,7 +59,7 @@ jobs:
         name: Get package attributes to update
         run: |
           set -o pipefail
-          nix eval --raw --file ./internal/update-script-attrs.nix | tee "$GITHUB_OUTPUT"
+          nix eval --raw --impure --file ./internal/update-script-attrs.nix | tee "$GITHUB_OUTPUT"
         env:
           FLAKE_URI: ${{ github.workspace }}
 
