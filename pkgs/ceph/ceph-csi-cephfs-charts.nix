@@ -6,13 +6,13 @@
   yq,
   nur,
 }:
-stdenvNoCC.mkDerivation (finalAttrs: {
+stdenvNoCC.mkDerivation {
   pname = "ceph-csi-cephfs-charts";
   version = "3.15.1";
 
   src = fetchzip {
-    url = "https://ceph.github.io/csi-charts/cephfs/ceph-csi-cephfs-${finalAttrs.version}.tgz";
-    sha256 = "sha256-6JTWnNOrsg5eyju5ccHeJ8335sA5J279zApPSjfKQMQ";
+    url = "https://ceph.github.io/csi-charts/cephfs/ceph-csi-cephfs-3.15.1.tgz";
+    sha256 = "1i20r8vllkqarkynw9rrq3kggk97vv0p3f9vr9g0xcmbsffdd578";
   };
 
   __structuredAttrs = true;
@@ -48,9 +48,9 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   ];
 
   meta = {
-    description = "The ceph-csi-cephfs chart adds cephFS volume support to your cluster.";
+    description = "Container Storage Interface (CSI) driver, provisioner, snapshotter, resizer and attacher for Ceph cephfs";
     homepage = "https://github.com/ceph/ceph-csi/tree/devel/charts/ceph-csi-cephfs";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;
   };
-})
+}
