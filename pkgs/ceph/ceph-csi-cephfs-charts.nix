@@ -4,7 +4,7 @@
   fetchzip,
   kubernetes-helm,
   yq,
-  nix-update-script,
+  nur,
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "ceph-csi-cephfs-charts";
@@ -39,13 +39,13 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     runHook postInstall
   '';
 
-  passthru.updateScript = nix-update-script {
-    extraArgs = [
-      "--url"
-      "https://github.com/ceph/ceph-csi"
-      "--version=stable"
-    ];
-  };
+  passthru.updateScript = [
+    "${lib.getExe nur.repos.josh.nixhelm-update}"
+    "--url"
+    "https://ceph.github.io/csi-charts"
+    "--chart"
+    "cceph-csi-cephfs"
+  ];
 
   meta = {
     description = "The ceph-csi-cephfs chart adds cephFS volume support to your cluster.";

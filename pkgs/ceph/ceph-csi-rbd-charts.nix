@@ -4,7 +4,7 @@
   fetchzip,
   kubernetes-helm,
   yq,
-  nix-update-script,
+  nur,
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "ceph-csi-rbd-charts";
@@ -39,13 +39,13 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     runHook postInstall
   '';
 
-  passthru.updateScript = nix-update-script {
-    extraArgs = [
-      "--url"
-      "https://github.com/ceph/ceph-csi"
-      "--version=stable"
-    ];
-  };
+  passthru.updateScript = [
+    "${lib.getExe nur.repos.josh.nixhelm-update}"
+    "--url"
+    "https://ceph.github.io/csi-charts"
+    "--chart"
+    "cceph-csi-rbd"
+  ];
 
   meta = {
     description = "The ceph-csi-rbd chart adds rbd volume support to your cluster";
