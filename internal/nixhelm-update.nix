@@ -10,6 +10,7 @@ let
     ps.click
     ps.pyyaml
     ps.requests
+    ps.semver
   ]);
 in
 stdenvNoCC.mkDerivation {
