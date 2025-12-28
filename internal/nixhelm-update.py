@@ -95,7 +95,7 @@ def main(
             flags=re.MULTILINE,
         )
 
-    if nix_old_version:
+    if nix_old_version and nix_old_version != new_version:
         commit_message = f"{nix_pname}: {nix_old_version} -> {new_version}"
     else:
         commit_message = f"{nix_pname}: {new_version}"
