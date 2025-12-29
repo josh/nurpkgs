@@ -7,12 +7,12 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "tailscale-operator-charts";
-  version = "1.92.4";
+  pname = "ceph-csi-cephfs-chart";
+  version = "3.15.1";
 
   src = fetchzip {
-    url = "https://pkgs.tailscale.com/helmcharts/tailscale-operator-1.92.4-1766063251-a64828964ee38b79448a54e52f5d819da2295ed10856de0c89414aa2e1fc7dc3.tgz";
-    sha256 = "0wdl431h6s8rb32hkfkjnx5kvpvxfpmy7vqy05q0ral9m87xnp5q";
+    url = "https://ceph.github.io/csi-charts/cephfs/ceph-csi-cephfs-3.15.1.tgz";
+    sha256 = "1i20r8vllkqarkynw9rrq3kggk97vv0p3f9vr9g0xcmbsffdd578";
   };
 
   __structuredAttrs = true;
@@ -22,7 +22,7 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
-  helmChartName = "tailscale-operator";
+  helmChartName = "ceph-csi-cephfs";
   helmArgs = [ ];
   helmValues = { };
 
@@ -43,15 +43,15 @@ stdenvNoCC.mkDerivation {
   passthru.updateScript = [
     "${lib.getExe nur.repos.josh.nixhelm-update}"
     "--url"
-    "https://pkgs.tailscale.com/helmcharts"
+    "https://ceph.github.io/csi-charts"
     "--chart"
-    "tailscale-operator"
+    "ceph-csi-cephfs"
   ];
 
   meta = {
-    description = "A Helm chart for Tailscale Kubernetes operator";
-    homepage = "https://github.com/tailscale/tailscale/tree/main/cmd/k8s-operator/deploy/chart";
-    license = lib.licenses.bsd3;
+    description = "Container Storage Interface (CSI) driver, provisioner, snapshotter, resizer and attacher for Ceph cephfs";
+    homepage = "https://github.com/ceph/ceph-csi/tree/devel/charts/ceph-csi-cephfs";
+    license = lib.licenses.asl20;
     platforms = lib.platforms.all;
   };
 }

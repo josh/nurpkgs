@@ -7,7 +7,7 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "nats-charts";
+  pname = "nats-chart";
   version = "2.12.3";
 
   src = fetchzip {

@@ -7,12 +7,13 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "nack-charts";
-  version = "0.31.1";
+  pname = "cert-manager-chart";
+  version = "1.19.2";
 
   src = fetchzip {
-    url = "https://github.com/nats-io/k8s/releases/download/nack-0.31.1/nack-0.31.1.tgz";
-    sha256 = "04lmij4m78ljb9dl466dwvmxlqx1ldryp9hd1496n0akyymddvyx";
+    url = "https://quay.io/v2/jetstack/charts/cert-manager/blobs/sha256:87e2dafa946bd05c56be897b2fe2e171f2bbfad96c9d48409d4b1188d240af6f";
+    sha256 = "1yjvhigjx71ags1imcrkjz4i0i6zv5gpdcdn93hp6hjf5x52kxja";
+    extension = "tar.gz";
   };
 
   __structuredAttrs = true;
@@ -22,7 +23,7 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
-  helmChartName = "nack";
+  helmChartName = "cert-manager";
   helmArgs = [ ];
   helmValues = { };
 
@@ -43,15 +44,13 @@ stdenvNoCC.mkDerivation {
   passthru.updateScript = [
     "${lib.getExe nur.repos.josh.nixhelm-update}"
     "--url"
-    "https://nats-io.github.io/k8s/helm/charts"
-    "--chart"
-    "nack"
+    "oci://quay.io/jetstack/charts/cert-manager"
   ];
 
   meta = {
-    description = "A Helm chart for NACK - NAts Controller for Kubernetes";
-    homepage = "https://github.com/nats-io/k8s/tree/main/helm/charts/nack";
-    license = lib.licenses.asl20;
+    description = "A Helm chart for cert-manager";
+    homepage = "https://cert-manager.io";
+    license = lib.licenses.bsd3;
     platforms = lib.platforms.all;
   };
 }

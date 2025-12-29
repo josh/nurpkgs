@@ -7,12 +7,12 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "ceph-csi-cephfs-charts";
-  version = "3.15.1";
+  pname = "nack-chart";
+  version = "0.31.1";
 
   src = fetchzip {
-    url = "https://ceph.github.io/csi-charts/cephfs/ceph-csi-cephfs-3.15.1.tgz";
-    sha256 = "1i20r8vllkqarkynw9rrq3kggk97vv0p3f9vr9g0xcmbsffdd578";
+    url = "https://github.com/nats-io/k8s/releases/download/nack-0.31.1/nack-0.31.1.tgz";
+    sha256 = "04lmij4m78ljb9dl466dwvmxlqx1ldryp9hd1496n0akyymddvyx";
   };
 
   __structuredAttrs = true;
@@ -22,7 +22,7 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
-  helmChartName = "ceph-csi-cephfs";
+  helmChartName = "nack";
   helmArgs = [ ];
   helmValues = { };
 
@@ -43,14 +43,14 @@ stdenvNoCC.mkDerivation {
   passthru.updateScript = [
     "${lib.getExe nur.repos.josh.nixhelm-update}"
     "--url"
-    "https://ceph.github.io/csi-charts"
+    "https://nats-io.github.io/k8s/helm/charts"
     "--chart"
-    "ceph-csi-cephfs"
+    "nack"
   ];
 
   meta = {
-    description = "Container Storage Interface (CSI) driver, provisioner, snapshotter, resizer and attacher for Ceph cephfs";
-    homepage = "https://github.com/ceph/ceph-csi/tree/devel/charts/ceph-csi-cephfs";
+    description = "A Helm chart for NACK - NAts Controller for Kubernetes";
+    homepage = "https://github.com/nats-io/k8s/tree/main/helm/charts/nack";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;
   };

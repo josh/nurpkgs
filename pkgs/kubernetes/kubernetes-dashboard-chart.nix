@@ -7,7 +7,7 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "kubernetes-dashboard-charts";
+  pname = "kubernetes-dashboard-chart";
   version = "7.14.0";
 
   src = fetchzip {

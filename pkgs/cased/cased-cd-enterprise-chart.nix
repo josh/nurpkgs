@@ -7,7 +7,7 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "cased-cd-enterprise-charts";
+  pname = "cased-cd-enterprise-chart";
   version = "0.2.24";
 
   src = fetchzip {

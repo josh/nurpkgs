@@ -7,7 +7,7 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "ceph-csi-rbd-charts";
+  pname = "ceph-csi-rbd-chart";
   version = "3.15.1";
 
   src = fetchzip {

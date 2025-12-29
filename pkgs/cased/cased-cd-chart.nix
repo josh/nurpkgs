@@ -7,13 +7,12 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "cert-manager-charts";
-  version = "1.19.2";
+  pname = "cased-cd-chart";
+  version = "0.2.19";
 
   src = fetchzip {
-    url = "https://quay.io/v2/jetstack/charts/cert-manager/blobs/sha256:87e2dafa946bd05c56be897b2fe2e171f2bbfad96c9d48409d4b1188d240af6f";
-    sha256 = "1yjvhigjx71ags1imcrkjz4i0i6zv5gpdcdn93hp6hjf5x52kxja";
-    extension = "tar.gz";
+    url = "https://cased.github.io/cased-cd/cased-cd-0.2.19.tgz";
+    sha256 = "1zkx35p869wdr7p39hqdii7bd3rn14iyz50i6mv1d532mg2174q0";
   };
 
   __structuredAttrs = true;
@@ -23,7 +22,6 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
-  helmChartName = "cert-manager";
   helmArgs = [ ];
   helmValues = { };
 
@@ -44,13 +42,15 @@ stdenvNoCC.mkDerivation {
   passthru.updateScript = [
     "${lib.getExe nur.repos.josh.nixhelm-update}"
     "--url"
-    "oci://quay.io/jetstack/charts/cert-manager"
+    "https://cased.github.io/cased-cd"
+    "--chart"
+    "cased-cd"
   ];
 
   meta = {
-    description = "A Helm chart for cert-manager";
-    homepage = "https://cert-manager.io";
-    license = lib.licenses.bsd3;
+    description = "A modern UI for ArgoCD";
+    homepage = "https://github.com/cased/cased-cd";
+    license = lib.licenses.fsl11Asl20;
     platforms = lib.platforms.all;
   };
 }
