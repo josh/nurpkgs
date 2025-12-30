@@ -1,4 +1,9 @@
-{ terraform-providers, nix-update-script }:
+{
+  lib,
+  terraform-providers,
+  sops,
+  nix-update-script,
+}:
 let
   pkg = terraform-providers.mkProvider {
     owner = "josh";
@@ -13,6 +18,7 @@ let
 in
 pkg.overrideAttrs (
   _finalAttrs: previousAttrs: {
+    ldflags = previousAttrs.ldflags ++ [ "-X main.sopsBinary=${lib.getExe sops}" ];
     passthru = previousAttrs.passthru // {
       updateScript = nix-update-script {
         extraArgs = [
