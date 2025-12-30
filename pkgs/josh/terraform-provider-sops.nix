@@ -22,7 +22,7 @@ pkg.overrideAttrs (
     passthru = previousAttrs.passthru // {
       updateScript = nix-update-script {
         extraArgs = [
-          "--version=branch"
+          "--version=stable"
           "--override-filename"
           "pkgs/josh/terraform-provider-sops.nix"
         ];
