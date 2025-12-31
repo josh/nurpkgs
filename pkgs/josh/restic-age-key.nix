@@ -40,8 +40,6 @@ buildGoModule (finalAttrs: {
     tinyxxd
   ];
 
-  doCheck = false;
-
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   passthru.tests =
