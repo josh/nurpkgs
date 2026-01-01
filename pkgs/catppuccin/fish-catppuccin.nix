@@ -52,13 +52,13 @@ let
 in
 fishPlugins.buildFishPlugin {
   pname = "fish-catppuccin";
-  version = "0-unstable-2025-11-28";
+  version = "0-unstable-2025-12-31";
 
   src = fetchFromGitHub {
     owner = "catppuccin";
     repo = "fish";
-    rev = "af622a6e247806f6260c00c6d261aa22680e5201";
-    hash = "sha256-KD/sWXSXYVlV+n7ft4vKFYpIMBB3PSn6a6jz+ZIMZvQ=";
+    rev = "2c7edbb1ef5640cb4ef387647a53327149e51e80";
+    hash = "sha256-Wy034oQuQXftG1TRzXyfEZO+8eAHTHQpUA6pXczIcE0=";
   };
 
   preInstall = ''
