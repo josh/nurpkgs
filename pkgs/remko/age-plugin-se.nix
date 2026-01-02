@@ -1,5 +1,3 @@
-# Blocked on NixOS broken swift compiler
-# <https://github.com/josh/nixpkgs/issues/14>
 {
   lib,
   stdenvNoCC,
@@ -15,21 +13,21 @@ stdenvNoCC.mkDerivation (
     sources = {
       "aarch64-darwin" = fetchzip {
         url = "https://github.com/remko/age-plugin-se/releases/download/v${version}/age-plugin-se-v${version}-macos.zip";
-        sha256 = "sha256-xJ4KHEpDFNGYPUsMlxoVPZe9t8raX0Ohf8jZI+z97y0=";
+        sha256 = "sha256-9dJ7tPaFQy2xNeaRt8JnIxVu/+cMYNluKqRAWyJ7RQk=";
       };
       "aarch64-linux" = fetchzip {
         url = "https://github.com/remko/age-plugin-se/releases/download/v${version}/age-plugin-se-v${version}-aarch64-linux.tgz";
-        sha256 = "sha256-T3tiH2vig+w7PMgMioHCyOAQN5T0TXlUnYgRKqe/aV4=";
+        sha256 = "sha256-66mnfTXk3MuReoLltFBLM6V4FC9FDj+FNpH5NfvZqFo=";
       };
       "x86_64-linux" = fetchzip {
         url = "https://github.com/remko/age-plugin-se/releases/download/v${version}/age-plugin-se-v${version}-x86_64-linux.tgz";
-        sha256 = "sha256-hBbB5xNEOCZcS+MXG9xJlNNW4oIvchsyYpezqR1SWJs=";
+        sha256 = "sha256-LvF094XcnndqVk7jVDkcCUV/ElW52JjmrKCFKAUwwQ8=";
       };
     };
   in
   {
     pname = "age-plugin-se";
-    version = "0.1.4";
+    version = "0.2.1";
 
     src = sources.${stdenvNoCC.targetPlatform.system};
 
