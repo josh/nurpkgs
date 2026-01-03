@@ -12,7 +12,7 @@ stdenvNoCC.mkDerivation {
 
   src = fetchzip {
     url = "https://github.com/NaturalSelectionLabs/helm-charts/releases/download/rsshub-0.2.9/rsshub-0.2.9.tgz";
-    sha256 = "sha256-CZ5JBgeVTVS0yNYpmX/CWN6MzlQ9ylVcbaEHAmVcSCA=";
+    sha256 = "0828bijh41x1dmf5bjixak78rpjqq9zrjafnr2s58kcm0w34k7h9";
   };
 
   __structuredAttrs = true;
