@@ -17,7 +17,7 @@ buildGoModule (finalAttrs: {
     hash = "sha256-vXxgs4yFfD+uIzmpumx0M2PugjEjlcbxxQBQwhbf9Co=";
   };
 
-  vendorHash = "sha256-Gyr2aSPTDuAusEL0wtrseHSL4/gnxgu5MvWL/WzkMcY=";
+  vendorHash = "sha256-9q7ShFXEl6h6frP29ZjKaC1pWS8CDg3DEBMJhECuAuE=";
 
   env.CGO_ENABLED = 1;
 
