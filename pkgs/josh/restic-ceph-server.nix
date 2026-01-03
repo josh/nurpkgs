@@ -8,13 +8,13 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "restic-ceph-server";
-  version = "0-unstable-2025-12-16";
+  version = "0-unstable-2026-01-03";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "restic-ceph-server";
-    rev = "8465c9077d682e150d8dbded2793b2ccb4ef0195";
-    hash = "sha256-UTxvwwiYCjy6qWTHbHfX3gzcOuBj0DUQbZaXLNmY05w=";
+    rev = "f38127423a4491218f6cbaba29e58a6d1508b948";
+    hash = "sha256-vXxgs4yFfD+uIzmpumx0M2PugjEjlcbxxQBQwhbf9Co=";
   };
 
   vendorHash = "sha256-Gyr2aSPTDuAusEL0wtrseHSL4/gnxgu5MvWL/WzkMcY=";
