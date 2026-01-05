@@ -8,7 +8,7 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "sops-secrets-operator-chart";
-  version = "0.0.0";
+  version = "0.24.1";
 
   src = fetchzip {
     url = "";
