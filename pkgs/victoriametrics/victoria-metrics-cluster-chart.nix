@@ -8,11 +8,11 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "victoria-metrics-cluster-chart";
-  version = "0.31.0";
+  version = "0.32.0";
 
   src = fetchzip {
-    url = "https://github.com/VictoriaMetrics/helm-charts/releases/download/victoria-metrics-cluster-0.31.0/victoria-metrics-cluster-0.31.0.tgz";
-    sha256 = "04i489rzfg64k7h1pyrkva31hk4zxbmf4gds5ahscp4r20a1w0p5";
+    url = "https://github.com/VictoriaMetrics/helm-charts/releases/download/victoria-metrics-cluster-0.32.0/victoria-metrics-cluster-0.32.0.tgz";
+    sha256 = "0d6aafnjd01xv5k5kyfawd9gzaya3q7f15yvsg12sdlfrfk7byli";
   };
 
   __structuredAttrs = true;
