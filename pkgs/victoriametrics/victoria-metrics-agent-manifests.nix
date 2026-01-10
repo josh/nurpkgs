@@ -1,19 +1,14 @@
 {
   lib,
   stdenvNoCC,
-  fetchzip,
   kubernetes-helm,
   yq,
   nur,
 }:
 stdenvNoCC.mkDerivation {
   pname = "victoria-metrics-agent-manifests";
-  version = "0.29.0";
-
-  src = fetchzip {
-    url = "https://github.com/VictoriaMetrics/helm-charts/releases/download/victoria-metrics-agent-0.29.0/victoria-metrics-agent-0.29.0.tgz";
-    sha256 = "14aay6lfmnjigbin3nvwmnj9gywr12z0p7907x35536mv8ilwvgv";
-  };
+  inherit (nur.repos.josh.victoria-metrics-agent-chart) version;
+  src = nur.repos.josh.victoria-metrics-agent-chart;
 
   __structuredAttrs = true;
 
@@ -43,14 +38,6 @@ stdenvNoCC.mkDerivation {
     cp -R ./"$helmChartName"/* $out
     runHook postInstall
   '';
-
-  passthru.updateScript = [
-    "${lib.getExe nur.repos.josh.nixhelm-update}"
-    "--url"
-    "https://victoriametrics.github.io/helm-charts"
-    "--chart"
-    "victoria-metrics-agent"
-  ];
 
   meta = {
     description = "VictoriaMetrics Agent - collects metrics from various sources and stores them to VictoriaMetrics";

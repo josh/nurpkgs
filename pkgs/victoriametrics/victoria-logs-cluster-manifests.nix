@@ -1,19 +1,14 @@
 {
   lib,
   stdenvNoCC,
-  fetchzip,
   kubernetes-helm,
   yq,
   nur,
 }:
 stdenvNoCC.mkDerivation {
   pname = "victoria-logs-cluster-manifests";
-  version = "0.0.25";
-
-  src = fetchzip {
-    url = "https://github.com/VictoriaMetrics/helm-charts/releases/download/victoria-logs-cluster-0.0.25/victoria-logs-cluster-0.0.25.tgz";
-    sha256 = "1bl2x8lcdybz8155k2x8h5i9hlmiamx3mmnq90zb2gqcs6zvyh9v";
-  };
+  inherit (nur.repos.josh.victoria-logs-cluster-chart) version;
+  src = nur.repos.josh.victoria-logs-cluster-chart;
 
   __structuredAttrs = true;
 
@@ -39,14 +34,6 @@ stdenvNoCC.mkDerivation {
     cp -R ./"$helmChartName"/* $out
     runHook postInstall
   '';
-
-  passthru.updateScript = [
-    "${lib.getExe nur.repos.josh.nixhelm-update}"
-    "--url"
-    "https://victoriametrics.github.io/helm-charts"
-    "--chart"
-    "victoria-logs-cluster"
-  ];
 
   meta = {
     description = "The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database in Kubernetes.";

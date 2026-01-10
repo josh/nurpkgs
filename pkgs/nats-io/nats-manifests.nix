@@ -1,19 +1,14 @@
 {
   lib,
   stdenvNoCC,
-  fetchzip,
   kubernetes-helm,
   yq,
   nur,
 }:
 stdenvNoCC.mkDerivation {
   pname = "nats-manifests";
-  version = "2.12.3";
-
-  src = fetchzip {
-    url = "https://github.com/nats-io/k8s/releases/download/nats-2.12.3/nats-2.12.3.tgz";
-    sha256 = "0pdfabb08b2plfns4ax3xjrwmq6z30qgrkgb1y0w0fjzvm28wz7g";
-  };
+  inherit (nur.repos.josh.nats-chart) version;
+  src = nur.repos.josh.nats-chart;
 
   __structuredAttrs = true;
 
@@ -39,14 +34,6 @@ stdenvNoCC.mkDerivation {
     cp -R ./"$helmChartName"/* $out
     runHook postInstall
   '';
-
-  passthru.updateScript = [
-    "${lib.getExe nur.repos.josh.nixhelm-update}"
-    "--url"
-    "https://nats-io.github.io/k8s/helm/charts"
-    "--chart"
-    "nats"
-  ];
 
   meta = {
     description = "A Helm chart for the NATS.io High Speed Cloud Native Distributed Communications Technology.";

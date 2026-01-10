@@ -1,19 +1,14 @@
 {
   lib,
   stdenvNoCC,
-  fetchzip,
   kubernetes-helm,
   yq,
   nur,
 }:
 stdenvNoCC.mkDerivation {
   pname = "victoria-logs-collector-manifests";
-  version = "0.2.5";
-
-  src = fetchzip {
-    url = "https://github.com/VictoriaMetrics/helm-charts/releases/download/victoria-logs-collector-0.2.5/victoria-logs-collector-0.2.5.tgz";
-    sha256 = "1vykbn3gs7pcv72yjyhxgkbac42vz3xbfj8yhwp6wmj6zpfn92fa";
-  };
+  inherit (nur.repos.josh.victoria-logs-collector-chart) version;
+  src = nur.repos.josh.victoria-logs-collector-chart;
 
   __structuredAttrs = true;
 
@@ -43,14 +38,6 @@ stdenvNoCC.mkDerivation {
     cp -R ./"$helmChartName"/* $out
     runHook postInstall
   '';
-
-  passthru.updateScript = [
-    "${lib.getExe nur.repos.josh.nixhelm-update}"
-    "--url"
-    "https://victoriametrics.github.io/helm-charts"
-    "--chart"
-    "victoria-logs-collector"
-  ];
 
   meta = {
     description = "VictoriaLogs Collector - collects logs from Kubernetes containers and stores them to VictoriaLogs";

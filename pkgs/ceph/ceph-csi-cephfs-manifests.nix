@@ -1,19 +1,14 @@
 {
   lib,
   stdenvNoCC,
-  fetchzip,
   kubernetes-helm,
   yq,
   nur,
 }:
 stdenvNoCC.mkDerivation {
   pname = "ceph-csi-cephfs-manifests";
-  version = "3.15.1";
-
-  src = fetchzip {
-    url = "https://ceph.github.io/csi-charts/cephfs/ceph-csi-cephfs-3.15.1.tgz";
-    sha256 = "1i20r8vllkqarkynw9rrq3kggk97vv0p3f9vr9g0xcmbsffdd578";
-  };
+  inherit (nur.repos.josh.ceph-csi-cephfs-chart) version;
+  src = nur.repos.josh.ceph-csi-cephfs-chart;
 
   __structuredAttrs = true;
 
@@ -39,14 +34,6 @@ stdenvNoCC.mkDerivation {
     cp -R ./"$helmChartName"/* $out
     runHook postInstall
   '';
-
-  passthru.updateScript = [
-    "${lib.getExe nur.repos.josh.nixhelm-update}"
-    "--url"
-    "https://ceph.github.io/csi-charts"
-    "--chart"
-    "ceph-csi-cephfs"
-  ];
 
   meta = {
     description = "Container Storage Interface (CSI) driver, provisioner, snapshotter, resizer and attacher for Ceph cephfs";

@@ -1,19 +1,14 @@
 {
   lib,
   stdenvNoCC,
-  fetchzip,
   kubernetes-helm,
   yq,
   nur,
 }:
 stdenvNoCC.mkDerivation {
   pname = "cased-cd-manifests";
-  version = "0.2.19";
-
-  src = fetchzip {
-    url = "https://cased.github.io/cased-cd/cased-cd-0.2.19.tgz";
-    sha256 = "1zkx35p869wdr7p39hqdii7bd3rn14iyz50i6mv1d532mg2174q0";
-  };
+  inherit (nur.repos.josh.cased-cd-chart) version;
+  src = nur.repos.josh.cased-cd-chart;
 
   __structuredAttrs = true;
 
@@ -22,6 +17,7 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
+  helmChartName = "cased-cd";
   helmArgs = [ ];
   helmValues = { };
 
@@ -38,14 +34,6 @@ stdenvNoCC.mkDerivation {
     cp -R ./"$helmChartName"/* $out
     runHook postInstall
   '';
-
-  passthru.updateScript = [
-    "${lib.getExe nur.repos.josh.nixhelm-update}"
-    "--url"
-    "https://cased.github.io/cased-cd"
-    "--chart"
-    "cased-cd"
-  ];
 
   meta = {
     description = "A modern UI for ArgoCD";

@@ -1,19 +1,14 @@
 {
   lib,
   stdenvNoCC,
-  fetchzip,
   kubernetes-helm,
   yq,
   nur,
 }:
 stdenvNoCC.mkDerivation {
   pname = "ceph-csi-rbd-manifests";
-  version = "3.15.1";
-
-  src = fetchzip {
-    url = "https://ceph.github.io/csi-charts/rbd/ceph-csi-rbd-3.15.1.tgz";
-    sha256 = "16miwsymyh8aa6lywgv9263wp7vn4jrzilx72rb6gzk292frkadm";
-  };
+  inherit (nur.repos.josh.ceph-csi-rbd-chart) version;
+  src = nur.repos.josh.ceph-csi-rbd-chart;
 
   __structuredAttrs = true;
 
@@ -39,14 +34,6 @@ stdenvNoCC.mkDerivation {
     cp -R ./"$helmChartName"/* $out
     runHook postInstall
   '';
-
-  passthru.updateScript = [
-    "${lib.getExe nur.repos.josh.nixhelm-update}"
-    "--url"
-    "https://ceph.github.io/csi-charts"
-    "--chart"
-    "ceph-csi-rbd"
-  ];
 
   meta = {
     description = "Container Storage Interface (CSI) driver, provisioner, snapshotter, resizer and attacher for Ceph RBD";

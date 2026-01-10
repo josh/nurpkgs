@@ -1,19 +1,14 @@
 {
   lib,
   stdenvNoCC,
-  fetchzip,
   kubernetes-helm,
   yq,
   nur,
 }:
 stdenvNoCC.mkDerivation {
   pname = "victoria-metrics-cluster-manifests";
-  version = "0.32.0";
-
-  src = fetchzip {
-    url = "https://github.com/VictoriaMetrics/helm-charts/releases/download/victoria-metrics-cluster-0.32.0/victoria-metrics-cluster-0.32.0.tgz";
-    sha256 = "0d6aafnjd01xv5k5kyfawd9gzaya3q7f15yvsg12sdlfrfk7byli";
-  };
+  inherit (nur.repos.josh.victoria-metrics-cluster-chart) version;
+  src = nur.repos.josh.victoria-metrics-cluster-chart;
 
   __structuredAttrs = true;
 
@@ -39,14 +34,6 @@ stdenvNoCC.mkDerivation {
     cp -R ./"$helmChartName"/* $out
     runHook postInstall
   '';
-
-  passthru.updateScript = [
-    "${lib.getExe nur.repos.josh.nixhelm-update}"
-    "--url"
-    "https://victoriametrics.github.io/helm-charts"
-    "--chart"
-    "victoria-metrics-cluster"
-  ];
 
   meta = {
     description = "VictoriaMetrics Cluster version - high-performance, cost-effective and scalable TSDB, long-term remote storage for Prometheus";

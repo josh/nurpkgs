@@ -1,19 +1,14 @@
 {
   lib,
   stdenvNoCC,
-  fetchzip,
   kubernetes-helm,
   yq,
   nur,
 }:
 stdenvNoCC.mkDerivation {
   pname = "cased-cd-enterprise-manifests";
-  version = "0.2.24";
-
-  src = fetchzip {
-    url = "https://cased.github.io/cased-cd-enterprise/cased-cd-enterprise-0.2.24.tgz";
-    sha256 = "1z5pp0s7v7khqdibjgw234j2yxradlmxhzbys8i1yq2kgab0jcym";
-  };
+  inherit (nur.repos.josh.cased-cd-enterprise-chart) version;
+  src = nur.repos.josh.cased-cd-enterprise-chart;
 
   __structuredAttrs = true;
 
@@ -22,6 +17,7 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
+  helmChartName = "cased-cd-enterprise";
   helmArgs = [ ];
   helmValues = { };
 
@@ -38,14 +34,6 @@ stdenvNoCC.mkDerivation {
     cp -R ./"$helmChartName"/* $out
     runHook postInstall
   '';
-
-  passthru.updateScript = [
-    "${lib.getExe nur.repos.josh.nixhelm-update}"
-    "--url"
-    "https://cased.github.io/cased-cd-enterprise"
-    "--chart"
-    "cased-cd-enterprise"
-  ];
 
   meta = {
     description = "A modern UI for ArgoCD with enterprise features (RBAC, audit trail, user management)";

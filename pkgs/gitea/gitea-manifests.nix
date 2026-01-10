@@ -1,19 +1,14 @@
 {
   lib,
   stdenvNoCC,
-  fetchzip,
   kubernetes-helm,
   yq,
   nur,
 }:
 stdenvNoCC.mkDerivation {
   pname = "gitea-manifests";
-  version = "12.4.0";
-
-  src = fetchzip {
-    url = "https://dl.gitea.com/charts/gitea-12.4.0.tgz";
-    sha256 = "0y5wxixz20fanb0p8y6jkbjrgkz3k24z70hsjfrzppxgpwaw524c";
-  };
+  inherit (nur.repos.josh.gitea-chart) version;
+  src = nur.repos.josh.gitea-chart;
 
   __structuredAttrs = true;
 
@@ -39,14 +34,6 @@ stdenvNoCC.mkDerivation {
     cp -R ./"$helmChartName"/* $out
     runHook postInstall
   '';
-
-  passthru.updateScript = [
-    "${lib.getExe nur.repos.josh.nixhelm-update}"
-    "--url"
-    "https://dl.gitea.com/charts/"
-    "--chart"
-    "gitea"
-  ];
 
   meta = {
     description = "Gitea Helm chart for Kubernetes";

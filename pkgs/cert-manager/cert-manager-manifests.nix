@@ -1,20 +1,14 @@
 {
   lib,
   stdenvNoCC,
-  fetchzip,
   kubernetes-helm,
   yq,
   nur,
 }:
 stdenvNoCC.mkDerivation {
   pname = "cert-manager-manifests";
-  version = "1.19.2";
-
-  src = fetchzip {
-    url = "https://quay.io/v2/jetstack/charts/cert-manager/blobs/sha256:87e2dafa946bd05c56be897b2fe2e171f2bbfad96c9d48409d4b1188d240af6f";
-    sha256 = "1yjvhigjx71ags1imcrkjz4i0i6zv5gpdcdn93hp6hjf5x52kxja";
-    extension = "tar.gz";
-  };
+  inherit (nur.repos.josh.cert-manager-chart) version;
+  src = nur.repos.josh.cert-manager-chart;
 
   __structuredAttrs = true;
 
@@ -40,12 +34,6 @@ stdenvNoCC.mkDerivation {
     cp -R ./"$helmChartName"/* $out
     runHook postInstall
   '';
-
-  passthru.updateScript = [
-    "${lib.getExe nur.repos.josh.nixhelm-update}"
-    "--url"
-    "oci://quay.io/jetstack/charts/cert-manager"
-  ];
 
   meta = {
     description = "A Helm chart for cert-manager";
