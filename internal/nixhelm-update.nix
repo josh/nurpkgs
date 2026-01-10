@@ -4,18 +4,15 @@
   stdenvNoCC,
   git,
   nix,
+  kubernetes-helm,
 }:
 let
   python = python3.withPackages (ps: [
     ps.click
     ps.pyyaml
-    ps.requests
-    ps.semver
   ]);
 in
 stdenvNoCC.mkDerivation {
-  __structuredAttrs = true;
-
   name = "nixhelm-update";
 
   buildCommand = ''
@@ -25,7 +22,8 @@ stdenvNoCC.mkDerivation {
       cat "${./nixhelm-update.py}"
     ) >$out/bin/nixhelm-update
     substituteInPlace $out/bin/nixhelm-update --replace-fail '@git@' '${git}/bin/git'
-    substituteInPlace $out/bin/nixhelm-update --replace-fail '@nix-prefetch-url@' '${nix}/bin/nix-prefetch-url'
+    substituteInPlace $out/bin/nixhelm-update --replace-fail '@helm@' '${kubernetes-helm}/bin/helm'
+    substituteInPlace $out/bin/nixhelm-update --replace-fail '@nix-hash@' '${nix}/bin/nix-hash'
     substituteInPlace $out/bin/nixhelm-update --replace-fail '@nix@' '${nix}/bin/nix'
     chmod +x $out/bin/nixhelm-update
   '';
