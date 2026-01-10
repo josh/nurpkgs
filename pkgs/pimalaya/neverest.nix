@@ -13,7 +13,7 @@
   notmuch,
   buildNoDefaultFeatures ? false,
   buildFeatures ? [ ],
-# nix-update-script,
+  # nix-update-script,
 }:
 rustPlatform.buildRustPackage rec {
   __structuredAttrs = true;
