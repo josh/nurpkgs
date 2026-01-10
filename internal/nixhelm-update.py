@@ -2,6 +2,7 @@ import os
 import re
 import subprocess
 import sys
+from urllib.parse import urljoin
 
 import click
 import requests
@@ -108,7 +109,7 @@ def main(
 def fetch_helm_latest_release(url: str, chart: str, unpack: bool) -> dict:
     base_url = url
 
-    resp = requests.get(f"{url}/index.yaml")
+    resp = requests.get(urljoin(url, "index.yaml"))
     resp.raise_for_status()
     helm_index = yaml.safe_load(resp.content)
 
