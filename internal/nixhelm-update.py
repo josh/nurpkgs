@@ -135,30 +135,68 @@ def fetch_helm_latest_release(url: str, chart: str, unpack: bool) -> dict:
     }
 
 
+def get_oci_token(registry: str, repository: str) -> str | None:
+    check_url = f"https://{registry}/v2/"
+    check_response = requests.get(check_url)
+
+    if check_response.status_code == 200:
+        return None
+
+    if check_response.status_code == 401:
+        www_auth = check_response.headers.get("www-authenticate", "")
+
+        if not www_auth.startswith("Bearer "):
+            return None
+
+        realm_match = re.search(r'realm="([^"]+)"', www_auth)
+        service_match = re.search(r'service="([^"]+)"', www_auth)
+
+        if not realm_match:
+            return None
+
+        realm = realm_match.group(1)
+
+        token_params = {}
+        if service_match:
+            token_params["service"] = service_match.group(1)
+
+        token_params["scope"] = f"repository:{repository}:pull"
+
+        token_response = requests.get(realm, params=token_params)
+        token_response.raise_for_status()
+        token_data = token_response.json()
+
+        return token_data.get("token") or token_data.get("access_token")
+
+    return None
+
+
 def fetch_oci_latest_release(url: str) -> dict:
     url = url.removeprefix("oci://")
     registry, *url_parts = url.split("/")
+    repository = "/".join(url_parts)
 
-    if registry == "quay.io":
-        base_url = f"https://quay.io/v2/{'/'.join(url_parts)}"
-        tags_list_url = f"{base_url}/tags/list"
-    else:
-        raise ValueError(f"Unsupported registry: {registry}")
+    base_url = f"https://{registry}/v2/{repository}"
 
-    tags_response = requests.get(tags_list_url)
+    headers = {}
+    if token := get_oci_token(registry, repository):
+        log(f"Using auth token for registry: {registry}")
+        headers["Authorization"] = f"Bearer {token}"
+
+    tags_response = requests.get(f"{base_url}/tags/list", headers=headers)
     tags_response.raise_for_status()
     latest_tag = detect_latest_tag(tags_response.json()["tags"])
 
     manifest_response = requests.get(
         f"{base_url}/manifests/{latest_tag}",
-        headers={"Accept": "application/vnd.oci.image.manifest.v1+json"},
+        headers={**headers, "Accept": "application/vnd.oci.image.manifest.v1+json"},
     )
     manifest_response.raise_for_status()
     manifest_data = manifest_response.json()
 
     config_response = requests.get(
         f"{base_url}/blobs/{manifest_data['config']['digest']}",
-        headers={"Accept": "application/vnd.cncf.helm.config.v1+json"},
+        headers={**headers, "Accept": "application/vnd.cncf.helm.config.v1+json"},
     )
     config_response.raise_for_status()
     config_data = config_response.json()
