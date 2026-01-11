@@ -7,12 +7,12 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "nats-chart";
-  version = "2.12.3";
+  pname = "tailscale-operator-manifests";
+  version = "1.92.5";
 
   src = fetchzip {
-    url = "https://github.com/nats-io/k8s/releases/download/nats-2.12.3/nats-2.12.3.tgz";
-    sha256 = "0pdfabb08b2plfns4ax3xjrwmq6z30qgrkgb1y0w0fjzvm28wz7g";
+    url = "https://pkgs.tailscale.com/helmcharts/tailscale-operator-1.92.5-1767733200-9d5d1097d67e15c7fba07e52c2670d89e215048a03dfb37e8cd8469f3a7e2bc0.tgz";
+    sha256 = "1g35v1vh3bcayzizz21qf995xdvsnpblldqfv4y6civs78wd6fmh";
   };
 
   __structuredAttrs = true;
@@ -22,7 +22,7 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
-  helmChartName = "nats";
+  helmChartName = "tailscale-operator";
   helmArgs = [ ];
   helmValues = { };
 
@@ -43,15 +43,15 @@ stdenvNoCC.mkDerivation {
   passthru.updateScript = [
     "${lib.getExe nur.repos.josh.nixhelm-update}"
     "--url"
-    "https://nats-io.github.io/k8s/helm/charts"
+    "https://pkgs.tailscale.com/helmcharts"
     "--chart"
-    "nats"
+    "tailscale-operator"
   ];
 
   meta = {
-    description = "A Helm chart for the NATS.io High Speed Cloud Native Distributed Communications Technology.";
-    homepage = "https://github.com/nats-io/k8s/tree/main/helm/charts/nats";
-    license = lib.licenses.asl20;
+    description = "A Helm chart for Tailscale Kubernetes operator";
+    homepage = "https://github.com/tailscale/tailscale/tree/main/cmd/k8s-operator/deploy/chart";
+    license = lib.licenses.bsd3;
     platforms = lib.platforms.all;
   };
 }

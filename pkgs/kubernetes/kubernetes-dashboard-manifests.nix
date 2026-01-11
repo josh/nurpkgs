@@ -7,12 +7,12 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "sops-secrets-operator-chart";
-  version = "0.24.1";
+  pname = "kubernetes-dashboard-manifests";
+  version = "7.14.0";
 
   src = fetchzip {
-    url = "https://isindir.github.io/sops-secrets-operator/sops-secrets-operator-0.24.1.tgz";
-    sha256 = "1agk8pgm3z10dfharppl481dfcrr67qr8zhx2qj8ll8y3lbvbf1i";
+    url = "https://github.com/kubernetes/dashboard/releases/download/kubernetes-dashboard-7.14.0/kubernetes-dashboard-7.14.0.tgz";
+    sha256 = "0w44sai3sb8xd23c45vxz819njssy39kysl2pdcjz9byxl6yyhcz";
   };
 
   __structuredAttrs = true;
@@ -22,7 +22,7 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
-  helmChartName = "sops-secrets-operator";
+  helmChartName = "kubernetes-dashboard";
   helmArgs = [ ];
   helmValues = { };
 
@@ -43,15 +43,15 @@ stdenvNoCC.mkDerivation {
   passthru.updateScript = [
     "${lib.getExe nur.repos.josh.nixhelm-update}"
     "--url"
-    "https://isindir.github.io/sops-secrets-operator/"
+    "https://kubernetes.github.io/dashboard"
     "--chart"
-    "sops-secrets-operator"
+    "kubernetes-dashboard"
   ];
 
   meta = {
-    description = "Helm chart deploys sops-secrets-operator";
-    homepage = "https://github.com/isindir/sops-secrets-operator/tree/master/chart/helm3/sops-secrets-operator";
-    license = lib.licenses.mpl20;
+    description = "General-purpose web UI for Kubernetes clusters";
+    homepage = "https://github.com/kubernetes/dashboard/tree/master/charts/kubernetes-dashboard";
+    license = lib.licenses.asl20;
     platforms = lib.platforms.all;
   };
 }

@@ -7,12 +7,12 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "victoria-metrics-single-chart";
-  version = "0.28.0";
+  pname = "victoria-logs-single-manifests";
+  version = "0.11.24";
 
   src = fetchzip {
-    url = "https://github.com/VictoriaMetrics/helm-charts/releases/download/victoria-metrics-single-0.28.0/victoria-metrics-single-0.28.0.tgz";
-    sha256 = "0nmpcds24bqls619cw62kybwrn9zh8038d5w77s5k2acrqamd8kj";
+    url = "https://github.com/VictoriaMetrics/helm-charts/releases/download/victoria-logs-single-0.11.24/victoria-logs-single-0.11.24.tgz";
+    sha256 = "13kg4gh8ix24bqyawl3jp586hr6f6yjf6jkfnsjblgsd146jdkmi";
   };
 
   __structuredAttrs = true;
@@ -22,7 +22,7 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
-  helmChartName = "victoria-metrics-single";
+  helmChartName = "victoria-logs-single";
   helmArgs = [ ];
   helmValues = { };
 
@@ -45,11 +45,11 @@ stdenvNoCC.mkDerivation {
     "--url"
     "https://victoriametrics.github.io/helm-charts"
     "--chart"
-    "victoria-metrics-single"
+    "victoria-logs-single"
   ];
 
   meta = {
-    description = "VictoriaMetrics Single version - high-performance, cost-effective and scalable TSDB, long-term remote storage for Prometheus";
+    description = "The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes.";
     homepage = "https://github.com/VictoriaMetrics/helm-charts/tree/master/charts/victoria-logs-collector";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;

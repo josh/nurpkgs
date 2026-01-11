@@ -7,12 +7,12 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "victoria-metrics-k8s-stack-chart";
-  version = "0.67.0";
+  pname = "cased-cd-enterprise-manifests";
+  version = "0.2.24";
 
   src = fetchzip {
-    url = "https://github.com/VictoriaMetrics/helm-charts/releases/download/victoria-metrics-k8s-stack-0.67.0/victoria-metrics-k8s-stack-0.67.0.tgz";
-    sha256 = "0h5g5xi8rywfwdigvf0g9bv3yna9kn75y90kwv2xmjisvj2hlrss";
+    url = "https://cased.github.io/cased-cd-enterprise/cased-cd-enterprise-0.2.24.tgz";
+    sha256 = "1z5pp0s7v7khqdibjgw234j2yxradlmxhzbys8i1yq2kgab0jcym";
   };
 
   __structuredAttrs = true;
@@ -22,7 +22,6 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
-  helmChartName = "victoria-metrics-k8s-stack";
   helmArgs = [ ];
   helmValues = { };
 
@@ -43,15 +42,15 @@ stdenvNoCC.mkDerivation {
   passthru.updateScript = [
     "${lib.getExe nur.repos.josh.nixhelm-update}"
     "--url"
-    "https://victoriametrics.github.io/helm-charts"
+    "https://cased.github.io/cased-cd-enterprise"
     "--chart"
-    "victoria-metrics-k8s-stack"
+    "cased-cd-enterprise"
   ];
 
   meta = {
-    description = "Kubernetes monitoring on VictoriaMetrics stack. Includes VictoriaMetrics Operator, Grafana dashboards, ServiceScrapes and VMRules";
-    homepage = "https://github.com/VictoriaMetrics/helm-charts/tree/master/charts/victoria-logs-collector";
-    license = lib.licenses.asl20;
+    description = "A modern UI for ArgoCD with enterprise features (RBAC, audit trail, user management)";
+    homepage = "https://github.com/cased/cased-cd-enterprise";
+    license = lib.licenses.unfree;
     platforms = lib.platforms.all;
   };
 }

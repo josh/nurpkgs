@@ -7,12 +7,12 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "ceph-csi-cephfs-chart";
-  version = "3.15.1";
+  pname = "victoria-metrics-agent-manifests";
+  version = "0.29.0";
 
   src = fetchzip {
-    url = "https://ceph.github.io/csi-charts/cephfs/ceph-csi-cephfs-3.15.1.tgz";
-    sha256 = "1i20r8vllkqarkynw9rrq3kggk97vv0p3f9vr9g0xcmbsffdd578";
+    url = "https://github.com/VictoriaMetrics/helm-charts/releases/download/victoria-metrics-agent-0.29.0/victoria-metrics-agent-0.29.0.tgz";
+    sha256 = "14aay6lfmnjigbin3nvwmnj9gywr12z0p7907x35536mv8ilwvgv";
   };
 
   __structuredAttrs = true;
@@ -22,9 +22,13 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
-  helmChartName = "ceph-csi-cephfs";
+  helmChartName = "victoria-metrics-agent";
   helmArgs = [ ];
-  helmValues = { };
+  helmValues = {
+    remoteWrite = [
+      { url = "http://victoria-logs:9428"; }
+    ];
+  };
 
   buildPhase = ''
     runHook preBuild
@@ -43,14 +47,14 @@ stdenvNoCC.mkDerivation {
   passthru.updateScript = [
     "${lib.getExe nur.repos.josh.nixhelm-update}"
     "--url"
-    "https://ceph.github.io/csi-charts"
+    "https://victoriametrics.github.io/helm-charts"
     "--chart"
-    "ceph-csi-cephfs"
+    "victoria-metrics-agent"
   ];
 
   meta = {
-    description = "Container Storage Interface (CSI) driver, provisioner, snapshotter, resizer and attacher for Ceph cephfs";
-    homepage = "https://github.com/ceph/ceph-csi/tree/devel/charts/ceph-csi-cephfs";
+    description = "VictoriaMetrics Agent - collects metrics from various sources and stores them to VictoriaMetrics";
+    homepage = "https://github.com/VictoriaMetrics/helm-charts/tree/master/charts/victoria-logs-collector";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;
   };

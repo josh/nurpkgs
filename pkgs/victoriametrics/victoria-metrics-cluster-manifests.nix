@@ -7,12 +7,12 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "nack-chart";
-  version = "0.31.1";
+  pname = "victoria-metrics-cluster-manifests";
+  version = "0.32.0";
 
   src = fetchzip {
-    url = "https://github.com/nats-io/k8s/releases/download/nack-0.31.1/nack-0.31.1.tgz";
-    sha256 = "04lmij4m78ljb9dl466dwvmxlqx1ldryp9hd1496n0akyymddvyx";
+    url = "https://github.com/VictoriaMetrics/helm-charts/releases/download/victoria-metrics-cluster-0.32.0/victoria-metrics-cluster-0.32.0.tgz";
+    sha256 = "0d6aafnjd01xv5k5kyfawd9gzaya3q7f15yvsg12sdlfrfk7byli";
   };
 
   __structuredAttrs = true;
@@ -22,7 +22,7 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
-  helmChartName = "nack";
+  helmChartName = "victoria-metrics-cluster";
   helmArgs = [ ];
   helmValues = { };
 
@@ -43,14 +43,14 @@ stdenvNoCC.mkDerivation {
   passthru.updateScript = [
     "${lib.getExe nur.repos.josh.nixhelm-update}"
     "--url"
-    "https://nats-io.github.io/k8s/helm/charts"
+    "https://victoriametrics.github.io/helm-charts"
     "--chart"
-    "nack"
+    "victoria-metrics-cluster"
   ];
 
   meta = {
-    description = "A Helm chart for NACK - NAts Controller for Kubernetes";
-    homepage = "https://github.com/nats-io/k8s/tree/main/helm/charts/nack";
+    description = "VictoriaMetrics Cluster version - high-performance, cost-effective and scalable TSDB, long-term remote storage for Prometheus";
+    homepage = "https://github.com/VictoriaMetrics/helm-charts/tree/master/charts/victoria-logs-collector";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;
   };

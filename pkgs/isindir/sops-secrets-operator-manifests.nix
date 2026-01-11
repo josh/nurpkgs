@@ -7,12 +7,12 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "victoria-logs-cluster-chart";
-  version = "0.0.25";
+  pname = "sops-secrets-operator-manifests";
+  version = "0.24.1";
 
   src = fetchzip {
-    url = "https://github.com/VictoriaMetrics/helm-charts/releases/download/victoria-logs-cluster-0.0.25/victoria-logs-cluster-0.0.25.tgz";
-    sha256 = "1bl2x8lcdybz8155k2x8h5i9hlmiamx3mmnq90zb2gqcs6zvyh9v";
+    url = "https://isindir.github.io/sops-secrets-operator/sops-secrets-operator-0.24.1.tgz";
+    sha256 = "1agk8pgm3z10dfharppl481dfcrr67qr8zhx2qj8ll8y3lbvbf1i";
   };
 
   __structuredAttrs = true;
@@ -22,7 +22,7 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
-  helmChartName = "victoria-logs-cluster";
+  helmChartName = "sops-secrets-operator";
   helmArgs = [ ];
   helmValues = { };
 
@@ -43,15 +43,15 @@ stdenvNoCC.mkDerivation {
   passthru.updateScript = [
     "${lib.getExe nur.repos.josh.nixhelm-update}"
     "--url"
-    "https://victoriametrics.github.io/helm-charts"
+    "https://isindir.github.io/sops-secrets-operator/"
     "--chart"
-    "victoria-logs-cluster"
+    "sops-secrets-operator"
   ];
 
   meta = {
-    description = "The VictoriaLogs cluster Helm chart deploys VictoriaLogs cluster database in Kubernetes.";
-    homepage = "https://github.com/VictoriaMetrics/helm-charts/tree/master/charts/victoria-logs-collector";
-    license = lib.licenses.asl20;
+    description = "Helm chart deploys sops-secrets-operator";
+    homepage = "https://github.com/isindir/sops-secrets-operator/tree/master/chart/helm3/sops-secrets-operator";
+    license = lib.licenses.mpl20;
     platforms = lib.platforms.all;
   };
 }

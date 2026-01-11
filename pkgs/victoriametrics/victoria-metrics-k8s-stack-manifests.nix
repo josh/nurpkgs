@@ -7,12 +7,12 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "gitea-chart";
-  version = "12.4.0";
+  pname = "victoria-metrics-k8s-stack-manifests";
+  version = "0.67.0";
 
   src = fetchzip {
-    url = "https://dl.gitea.com/charts/gitea-12.4.0.tgz";
-    sha256 = "0y5wxixz20fanb0p8y6jkbjrgkz3k24z70hsjfrzppxgpwaw524c";
+    url = "https://github.com/VictoriaMetrics/helm-charts/releases/download/victoria-metrics-k8s-stack-0.67.0/victoria-metrics-k8s-stack-0.67.0.tgz";
+    sha256 = "0h5g5xi8rywfwdigvf0g9bv3yna9kn75y90kwv2xmjisvj2hlrss";
   };
 
   __structuredAttrs = true;
@@ -22,7 +22,7 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
-  helmChartName = "gitea";
+  helmChartName = "victoria-metrics-k8s-stack";
   helmArgs = [ ];
   helmValues = { };
 
@@ -43,15 +43,15 @@ stdenvNoCC.mkDerivation {
   passthru.updateScript = [
     "${lib.getExe nur.repos.josh.nixhelm-update}"
     "--url"
-    "https://dl.gitea.com/charts/"
+    "https://victoriametrics.github.io/helm-charts"
     "--chart"
-    "gitea"
+    "victoria-metrics-k8s-stack"
   ];
 
   meta = {
-    description = "Gitea Helm chart for Kubernetes";
-    homepage = "https://gitea.com/gitea/helm-gitea";
-    license = lib.licenses.mit;
+    description = "Kubernetes monitoring on VictoriaMetrics stack. Includes VictoriaMetrics Operator, Grafana dashboards, ServiceScrapes and VMRules";
+    homepage = "https://github.com/VictoriaMetrics/helm-charts/tree/master/charts/victoria-logs-collector";
+    license = lib.licenses.asl20;
     platforms = lib.platforms.all;
   };
 }

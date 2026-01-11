@@ -7,12 +7,12 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "kubernetes-dashboard-chart";
-  version = "7.14.0";
+  pname = "gitea-manifests";
+  version = "12.4.0";
 
   src = fetchzip {
-    url = "https://github.com/kubernetes/dashboard/releases/download/kubernetes-dashboard-7.14.0/kubernetes-dashboard-7.14.0.tgz";
-    sha256 = "0w44sai3sb8xd23c45vxz819njssy39kysl2pdcjz9byxl6yyhcz";
+    url = "https://dl.gitea.com/charts/gitea-12.4.0.tgz";
+    sha256 = "0y5wxixz20fanb0p8y6jkbjrgkz3k24z70hsjfrzppxgpwaw524c";
   };
 
   __structuredAttrs = true;
@@ -22,7 +22,7 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
-  helmChartName = "kubernetes-dashboard";
+  helmChartName = "gitea";
   helmArgs = [ ];
   helmValues = { };
 
@@ -43,15 +43,15 @@ stdenvNoCC.mkDerivation {
   passthru.updateScript = [
     "${lib.getExe nur.repos.josh.nixhelm-update}"
     "--url"
-    "https://kubernetes.github.io/dashboard"
+    "https://dl.gitea.com/charts/"
     "--chart"
-    "kubernetes-dashboard"
+    "gitea"
   ];
 
   meta = {
-    description = "General-purpose web UI for Kubernetes clusters";
-    homepage = "https://github.com/kubernetes/dashboard/tree/master/charts/kubernetes-dashboard";
-    license = lib.licenses.asl20;
+    description = "Gitea Helm chart for Kubernetes";
+    homepage = "https://gitea.com/gitea/helm-gitea";
+    license = lib.licenses.mit;
     platforms = lib.platforms.all;
   };
 }

@@ -7,12 +7,12 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "victoria-logs-single-chart";
-  version = "0.11.24";
+  pname = "victoria-metrics-operator-manifests";
+  version = "0.57.1";
 
   src = fetchzip {
-    url = "https://github.com/VictoriaMetrics/helm-charts/releases/download/victoria-logs-single-0.11.24/victoria-logs-single-0.11.24.tgz";
-    sha256 = "13kg4gh8ix24bqyawl3jp586hr6f6yjf6jkfnsjblgsd146jdkmi";
+    url = "https://github.com/VictoriaMetrics/helm-charts/releases/download/victoria-metrics-operator-0.57.1/victoria-metrics-operator-0.57.1.tgz";
+    sha256 = "0mql8lk396ndgby67nv0hl8xck9fasg3p79m2vapbqnpgms4zy0w";
   };
 
   __structuredAttrs = true;
@@ -22,7 +22,7 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
-  helmChartName = "victoria-logs-single";
+  helmChartName = "victoria-metrics-operator";
   helmArgs = [ ];
   helmValues = { };
 
@@ -45,11 +45,11 @@ stdenvNoCC.mkDerivation {
     "--url"
     "https://victoriametrics.github.io/helm-charts"
     "--chart"
-    "victoria-logs-single"
+    "victoria-metrics-operator"
   ];
 
   meta = {
-    description = "The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes.";
+    description = "VictoriaMetrics Operator";
     homepage = "https://github.com/VictoriaMetrics/helm-charts/tree/master/charts/victoria-logs-collector";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;

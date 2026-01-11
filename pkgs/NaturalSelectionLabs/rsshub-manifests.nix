@@ -7,13 +7,12 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "cert-manager-chart";
-  version = "1.19.2";
+  pname = "rsshub-manifests";
+  version = "0.2.9";
 
   src = fetchzip {
-    url = "https://quay.io/v2/jetstack/charts/cert-manager/blobs/sha256:87e2dafa946bd05c56be897b2fe2e171f2bbfad96c9d48409d4b1188d240af6f";
-    sha256 = "1yjvhigjx71ags1imcrkjz4i0i6zv5gpdcdn93hp6hjf5x52kxja";
-    extension = "tar.gz";
+    url = "https://github.com/NaturalSelectionLabs/helm-charts/releases/download/rsshub-0.2.9/rsshub-0.2.9.tgz";
+    sha256 = "0828bijh41x1dmf5bjixak78rpjqq9zrjafnr2s58kcm0w34k7h9";
   };
 
   __structuredAttrs = true;
@@ -23,7 +22,7 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
-  helmChartName = "cert-manager";
+  helmChartName = "rsshub";
   helmArgs = [ ];
   helmValues = { };
 
@@ -44,13 +43,15 @@ stdenvNoCC.mkDerivation {
   passthru.updateScript = [
     "${lib.getExe nur.repos.josh.nixhelm-update}"
     "--url"
-    "oci://quay.io/jetstack/charts/cert-manager"
+    "https://naturalselectionlabs.github.io/helm-charts"
+    "--chart"
+    "rsshub"
   ];
 
   meta = {
-    description = "A Helm chart for cert-manager";
-    homepage = "https://cert-manager.io";
-    license = lib.licenses.bsd3;
+    description = "";
+    homepage = "https://github.com/NaturalSelectionLabs/helm-charts/tree/main/charts/rsshub";
+    license = lib.licenses.agpl3Only;
     platforms = lib.platforms.all;
   };
 }

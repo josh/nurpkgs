@@ -7,12 +7,12 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "cased-cd-enterprise-chart";
-  version = "0.2.24";
+  pname = "ceph-csi-rbd-manifests";
+  version = "3.15.1";
 
   src = fetchzip {
-    url = "https://cased.github.io/cased-cd-enterprise/cased-cd-enterprise-0.2.24.tgz";
-    sha256 = "1z5pp0s7v7khqdibjgw234j2yxradlmxhzbys8i1yq2kgab0jcym";
+    url = "https://ceph.github.io/csi-charts/rbd/ceph-csi-rbd-3.15.1.tgz";
+    sha256 = "16miwsymyh8aa6lywgv9263wp7vn4jrzilx72rb6gzk292frkadm";
   };
 
   __structuredAttrs = true;
@@ -22,6 +22,7 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
+  helmChartName = "ceph-csi-rbd";
   helmArgs = [ ];
   helmValues = { };
 
@@ -42,15 +43,15 @@ stdenvNoCC.mkDerivation {
   passthru.updateScript = [
     "${lib.getExe nur.repos.josh.nixhelm-update}"
     "--url"
-    "https://cased.github.io/cased-cd-enterprise"
+    "https://ceph.github.io/csi-charts"
     "--chart"
-    "cased-cd-enterprise"
+    "ceph-csi-rbd"
   ];
 
   meta = {
-    description = "A modern UI for ArgoCD with enterprise features (RBAC, audit trail, user management)";
-    homepage = "https://github.com/cased/cased-cd-enterprise";
-    license = lib.licenses.unfree;
+    description = "Container Storage Interface (CSI) driver, provisioner, snapshotter, resizer and attacher for Ceph RBD";
+    homepage = "https://github.com/ceph/ceph-csi/tree/devel/charts/ceph-csi-rbd";
+    license = lib.licenses.asl20;
     platforms = lib.platforms.all;
   };
 }

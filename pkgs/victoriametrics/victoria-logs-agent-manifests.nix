@@ -7,12 +7,12 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "victoria-logs-collector-chart";
-  version = "0.2.5";
+  pname = "victoria-logs-agent-manifests";
+  version = "0.0.5";
 
   src = fetchzip {
-    url = "https://github.com/VictoriaMetrics/helm-charts/releases/download/victoria-logs-collector-0.2.5/victoria-logs-collector-0.2.5.tgz";
-    sha256 = "1vykbn3gs7pcv72yjyhxgkbac42vz3xbfj8yhwp6wmj6zpfn92fa";
+    url = "https://github.com/VictoriaMetrics/helm-charts/releases/download/victoria-logs-agent-0.0.5/victoria-logs-agent-0.0.5.tgz";
+    sha256 = "0k2hq14jbik3zvk17maqi752r3dcsa97w9f1k62mpsmlwydgy81d";
   };
 
   __structuredAttrs = true;
@@ -22,7 +22,7 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
-  helmChartName = "victoria-logs-collector";
+  helmChartName = "victoria-logs-agent";
   helmArgs = [ ];
   helmValues = {
     remoteWrite = [
@@ -49,11 +49,11 @@ stdenvNoCC.mkDerivation {
     "--url"
     "https://victoriametrics.github.io/helm-charts"
     "--chart"
-    "victoria-logs-collector"
+    "victoria-logs-agent"
   ];
 
   meta = {
-    description = "VictoriaLogs Collector - collects logs from Kubernetes containers and stores them to VictoriaLogs";
+    description = "VictoriaLogs Agent - accepts logs from various protocols and replicates them across multiple VictoriaLogs instances.";
     homepage = "https://github.com/VictoriaMetrics/helm-charts/tree/master/charts/victoria-logs-collector";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;

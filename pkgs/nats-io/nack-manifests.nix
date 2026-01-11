@@ -7,12 +7,12 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "victoria-logs-agent-chart";
-  version = "0.0.5";
+  pname = "nack-manifests";
+  version = "0.31.1";
 
   src = fetchzip {
-    url = "https://github.com/VictoriaMetrics/helm-charts/releases/download/victoria-logs-agent-0.0.5/victoria-logs-agent-0.0.5.tgz";
-    sha256 = "0k2hq14jbik3zvk17maqi752r3dcsa97w9f1k62mpsmlwydgy81d";
+    url = "https://github.com/nats-io/k8s/releases/download/nack-0.31.1/nack-0.31.1.tgz";
+    sha256 = "04lmij4m78ljb9dl466dwvmxlqx1ldryp9hd1496n0akyymddvyx";
   };
 
   __structuredAttrs = true;
@@ -22,13 +22,9 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
-  helmChartName = "victoria-logs-agent";
+  helmChartName = "nack";
   helmArgs = [ ];
-  helmValues = {
-    remoteWrite = [
-      { url = "http://victoria-logs:9428"; }
-    ];
-  };
+  helmValues = { };
 
   buildPhase = ''
     runHook preBuild
@@ -47,14 +43,14 @@ stdenvNoCC.mkDerivation {
   passthru.updateScript = [
     "${lib.getExe nur.repos.josh.nixhelm-update}"
     "--url"
-    "https://victoriametrics.github.io/helm-charts"
+    "https://nats-io.github.io/k8s/helm/charts"
     "--chart"
-    "victoria-logs-agent"
+    "nack"
   ];
 
   meta = {
-    description = "VictoriaLogs Agent - accepts logs from various protocols and replicates them across multiple VictoriaLogs instances.";
-    homepage = "https://github.com/VictoriaMetrics/helm-charts/tree/master/charts/victoria-logs-collector";
+    description = "A Helm chart for NACK - NAts Controller for Kubernetes";
+    homepage = "https://github.com/nats-io/k8s/tree/main/helm/charts/nack";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;
   };

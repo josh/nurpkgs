@@ -7,12 +7,12 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "victoria-metrics-operator-chart";
-  version = "0.57.1";
+  pname = "victoria-metrics-single-manifests";
+  version = "0.28.0";
 
   src = fetchzip {
-    url = "https://github.com/VictoriaMetrics/helm-charts/releases/download/victoria-metrics-operator-0.57.1/victoria-metrics-operator-0.57.1.tgz";
-    sha256 = "0mql8lk396ndgby67nv0hl8xck9fasg3p79m2vapbqnpgms4zy0w";
+    url = "https://github.com/VictoriaMetrics/helm-charts/releases/download/victoria-metrics-single-0.28.0/victoria-metrics-single-0.28.0.tgz";
+    sha256 = "0nmpcds24bqls619cw62kybwrn9zh8038d5w77s5k2acrqamd8kj";
   };
 
   __structuredAttrs = true;
@@ -22,7 +22,7 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
-  helmChartName = "victoria-metrics-operator";
+  helmChartName = "victoria-metrics-single";
   helmArgs = [ ];
   helmValues = { };
 
@@ -45,11 +45,11 @@ stdenvNoCC.mkDerivation {
     "--url"
     "https://victoriametrics.github.io/helm-charts"
     "--chart"
-    "victoria-metrics-operator"
+    "victoria-metrics-single"
   ];
 
   meta = {
-    description = "VictoriaMetrics Operator";
+    description = "VictoriaMetrics Single version - high-performance, cost-effective and scalable TSDB, long-term remote storage for Prometheus";
     homepage = "https://github.com/VictoriaMetrics/helm-charts/tree/master/charts/victoria-logs-collector";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;

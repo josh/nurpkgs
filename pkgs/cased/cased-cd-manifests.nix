@@ -7,12 +7,12 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "tailscale-operator-chart";
-  version = "1.92.5";
+  pname = "cased-cd-manifests";
+  version = "0.2.19";
 
   src = fetchzip {
-    url = "https://pkgs.tailscale.com/helmcharts/tailscale-operator-1.92.5-1767733200-9d5d1097d67e15c7fba07e52c2670d89e215048a03dfb37e8cd8469f3a7e2bc0.tgz";
-    sha256 = "1g35v1vh3bcayzizz21qf995xdvsnpblldqfv4y6civs78wd6fmh";
+    url = "https://cased.github.io/cased-cd/cased-cd-0.2.19.tgz";
+    sha256 = "1zkx35p869wdr7p39hqdii7bd3rn14iyz50i6mv1d532mg2174q0";
   };
 
   __structuredAttrs = true;
@@ -22,7 +22,6 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
-  helmChartName = "tailscale-operator";
   helmArgs = [ ];
   helmValues = { };
 
@@ -43,15 +42,15 @@ stdenvNoCC.mkDerivation {
   passthru.updateScript = [
     "${lib.getExe nur.repos.josh.nixhelm-update}"
     "--url"
-    "https://pkgs.tailscale.com/helmcharts"
+    "https://cased.github.io/cased-cd"
     "--chart"
-    "tailscale-operator"
+    "cased-cd"
   ];
 
   meta = {
-    description = "A Helm chart for Tailscale Kubernetes operator";
-    homepage = "https://github.com/tailscale/tailscale/tree/main/cmd/k8s-operator/deploy/chart";
-    license = lib.licenses.bsd3;
+    description = "A modern UI for ArgoCD";
+    homepage = "https://github.com/cased/cased-cd";
+    license = lib.licenses.fsl11Asl20;
     platforms = lib.platforms.all;
   };
 }

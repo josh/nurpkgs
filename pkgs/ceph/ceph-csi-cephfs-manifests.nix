@@ -7,12 +7,12 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "cased-cd-chart";
-  version = "0.2.19";
+  pname = "ceph-csi-cephfs-manifests";
+  version = "3.15.1";
 
   src = fetchzip {
-    url = "https://cased.github.io/cased-cd/cased-cd-0.2.19.tgz";
-    sha256 = "1zkx35p869wdr7p39hqdii7bd3rn14iyz50i6mv1d532mg2174q0";
+    url = "https://ceph.github.io/csi-charts/cephfs/ceph-csi-cephfs-3.15.1.tgz";
+    sha256 = "1i20r8vllkqarkynw9rrq3kggk97vv0p3f9vr9g0xcmbsffdd578";
   };
 
   __structuredAttrs = true;
@@ -22,6 +22,7 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
+  helmChartName = "ceph-csi-cephfs";
   helmArgs = [ ];
   helmValues = { };
 
@@ -42,15 +43,15 @@ stdenvNoCC.mkDerivation {
   passthru.updateScript = [
     "${lib.getExe nur.repos.josh.nixhelm-update}"
     "--url"
-    "https://cased.github.io/cased-cd"
+    "https://ceph.github.io/csi-charts"
     "--chart"
-    "cased-cd"
+    "ceph-csi-cephfs"
   ];
 
   meta = {
-    description = "A modern UI for ArgoCD";
-    homepage = "https://github.com/cased/cased-cd";
-    license = lib.licenses.fsl11Asl20;
+    description = "Container Storage Interface (CSI) driver, provisioner, snapshotter, resizer and attacher for Ceph cephfs";
+    homepage = "https://github.com/ceph/ceph-csi/tree/devel/charts/ceph-csi-cephfs";
+    license = lib.licenses.asl20;
     platforms = lib.platforms.all;
   };
 }

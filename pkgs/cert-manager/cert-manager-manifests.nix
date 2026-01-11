@@ -7,12 +7,13 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "ceph-csi-rbd-chart";
-  version = "3.15.1";
+  pname = "cert-manager-manifests";
+  version = "1.19.2";
 
   src = fetchzip {
-    url = "https://ceph.github.io/csi-charts/rbd/ceph-csi-rbd-3.15.1.tgz";
-    sha256 = "16miwsymyh8aa6lywgv9263wp7vn4jrzilx72rb6gzk292frkadm";
+    url = "https://quay.io/v2/jetstack/charts/cert-manager/blobs/sha256:87e2dafa946bd05c56be897b2fe2e171f2bbfad96c9d48409d4b1188d240af6f";
+    sha256 = "1yjvhigjx71ags1imcrkjz4i0i6zv5gpdcdn93hp6hjf5x52kxja";
+    extension = "tar.gz";
   };
 
   __structuredAttrs = true;
@@ -22,7 +23,7 @@ stdenvNoCC.mkDerivation {
     yq
   ];
 
-  helmChartName = "ceph-csi-rbd";
+  helmChartName = "cert-manager";
   helmArgs = [ ];
   helmValues = { };
 
@@ -43,15 +44,13 @@ stdenvNoCC.mkDerivation {
   passthru.updateScript = [
     "${lib.getExe nur.repos.josh.nixhelm-update}"
     "--url"
-    "https://ceph.github.io/csi-charts"
-    "--chart"
-    "ceph-csi-rbd"
+    "oci://quay.io/jetstack/charts/cert-manager"
   ];
 
   meta = {
-    description = "Container Storage Interface (CSI) driver, provisioner, snapshotter, resizer and attacher for Ceph RBD";
-    homepage = "https://github.com/ceph/ceph-csi/tree/devel/charts/ceph-csi-rbd";
-    license = lib.licenses.asl20;
+    description = "A Helm chart for cert-manager";
+    homepage = "https://cert-manager.io";
+    license = lib.licenses.bsd3;
     platforms = lib.platforms.all;
   };
 }
