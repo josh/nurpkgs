@@ -19,12 +19,20 @@ stdenvNoCC.mkDerivation {
 
   helmChartName = "kubernetes-dashboard";
   helmArgs = [ ];
-  helmValues = { };
+  helmValues = {
+    app.security.csrfKey = "DELETE ME";
+  };
 
   buildPhase = ''
     runHook preBuild
     yq --yaml-output '.helmValues' "$NIX_ATTRS_JSON_FILE" >values.yaml
     helm template "$helmChartName" "$src" --output-dir . --values values.yaml "''${helmArgs[@]}"
+
+    csrf_secret=./"$helmChartName"/templates/secrets/csrf.yaml
+    if yq --exit-status '.data["private.key"] | @base64d == "DELETE ME"' "$csrf_secret" ; then
+      rm "$csrf_secret"
+    fi
+
     runHook postBuild
   '';
 
