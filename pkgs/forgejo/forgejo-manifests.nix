@@ -19,7 +19,14 @@ stdenvNoCC.mkDerivation {
 
   helmChartName = "forgejo";
   helmArgs = [ ];
-  helmValues = { };
+  helmValues = {
+    gitea = {
+      admin = {
+        username = "";
+        password = "";
+      };
+    };
+  };
 
   buildPhase = ''
     runHook preBuild
