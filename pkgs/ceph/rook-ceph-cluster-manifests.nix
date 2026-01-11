@@ -36,8 +36,8 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "Gitea Helm chart for Kubernetes";
-    homepage = "https://gitea.com/gitea/helm-gitea";
+    description = "Rook-Ceph Cluster - Creates Rook resources to configure a Ceph cluster";
+    homepage = "https://github.com/rook/rook";
     license = lib.licenses.mit;
     platforms = lib.platforms.all;
   };

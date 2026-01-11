@@ -37,7 +37,7 @@ stdenvNoCC.mkDerivation {
 
   meta = {
     description = "VictoriaMetrics Single version - high-performance, cost-effective and scalable TSDB, long-term remote storage for Prometheus";
-    homepage = "https://github.com/VictoriaMetrics/helm-charts/tree/master/charts/victoria-logs-collector";
+    homepage = "https://github.com/VictoriaMetrics/helm-charts/tree/master/charts/victoria-metrics-single";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;
   };

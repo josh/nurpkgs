@@ -36,8 +36,8 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "Gitea Helm chart for Kubernetes";
-    homepage = "https://gitea.com/gitea/helm-gitea";
+    description = "A Kubernetes controller and tool for one-way encrypted Secrets";
+    homepage = "https://github.com/bitnami-labs/sealed-secrets";
     license = lib.licenses.mit;
     platforms = lib.platforms.all;
   };

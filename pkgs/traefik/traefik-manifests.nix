@@ -36,8 +36,8 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "Gitea Helm chart for Kubernetes";
-    homepage = "https://gitea.com/gitea/helm-gitea";
+    description = "Traefik Proxy Helm chart - The Cloud Native Application Proxy";
+    homepage = "https://github.com/traefik/traefik-helm-chart";
     license = lib.licenses.mit;
     platforms = lib.platforms.all;
   };

@@ -37,7 +37,7 @@ stdenvNoCC.mkDerivation {
 
   meta = {
     description = "VictoriaMetrics Operator";
-    homepage = "https://github.com/VictoriaMetrics/helm-charts/tree/master/charts/victoria-logs-collector";
+    homepage = "https://github.com/VictoriaMetrics/helm-charts/tree/master/charts/victoria-metrics-operator";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;
   };

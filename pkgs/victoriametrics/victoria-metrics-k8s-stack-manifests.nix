@@ -37,7 +37,7 @@ stdenvNoCC.mkDerivation {
 
   meta = {
     description = "Kubernetes monitoring on VictoriaMetrics stack. Includes VictoriaMetrics Operator, Grafana dashboards, ServiceScrapes and VMRules";
-    homepage = "https://github.com/VictoriaMetrics/helm-charts/tree/master/charts/victoria-logs-collector";
+    homepage = "https://github.com/VictoriaMetrics/helm-charts/tree/master/charts/victoria-metrics-k8s-stack";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;
   };

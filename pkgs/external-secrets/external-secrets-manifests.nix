@@ -36,8 +36,8 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "Gitea Helm chart for Kubernetes";
-    homepage = "https://gitea.com/gitea/helm-gitea";
+    description = "External Secrets Operator - Integrates external secret management systems with Kubernetes";
+    homepage = "https://github.com/external-secrets/external-secrets";
     license = lib.licenses.mit;
     platforms = lib.platforms.all;
   };

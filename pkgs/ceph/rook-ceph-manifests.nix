@@ -36,8 +36,8 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "Gitea Helm chart for Kubernetes";
-    homepage = "https://gitea.com/gitea/helm-gitea";
+    description = "Rook-Ceph Operator - Storage Orchestration for Kubernetes";
+    homepage = "https://github.com/rook/rook";
     license = lib.licenses.mit;
     platforms = lib.platforms.all;
   };

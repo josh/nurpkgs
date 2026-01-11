@@ -36,8 +36,8 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "A Helm chart for Tailscale Kubernetes operator";
-    homepage = "https://github.com/tailscale/tailscale/tree/main/cmd/k8s-operator/deploy/chart";
+    description = "eBPF-based Networking, Security, and Observability for Kubernetes";
+    homepage = "https://github.com/cilium/charts";
     license = lib.licenses.bsd3;
     platforms = lib.platforms.all;
   };

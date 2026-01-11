@@ -36,8 +36,8 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "Gitea Helm chart for Kubernetes";
-    homepage = "https://gitea.com/gitea/helm-gitea";
+    description = "Actions Runner Controller - Kubernetes controller for GitHub Actions self-hosted runners";
+    homepage = "https://github.com/actions/actions-runner-controller";
     license = lib.licenses.mit;
     platforms = lib.platforms.all;
   };
