@@ -1,5 +1,6 @@
 pkgs:
 args@{
+  pname ? "${chart}-chart",
   url,
   chart,
   version,
@@ -12,8 +13,7 @@ in
 stdenvNoCC.mkDerivation {
   __structuredAttrs = true;
 
-  pname = "${chart}-chart";
-  inherit version;
+  inherit pname version;
 
   outputHashAlgo = "sha256";
   outputHashMode = "recursive";
