@@ -46,21 +46,13 @@ stdenvNoCC.mkDerivation {
     cp -R ./out/"$helmChart" $out
   '';
 
-  passthru.updateScript =
-    if (lib.strings.hasPrefix "oci://" url) then
-      [
-        "${lib.getExe nixhelm-update}"
-        "--url"
-        url
-      ]
-    else
-      [
-        "${lib.getExe nixhelm-update}"
-        "--url"
-        chart
-        "--repo"
-        url
-      ];
+  passthru.updateScript = [
+    "${lib.getExe nixhelm-update}"
+    "--url"
+    url
+    "--chart"
+    chart
+  ];
 
   meta = {
     description = "Fetch Helm chart";
