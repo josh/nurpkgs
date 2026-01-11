@@ -21,7 +21,7 @@ stdenvNoCC.mkDerivation {
   helmArgs = [ ];
   helmValues = {
     remoteWrite = [
-      { url = "http://victoria-logs:9428"; }
+      { url = "http://victoria-metrics:8428"; }
     ];
   };
 

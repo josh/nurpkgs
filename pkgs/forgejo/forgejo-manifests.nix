@@ -6,7 +6,7 @@
   nur,
 }:
 stdenvNoCC.mkDerivation {
-  pname = "forgejo-chart";
+  pname = "forgejo-manifests";
   inherit (nur.repos.josh.forgejo-chart) version;
   src = nur.repos.josh.forgejo-chart;
 
