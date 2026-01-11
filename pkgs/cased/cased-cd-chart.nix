@@ -1,56 +1,7 @@
-{
-  lib,
-  stdenvNoCC,
-  fetchzip,
-  kubernetes-helm,
-  yq,
-  nur,
-}:
-stdenvNoCC.mkDerivation {
-  pname = "cased-cd-chart";
+{ nur }:
+nur.repos.josh.fetchhelm {
+  url = "https://cased.github.io/cased-cd";
+  chart = "cased-cd";
   version = "0.2.19";
-
-  src = fetchzip {
-    url = "https://cased.github.io/cased-cd/cased-cd-0.2.19.tgz";
-    sha256 = "1zkx35p869wdr7p39hqdii7bd3rn14iyz50i6mv1d532mg2174q0";
-  };
-
-  __structuredAttrs = true;
-
-  nativeBuildInputs = [
-    kubernetes-helm
-    yq
-  ];
-
-  helmArgs = [ ];
-  helmValues = { };
-
-  buildPhase = ''
-    runHook preBuild
-    yq --yaml-output '.helmValues' "$NIX_ATTRS_JSON_FILE" >values.yaml
-    helm template "$helmChartName" "$src" --output-dir . --values values.yaml "''${helmArgs[@]}"
-    runHook postBuild
-  '';
-
-  installPhase = ''
-    runHook preInstall
-    mkdir -p $out
-    cp -R ./"$helmChartName"/* $out
-    runHook postInstall
-  '';
-
-  passthru.updateScript = [
-    "${lib.getExe nur.repos.josh.nixhelm-update}"
-    "--url"
-    "https://cased.github.io/cased-cd"
-    "--chart"
-    "cased-cd"
-  ];
-
-  meta = {
-    description = "A modern UI for ArgoCD";
-    homepage = "https://github.com/cased/cased-cd";
-    license = lib.licenses.fsl11Asl20;
-    platforms = lib.platforms.all;
-  };
+  sha256 = "sha256-AJMTxKtilBZ2NRGU7yMJNo+2TowNwzTuyY0ng24Zff4=";
 }
