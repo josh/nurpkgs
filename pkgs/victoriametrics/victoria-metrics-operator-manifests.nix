@@ -19,7 +19,9 @@ stdenvNoCC.mkDerivation {
 
   helmChartName = "victoria-metrics-operator";
   helmArgs = [ ];
-  helmValues = { };
+  helmValues = {
+    admissionWebhooks.certManager.enabled = true;
+  };
 
   buildPhase = ''
     runHook preBuild
