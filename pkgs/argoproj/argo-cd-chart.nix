@@ -2,6 +2,6 @@
 nur.repos.josh.fetchhelm {
   url = "https://argoproj.github.io/argo-helm/";
   chart = "argo-cd";
-  version = "9.2.4";
-  sha256 = "sha256-c8rtVYMnaaN4q6TlchzkD/hU7ZFxiM7WextnMpD3of4=";
+  version = "9.3.0";
+  sha256 = "sha256-tzRpMlUoGaC+f7N82PdQRwpNPzeSE/M0mJP0OdBZjr0=";
 }
