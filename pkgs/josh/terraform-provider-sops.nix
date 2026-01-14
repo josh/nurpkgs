@@ -8,8 +8,8 @@ let
   pkg = terraform-providers.mkProvider {
     owner = "josh";
     repo = "terraform-provider-sops";
-    rev = "v0.0.8";
-    hash = "sha256-hR4l+L12BDqDOT2l7Hwk+tjjdqzPaFEIm7/b5khs/Bg=";
+    rev = "v0.0.9";
+    hash = "sha256-d5bnlKBiSIDi3CNEC+eg5sK6qtkf351VP4voZxmmXt0=";
     vendorHash = "sha256-D0lDwV0rEVqUsoUh4mKKjRMr7vm56oXoRLiLfKZhviY=";
     provider-source-address = "registry.terraform.io/josh/sops";
     homepage = "https://github.com/josh/terraform-provider-sops";
