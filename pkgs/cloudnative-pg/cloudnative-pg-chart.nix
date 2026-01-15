@@ -1,6 +1,6 @@
 { nur }:
 nur.repos.josh.fetchhelm {
-  pname = "cloudnative-pg-cluster";
+  pname = "cloudnative-pg";
   url = "https://cloudnative-pg.github.io/charts";
   chart = "cloudnative-pg";
   version = "0.27.0";
