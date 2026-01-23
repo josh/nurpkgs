@@ -19,13 +19,13 @@ rustPlatform.buildRustPackage rec {
   __structuredAttrs = true;
 
   pname = "himalaya";
-  version = "1.1.0-unstable-2026-01-22";
+  version = "1.1.0-unstable-2026-01-23";
 
   src = fetchFromGitHub {
     owner = "pimalaya";
     repo = "himalaya";
-    rev = "ce1f8df46dc6780be4e2c139b3eba5bdacba1d60";
-    hash = "sha256-LRRshhdd41OIvLUiMUxY+oHNq24/bvajsvxh4jECAbU=";
+    rev = "6e9663444493e4860da18d45b3c703eecbc9454b";
+    hash = "sha256-CSPA3v/C2yGZ+OZn688xIi83uC0mcpqb7Am0EhDKq9c=";
   };
 
   cargoHash = "sha256-QbwuxcV5NZ0SA/XNJ6FeHOwLyR/AYz8Vp+pNcUFY3QU=";
