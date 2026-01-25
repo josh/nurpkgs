@@ -18,7 +18,7 @@ pkg.overrideAttrs (
         extraArgs = [
           "--version=stable"
           "--override-filename"
-          "pkgs/josh/terraform-provider-unifi.nix"
+          "pkgs/ubiquiti-community/terraform-provider-unifi.nix"
         ];
       };
     };
