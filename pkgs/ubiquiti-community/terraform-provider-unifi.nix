@@ -1,7 +1,7 @@
 { terraform-providers, nix-update-script }:
 let
   pkg = terraform-providers.mkProvider {
-    owner = "josh";
+    owner = "ubiquiti-community";
     repo = "terraform-provider-unifi";
     rev = "v0.41.3";
     hash = "sha256-IqsQRVgAB1PUqYJ0JPig6oq7FKJuS/a2NCgTCxX9+cg=";
