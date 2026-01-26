@@ -12,11 +12,11 @@ buildGoModule {
   src = fetchFromGitHub {
     owner = "josh";
     repo = "ceph-mgr-endpoint-controller";
-    rev = "5c5374050199b0b61099124dd8a4fb5927dbd4ba";
-    hash = "sha256-chs2xeeIYpPMnvi35+qnbeeGNuIJSZ1qFoP8NOlykVs=";
+    rev = "001b54b9b936a3d4b22815ada39411157c9124c2";
+    hash = "sha256-/xTlNQ+vwPaVtEMw94Te3kisbu6RMX3UtZM8ze31CcA=";
   };
 
-  vendorHash = "sha256-7p2HyKKanP0xTa7+4SH7eyu0esflNmsuji/7lZTcvbQ=";
+  vendorHash = "sha256-Nk78g43DKAbfOcZMQdDLu2iquUKT72Ed4JuXdFa/M+E=";
 
   env.CGO_ENABLED = 1;
 
