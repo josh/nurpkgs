@@ -3,6 +3,8 @@
   buildGoModule,
   fetchFromGitHub,
   nix-update-script,
+  runCommand,
+  testers,
   ceph,
   restic,
 }:
@@ -13,8 +15,8 @@ buildGoModule (finalAttrs: {
   src = fetchFromGitHub {
     owner = "josh";
     repo = "restic-rados-server";
-    rev = "116fa2c63379ae0693ca49263e77f36ef3215fc4";
-    hash = "sha256-0co5PlX9XFe4v9MCW/37kFy8Z6o8gao4l85VY37boUY=";
+    rev = "b7986f61b78e49fdef77d99ff50c50d8361e04d2";
+    hash = "sha256-91fNhfCa4lpxUYfMVDyBpHazi/44rE/v6fz8XTW6Svo=";
   };
 
   vendorHash = "sha256-YJQIf2fXcDnwHXwVpzS/k0xXbKme/Hk60R1h6gSNTSc=";
@@ -23,8 +25,7 @@ buildGoModule (finalAttrs: {
 
   ldflags = [
     "-w"
-    "-X main.Version=${finalAttrs.version}"
-    "-X main.ResticProgram=${lib.getExe restic}"
+    "-X main.version=${finalAttrs.version}"
   ];
 
   buildInputs = [
@@ -38,7 +39,21 @@ buildGoModule (finalAttrs: {
 
   doCheck = false;
 
-  passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+  passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
+
+  passthru.tests = {
+    version = testers.testVersion {
+      package = finalAttrs.finalPackage;
+      inherit (finalAttrs) version;
+    };
+
+    help =
+      runCommand "test-restic-rados-server-help" { nativeBuildInputs = [ finalAttrs.finalPackage ]; }
+        ''
+          restic-rados-server --help
+          touch $out
+        '';
+  };
 
   meta = {
     description = "A restic repository backend that stores data in raw Ceph RADOS";
