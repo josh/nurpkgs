@@ -6,15 +6,15 @@
   nix-update-script,
 }:
 let
-  imdb-plex-sync = python3Packages.buildPythonApplication {
+  imdb-plex-sync = python3Packages.buildPythonApplication rec {
     pname = "imdb-plex-sync";
     version = "0.2.0";
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "imdb-plex-sync";
-      rev = "da172067136c1fee3425ac6265b74aa0abbe9a7f";
-      hash = "sha256-t/CpkjovvLldYxMkdAOal7c97mugZiyjoqyO71HedZ0=";
+      tag = "v${version}";
+      hash = "sha256-nRGxekhGjaxU7uLAvIpB/B6+zx3ztlWkjG4kMg0yRbA=";
     };
 
     pyproject = true;

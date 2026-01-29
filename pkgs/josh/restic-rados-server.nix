@@ -15,8 +15,8 @@ buildGoModule (finalAttrs: {
   src = fetchFromGitHub {
     owner = "josh";
     repo = "restic-rados-server";
-    rev = "b7986f61b78e49fdef77d99ff50c50d8361e04d2";
-    hash = "sha256-91fNhfCa4lpxUYfMVDyBpHazi/44rE/v6fz8XTW6Svo=";
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-JHjT6Dbca3jXu1bd5rtKSg53Bl9OpTd1aZmt3K6fz4Y=";
   };
 
   vendorHash = "sha256-YJQIf2fXcDnwHXwVpzS/k0xXbKme/Hk60R1h6gSNTSc=";

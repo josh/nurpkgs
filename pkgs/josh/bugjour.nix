@@ -4,15 +4,15 @@
   fetchFromGitHub,
   nix-update-script,
 }:
-buildGoModule {
+buildGoModule (finalAttrs: {
   pname = "bugjour";
   version = "0.1.1";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "bugjour";
-    rev = "32b27dd2b77d65315e3b1e3b7120568ba2a5a503";
-    hash = "sha256-JreMpUm8z9rRRYJpQXVIqZoclaP+lxXHsf9C428bWZM=";
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-WtUiDry2ctStzvLi8InBckewjpuhYV3/J3PRqLzfp6c=";
   };
 
   vendorHash = "sha256-4V3cIgEN8WkHHrPz9SRshoiu0C+NHR0Xov1FZ06Q9XI=";
@@ -32,4 +32,4 @@ buildGoModule {
     platforms = lib.platforms.all;
     mainProgram = "bugjour";
   };
-}
+})
