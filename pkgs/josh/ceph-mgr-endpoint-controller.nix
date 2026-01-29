@@ -7,13 +7,13 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "ceph-mgr-endpoint-controller";
-  version = "0.3.1";
+  version = "0.3.2";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "ceph-mgr-endpoint-controller";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-qg4q97XwV8jdwt2SH/wo8lB+0ohg7odd9C4n9q8To5c=";
+    hash = "sha256-fUD01P/vdrJHTFyKaVdQ4nybyVZo2ngqs7aGG0jup8c=";
   };
 
   vendorHash = "sha256-Nk78g43DKAbfOcZMQdDLu2iquUKT72Ed4JuXdFa/M+E=";
