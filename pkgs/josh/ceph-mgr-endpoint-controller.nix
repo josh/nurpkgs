@@ -5,15 +5,15 @@
   nix-update-script,
   ceph,
 }:
-buildGoModule {
+buildGoModule (finalAttrs: {
   pname = "ceph-mgr-endpoint-controller";
   version = "0.2.0";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "ceph-mgr-endpoint-controller";
-    rev = "a3a4a4e17796e3e706b087f536a56bec9f06a05b";
-    hash = "sha256-M+m/ffk8WCqcqVcYRqkC85OjP6NdZWW9XUQ0gSI6MBg=";
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-h+uDfVE/jkwr/Zk19F8UVfLus1hP+t2/roW+nXWBJTY=";
   };
 
   vendorHash = "sha256-Nk78g43DKAbfOcZMQdDLu2iquUKT72Ed4JuXdFa/M+E=";
@@ -38,4 +38,4 @@ buildGoModule {
     inherit (ceph.meta) platforms;
     mainProgram = "ceph-mgr-endpoint-controller";
   };
-}
+})
