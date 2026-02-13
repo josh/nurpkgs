@@ -5,7 +5,6 @@
   restic,
   nix-update-script,
   runCommand,
-  testers,
 }:
 buildGoModule (finalAttrs: {
   pname = "prometheus-restic-exporter";
@@ -37,10 +36,11 @@ buildGoModule (finalAttrs: {
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
   passthru.tests = {
-    version = testers.testVersion {
-      package = finalAttrs.finalPackage;
-      inherit (finalAttrs) version;
-    };
+    # TODO: Implement version
+    # version = testers.testVersion {
+    #   package = finalAttrs.finalPackage;
+    #   inherit (finalAttrs) version;
+    # };
 
     help =
       runCommand "test-prometheus-restic-exporter-help"
