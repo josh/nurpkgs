@@ -2,6 +2,6 @@
 nur.repos.josh.fetchhelm {
   url = "https://nats-io.github.io/k8s/helm/charts";
   chart = "nack";
-  version = "0.33.1";
-  sha256 = "sha256-AJ1B5bJlqLB43ldUG0Ud7SNqfb/fCZZBvBDif6S9SUk=";
+  version = "0.33.2";
+  sha256 = "sha256-UjpDF2MDk6YcYF1gQaK2ap2iEUzJt5k4xZpsz8u4hoc=";
 }
