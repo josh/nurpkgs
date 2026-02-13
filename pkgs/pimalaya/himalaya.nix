@@ -24,11 +24,11 @@ rustPlatform.buildRustPackage rec {
   src = fetchFromGitHub {
     owner = "pimalaya";
     repo = "himalaya";
-    rev = "85988da4cf0e1e0c8d1ca6f9bf7c5fa9eba5c229";
-    hash = "sha256-1J7+mBQXUZgOgkN2l+y316uJVkZhl9Fv/iSTRNGGtx8=";
+    rev = "c64710aad4cc4ed2949fdb7cdc8f75445b72f28a";
+    hash = "sha256-yr0PF/yxQxEZYhyXGoguP8hsT/tTJR8DwMv7nCG5xe8=";
   };
 
-  cargoHash = "sha256-YSkljOaE3S8jyGER7b3FUCZUY+tyH8WdVWV3rLoS9jo=";
+  cargoHash = "sha256-x7TbS74rbJ2KPFie8zi9aFKJhr/72aSF5BfXxFlU9XQ=";
 
   inherit buildNoDefaultFeatures buildFeatures;
 
