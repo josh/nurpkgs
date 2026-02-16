@@ -28,6 +28,10 @@ buildGoModule (finalAttrs: {
     "-X main.resticBinary=${lib.getExe restic}"
   ];
 
+  nativeCheckInputs = [
+    restic
+  ];
+
   postInstall = ''
     substituteInPlace ./systemd/*.service --replace-fail /usr/bin/restic-exporter $out/bin/restic-exporter
     install -D --mode=0444 --target-directory $out/lib/systemd/system ./systemd/*
