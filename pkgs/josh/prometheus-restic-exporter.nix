@@ -9,13 +9,13 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "prometheus-restic-exporter";
-  version = "0-unstable-2026-02-14";
+  version = "0-unstable-2026-02-17";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "restic-exporter";
-    rev = "24231eeb625f4d0d94287268106433f103f396df";
-    hash = "sha256-Js2NFAHC3TE1CgSUiSIThb7RPsPtecHGePuHQO/Plwg=";
+    rev = "192d0f85e7d97882e61412df177b37b7afdcce10";
+    hash = "sha256-DIPAk8+x7iJquWaWHrl3FwptRO1epmjqW0hNYnua0K4=";
   };
 
   vendorHash = "sha256-oeCSKwDKVwvYQ1fjXXTwQSXNl/upDE3WAAk680vqh3U=";
