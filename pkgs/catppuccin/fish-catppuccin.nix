@@ -52,18 +52,18 @@ let
 in
 fishPlugins.buildFishPlugin {
   pname = "fish-catppuccin";
-  version = "0-unstable-2026-01-06";
+  version = "0-unstable-2026-02-17";
 
   src = fetchFromGitHub {
     owner = "catppuccin";
     repo = "fish";
-    rev = "521560ce2075ca757473816aa31914215332bac9";
-    hash = "sha256-5CXdzym6Vp+FbKTVBtVdWoh3dODudADIzOLXIyIIxgQ=";
+    rev = "bc201afe737fa0c8884ffcef206217f8aac88866";
+    hash = "sha256-jn2YoybaDY2gQgqmVGi9GPeRWn/H6IHnzxi/VcihIYM=";
   };
 
   preInstall = ''
     mkdir -p $out/share/fish/themes
-    cp themes/* $out/share/fish/themes/
+    install -m644 themes/*.theme $out/share/fish/themes/
 
     ${catppuccin-whiskers}/bin/whiskers ${fishTerra}
   '';
