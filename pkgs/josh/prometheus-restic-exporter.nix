@@ -9,13 +9,13 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "prometheus-restic-exporter";
-  version = "0-unstable-2026-02-17";
+  version = "0.1.0";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "restic-exporter";
-    rev = "192d0f85e7d97882e61412df177b37b7afdcce10";
-    hash = "sha256-DIPAk8+x7iJquWaWHrl3FwptRO1epmjqW0hNYnua0K4=";
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-o1bsfvsvSskVkTgJIUvjd3GF6JotNj3X0YrVPJ1rxxU";
   };
 
   vendorHash = "sha256-oeCSKwDKVwvYQ1fjXXTwQSXNl/upDE3WAAk680vqh3U=";
@@ -32,13 +32,20 @@ buildGoModule (finalAttrs: {
     restic
   ];
 
+  outputs = [
+    "out"
+    "grafana"
+  ];
+
   postInstall = ''
     substituteInPlace ./systemd/*.service --replace-fail /usr/bin/restic-exporter $out/bin/restic-exporter
     install -D --mode=0444 --target-directory $out/lib/systemd/system ./systemd/*
+
+    mkdir $grafana
+    cp -R ./grafana/* $grafana/
   '';
 
-  # TODO: Switch to stable branch
-  passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+  passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   passthru.tests = {
     version = testers.testVersion {
