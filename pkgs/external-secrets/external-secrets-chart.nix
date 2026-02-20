@@ -2,6 +2,6 @@
 nur.repos.josh.fetchhelm {
   url = "https://charts.external-secrets.io/";
   chart = "external-secrets";
-  version = "2.0.0";
-  sha256 = "sha256-lEA9nnW9XY3Qq6h8MA2SzAefwmvxEE2NqwXUTGUQgBA=";
+  version = "2.0.1";
+  sha256 = "sha256-alSCnwvux7n6YF1bRTd98YnlrB3kGoIu895CQTkNHUE=";
 }
