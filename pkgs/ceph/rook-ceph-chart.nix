@@ -2,6 +2,6 @@
 nur.repos.josh.fetchhelm {
   url = "https://charts.rook.io/release/";
   chart = "rook-ceph";
-  version = "1.19.1";
-  sha256 = "sha256-xsizvLWaZO6TrNBSX4WeG3Lm+zLpK6L8cF9fS0HDC38=";
+  version = "1.19.2";
+  sha256 = "sha256-2P9+T4DUm8dco45YNC6i45zeAhVTnsRPDlZz8N9TmgI=";
 }
