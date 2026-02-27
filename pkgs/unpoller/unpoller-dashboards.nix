@@ -15,11 +15,33 @@ stdenvNoCC.mkDerivation {
     hash = "sha256-XLhmOoeTBhKxYs8tLeWy3ng7rLzaCjt0Dhn7pAuL0Vk=";
   };
 
+  outputs = [
+    "out"
+    "influxdb"
+    "prometheus"
+  ];
+
   installPhase = ''
     runHook preInstall
 
     mkdir $out
     cp -R ./v2.0.0/*.json $out/
+
+    mkdir $influxdb
+    for src in ./v2.0.0/*InfluxDB.json; do
+      basename=$(basename "$src")
+      dst=''${basename/ - InfluxDB/}
+      cp "$src" "$influxdb/$dst"
+    done
+    substituteInPlace $influxdb/*.json --replace-warn ' - InfluxDB' ""
+
+    mkdir $prometheus
+    for src in ./v2.0.0/*Prometheus.json; do
+      basename=$(basename "$src")
+      dst=''${basename/ - Prometheus/}
+      cp "$src" "$prometheus/$dst"
+    done
+    substituteInPlace $prometheus/*.json --replace-warn ' - Prometheus' ""
 
     runHook postInstall
   '';
