@@ -6,7 +6,7 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "proxmox-via-prometheus-dashboard";
-  version = "0.0.0";
+  version = "0-unstable-2023-04-25";
 
   src = fetchFromGitHub {
     owner = "mittelab";
