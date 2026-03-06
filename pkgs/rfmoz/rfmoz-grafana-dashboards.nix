@@ -6,7 +6,7 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "rfmoz-grafana-dashboards";
-  version = "0";
+  version = "0-unstable-2026-02-14";
 
   src = fetchFromGitHub {
     owner = "rfmoz";
