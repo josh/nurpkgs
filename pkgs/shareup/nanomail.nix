@@ -8,7 +8,7 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "nanomail";
-  version = "0-unstable-2026-03-05";
+  version = "0-unstable-2026-03-04";
 
   src = fetchFromGitHub {
     owner = "shareup";
