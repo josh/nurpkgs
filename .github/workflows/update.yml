@@ -36,7 +36,7 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
 
-      - uses: DeterminateSystems/determinate-nix-action@73327eb48f028efaaf5013656ba216ca3cdeca7b # v3.16.3
+      - uses: DeterminateSystems/determinate-nix-action@131015bad844610e5e6300f8a143bf625d3e74f4 # v3.17.0
         with:
           extra-conf: |
             accept-flake-config = true
