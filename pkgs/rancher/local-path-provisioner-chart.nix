@@ -8,13 +8,13 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   __structuredAttrs = true;
 
   pname = "local-path-provisioner-chart";
-  version = "0.0.34";
+  version = "0.0.35";
 
   src = fetchFromGitHub {
     owner = "rancher";
     repo = "local-path-provisioner";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-SlyGFCvxdOgibUb9LePlRLaROtXE0cfd1T7fP2/UPpo=";
+    hash = "sha256-0/3kaGyd7z68EXNCiC8YUFXQ7ZbSpLJ1e8vAH3AGCdk=";
   };
 
   buildCommand = ''
