@@ -17,13 +17,13 @@ rustPlatform.buildRustPackage rec {
   __structuredAttrs = true;
 
   pname = "mirador";
-  version = "root-unstable-2025-01-18";
+  version = "root-unstable-2026-03-11";
 
   src = fetchFromGitHub {
     owner = "pimalaya";
     repo = "mirador";
-    rev = "7bd89a58ee71a33768be8a11f994b138dfa7464f";
-    hash = "sha256-/6ZThG+vl0uH1io/vOiveQqixYJvbStGpLH90NlN6EY=";
+    rev = "979944376f851baf22e831eb2b05c2a856b73388";
+    hash = "sha256-B+H49oTliiMMB/s/N9nim/Bsv/KOJOikm32Eh1vr3Fs=";
   };
 
   cargoHash = "sha256-JtLVk+Y58N66C4xUO2p3+MvO67AFdTPkkkXxYT3a1Hw=";
