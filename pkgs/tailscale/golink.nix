@@ -3,7 +3,6 @@
   buildGoModule,
   fetchFromGitHub,
   go,
-  nix-update-script,
   runCommand,
 }:
 buildGoModule (finalAttrs: {
@@ -25,7 +24,8 @@ buildGoModule (finalAttrs: {
     "-w"
   ];
 
-  passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+  # TODO: re-enable once nixpkgs has go 1.26
+  # passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
   passthru.tests = {
     help = runCommand "test-golink-help" { nativeBuildInputs = [ finalAttrs.finalPackage ]; } ''
