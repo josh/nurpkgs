@@ -3,7 +3,6 @@
   buildGoModule,
   fetchFromGitHub,
   coreutils,
-  nix-update-script,
   runCommand,
   testers,
 }:
@@ -33,8 +32,6 @@ buildGoModule (finalAttrs: {
       --replace-fail /usr/bin/rm ${coreutils}/bin/rm
     install -D --mode=0444 --target-directory $out/lib/systemd/system ./systemd/*
   '';
-
-  passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   passthru.tests = {
     version = testers.testVersion {
