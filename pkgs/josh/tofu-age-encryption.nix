@@ -10,24 +10,26 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "tofu-age-encryption";
-  version = "1.0.0";
+  version = "1.1.0";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "tofu-age-encryption";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-XGPHzKwi3xERmW0EWUPo0+7FCCtDlmd5iyfaiUEwvaE=";
+    hash = "sha256-N54A1iyCJ8Qtt6oMa0wHr6Zd91iW2wNuMRc1gHK4rec=";
   };
 
-  vendorHash = "sha256-OEXvKQ/dBxhz6/pbQNDYIjBf3O0x36ZE3Se/FqEgYRg=";
+  vendorHash = "sha256-/cORC9k0BtXaChMY0jHwo3fcixeZiZaAkh0xxhGFzII=";
 
   env.CGO_ENABLED = 0;
   ldflags = [
     "-s"
     "-w"
     "-X main.Version=${finalAttrs.version}"
-    "-X main.AgeProgram=${lib.getExe age}"
+    "-X main.AgePluginPath=${lib.strings.makeBinPath finalAttrs.agePlugins}"
   ];
+
+  agePlugins = [ age ];
 
   nativeCheckInputs = [
     age
