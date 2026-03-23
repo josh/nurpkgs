@@ -2,6 +2,6 @@
 nur.repos.josh.fetchhelm {
   url = "https://grafana-community.github.io/helm-charts";
   chart = "grafana";
-  version = "11.3.3";
-  sha256 = "sha256-4Mt7Ugck7/IzH12J9JDb9RcuANdQpJTViiTYcHHEf7c=";
+  version = "11.3.4";
+  sha256 = "sha256-ym2JNyi5khRavit1mNkDcm0QYe2kK5CEs92LJ7t9LRA=";
 }
