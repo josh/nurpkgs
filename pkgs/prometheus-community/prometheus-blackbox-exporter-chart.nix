@@ -2,6 +2,6 @@
 nur.repos.josh.fetchhelm {
   url = "https://prometheus-community.github.io/helm-charts";
   chart = "prometheus-blackbox-exporter";
-  version = "11.9.0";
-  sha256 = "sha256-+TWd3+RTKUTZOmXjFBmBWKh9AqyHhmjiNE2zIQxIZ+Y=";
+  version = "11.9.1";
+  sha256 = "sha256-z2WeSjHuZj4LWBiuQIeJLkLA/mr/ASOgRRcldkey8Bk=";
 }
