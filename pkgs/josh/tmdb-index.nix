@@ -8,13 +8,13 @@
 let
   tmdb-index = python3Packages.buildPythonApplication {
     pname = "tmdb-index";
-    version = "1.0.0-unstable-2026-03-30";
+    version = "1.0.0-unstable-2026-04-06";
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "tmdb-index";
-      rev = "999fd56aee65ecde07bad00f07865091f48324c3";
-      hash = "sha256-PIAosREf+tOwJoAffnx9nL1anrvnBJnbusM+jXsN8fc=";
+      rev = "035debeadbf32a973ca3174e6067dde7c27dfa67";
+      hash = "sha256-elyym+z76g/WwAxVOpVzOE6l4pehKVqSbROt50ouQPE=";
     };
 
     pyproject = true;
