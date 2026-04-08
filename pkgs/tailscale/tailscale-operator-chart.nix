@@ -2,6 +2,6 @@
 nur.repos.josh.fetchhelm {
   url = "https://pkgs.tailscale.com/helmcharts";
   chart = "tailscale-operator";
-  version = "1.94.2";
-  sha256 = "sha256-Lf+DnB+C3WOEJUeAa5cEiWzfNjSl7ChBv4bT4IwzVT0=";
+  version = "1.96.5";
+  sha256 = "sha256-Dh/fRXdA9z+TMfg7rzfKhKt5cRh6cDYPotP4hXvEpls=";
 }
