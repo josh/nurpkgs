@@ -2,6 +2,6 @@
 nur.repos.josh.fetchhelm {
   url = "https://open-webui.github.io/helm-charts";
   chart = "open-webui";
-  version = "13.1.0";
-  sha256 = "sha256-RjMQx6z97yOnELC90fI7FiicqfH0nljnF0hYP0DeOPE=";
+  version = "13.3.1";
+  sha256 = "sha256-hP6XkYx0EIr3/++6tXbWap2NDkFPf5WcFFVBnyGkNZg=";
 }
