@@ -7,13 +7,13 @@
 tmuxPlugins.mkTmuxPlugin rec {
   pluginName = "catppuccin";
   rtpFilePath = "catppuccin.tmux";
-  version = "2.2.2";
+  version = "2.3.0";
 
   src = fetchFromGitHub {
     owner = "catppuccin";
     repo = "tmux";
     tag = "v${version}";
-    hash = "sha256-aVqh8zP4hwOKJavoV/AoLMP5JTQORCgvwJlGpFxADjk=";
+    hash = "sha256-3CJRQCgS8NAN7vOLBjNGiHbGXTIrIyY/FLmfZrXcEYc=";
   };
 
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
