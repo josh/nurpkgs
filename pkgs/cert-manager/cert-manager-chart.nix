@@ -2,6 +2,6 @@
 nur.repos.josh.fetchhelm {
   url = "oci://quay.io/jetstack/charts/cert-manager";
   chart = "cert-manager";
-  version = "1.20.1";
-  sha256 = "sha256-H9FnC6RUmRx4cYP731D1haE/ztHU8ktqLfx+S7RcHVs=";
+  version = "1.20.2";
+  sha256 = "sha256-4V44v91c1wUBKDr7GbhahRWCjPtl1zCT9Bd0Hn5gCYY=";
 }
