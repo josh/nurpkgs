@@ -5,7 +5,7 @@
   go,
   nix-update-script,
 }:
-buildGoModule (finalAttrs: {
+buildGoModule {
   pname = "ceph-mgr-ts-gateway";
   version = "0-unstable-2026-04-13";
 
@@ -33,4 +33,4 @@ buildGoModule (finalAttrs: {
     mainProgram = "ceph-mgr-ts-gateway";
     broken = lib.strings.versionOlder go.version "1.26.1";
   };
-})
+}
