@@ -12,8 +12,8 @@ buildGoModule {
   src = fetchFromGitHub {
     owner = "josh";
     repo = "ceph-mgr-ts-gateway";
-    rev = "b52385283f0597d99872498042f8a4b45c9c74bc";
-    hash = "sha256-8ysPoRZwkBHa7XNXoTrHpjtR5KUmjAGIx1Wd5BI1hUY=";
+    rev = "cb2c2f6b7f9afde2888bfdb4cde528fbfe5690ad";
+    hash = "sha256-2k4JpPIbwlg6DICVvCfFQM/Cmv8SPWbb6RcnTIkMwAs=";
   };
 
   vendorHash = "sha256-PV3E0vl9QPtw8xFWSWbF5x0IoqWNf37XIRhvTJ7fSUk=";
