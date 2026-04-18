@@ -5,12 +5,13 @@ args@{
   chart,
   version,
   sha256,
+  helmTestValues ? { },
 }:
 let
   inherit (pkgs) lib callPackage stdenvNoCC;
   nixhelm-update = callPackage ./nixhelm-update.nix { };
 in
-stdenvNoCC.mkDerivation {
+stdenvNoCC.mkDerivation (finalAttrs: {
   __structuredAttrs = true;
 
   inherit pname version;
@@ -54,10 +55,22 @@ stdenvNoCC.mkDerivation {
     chart
   ];
 
+  passthru.tests = {
+    render = callPackage ./helm-render-template.nix {
+      src = finalAttrs.finalPackage;
+      chartName = chart;
+      helmValues = helmTestValues;
+    };
+    images = callPackage ./check-kube-images.nix {
+      src = finalAttrs.passthru.tests.render;
+      inherit pname version;
+    };
+  };
+
   meta = {
     description = "Fetch Helm chart";
     platforms = lib.platforms.all;
   };
 
   pos = builtins.unsafeGetAttrPos "url" args;
-}
+})
