@@ -10,4 +10,4 @@ let
   };
   pkgs' = import nixpkgs { inherit (stdenv.hostPlatform) system; };
 in
-if (lib.trivial.release == "26.05" && ceph.python.pkgs.sphinx.disabled) then pkgs'.ceph else ceph
+if lib.trivial.release == "26.05" then pkgs'.ceph else ceph
