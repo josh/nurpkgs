@@ -1,15 +1,10 @@
 {
-  pkgs,
   lib,
   buildGoModule,
   fetchFromGitHub,
   nix-update-script,
   ceph,
-  nur,
 }:
-let
-  ceph' = if ceph.meta == pkgs.ceph.meta then nur.repos.josh.ceph else ceph;
-in
 buildGoModule (finalAttrs: {
   pname = "ceph-mgr-endpoint-controller";
   version = "0.5.0";
@@ -31,7 +26,7 @@ buildGoModule (finalAttrs: {
   ];
 
   buildInputs = [
-    ceph'
+    ceph
   ];
 
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };

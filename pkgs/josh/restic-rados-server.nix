@@ -1,5 +1,4 @@
 {
-  pkgs,
   lib,
   buildGoModule,
   fetchFromGitHub,
@@ -8,11 +7,7 @@
   testers,
   ceph,
   restic,
-  nur,
 }:
-let
-  ceph' = if ceph.meta == pkgs.ceph.meta then nur.repos.josh.ceph else ceph;
-in
 buildGoModule (finalAttrs: {
   pname = "restic-rados-server";
   version = "0.6.0";
@@ -34,11 +29,11 @@ buildGoModule (finalAttrs: {
   ];
 
   buildInputs = [
-    ceph'
+    ceph
   ];
 
   nativeCheckInputs = [
-    ceph'
+    ceph
     restic
   ];
 

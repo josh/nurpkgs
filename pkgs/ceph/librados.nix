@@ -4,6 +4,7 @@
   fetchurl,
   runCommandCC,
   writeText,
+  ceph,
 
   # Build tools
   autoconf,
@@ -60,12 +61,18 @@
 }:
 
 let
-  version = "20.2.0";
+  ceph20 = lib.versionAtLeast ceph.version "20";
 
-  src = fetchurl {
-    url = "https://download.ceph.com/tarballs/ceph-${version}.tar.gz";
-    hash = "sha256-jeBk1pgx7zJzOVOfIzx47IJ/o1HEDO2amRbwtBdMZoU=";
-  };
+  version = if ceph20 then ceph.version else "20.2.0";
+
+  src =
+    if ceph20 then
+      ceph.src
+    else
+      fetchurl {
+        url = "https://download.ceph.com/tarballs/ceph-20.2.0.tar.gz";
+        hash = "sha256-jeBk1pgx7zJzOVOfIzx47IJ/o1HEDO2amRbwtBdMZoU=";
+      };
 
   ceph-python = python3.withPackages (ps: [
     ps.cython
@@ -86,8 +93,8 @@ stdenv.mkDerivation (finalAttrs: {
   pname = "librados";
   inherit version src;
 
-  patches = [
-    # PyO3 workaround — allows build on Python 3.12
+  patches = lib.optionals (!lib.versionAtLeast version "20.2.1") [
+    # PyO3 workaround — allows build on Python 3.12 (merged upstream in 20.2.1)
     (fetchurl {
       name = "ceph-upstream-pyo3-workaround.patch";
       url = "https://github.com/ceph/ceph/pull/66794.diff?full_index=1";
