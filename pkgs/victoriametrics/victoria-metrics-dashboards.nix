@@ -6,13 +6,13 @@
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "victoria-metrics-dashboards";
-  version = "1.136.4";
+  version = "1.136.5";
 
   src = fetchFromGitHub {
     owner = "VictoriaMetrics";
     repo = "VictoriaMetrics";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-hNQ1TlViSHuopgHCsmZT/9R8jK4MiFVWtfM0sksTCo4=";
+    hash = "sha256-Vuy+H7ezarNnjJRQRfDNCfixcxP9f+GkJu3Ven6eckk=";
   };
 
   outputs = [
