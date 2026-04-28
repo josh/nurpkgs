@@ -28,7 +28,7 @@ stdenvNoCC.mkDerivation {
   ];
 
   buildCommand = ''
-    readarray -t images < <(grep -rh 'image:' "$src" | sed 's/.*image: *"\?\([^"]*\)"\?.*/\1/' | sort -u)
+    readarray -t images < <(grep -rh 'image:' "$src" | sed 's/.*image: *"\?\([^"]*\)"\?.*/\1/' | grep -v '^$' | sort -u)
     for image in "''${images[@]}"; do
       for platform in "''${platforms[@]}"; do
         crane manifest --platform "$platform" "$image" >/dev/null
