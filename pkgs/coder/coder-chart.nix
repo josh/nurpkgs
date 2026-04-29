@@ -2,6 +2,6 @@
 nur.repos.josh.fetchhelm {
   url = "https://helm.coder.com/v2";
   chart = "coder";
-  version = "2.32.0";
-  sha256 = "sha256-fc93DiUHwIU2rn/Mtb3f3vWAC9npAvPkN4dWXkOwBXM=";
+  version = "2.32.1";
+  sha256 = "sha256-ECTivnv4iBDudqlEeQLaPiby1M65pF2qNV3iZwGB52E=";
 }
