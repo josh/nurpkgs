@@ -36,16 +36,6 @@ jobs:
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
 
-      # - uses: DeterminateSystems/determinate-nix-action@32cb6a5ae30bb0dfc996fa7baf8bf1ed28442fa4 # v3.17.3
-      #   with:
-      #     extra-conf: |
-      #       accept-flake-config = true
-
-      # - uses: cachix/cachix-action@1eb2ef646ac0255473d23a5907ad7b04ce94065c # v17
-      #   with:
-      #     name: josh
-      #     authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
-
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           token: ${{ steps.app-token.outputs.token }}

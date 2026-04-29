@@ -4,10 +4,6 @@ on:
   push:
   workflow_dispatch:
 
-# permissions:
-#   id-token: "write"
-#   contents: "read"
-
 env:
   NIX_ABORT_ON_WARN: "1"
   NIXPKGS_ALLOW_UNFREE: "1"
@@ -25,18 +21,6 @@ jobs:
     runs-on: [self-hosted, "${{ matrix.system }}"]
 
     steps:
-      # - uses: DeterminateSystems/determinate-nix-action@32cb6a5ae30bb0dfc996fa7baf8bf1ed28442fa4 # v3.17.3
-      #   with:
-      #     extra-conf: |
-      #       accept-flake-config = true
-      #       allow-import-from-derivation = false
-
-      # - uses: cachix/cachix-action@1eb2ef646ac0255473d23a5907ad7b04ce94065c # v17
-      #   with:
-      #     name: josh
-      #     authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
-      #     installCommand: nix profile install nixpkgs#cachix
-
       - name: Check flake
         run: |
           nix flake check --keep-going --print-build-logs github:${{ github.repository }}/${{ github.sha }}
