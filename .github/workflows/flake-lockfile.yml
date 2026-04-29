@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   lockfile-drv-changed:
-    runs-on: ubuntu-24.04
+    runs-on: self-hosted
 
     steps:
       - name: Check changed files
@@ -23,12 +23,6 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           PR_URL: ${{ github.event.pull_request.html_url }}
-
-      - uses: DeterminateSystems/determinate-nix-action@32cb6a5ae30bb0dfc996fa7baf8bf1ed28442fa4 # v3.17.3
-        if: steps.changed.outputs.only_lock_changed == 'true'
-        with:
-          extra-conf: |
-            accept-flake-config = true
 
       - name: Install gh-actions-compare-pr-flake-lockfile
         if: steps.changed.outputs.only_lock_changed == 'true'
