@@ -6,13 +6,13 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "ghostty-theme-icons";
-  version = "0-unstable-2026-04-23";
+  version = "0-unstable-2026-04-28";
 
   src = fetchFromGitHub {
     owner = "jasonlong";
     repo = "ghostty-theme-icons";
-    rev = "99b0c77ff528d5d38d6acadd7636ba55864cad07";
-    hash = "sha256-qjznugYlD7TgLggm0VxFQ+D8uiDSuDYT8+gNHwN/z5w=";
+    rev = "4bfd6c552694d51f9a840c853691c62716359f9d";
+    hash = "sha256-BLZ+L/4cy1Sbq0cG2wzCpPW4zhcrxp18BCskJo/YKSg=";
   };
 
   installPhase = ''
