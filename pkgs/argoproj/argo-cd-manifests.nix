@@ -8,13 +8,13 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   __structuredAttrs = true;
 
   pname = "argo-cd-manifests";
-  version = "3.3.8";
+  version = "3.3.9";
 
   src = fetchFromGitHub {
     owner = "argoproj";
     repo = "argo-cd";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-fmZMtB3hdjJ5MeCulDv8KafXxt1CJOIOhU+OmaIuGQ0=";
+    hash = "sha256-Ae3CpgChri8wU0XI88+5nxFbaSkmICiS9R48eLmkwV8=";
   };
 
   buildCommand = ''
