@@ -7,13 +7,13 @@
 }:
 buildGoModule {
   pname = "ceph-mgr-ts-gateway";
-  version = "0-unstable-2026-04-13";
+  version = "0-unstable-2026-05-04";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "ceph-mgr-ts-gateway";
-    rev = "cb2c2f6b7f9afde2888bfdb4cde528fbfe5690ad";
-    hash = "sha256-2k4JpPIbwlg6DICVvCfFQM/Cmv8SPWbb6RcnTIkMwAs=";
+    rev = "fa5c960122cf96535cf87e108941f077dc6fbea8";
+    hash = "sha256-Ly9uvrTxyshT4DDvGPYjaTWLly/yUPZ1iXW1lJ8k+4A=";
   };
 
   vendorHash = "sha256-PV3E0vl9QPtw8xFWSWbF5x0IoqWNf37XIRhvTJ7fSUk=";
