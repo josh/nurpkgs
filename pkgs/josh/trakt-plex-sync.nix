@@ -8,7 +8,7 @@
 let
   trakt-plex-sync = python3Packages.buildPythonApplication rec {
     pname = "trakt-plex-sync";
-    version = "0.2.0-unstable-2026-04-30";
+    version = "0-unstable-2026-04-30";
 
     src = fetchFromGitHub {
       owner = "josh";
