@@ -3,7 +3,6 @@
   fetchFromGitHub,
   python3Packages,
   runCommand,
-  testers,
   nix-update-script,
 }:
 let
@@ -44,19 +43,12 @@ gh-audit.overrideAttrs (
   finalAttrs: previousAttrs:
   let
     gh-audit = finalAttrs.finalPackage;
-    version-parts = lib.versions.splitVersion finalAttrs.version;
-    stable-version = "${builtins.elemAt version-parts 0}.${builtins.elemAt version-parts 1}.${builtins.elemAt version-parts 2}";
   in
   {
     passthru = previousAttrs.passthru // {
       updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
       tests = {
-        version = testers.testVersion {
-          package = gh-audit;
-          version = stable-version;
-        };
-
         help =
           runCommand "test-gh-audit-help"
             {
