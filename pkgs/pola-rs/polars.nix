@@ -15,7 +15,7 @@ in
 }).overrideAttrs
   (
     finalAttrs: prevAttrs: {
-      passthru = prevAttrs.passthru // {
+      passthru = builtins.removeAttrs prevAttrs.passthru [ "updateScript" ] // {
         tests =
           let
             polars = finalAttrs.finalPackage;
