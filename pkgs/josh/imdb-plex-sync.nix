@@ -1,6 +1,7 @@
 {
   lib,
   fetchFromGitHub,
+  nur,
   python3Packages,
   runCommand,
   nix-update-script,
@@ -25,7 +26,7 @@ let
 
     dependencies = with python3Packages; [
       click
-      polars
+      nur.repos.josh.polars
     ];
 
     meta = {
