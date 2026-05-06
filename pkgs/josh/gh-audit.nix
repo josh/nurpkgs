@@ -8,7 +8,7 @@
 let
   gh-audit = python3Packages.buildPythonApplication {
     pname = "gh-audit";
-    version = "0.2.0-unstable-2026-05-06";
+    version = "0-unstable-2026-05-06";
 
     src = fetchFromGitHub {
       owner = "josh";
