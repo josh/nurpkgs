@@ -7,15 +7,15 @@
   nix-update-script,
 }:
 let
-  gh-audit = python3Packages.buildPythonApplication rec {
+  gh-audit = python3Packages.buildPythonApplication {
     pname = "gh-audit";
-    version = "0.1.3-unstable-2026-05-01";
+    version = "0.2.0-unstable-2026-05-06";
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "gh-audit";
-      rev = "007af745c48dbb53c97e878b14a4ff5c44fd8d56";
-      hash = "sha256-QWummaNiVXRjMMr1mvn0HzwN34fmRmFpy5g5P2G/UN8=";
+      rev = "5337e8240a80fd76185dba9acddbed8a3c41ae59";
+      hash = "sha256-nFleaGQDD04sOcVxQh2zlPnM58SXkcuZQeCdQdGRI8I=";
     };
 
     pyproject = true;
