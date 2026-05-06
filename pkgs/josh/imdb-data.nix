@@ -8,7 +8,7 @@
 let
   imdb-data = python3Packages.buildPythonApplication rec {
     pname = "imdb-data";
-    version = "0.1.0-unstable-2026-05-04";
+    version = "0-unstable-2026-05-04";
 
     src = fetchFromGitHub {
       owner = "josh";
