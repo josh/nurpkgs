@@ -19,7 +19,7 @@ rustPlatform.buildRustPackage rec {
   __structuredAttrs = true;
 
   pname = "himalaya";
-  version = "1.2.0-unstable-2026-04-15";
+  version = "0-unstable-2026-04-15";
 
   src = fetchFromGitHub {
     owner = "pimalaya";
