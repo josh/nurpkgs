@@ -2,6 +2,6 @@
 nur.repos.josh.fetchhelm {
   url = "oci://code.forgejo.org/forgejo-helm/forgejo";
   chart = "forgejo";
-  version = "17.0.1";
-  sha256 = "sha256-3JNswoSltAMzPdBflc1LXePj0boBFRfBvBP1dcAfBmg=";
+  version = "17.1.0";
+  sha256 = "sha256-yW8bTZSSEN7LhpcD4eWur1cay+PpSyamY6Q9k+tLyaE=";
 }
