@@ -6,6 +6,7 @@ args@{
   version,
   sha256,
   helmTestValues ? { },
+  helmTestArgs ? [ ],
 }:
 let
   inherit (pkgs) lib callPackage stdenvNoCC;
@@ -60,6 +61,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
       src = finalAttrs.finalPackage;
       chartName = chart;
       helmValues = helmTestValues;
+      helmArgs = helmTestArgs;
     };
     images = callPackage ./check-kube-images.nix {
       src = finalAttrs.passthru.tests.render;

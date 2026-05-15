@@ -18,7 +18,10 @@ stdenvNoCC.mkDerivation {
   ];
 
   helmChartName = "sops-secrets-operator";
-  helmArgs = [ ];
+  helmArgs = [
+    "--kube-version"
+    "1.36.0"
+  ];
   helmValues = { };
 
   buildPhase = ''
