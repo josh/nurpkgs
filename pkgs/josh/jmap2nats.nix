@@ -6,13 +6,13 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "jmap2nats";
-  version = "0.0.4";
+  version = "0.0.5";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "jmap2nats";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-P0RVPIBQMebjO+KyHWfMiGzFzwT2u8+x/ylSIZ6nORI=";
+    hash = "sha256-nDicSHonT/A1St0Lf1r4h3gvZeoRfM+Wa5Tgn3RGcdI=";
   };
 
   vendorHash = "sha256-osoKMrdwMTlgOXzTSeDeop7l8UiZqAAYYL5cpCQ1gEo=";
