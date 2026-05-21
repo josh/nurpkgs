@@ -2,6 +2,6 @@
 nur.repos.josh.fetchhelm {
   url = "https://bitnami-labs.github.io/sealed-secrets/";
   chart = "sealed-secrets";
-  version = "2.18.5";
-  sha256 = "sha256-MO139oUgyefscxmJmkUpKlS/kC9a3t5rQ6CW4Oj6D20=";
+  version = "2.18.6";
+  sha256 = "sha256-UU9mdf65anGaqkCv31oLRFVbfKxoX/un29PAgfAJS8k=";
 }
