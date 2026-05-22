@@ -19,7 +19,9 @@ stdenvNoCC.mkDerivation {
 
   helmChartName = "metallb";
   helmArgs = [ ];
-  helmValues = { };
+  helmValues = {
+    "frr-k8s".prometheus.serviceMonitor.enabled = false;
+  };
 
   buildPhase = ''
     runHook preBuild
