@@ -2,6 +2,9 @@
 nur.repos.josh.fetchhelm {
   url = "https://metallb.github.io/metallb/";
   chart = "metallb";
-  version = "0.15.3";
-  sha256 = "sha256-KWdVaF6CjFjeHQ6HT1WvkI9JnSurt9emLVCpkxma0fg=";
+  version = "0.16.0";
+  sha256 = "sha256-rbOhBugpWX4ONiAr3EW4UpCUf2QlHJ6WivC6KVzqDqc=";
+  helmTestValues = {
+    "frr-k8s".prometheus.serviceMonitor.enabled = false;
+  };
 }
