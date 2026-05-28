@@ -2,6 +2,6 @@
 nur.repos.josh.fetchhelm {
   url = "https://victoriametrics.github.io/helm-charts";
   chart = "victoria-metrics-k8s-stack";
-  version = "0.80.0";
-  sha256 = "sha256-mYNFu8SvSovoljwUs0NqZ6l7L11YBP6bHjTCGNZpPpo=";
+  version = "0.81.0";
+  sha256 = "sha256-a5vxadViVz5A8oFiOWBcIl4UO7F/TgTDI2BK19nOfoE=";
 }
