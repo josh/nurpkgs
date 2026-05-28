@@ -8,13 +8,13 @@
 let
   trakt-plex-sync = python3Packages.buildPythonApplication rec {
     pname = "trakt-plex-sync";
-    version = "0-unstable-2026-05-07";
+    version = "0-unstable-2026-05-28";
 
     src = fetchFromGitHub {
       owner = "josh";
       repo = "trakt-plex-sync";
-      rev = "67d05062edc25f93de5ccbe55eaa843e538e46c1";
-      hash = "sha256-S1jZDY3nDGv2xzx/+LB8MdUTBs3NCl1EyW2fnvuQpFc=";
+      rev = "8c1fb22756f386ec21423b92d3320679da5c2e91";
+      hash = "sha256-1x/IfNWeBZYohBPDSaNHQcGQECixcYX65L2SPNWswEM=";
     };
 
     pyproject = true;
