@@ -6,13 +6,13 @@
 }:
 swiftPackages.stdenv.mkDerivation (finalAttrs: {
   pname = "wezterm-tabline";
-  version = ".1.5.0";
+  version = "1.6.0";
 
   src = fetchFromGitHub {
     owner = "michaelbrusegard";
     repo = "tabline.wez";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-3Buey1YzN/VHYfOtA7/Fu09l5GooXzbQUW9wqGTSemg=";
+    hash = "sha256-1/lA0wjkvpIRauuhDhaV3gzCFSql+PH39/Kpwzrbk54=";
   };
 
   installPhase = ''
