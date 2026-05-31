@@ -10,7 +10,7 @@
 }:
 rustPlatform.buildRustPackage {
   pname = "age-plugin-yubikey";
-  version = "0-unstable-2026-04-24";
+  version = "0.5.1-unstable-2026-04-24";
 
   src = fetchFromGitHub {
     owner = "str4d";
