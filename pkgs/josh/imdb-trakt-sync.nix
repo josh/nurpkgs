@@ -8,7 +8,7 @@
 let
   imdb-trakt-sync = python3Packages.buildPythonApplication rec {
     pname = "imdb-trakt-sync";
-    version = "0-unstable-2026-05-11";
+    version = "0.1.0-unstable-2026-05-11";
 
     src = fetchFromGitHub {
       owner = "josh";
