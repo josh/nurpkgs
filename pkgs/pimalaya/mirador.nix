@@ -30,7 +30,7 @@ rustPlatform.buildRustPackage rec {
   __structuredAttrs = true;
 
   pname = "mirador";
-  version = "0-unstable-2026-05-30";
+  version = "root-unstable-2026-05-30";
 
   src = fetchFromGitHub {
     owner = "pimalaya";
