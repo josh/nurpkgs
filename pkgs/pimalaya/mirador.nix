@@ -17,16 +17,16 @@ rustPlatform.buildRustPackage rec {
   __structuredAttrs = true;
 
   pname = "mirador";
-  version = "0-unstable-2026-03-11";
+  version = "0-unstable-2026-05-30";
 
   src = fetchFromGitHub {
     owner = "pimalaya";
     repo = "mirador";
-    rev = "979944376f851baf22e831eb2b05c2a856b73388";
-    hash = "sha256-B+H49oTliiMMB/s/N9nim/Bsv/KOJOikm32Eh1vr3Fs=";
+    rev = "942e293af6fc9c3f7997013bf03dd0a35eac86f5";
+    hash = "sha256-sHjsZVq+N9F3O4YNKE5xfoXRVfk2srkAP1O2UkjT+jk=";
   };
 
-  cargoHash = "sha256-JtLVk+Y58N66C4xUO2p3+MvO67AFdTPkkkXxYT3a1Hw=";
+  cargoHash = "sha256-PlgqC14ARHvAkAGSLmJ8y2JD4K2zZb433d+owGQdMuY=";
 
   inherit buildNoDefaultFeatures buildFeatures;
 
