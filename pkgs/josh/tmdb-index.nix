@@ -9,7 +9,7 @@
 let
   tmdb-index = python3Packages.buildPythonApplication {
     pname = "tmdb-index";
-    version = "0-unstable-2026-05-21";
+    version = "1.0.0-unstable-2026-05-21";
 
     src = fetchFromGitHub {
       owner = "josh";
