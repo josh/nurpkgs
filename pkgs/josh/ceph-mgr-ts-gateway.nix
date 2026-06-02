@@ -6,7 +6,7 @@
 }:
 buildGoModule {
   pname = "ceph-mgr-ts-gateway";
-  version = "0.1.0-unstable-2026-05-31";
+  version = "0.1.0";
 
   src = fetchFromGitHub {
     owner = "josh";
