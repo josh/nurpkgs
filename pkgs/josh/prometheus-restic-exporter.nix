@@ -9,13 +9,13 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "prometheus-restic-exporter";
-  version = "1.0.2";
+  version = "1.0.3";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "restic-exporter";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-tMYLTqg9nGZU92etuHWGLvEj402SNMrvUG7xMdmeKls=";
+    hash = "sha256-1RjiKFYTUYq3csV34z2BEEgJa4UxOi/7e0LC3QJYPNY=";
   };
 
   vendorHash = "sha256-6av04F+ViJyS9Or4Dx6iGPCSxNBs8Kmj9T9U6TD+P/g=";
@@ -26,6 +26,7 @@ buildGoModule (finalAttrs: {
     "-w"
     "-X main.version=${finalAttrs.version}"
     "-X main.resticBinary=${lib.getExe restic}"
+    "-X main.resticVersion=${restic.version}"
   ];
 
   nativeCheckInputs = [
@@ -68,7 +69,5 @@ buildGoModule (finalAttrs: {
     license = lib.licenses.mit;
     platforms = lib.platforms.all;
     mainProgram = "restic-exporter";
-    # https://github.com/restic/restic/issues/21891
-    broken = restic.version == "0.19.0";
   };
 })
