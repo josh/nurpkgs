@@ -76,5 +76,7 @@ buildGoModule (finalAttrs: {
     license = lib.licenses.mit;
     platforms = lib.platforms.all;
     mainProgram = "restic-age-key";
+    # https://github.com/restic/restic/issues/21891
+    broken = restic.version == "0.19.0";
   };
 })

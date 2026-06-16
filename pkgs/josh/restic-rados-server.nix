@@ -61,5 +61,7 @@ buildGoModule (finalAttrs: {
     license = lib.licenses.mit;
     inherit (ceph.meta) platforms;
     mainProgram = "restic-rados-server";
+    # https://github.com/restic/restic/issues/21891
+    broken = restic.version == "0.19.0";
   };
 })
