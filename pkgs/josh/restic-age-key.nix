@@ -13,16 +13,16 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "restic-age-key";
-  version = "1.1.2";
+  version = "1.1.3";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "restic-age-key";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-kk14UWYEjzWvVL3MiROFlZZRBE45bkgHowStyOM7KDo=";
+    hash = "sha256-W2EboqQjYEV3V4UssJFr6RuXFM3lp39v/d57CMlCUVI=";
   };
 
-  vendorHash = "sha256-whsXXAPOoyzB/Mj2FvD1VRN5i8TnxqVlmD6DHPALHoQ=";
+  vendorHash = "sha256-27VATsznIVkQFK6z95EhOvda8Ty+6sMyXfHKaVfaz2s=";
 
   env.CGO_ENABLED = 0;
   ldflags = [
@@ -76,7 +76,5 @@ buildGoModule (finalAttrs: {
     license = lib.licenses.mit;
     platforms = lib.platforms.all;
     mainProgram = "restic-age-key";
-    # https://github.com/restic/restic/issues/21891
-    broken = restic.version == "0.19.0";
   };
 })
