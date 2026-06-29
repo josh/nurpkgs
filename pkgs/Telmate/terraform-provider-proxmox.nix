@@ -1,4 +1,4 @@
-{ terraform-providers, nix-update-script }:
+{ terraform-providers }:
 let
   pkg = terraform-providers.mkProvider {
     owner = "Telmate";
@@ -11,16 +11,11 @@ let
     spdx = "MIT";
   };
 in
+# Telmate ships only release candidates on the 3.0.x line, which nix-update's
+# --version=stable refuses to track. Drop the default updateScript so the daily
+# Update workflow skips this provider; bump it manually instead.
 pkg.overrideAttrs (
   _finalAttrs: previousAttrs: {
-    passthru = previousAttrs.passthru // {
-      updateScript = nix-update-script {
-        extraArgs = [
-          "--version=stable"
-          "--override-filename"
-          "pkgs/Telmate/terraform-provider-proxmox.nix"
-        ];
-      };
-    };
+    passthru = builtins.removeAttrs previousAttrs.passthru [ "updateScript" ];
   }
 )
