@@ -18,15 +18,15 @@ buildGoModule (finalAttrs: {
 
   vendorHash = "sha256-Kepv0ZhSKpkBPR0lz0Kx1RnX1SyEsdIKToF0Yrej4oM=";
 
+  buildInputs = [
+    ceph
+  ];
+
   env.CGO_ENABLED = 1;
 
   ldflags = [
     "-s"
     "-w"
-  ];
-
-  buildInputs = [
-    ceph
   ];
 
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };

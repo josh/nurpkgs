@@ -31,10 +31,11 @@ let
   };
 in
 stdenvNoCC.mkDerivation (finalAttrs: {
-  __structuredAttrs = true;
-
   pname = "swiftly";
   inherit version;
+
+  __structuredAttrs = true;
+
   src = sources.${stdenvNoCC.hostPlatform.system};
   dontUnpack = true;
   nativeBuildInputs = [

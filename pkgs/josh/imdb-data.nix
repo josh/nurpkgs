@@ -9,15 +9,15 @@ python3Packages.buildPythonApplication (finalAttrs: {
   pname = "imdb-data";
   version = "0.1.0-unstable-2026-07-26";
 
+  pyproject = true;
+  __structuredAttrs = true;
+
   src = fetchFromGitHub {
     owner = "josh";
     repo = "imdb-data";
     rev = "3c508bbb35f899cbbe4e4c6479b13e201216a75a";
     hash = "sha256-cUmpi8jFKswFoBfka3xU5NLoJGUl+PJjxP8fCv9Wd2s=";
   };
-
-  pyproject = true;
-  __structuredAttrs = true;
 
   build-system = with python3Packages; [
     hatchling

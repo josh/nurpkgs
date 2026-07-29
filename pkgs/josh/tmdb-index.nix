@@ -10,14 +10,14 @@ python3Packages.buildPythonApplication (finalAttrs: {
   pname = "tmdb-index";
   version = "1.0.0-unstable-2026-07-28";
 
+  pyproject = true;
+
   src = fetchFromGitHub {
     owner = "josh";
     repo = "tmdb-index";
     rev = "ecb2c6e859d4e34314b597d029e0a119c3fed87c";
     hash = "sha256-ZRqaLuGU+mm1TRoxupQ/OphVUd/F1pENJ2e7NmZVlF0=";
   };
-
-  pyproject = true;
 
   build-system = with python3Packages; [
     hatchling

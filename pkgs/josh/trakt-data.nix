@@ -10,15 +10,15 @@ python3Packages.buildPythonApplication (finalAttrs: {
   pname = "trakt-data";
   version = "0-unstable-2026-07-22";
 
+  pyproject = true;
+  __structuredAttrs = true;
+
   src = fetchFromGitHub {
     owner = "josh";
     repo = "trakt-data";
     rev = "4291cef480d203b8b7362854a3f0a4d2bf4515a2";
     hash = "sha256-7JHG8ofwgsREA2hxBEqvS9z0SCs9mKwqS5mQKbNtxeI=";
   };
-
-  pyproject = true;
-  __structuredAttrs = true;
 
   build-system = with python3Packages; [
     hatchling

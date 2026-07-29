@@ -23,15 +23,15 @@ buildGoModule (finalAttrs: {
 
   vendorHash = "sha256-wivLXMYNzChTvy1r/XmIkxZxYLVVJLdyhSS4C+SYjFg=";
 
+  buildInputs = [
+    ceph
+  ];
+
   env.CGO_ENABLED = 1;
 
   ldflags = [
     "-w"
     "-X main.version=${finalAttrs.version}"
-  ];
-
-  buildInputs = [
-    ceph
   ];
 
   nativeCheckInputs = [

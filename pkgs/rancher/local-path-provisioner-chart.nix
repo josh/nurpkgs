@@ -6,10 +6,10 @@
   nix-update-script,
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
-  __structuredAttrs = true;
-
   pname = "local-path-provisioner-chart";
   version = "0.0.36";
+
+  __structuredAttrs = true;
 
   src = fetchFromGitHub {
     owner = "rancher";

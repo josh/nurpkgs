@@ -10,14 +10,14 @@ python3Packages.buildPythonApplication (finalAttrs: {
   pname = "imdb-plex-sync";
   version = "0.2.0";
 
+  pyproject = true;
+
   src = fetchFromGitHub {
     owner = "josh";
     repo = "imdb-plex-sync";
     tag = "v${finalAttrs.version}";
     hash = "sha256-nRGxekhGjaxU7uLAvIpB/B6+zx3ztlWkjG4kMg0yRbA=";
   };
-
-  pyproject = true;
 
   build-system = with python3Packages; [
     hatchling
