@@ -21,7 +21,7 @@ let
 in
 offlineimap.overrideAttrs (
   finalAttrs: previousAttrs: {
-    version = "8.0.3-unstable-2024-08-24";
+    version = "8.0.3";
 
     src = fetchFromGitHub {
       owner = "OfflineIMAP";
