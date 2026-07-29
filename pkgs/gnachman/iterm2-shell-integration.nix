@@ -2,10 +2,12 @@
   lib,
   stdenvNoCC,
   fetchFromGitHub,
-  makeWrapper,
+
   bash,
+  makeWrapper,
   perl,
   python3,
+
   nix-update-script,
   runCommand,
 }:

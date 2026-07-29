@@ -1,10 +1,10 @@
 {
   lib,
+  python3Packages,
   fetchFromGitHub,
   nur,
-  python3Packages,
-  runCommand,
   nix-update-script,
+  runCommand,
 }:
 python3Packages.buildPythonApplication (finalAttrs: {
   pname = "tmdb-index";

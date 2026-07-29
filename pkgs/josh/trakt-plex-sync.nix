@@ -1,7 +1,7 @@
 {
   lib,
-  fetchFromGitHub,
   python3Packages,
+  fetchFromGitHub,
   nur,
   nix-update-script,
 }:

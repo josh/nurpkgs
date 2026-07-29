@@ -1,9 +1,9 @@
 {
   lib,
-  fetchFromGitHub,
   python3Packages,
-  runCommand,
+  fetchFromGitHub,
   nix-update-script,
+  runCommand,
 }:
 python3Packages.buildPythonApplication (finalAttrs: {
   pname = "imdb-trakt-sync";

@@ -2,8 +2,8 @@
   lib,
   stdenvNoCC,
   fetchFromGitHub,
-  nix-update-script,
   nur,
+  nix-update-script,
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
   __structuredAttrs = true;

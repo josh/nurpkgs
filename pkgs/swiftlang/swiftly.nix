@@ -9,11 +9,13 @@
   lib,
   stdenv,
   stdenvNoCC,
-  runCommand,
-  testers,
   fetchurl,
+
   autoPatchelfHook,
   zlib,
+
+  runCommand,
+  testers,
 }:
 let
   version = "0.3.0";

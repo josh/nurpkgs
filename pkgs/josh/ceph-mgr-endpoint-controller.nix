@@ -2,8 +2,8 @@
   lib,
   buildGoModule,
   fetchFromGitHub,
-  nix-update-script,
   ceph,
+  nix-update-script,
 }:
 buildGoModule (finalAttrs: {
   pname = "ceph-mgr-endpoint-controller";

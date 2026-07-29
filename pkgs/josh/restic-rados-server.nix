@@ -2,11 +2,13 @@
   lib,
   buildGoModule,
   fetchFromGitHub,
+
+  ceph,
+  restic,
+
   nix-update-script,
   runCommand,
   testers,
-  ceph,
-  restic,
 }:
 buildGoModule (finalAttrs: {
   pname = "restic-rados-server";
