@@ -38,7 +38,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   checkPhase = ''
     runHook preCheck
 
-    php -l *.php
+    find . -name '*.php' -print0 | xargs -0 -n1 php -l
 
     runHook postCheck
   '';
