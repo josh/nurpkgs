@@ -29,15 +29,6 @@ swiftPackages.stdenv.mkDerivation (finalAttrs: {
     hash = "sha256-HPTQ+ebGNvfaMKtn8gqXrxG+PDAqmpdWWhmRIyaSXhU=";
   };
 
-  nativeBuildInputs = [
-    swift
-    swiftpm
-  ];
-
-  buildInputs = [
-    sqlite
-  ];
-
   postPatch = ''
     grep -rlF "import SQLite3" Sources | while IFS= read -r f; do
       substituteInPlace "$f" --replace-fail "import SQLite3" "import CSQLite"
@@ -47,6 +38,15 @@ swiftPackages.stdenv.mkDerivation (finalAttrs: {
     grep -rqF "import SQLite3" Sources || status=$?
     test "$status" -eq 1
   '';
+
+  nativeBuildInputs = [
+    swift
+    swiftpm
+  ];
+
+  buildInputs = [
+    sqlite
+  ];
 
   swiftpmFlags = [
     "-Xcc"
