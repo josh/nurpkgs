@@ -29,6 +29,8 @@ python3Packages.buildPythonApplication (finalAttrs: {
     requests
   ];
 
+  pythonImportsCheck = [ "trakt_data" ];
+
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
   passthru.tests = {
