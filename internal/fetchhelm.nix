@@ -60,6 +60,8 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     url
     "--chart"
     chart
+    "--position-file"
+    (builtins.unsafeGetAttrPos "url" args).file
   ];
 
   passthru.tests = {
