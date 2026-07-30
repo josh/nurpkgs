@@ -1,4 +1,4 @@
-{ nur }:
+{ lib, nur }:
 nur.repos.josh.fetchhelm {
   url = "https://naturalselectionlabs.github.io/helm-charts";
   chart = "rsshub";
@@ -8,5 +8,6 @@ nur.repos.josh.fetchhelm {
   meta = {
     description = "RSSHub Helm chart";
     homepage = "https://github.com/NaturalSelectionLabs/helm-charts";
+    license = lib.licenses.mit;
   };
 }
