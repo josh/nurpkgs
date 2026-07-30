@@ -5,11 +5,11 @@
   kubernetes-helm,
 }:
 args@{
-  pname ? "${chart}-chart",
   url,
   chart,
   version,
   hash,
+  pname ? "${chart}-chart",
   helmTestValues ? { },
   helmTestArgs ? [ ],
   meta ? { },
