@@ -2,9 +2,11 @@
   lib,
   swiftPackages,
   fetchFromGitHub,
+
   sqlite,
   swift,
   swiftpm,
+
   runCommand,
   testers,
   writeText,
