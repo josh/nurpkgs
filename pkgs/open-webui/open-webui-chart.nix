@@ -1,4 +1,4 @@
-{ nur }:
+{ lib, nur }:
 nur.repos.josh.fetchhelm {
   url = "https://open-webui.github.io/helm-charts";
   chart = "open-webui";
@@ -8,5 +8,6 @@ nur.repos.josh.fetchhelm {
   meta = {
     description = "Open WebUI: A User-Friendly Web Interface for Chat Interactions";
     homepage = "https://www.openwebui.com";
+    license = lib.licenses.mit;
   };
 }
