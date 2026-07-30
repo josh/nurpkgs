@@ -37,7 +37,7 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "The VictoriaLogs single Helm chart deploys VictoriaLogs database in Kubernetes";
+    description = "Kubernetes manifests for a single-node VictoriaLogs database";
     homepage = "https://github.com/VictoriaMetrics/helm-charts/tree/master/charts/victoria-logs-single";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;

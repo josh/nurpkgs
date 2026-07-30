@@ -37,7 +37,7 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "ExternalDNS synchronizes exposed Kubernetes Services and Ingresses with DNS providers";
+    description = "Kubernetes manifests for ExternalDNS, which synchronizes exposed Kubernetes Services and Ingresses with DNS providers";
     homepage = "https://github.com/kubernetes-sigs/external-dns";
     license = lib.licenses.mit;
     platforms = lib.platforms.all;

@@ -6,7 +6,7 @@ nur.repos.josh.fetchhelm {
   hash = "sha256-xEF8LuR5ICp9rJQdFinXf0DP5b7y5KdLZHNgtQl7CxM=";
 
   meta = {
-    description = "Prometheus is a monitoring system and time series database";
+    description = "Helm chart for Prometheus, a monitoring system and time series database";
     homepage = "https://prometheus.io";
     license = lib.licenses.asl20;
   };

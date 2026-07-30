@@ -36,7 +36,7 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "A Kubernetes manifests for ceph-mgr-endpoint-controller";
+    description = "Kubernetes manifests for ceph-mgr-endpoint-controller";
     homepage = "https://github.com/josh/ceph-mgr-endpoint-controller/tree/main/charts/ceph-mgr-endpoint-controller";
     license = lib.licenses.mit;
     platforms = lib.platforms.all;

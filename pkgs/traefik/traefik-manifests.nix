@@ -37,7 +37,7 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "Traefik Proxy Helm chart - The Cloud Native Application Proxy";
+    description = "Kubernetes manifests for the Traefik Kubernetes ingress controller";
     homepage = "https://github.com/traefik/traefik-helm-chart";
     license = lib.licenses.mit;
     platforms = lib.platforms.all;

@@ -19,7 +19,7 @@ tmuxPlugins.mkTmuxPlugin rec {
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   meta = {
-    description = "A powerful, modular tmux status bar framework";
+    description = "Modular tmux status bar framework";
     homepage = "https://github.com/fabioluciano/tmux-powerkit";
     license = lib.licenses.mit;
     platforms = lib.platforms.unix;

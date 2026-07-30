@@ -36,7 +36,7 @@ stdenvNoCC.mkDerivation {
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
 
   meta = {
-    description = "A standalone CLI for reading and creating notes in Apple Notes";
+    description = "Standalone CLI for reading and creating notes in Apple Notes";
     homepage = "https://github.com/shareup/nanotes";
     license = lib.licenses.mit;
     mainProgram = "nanotes";

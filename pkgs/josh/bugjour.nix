@@ -40,7 +40,7 @@ buildGoModule (finalAttrs: {
   };
 
   meta = {
-    description = "Detecting Apple Bonjour hostname conflicts…";
+    description = "Detect Apple Bonjour hostname conflicts";
     homepage = "https://github.com/josh/bugjour";
     license = lib.licenses.mit;
     mainProgram = "bugjour";

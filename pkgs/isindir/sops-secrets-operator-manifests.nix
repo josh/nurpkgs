@@ -40,7 +40,7 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "Helm chart deploys sops-secrets-operator";
+    description = "Kubernetes manifests for sops-secrets-operator";
     homepage = "https://github.com/isindir/sops-secrets-operator/tree/master/chart/helm3/sops-secrets-operator";
     license = lib.licenses.mpl20;
     platforms = lib.platforms.all;
