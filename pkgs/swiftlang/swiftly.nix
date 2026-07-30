@@ -45,7 +45,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   installPhase = ''
     runHook preInstall
 
-    mkdir -p "$out/bin" "$out/share/swiftly"
+    mkdir -p "$out/bin"
     cp "$src" "$out/bin/swiftly"
     chmod +x "$out/bin/swiftly"
 
