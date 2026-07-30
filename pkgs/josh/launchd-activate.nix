@@ -27,10 +27,6 @@ swiftPackages.stdenv.mkDerivation (finalAttrs: {
     swiftpm
   ];
 
-  buildInputs = [
-    coreutils
-  ];
-
   configurePhase = ''
     runHook preConfigure
 
@@ -38,11 +34,11 @@ swiftPackages.stdenv.mkDerivation (finalAttrs: {
 
     cat >Sources/launchd-activate/Constants.swift <<EOF
     let VERSION = "$version"
-    let CP_PATH = "$(command -v cp || echo "/bin/cp")"
-    let LN_PATH = "$(command -v ln || echo "/bin/ln")"
-    let RM_PATH = "$(command -v rm || echo "/bin/rm")"
-    let SUDO_PATH = "$(command -v sudo || echo "/usr/bin/sudo")"
-    let LAUNCHCTL_PATH = "$(command -v launchctl || echo "/bin/launchctl")"
+    let CP_PATH = "${lib.getExe' coreutils "cp"}"
+    let LN_PATH = "${lib.getExe' coreutils "ln"}"
+    let RM_PATH = "${lib.getExe' coreutils "rm"}"
+    let SUDO_PATH = "/usr/bin/sudo"
+    let LAUNCHCTL_PATH = "/bin/launchctl"
     EOF
 
     runHook postConfigure
