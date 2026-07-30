@@ -8,9 +8,10 @@
 stdenvNoCC.mkDerivation {
   pname = "victoria-logs-single-manifests";
   inherit (nur.repos.josh.victoria-logs-single-chart) version;
-  src = nur.repos.josh.victoria-logs-single-chart;
 
   __structuredAttrs = true;
+
+  src = nur.repos.josh.victoria-logs-single-chart;
 
   nativeBuildInputs = [
     kubernetes-helm

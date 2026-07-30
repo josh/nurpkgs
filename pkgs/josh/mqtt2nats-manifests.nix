@@ -7,9 +7,11 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "mqtt2nats-manifests";
-  inherit (nur.repos.josh.mqtt2nats) version src;
+  inherit (nur.repos.josh.mqtt2nats) version;
 
   __structuredAttrs = true;
+
+  inherit (nur.repos.josh.mqtt2nats) src;
 
   nativeBuildInputs = [
     kubernetes-helm

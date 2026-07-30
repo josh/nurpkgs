@@ -8,9 +8,10 @@
 stdenvNoCC.mkDerivation {
   pname = "rsshub-manifests";
   inherit (nur.repos.josh.rsshub-chart) version;
-  src = nur.repos.josh.rsshub-chart;
 
   __structuredAttrs = true;
+
+  src = nur.repos.josh.rsshub-chart;
 
   nativeBuildInputs = [
     kubernetes-helm

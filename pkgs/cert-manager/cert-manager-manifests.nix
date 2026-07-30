@@ -8,9 +8,10 @@
 stdenvNoCC.mkDerivation {
   pname = "cert-manager-manifests";
   inherit (nur.repos.josh.cert-manager-chart) version;
-  src = nur.repos.josh.cert-manager-chart;
 
   __structuredAttrs = true;
+
+  src = nur.repos.josh.cert-manager-chart;
 
   nativeBuildInputs = [
     kubernetes-helm

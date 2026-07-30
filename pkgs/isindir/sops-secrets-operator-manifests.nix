@@ -8,9 +8,10 @@
 stdenvNoCC.mkDerivation {
   pname = "sops-secrets-operator-manifests";
   inherit (nur.repos.josh.sops-secrets-operator-chart) version;
-  src = nur.repos.josh.sops-secrets-operator-chart;
 
   __structuredAttrs = true;
+
+  src = nur.repos.josh.sops-secrets-operator-chart;
 
   nativeBuildInputs = [
     kubernetes-helm

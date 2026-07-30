@@ -8,9 +8,10 @@
 stdenvNoCC.mkDerivation {
   pname = "tailscale-operator-manifests";
   inherit (nur.repos.josh.tailscale-operator-chart) version;
-  src = nur.repos.josh.tailscale-operator-chart;
 
   __structuredAttrs = true;
+
+  src = nur.repos.josh.tailscale-operator-chart;
 
   nativeBuildInputs = [
     kubernetes-helm

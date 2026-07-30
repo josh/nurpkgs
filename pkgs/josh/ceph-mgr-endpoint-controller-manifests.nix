@@ -7,9 +7,11 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "ceph-mgr-endpoint-controller-manifests";
-  inherit (nur.repos.josh.ceph-mgr-endpoint-controller) version src;
+  inherit (nur.repos.josh.ceph-mgr-endpoint-controller) version;
 
   __structuredAttrs = true;
+
+  inherit (nur.repos.josh.ceph-mgr-endpoint-controller) src;
 
   nativeBuildInputs = [
     kubernetes-helm

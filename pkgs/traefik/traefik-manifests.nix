@@ -8,9 +8,10 @@
 stdenvNoCC.mkDerivation {
   pname = "traefik-manifests";
   inherit (nur.repos.josh.traefik-chart) version;
-  src = nur.repos.josh.traefik-chart;
 
   __structuredAttrs = true;
+
+  src = nur.repos.josh.traefik-chart;
 
   nativeBuildInputs = [
     kubernetes-helm
