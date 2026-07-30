@@ -3,8 +3,8 @@
   python3Packages,
   fetchFromGitHub,
   nur,
-  runCommand,
   nix-update-script,
+  runCommand,
 }:
 python3Packages.buildPythonApplication (finalAttrs: {
   pname = "trakt-plex-sync";
