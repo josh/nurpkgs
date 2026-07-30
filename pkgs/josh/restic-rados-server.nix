@@ -55,7 +55,7 @@ buildGoModule (finalAttrs: {
     description = "A restic repository backend that stores data in raw Ceph RADOS";
     homepage = "https://github.com/josh/restic-rados-server";
     license = lib.licenses.mit;
-    inherit (ceph.meta) platforms;
     mainProgram = "restic-rados-server";
+    inherit (ceph.meta) platforms;
   };
 })

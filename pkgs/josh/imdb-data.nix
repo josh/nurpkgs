@@ -50,7 +50,7 @@ python3Packages.buildPythonApplication (finalAttrs: {
     description = "IMDB personal lists and ratings data scaper";
     homepage = "https://github.com/josh/imdb-data";
     license = lib.licenses.mit;
-    platforms = lib.platforms.all;
     mainProgram = "imdb-data";
+    platforms = lib.platforms.all;
   };
 })

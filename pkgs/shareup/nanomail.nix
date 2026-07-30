@@ -56,7 +56,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     description = "A Deno + JXA CLI for reading and managing Apple Mail on macOS";
     homepage = "https://github.com/shareup/nanomail";
     license = lib.licenses.mit;
-    platforms = lib.platforms.darwin;
     mainProgram = "nanomail";
+    platforms = lib.platforms.darwin;
   };
 })
