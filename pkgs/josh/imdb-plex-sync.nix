@@ -52,5 +52,6 @@ python3Packages.buildPythonApplication (finalAttrs: {
     license = lib.licenses.mit;
     platforms = lib.platforms.all;
     mainProgram = "imdb-plex-sync";
+    broken = lib.strings.versionOlder nur.repos.josh.polars.version "1.30";
   };
 })
