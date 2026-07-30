@@ -47,7 +47,7 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "Cilium - eBPF-based Networking, Observability, and Security";
+    description = "Kubernetes manifests for Cilium, eBPF-based networking, observability, and security";
     homepage = "https://github.com/cilium/cilium";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;

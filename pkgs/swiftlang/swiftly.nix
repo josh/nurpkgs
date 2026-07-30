@@ -71,7 +71,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   };
 
   meta = {
-    description = "A Swift toolchain installer and manager, written in Swift";
+    description = "Swift toolchain installer and manager, written in Swift";
     longDescription = ''
       swiftly is a CLI tool for installing, managing, and switching between Swift toolchains, written in Swift.
     '';

@@ -47,7 +47,7 @@ python3Packages.buildPythonApplication (finalAttrs: {
   };
 
   meta = {
-    description = "IMDB personal lists and ratings data scaper";
+    description = "IMDB personal lists and ratings data scraper";
     homepage = "https://github.com/josh/imdb-data";
     license = lib.licenses.mit;
     mainProgram = "imdb-data";

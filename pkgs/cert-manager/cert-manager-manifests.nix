@@ -38,7 +38,7 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "A Helm chart for cert-manager";
+    description = "Kubernetes manifests for cert-manager";
     homepage = "https://cert-manager.io";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;
