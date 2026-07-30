@@ -1,7 +1,9 @@
 {
+  lib,
   fetchFromGitHub,
   offlineimap,
   runCommand,
+  testers,
   writeText,
 }:
 let
@@ -21,7 +23,7 @@ let
 in
 offlineimap.overrideAttrs (
   finalAttrs: previousAttrs: {
-    version = "8.0.3";
+    version = "8.0.0-unstable-2024-08-24";
 
     src = fetchFromGitHub {
       owner = "OfflineIMAP";
@@ -33,7 +35,11 @@ offlineimap.overrideAttrs (
     patches = previousAttrs.patches or [ ] ++ [ no-install-requires-patch ];
 
     passthru = previousAttrs.passthru // {
-      tests = {
+      tests = previousAttrs.passthru.tests or { } // {
+        version = testers.testVersion {
+          package = finalAttrs.finalPackage;
+          version = lib.head (lib.splitString "-unstable-" finalAttrs.version);
+        };
         help = runCommand "test-offlineimap-help" { nativeBuildInputs = [ finalAttrs.finalPackage ]; } ''
           offlineimap --help
           touch $out
