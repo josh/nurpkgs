@@ -80,15 +80,17 @@ let
     ps.pyyaml
   ]);
 
-  ceph-rocksdb = rocksdb.overrideAttrs (finalAttrs: {
-    version = "7.9.2";
-    src = fetchFromGitHub {
-      owner = "facebook";
-      repo = "rocksdb";
-      tag = "v${finalAttrs.version}";
-      hash = "sha256-5P7IqJ14EZzDkbjaBvbix04ceGGdlWBuVFH/5dpD5VM=";
-    };
-  });
+  ceph-rocksdb = rocksdb.overrideAttrs (
+    finalAttrs: _prevAttrs: {
+      version = "7.9.2";
+      src = fetchFromGitHub {
+        owner = "facebook";
+        repo = "rocksdb";
+        tag = "v${finalAttrs.version}";
+        hash = "sha256-5P7IqJ14EZzDkbjaBvbix04ceGGdlWBuVFH/5dpD5VM=";
+      };
+    }
+  );
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "librados";
