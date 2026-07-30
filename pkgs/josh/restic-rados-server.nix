@@ -29,6 +29,7 @@ buildGoModule (finalAttrs: {
   env.CGO_ENABLED = 1;
 
   ldflags = [
+    "-s"
     "-w"
     "-X main.version=${finalAttrs.version}"
   ];
