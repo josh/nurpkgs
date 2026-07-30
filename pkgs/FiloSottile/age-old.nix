@@ -18,13 +18,13 @@ buildGoModule (finalAttrs: {
 
   vendorHash = "sha256-ilRLEV7qOBZbqzg2XQi4kt0JAb/1ftT4JmahYT0zSRU=";
 
+  nativeBuildInputs = [ installShellFiles ];
+
   ldflags = [
     "-s"
     "-w"
     "-X main.Version=v${finalAttrs.version}"
   ];
-
-  nativeBuildInputs = [ installShellFiles ];
 
   preInstall = ''
     installManPage doc/*.1
