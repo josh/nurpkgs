@@ -61,7 +61,7 @@ def main(
 
         with open(f"{chart_path}/Chart.yaml", "r") as f:
             chart_data = yaml.safe_load(f)
-        version = chart_data["version"].removeprefix("v")
+        version = chart_data["version"]
 
         sha256 = nix_hash(chart_path)
 
