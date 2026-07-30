@@ -25,7 +25,6 @@ python3Packages.buildPythonApplication (finalAttrs: {
 
   dependencies = with python3Packages; [
     click
-    requests
   ];
 
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
