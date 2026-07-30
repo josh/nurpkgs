@@ -39,7 +39,7 @@ stdenvNoCC.mkDerivation {
     description = "A standalone CLI for reading and creating notes in Apple Notes";
     homepage = "https://github.com/shareup/nanotes";
     license = lib.licenses.mit;
-    platforms = lib.platforms.darwin;
     mainProgram = "nanotes";
+    platforms = lib.platforms.darwin;
   };
 }

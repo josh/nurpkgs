@@ -59,7 +59,7 @@ python3Packages.buildPythonApplication (finalAttrs: {
     description = "Export Trakt data";
     homepage = "https://github.com/josh/trakt-data";
     license = lib.licenses.mit;
-    platforms = lib.platforms.all;
     mainProgram = "trakt-data";
+    platforms = lib.platforms.all;
   };
 })

@@ -54,7 +54,7 @@ python3Packages.buildPythonApplication (finalAttrs: {
     description = "Sync Trakt history to Plex library";
     homepage = "https://github.com/josh/trakt-plex-sync";
     license = lib.licenses.mit;
-    platforms = lib.platforms.all;
     mainProgram = "trakt-plex-sync";
+    platforms = lib.platforms.all;
   };
 })

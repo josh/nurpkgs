@@ -81,7 +81,7 @@ swiftPackages.stdenv.mkDerivation (finalAttrs: {
     description = "Manage macOS TCC database declaratively";
     homepage = "https://github.com/josh/tccpolicy";
     license = lib.licenses.mit;
-    platforms = lib.platforms.darwin;
     mainProgram = "tccpolicy";
+    platforms = lib.platforms.darwin;
   };
 })

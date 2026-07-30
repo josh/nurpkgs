@@ -50,7 +50,7 @@ swiftPackages.stdenv.mkDerivation (finalAttrs: {
     description = "Export iTunes Library XML files";
     homepage = "https://github.com/josh/itunes-library-export";
     license = lib.licenses.mit;
-    platforms = lib.platforms.darwin;
     mainProgram = "itunes-library-export";
+    platforms = lib.platforms.darwin;
   };
 })
