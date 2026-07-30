@@ -2,8 +2,8 @@
 nur.repos.josh.fetchhelm {
   url = "https://prometheus-community.github.io/helm-charts";
   chart = "prometheus";
-  version = "29.20.0";
-  hash = "sha256-xEF8LuR5ICp9rJQdFinXf0DP5b7y5KdLZHNgtQl7CxM=";
+  version = "29.20.1";
+  hash = "sha256-g6PPZmVBR6WS4YjbnD4dUP+LsqgkR99bslKIIQG9c2g=";
 
   meta = {
     description = "Helm chart for Prometheus, a monitoring system and time series database";
