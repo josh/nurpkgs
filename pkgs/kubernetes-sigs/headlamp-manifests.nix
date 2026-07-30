@@ -8,9 +8,10 @@
 stdenvNoCC.mkDerivation {
   pname = "headlamp-manifests";
   inherit (nur.repos.josh.headlamp-chart) version;
-  src = nur.repos.josh.headlamp-chart;
 
   __structuredAttrs = true;
+
+  src = nur.repos.josh.headlamp-chart;
 
   nativeBuildInputs = [
     kubernetes-helm

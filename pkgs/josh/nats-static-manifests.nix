@@ -7,9 +7,11 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "nats-static-manifests";
-  inherit (nur.repos.josh.nats-static) version src;
+  inherit (nur.repos.josh.nats-static) version;
 
   __structuredAttrs = true;
+
+  inherit (nur.repos.josh.nats-static) src;
 
   nativeBuildInputs = [
     kubernetes-helm

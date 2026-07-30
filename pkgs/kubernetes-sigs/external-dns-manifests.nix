@@ -8,9 +8,10 @@
 stdenvNoCC.mkDerivation {
   pname = "external-dns-manifests";
   inherit (nur.repos.josh.external-dns-chart) version;
-  src = nur.repos.josh.external-dns-chart;
 
   __structuredAttrs = true;
+
+  src = nur.repos.josh.external-dns-chart;
 
   nativeBuildInputs = [
     kubernetes-helm

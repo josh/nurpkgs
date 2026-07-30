@@ -7,9 +7,11 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "jmap2nats-manifests";
-  inherit (nur.repos.josh.jmap2nats) version src;
+  inherit (nur.repos.josh.jmap2nats) version;
 
   __structuredAttrs = true;
+
+  inherit (nur.repos.josh.jmap2nats) src;
 
   nativeBuildInputs = [
     kubernetes-helm

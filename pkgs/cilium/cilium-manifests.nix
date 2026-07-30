@@ -8,9 +8,10 @@
 stdenvNoCC.mkDerivation {
   pname = "cilium-manifests";
   inherit (nur.repos.josh.cilium-chart) version;
-  src = nur.repos.josh.cilium-chart;
 
   __structuredAttrs = true;
+
+  src = nur.repos.josh.cilium-chart;
 
   nativeBuildInputs = [
     kubernetes-helm

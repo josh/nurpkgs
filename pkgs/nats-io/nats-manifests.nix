@@ -8,9 +8,10 @@
 stdenvNoCC.mkDerivation {
   pname = "nats-manifests";
   inherit (nur.repos.josh.nats-chart) version;
-  src = nur.repos.josh.nats-chart;
 
   __structuredAttrs = true;
+
+  src = nur.repos.josh.nats-chart;
 
   nativeBuildInputs = [
     kubernetes-helm
