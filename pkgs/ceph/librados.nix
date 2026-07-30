@@ -2,7 +2,7 @@
   lib,
   stdenv,
   fetchFromGitHub,
-  fetchpatch,
+  fetchpatch2,
   fetchurl,
 
   # Build tools
@@ -100,10 +100,10 @@ stdenv.mkDerivation (finalAttrs: {
     # PyO3 workaround — allows build on Python 3.12 (merged upstream in 20.2.1)
     # https://github.com/ceph/ceph/pull/66794
     # Pinned base...head range of that PR; PR diff URLs are mutable
-    (fetchpatch {
+    (fetchpatch2 {
       name = "ceph-upstream-pyo3-workaround.patch";
       url = "https://github.com/ceph/ceph/compare/ba0181c0fc1118f6199dc21db58da8ccc94ca0b7...411fcaa78fcf75392dd235533ba9b8d351971b08.diff";
-      hash = "sha256-bZvcCNf9R3JpcHP0r3x6iRE9lp3CGOPCqi44fj15U1E=";
+      hash = "sha256-Et3v5U6HibwlhErYxogimluLRL+9efRBptdcNuh4xLg=";
     })
   ];
 
