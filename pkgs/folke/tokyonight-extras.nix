@@ -24,12 +24,7 @@ stdenvNoCC.mkDerivation {
     runHook postInstall
   '';
 
-  passthru.updateScript = nix-update-script {
-    extraArgs = [
-      "--version=branch=main"
-      "--version-regex=v?([0-9].*)"
-    ];
-  };
+  passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch=main" ]; };
 
   meta = {
     description = "Provides TokyoNight extras for numerous other applications";
