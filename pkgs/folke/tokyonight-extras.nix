@@ -6,7 +6,7 @@
 }:
 stdenvNoCC.mkDerivation {
   pname = "tokyonight-extras";
-  version = "stable-unstable-2026-03-24";
+  version = "4.14.1-unstable-2026-03-24";
 
   src = fetchFromGitHub {
     owner = "folke";
@@ -24,7 +24,14 @@ stdenvNoCC.mkDerivation {
     runHook postInstall
   '';
 
-  passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch=main" ]; };
+  # The regex filters out upstream's rolling non-numeric "stable" tag, which
+  # otherwise becomes the version base
+  passthru.updateScript = nix-update-script {
+    extraArgs = [
+      "--version=branch=main"
+      "--version-regex=v?([0-9].*)"
+    ];
+  };
 
   meta = {
     description = "Extra TokyoNight theme files for terminals and other applications";
