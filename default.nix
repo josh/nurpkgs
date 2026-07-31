@@ -5,7 +5,14 @@ let
   inherit (pkgs) lib;
 
   callPackage = pkgs.lib.customisation.callPackageWith (
-    pkgs // { nur.repos.josh = pkgs' // internalPkgs; }
+    pkgs
+    // {
+      nur = (pkgs.nur or { }) // {
+        repos = (pkgs.nur.repos or { }) // {
+          josh = pkgs' // internalPkgs;
+        };
+      };
+    }
   );
 
   internalPkgs = {
