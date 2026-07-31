@@ -38,7 +38,7 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "Kubernetes manifests for nats-static";
+    description = "Kubernetes manifests for the nats-static file server";
     homepage = "https://github.com/josh/nats-static/tree/main/charts/nats-static";
     license = lib.licenses.mit;
     platforms = lib.platforms.all;

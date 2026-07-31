@@ -47,7 +47,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   };
 
   meta = {
-    description = "Tailscale traffic with Grafana";
+    description = "Grafana dashboard visualizing Tailscale traffic";
     homepage = "https://github.com/Zydepoint/Tailscale-dashboard";
     license = lib.licenses.mit;
     platforms = lib.platforms.all;

@@ -38,7 +38,7 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "Actions Runner Controller - Kubernetes controller for GitHub Actions self-hosted runners";
+    description = "Kubernetes manifests for the GitHub Actions runner scale set controller";
     homepage = "https://github.com/actions/actions-runner-controller";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;

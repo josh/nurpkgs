@@ -42,7 +42,7 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "VictoriaLogs Agent - accepts logs from various protocols and replicates them across multiple VictoriaLogs instances";
+    description = "Kubernetes manifests for the VictoriaLogs agent, replicating logs across VictoriaLogs instances";
     homepage = "https://github.com/VictoriaMetrics/helm-charts/tree/master/charts/victoria-logs-agent";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;

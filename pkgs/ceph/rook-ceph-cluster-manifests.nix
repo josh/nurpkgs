@@ -38,7 +38,7 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "Rook-Ceph Cluster - Creates Rook resources to configure a Ceph cluster";
+    description = "Kubernetes manifests creating Rook resources to configure a Ceph cluster";
     homepage = "https://github.com/rook/rook";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;
