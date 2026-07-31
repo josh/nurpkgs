@@ -8,7 +8,7 @@
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "zydepoint-tailscale-dashboard";
-  version = "0-unstable-2025-02-09";
+  version = "0-unstable-2025-02-10";
 
   outputs = [
     "out"
