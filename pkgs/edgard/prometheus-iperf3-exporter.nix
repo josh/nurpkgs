@@ -75,6 +75,5 @@ buildGoModule (finalAttrs: {
     homepage = "https://github.com/edgard/iperf3_exporter";
     license = lib.licenses.asl20;
     mainProgram = "iperf3_exporter";
-    platforms = lib.platforms.all;
   };
 })

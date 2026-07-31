@@ -91,6 +91,5 @@ buildGoModule (finalAttrs: {
     homepage = "https://github.com/josh/restic-exporter";
     license = lib.licenses.mit;
     mainProgram = "restic-exporter";
-    platforms = lib.platforms.all;
   };
 })
