@@ -3,8 +3,9 @@
   stdenvNoCC,
   fetchFromGitHub,
   nix-update-script,
+  runCommand,
 }:
-stdenvNoCC.mkDerivation {
+stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "tokyonight-extras";
   version = "4.14.1-unstable-2026-03-24";
 
@@ -33,10 +34,19 @@ stdenvNoCC.mkDerivation {
     ];
   };
 
+  passthru.tests = {
+    files = runCommand "test-tokyonight-extras-files" { } ''
+      test -s ${finalAttrs.finalPackage}/share/tokyonight/alacritty/tokyonight_night.toml
+      test -s ${finalAttrs.finalPackage}/share/tokyonight/kitty/tokyonight_night.conf
+      test -s ${finalAttrs.finalPackage}/share/tokyonight/fish/tokyonight_night.fish
+      touch $out
+    '';
+  };
+
   meta = {
     description = "Extra TokyoNight theme files for terminals and other applications";
     homepage = "https://github.com/folke/tokyonight.nvim";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;
   };
-}
+})
