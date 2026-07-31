@@ -3,8 +3,10 @@
   stdenv,
   buildGoModule,
   fetchFromGitHub,
+
   jq,
   restic,
+
   nix-update-script,
   runCommand,
   testers,
