@@ -42,7 +42,7 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "VictoriaLogs Collector - collects logs from Kubernetes containers and stores them to VictoriaLogs";
+    description = "Kubernetes manifests for the VictoriaLogs collector, shipping Kubernetes container logs to VictoriaLogs";
     homepage = "https://github.com/VictoriaMetrics/helm-charts/tree/master/charts/victoria-logs-collector";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;

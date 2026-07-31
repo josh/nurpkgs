@@ -38,7 +38,7 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "Kubernetes manifests for jmap2nats";
+    description = "Kubernetes manifests for the JMAP to NATS bridge";
     homepage = "https://github.com/josh/jmap2nats/tree/main/charts/jmap2nats";
     license = lib.licenses.mit;
     platforms = lib.platforms.all;

@@ -45,7 +45,7 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "Forgejo Helm chart";
+    description = "Kubernetes manifests for Forgejo, a self-hosted Git forge";
     homepage = "https://code.forgejo.org/forgejo-helm/forgejo-helm";
     license = lib.licenses.mit;
     platforms = lib.platforms.all;

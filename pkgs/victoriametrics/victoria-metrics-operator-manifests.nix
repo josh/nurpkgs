@@ -40,7 +40,7 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "VictoriaMetrics Operator";
+    description = "Kubernetes manifests for the VictoriaMetrics operator";
     homepage = "https://github.com/VictoriaMetrics/helm-charts/tree/master/charts/victoria-metrics-operator";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;

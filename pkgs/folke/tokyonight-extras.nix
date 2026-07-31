@@ -27,7 +27,7 @@ stdenvNoCC.mkDerivation {
   passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch=main" ]; };
 
   meta = {
-    description = "Provides TokyoNight extras for numerous other applications";
+    description = "Extra TokyoNight theme files for terminals and other applications";
     homepage = "https://github.com/folke/tokyonight.nvim";
     license = lib.licenses.asl20;
     platforms = lib.platforms.all;

@@ -38,7 +38,7 @@ stdenvNoCC.mkDerivation {
   '';
 
   meta = {
-    description = "Kubernetes manifests for mqtt2nats";
+    description = "Kubernetes manifests for the MQTT to NATS bridge";
     homepage = "https://github.com/josh/mqtt2nats/tree/main/charts/mqtt2nats";
     license = lib.licenses.mit;
     platforms = lib.platforms.all;
