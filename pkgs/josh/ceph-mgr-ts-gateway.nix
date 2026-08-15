@@ -8,13 +8,13 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "ceph-mgr-ts-gateway";
-  version = "0.2.1";
+  version = "0.2.2";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "ceph-mgr-ts-gateway";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-xyKG48cVLUV6dqchh1GymRJgBxlETybVQWQfUstwbTg=";
+    hash = "sha256-UFOZxjvTIi/hQF9EkkKgM4koXVZLIzXiImgppvQWDmU=";
   };
 
   vendorHash = "sha256-OfUI9qWzTh2rhTYfW7f8y9UGwqAZZJsU0AtcQFC5ROo=";
