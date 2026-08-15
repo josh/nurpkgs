@@ -1,10 +1,10 @@
 {
   lib,
   python3Packages,
+  rustPlatform,
   fetchPypi,
   fetchFromGitHub,
   nur,
-  rustPlatform,
 
   nix-update-script,
   runCommand,
