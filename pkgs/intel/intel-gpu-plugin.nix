@@ -2,22 +2,23 @@
   lib,
   buildGoModule,
   fetchFromGitHub,
-
+  go_1_27,
   nix-update-script,
   runCommand,
 }:
-buildGoModule (finalAttrs: {
+# Remove go 1.27 workaround once nixpkgs defaults to go 1.27 or newer.
+(buildGoModule.override { go = go_1_27; }) (finalAttrs: {
   pname = "intel-gpu-plugin";
-  version = "0.36.0";
+  version = "0.37.0";
 
   src = fetchFromGitHub {
     owner = "intel";
     repo = "intel-device-plugins-for-kubernetes";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-93suKBJ3XZE0XcVgu+R9CunRtkMwp06cNBdE/V0/Tq4=";
+    hash = "sha256-8sUag2GCxwug2HhyxFQrNPt9wIp7mhspIkZNs9+Cqe0=";
   };
 
-  vendorHash = "sha256-2bvBpMJH/XUM3wJU8fbkGCSatcry6zzDpRN4l/Q3rUo=";
+  vendorHash = "sha256-37g8gQD5tKp6zAZPc6BFvboBA/07YDwHw51K25oSc78=";
 
   subPackages = [ "cmd/gpu_plugin" ];
 
