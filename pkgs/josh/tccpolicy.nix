@@ -36,9 +36,7 @@ swiftPackages.stdenv.mkDerivation (finalAttrs: {
       substituteInPlace "$f" --replace-fail "import SQLite3" "import CSQLite"
     done
     grep -rqF "import CSQLite" Sources
-    status=0
-    grep -rqF "import SQLite3" Sources || status=$?
-    test "$status" -eq 1
+    ! grep -rqF "import SQLite3" Sources
   '';
 
   nativeBuildInputs = [
