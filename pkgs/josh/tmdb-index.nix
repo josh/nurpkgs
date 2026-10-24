@@ -58,6 +58,5 @@ python3Packages.buildPythonApplication (finalAttrs: {
     license = lib.licenses.mit;
     mainProgram = "tmdb-index";
     platforms = lib.platforms.all;
-    broken = lib.strings.versionOlder nur.repos.josh.polars.version "1.30";
   };
 })
