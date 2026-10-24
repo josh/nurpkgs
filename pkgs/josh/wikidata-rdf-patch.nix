@@ -20,7 +20,6 @@ python3Packages.buildPythonPackage (finalAttrs: {
 
   build-system = with python3Packages; [
     setuptools
-    wheel
   ];
 
   dependencies = with python3Packages; [
