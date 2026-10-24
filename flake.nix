@@ -54,7 +54,7 @@
             { "${pkgName}-${name}-build" = buildCheckPkg pkg; }
         ) (mkPackages pkgs);
 
-      treefmt-nix = eachSystem (import ./internal/treefmt.nix);
+      treefmt-nix = eachSystem (import ./internal/treefmt.nix internal-inputs);
     in
     {
       overlays.default = final: prev: {
