@@ -6,11 +6,11 @@
 }:
 tailscale-gui.overrideAttrs (
   finalAttrs: previousAttrs: {
-    version = "1.104.5";
+    version = "1.104.6";
 
     src = fetchurl {
       url = "https://pkgs.tailscale.com/stable/Tailscale-${finalAttrs.version}-macos.pkg";
-      hash = "sha256-8aKvtYncFkh8/58jxZ0AIaGk3PhHbSY3q0k8YoQiuBA=";
+      hash = "sha256-aTPigwLlaSpL542houF4RF626dVTkZdkfmTxh9VoLFM=";
     };
 
     installPhase = ''
