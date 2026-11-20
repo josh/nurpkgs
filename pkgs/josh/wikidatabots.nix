@@ -14,9 +14,9 @@ let
   pythonEnv = python3.withPackages (ps: [
     ps.backoff
     ps.feedparser
-    ps.polars
     ps.requests
     ps.tqdm
+    nur.repos.josh.polars
     nur.repos.josh.wikidata-rdf-patch
   ]);
 in
