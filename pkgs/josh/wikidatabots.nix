@@ -13,7 +13,6 @@
 let
   pythonEnv = python3.withPackages (ps: [
     ps.backoff
-    ps.feedparser
     ps.requests
     ps.tqdm
     nur.repos.josh.polars
@@ -46,7 +45,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
       esac
     done
 
-    for script in wikidata_maxlag wd_tmdb wd_opencritic; do
+    for script in wd_tmdb wd_opencritic; do
       makeWrapper ${lib.getExe pythonEnv} $out/bin/''${script//_/-} \
         --add-flags $out/share/wikidatabots/$script.py
     done
@@ -65,7 +64,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
       ${lib.getExe pythonEnv} -c '
       import sys
       sys.path.insert(0, "${finalAttrs.finalPackage}/share/wikidatabots")
-      import polars_requests, sparql, wd_opencritic, wd_tmdb, wikidata, wikidata_maxlag
+      import polars_requests, sparql, wd_opencritic, wd_tmdb, wikidata
       '
       touch $out
     '';
