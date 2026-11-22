@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   update:
@@ -18,29 +18,17 @@ jobs:
           # - aarch64-linux
           - x86_64-linux
 
-    runs-on: [self-hosted, "${{ matrix.system }}"]
+    runs-on: nix-${{ matrix.system }}
 
     steps:
-      - uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
-        id: app-token
-        with:
-          client-id: ${{ vars.GH_APP_ID }}
-          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
-
-      - name: Get GitHub App User ID
-        id: get-user-id
-        run: echo "user-id=$(gh api "/users/${{ steps.app-token.outputs.app-slug }}[bot]" --jq .id)" | tee -a "$GITHUB_OUTPUT"
-        env:
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
-
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          token: ${{ steps.app-token.outputs.token }}
+          token: ${{ secrets.GT_BOT_TOKEN }}
 
       - name: Configure git commit author
         run: |
-          git config --local user.name '${{ steps.app-token.outputs.app-slug }}[bot]'
-          git config --local user.email '${{ steps.get-user-id.outputs.user-id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com'
+          git config --local user.name 'gitea-actions[bot]'
+          git config --local user.email 'gitea-actions@noreply.invalid'
 
       - id: attrs
         name: Get package attributes to update
@@ -55,6 +43,7 @@ jobs:
           set -o pipefail
           exit_code=0
           while read -r attr; do
+            [ -n "$attr" ] || continue
             printf "\n\n==== Updating %s ====\n" "$attr" >&2
             if ! UPDATE_NIX_ATTR_PATH="$attr" nix run --file ./internal/update-script.nix </dev/null; then
               echo "::error::Update failed for $attr" >&2
@@ -65,4 +54,4 @@ jobs:
         env:
           FLAKE_URI: ${{ github.workspace }}
           UPDATE_NIX_ATTRS: ${{ steps.attrs.outputs.attrs }}
-          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          GITEA_TOKEN: ${{ secrets.GT_BOT_TOKEN }}

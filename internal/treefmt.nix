@@ -13,6 +13,16 @@ let
     programs.prettier.enable = true;
     programs.statix.enable = true;
     # keep-sorted end
+    settings.formatter.actionlint = {
+      includes = [
+        ".gitea/workflows/*.yml"
+        ".gitea/workflows/*.yaml"
+      ];
+      options = [
+        "-config-file"
+        ".gitea/actionlint.yml"
+      ];
+    };
   };
 in
 treefmtEval.config.build
