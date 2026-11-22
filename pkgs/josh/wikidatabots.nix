@@ -16,7 +16,6 @@ let
     ps.requests
     ps.tqdm
     nur.repos.josh.polars
-    nur.repos.josh.wikidata-rdf-patch
   ]);
 in
 stdenvNoCC.mkDerivation (finalAttrs: {
@@ -49,8 +48,6 @@ stdenvNoCC.mkDerivation (finalAttrs: {
       makeWrapper ${lib.getExe pythonEnv} $out/bin/''${script//_/-} \
         --add-flags $out/share/wikidatabots/$script.py
     done
-
-    ln -s ${pythonEnv}/bin/wikidata-rdf-patch $out/bin/wikidata-rdf-patch
 
     runHook postInstall
   '';
