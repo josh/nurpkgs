@@ -12,8 +12,8 @@ buildGoModule (finalAttrs: {
   src = fetchFromGitHub {
     owner = "josh";
     repo = "tmdb-upcoming-feeds";
-    rev = "01a9557e96a71151cb5d6829ba6d576778616af4";
-    hash = "sha256-tC8AsIsS5cUP/PfV1tR1BSEAPjCyGMuiZt9fTM8RfRM=";
+    rev = "0cd36c480174d9e4d1f523dac620c09389ea60ae";
+    hash = "sha256-zZ4XARX30+gqQekqDLmP7+0/I2eA8N4bHCqIWVruEuw=";
   };
 
   vendorHash = null;
