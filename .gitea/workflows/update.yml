@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "0 19 * * *" # 11am PST
   workflow_dispatch:
+    inputs:
+      package:
+        description: Package attribute to update (leave empty for all)
+        required: false
+        type: string
 
 permissions:
   contents: read
@@ -25,6 +30,7 @@ jobs:
           nix eval --raw --impure --file ./internal/update-script-matrix.nix | tee "$GITHUB_OUTPUT"
         env:
           FLAKE_URI: ${{ github.workspace }}
+          UPDATE_NIX_ATTR_PATH: ${{ inputs.package }}
 
   update:
     name: update-${{ matrix.attr }}

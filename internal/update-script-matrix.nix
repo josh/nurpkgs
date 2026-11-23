@@ -1,6 +1,7 @@
-# FLAKE_URI="$PWD" nix eval --raw --impure --file ./internal/update-script-matrix.nix
+# FLAKE_URI="$PWD" [UPDATE_NIX_ATTR_PATH=foo] nix eval --raw --impure --file ./internal/update-script-matrix.nix
 let
   flake = builtins.getFlake (builtins.getEnv "FLAKE_URI");
+  only = builtins.getEnv "UPDATE_NIX_ATTR_PATH";
 
   systems = [
     "x86_64-linux"
@@ -31,7 +32,8 @@ let
     builtins.map (attr: {
       inherit attr;
       system = preferredSystem attr;
-    }) attrNames
+    }) (if only == "" then attrNames else [ only ])
   );
 in
+assert only == "" || include != [ ] || throw "${only} has no updateScript on any supported system";
 "matrix=${builtins.toJSON { inherit include; }}"
