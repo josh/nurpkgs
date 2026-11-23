@@ -9,14 +9,30 @@ permissions:
   contents: read
 
 jobs:
+  matrix:
+    runs-on: nix-x86_64-linux
+
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - id: matrix
+        name: Generate package matrix
+        run: |
+          set -o pipefail
+          nix eval --raw --impure --file ./internal/update-script-matrix.nix | tee "$GITHUB_OUTPUT"
+        env:
+          FLAKE_URI: ${{ github.workspace }}
+
   update:
+    name: update-${{ matrix.attr }}
+    needs: matrix
+
     strategy:
       fail-fast: false
-      matrix:
-        system:
-          - aarch64-darwin
-          # - aarch64-linux
-          - x86_64-linux
+      matrix: ${{ fromJSON(needs.matrix.outputs.matrix) }}
 
     runs-on: nix-${{ matrix.system }}
 
@@ -30,28 +46,9 @@ jobs:
           git config --local user.name 'gitea-actions[bot]'
           git config --local user.email 'gitea-actions@noreply.invalid'
 
-      - id: attrs
-        name: Get package attributes to update
-        run: |
-          set -o pipefail
-          nix eval --raw --impure --file ./internal/update-script-attrs.nix | tee "$GITHUB_OUTPUT"
-        env:
-          FLAKE_URI: ${{ github.workspace }}
-
       - name: Run update-script
-        run: |
-          set -o pipefail
-          exit_code=0
-          while read -r attr; do
-            [ -n "$attr" ] || continue
-            printf "\n\n==== Updating %s ====\n" "$attr" >&2
-            if ! UPDATE_NIX_ATTR_PATH="$attr" nix run --file ./internal/update-script.nix </dev/null; then
-              echo "::error::Update failed for $attr" >&2
-              exit_code=1
-            fi
-          done <<<"$(jq --raw-output '.[]' <<<"$UPDATE_NIX_ATTRS")"
-          exit $exit_code
+        run: nix run --file ./internal/update-script.nix </dev/null
         env:
           FLAKE_URI: ${{ github.workspace }}
-          UPDATE_NIX_ATTRS: ${{ steps.attrs.outputs.attrs }}
+          UPDATE_NIX_ATTR_PATH: ${{ matrix.attr }}
           GITEA_TOKEN: ${{ secrets.GT_BOT_TOKEN }}
