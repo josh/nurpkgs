@@ -7,13 +7,13 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "tmdb-upcoming-feeds";
-  version = "0-unstable-2026-11-23";
+  version = "0.1.0";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "tmdb-upcoming-feeds";
-    rev = "0cd36c480174d9e4d1f523dac620c09389ea60ae";
-    hash = "sha256-zZ4XARX30+gqQekqDLmP7+0/I2eA8N4bHCqIWVruEuw=";
+    tag = "v${finalAttrs.version}";
+    hash = "sha256-WJumiL7XrDGiDn0QmxbfWOj5/IneFtPP3YaEbcQSwF0=";
   };
 
   vendorHash = null;
@@ -24,7 +24,7 @@ buildGoModule (finalAttrs: {
     "-w"
   ];
 
-  passthru.updateScript = nix-update-script { extraArgs = [ "--version=branch" ]; };
+  passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
 
   passthru.tests = {
     help =
