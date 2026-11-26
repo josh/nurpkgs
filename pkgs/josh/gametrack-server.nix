@@ -24,13 +24,13 @@ let
 in
 swiftPackages.stdenv.mkDerivation (finalAttrs: {
   pname = "gametrack-server";
-  version = "0.1.0";
+  version = "0.1.1";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "gametrack-server";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-kZgDus2+vTzqsqIqE5OBUKI9wUkW2oi+7kZgnulhy6M=";
+    hash = "sha256-Comk56PNHiR49akiN262kILlLz1W/EZZhGdhJid5LHk=";
   };
 
   postPatch = ''
