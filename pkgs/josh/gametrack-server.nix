@@ -10,18 +10,7 @@
 
   nix-update-script,
   runCommand,
-  writeText,
 }:
-let
-  # nixpkgs' Apple SDK ships SQLite3.modulemap without sqlite3.h or libsqlite3.
-  sqliteModuleMap = writeText "CSQLite.modulemap" ''
-    module CSQLite [system] {
-      header "${sqlite.dev}/include/sqlite3.h"
-      link "sqlite3"
-      export *
-    }
-  '';
-in
 swiftPackages.stdenv.mkDerivation (finalAttrs: {
   pname = "gametrack-server";
   version = "0.1.1";
@@ -33,19 +22,12 @@ swiftPackages.stdenv.mkDerivation (finalAttrs: {
     hash = "sha256-Comk56PNHiR49akiN262kILlLz1W/EZZhGdhJid5LHk=";
   };
 
-  postPatch = ''
-    grep -rlF "import SQLite3" Sources | while IFS= read -r f; do
-      substituteInPlace "$f" --replace-fail "import SQLite3" "import CSQLite"
-    done
-    grep -rqF "import CSQLite" Sources
-    ! grep -rqF "import SQLite3" Sources
-  '';
-
   nativeBuildInputs = [
     swift
     swiftpm
   ];
 
+  # The package's CSQLite module includes <sqlite3.h>; nixpkgs' Apple SDK has none.
   buildInputs = [
     sqlite
   ];
@@ -54,11 +36,6 @@ swiftPackages.stdenv.mkDerivation (finalAttrs: {
     inherit (finalAttrs) pname version src;
     hash = "sha256-gwcihDUxqP9FLA7gjVBATOCI8xX02kOKLwqKGnhrsF8=";
   };
-
-  swiftpmFlags = [
-    "-Xcc"
-    "-fmodule-map-file=${sqliteModuleMap}"
-  ];
 
   installPhase = ''
     runHook preInstall
