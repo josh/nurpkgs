@@ -15,6 +15,11 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "kaneo-cli";
   version = "0.1.1";
 
+  outputs = [
+    "out"
+    "skill"
+  ];
+
   src = fetchurl {
     url = "https://registry.npmjs.org/@kaneo/cli/-/cli-${finalAttrs.version}.tgz";
     hash = "sha256-dmDVPWp85vh1ugylwUndHg/R+nMMH55RGqRgsIKFiyY=";
@@ -33,6 +38,8 @@ stdenvNoCC.mkDerivation (finalAttrs: {
     makeWrapper ${lib.getExe nodejs} $out/bin/kaneo \
       --add-flags $out/lib/kaneo-cli/dist/kaneo.mjs
 
+    install -Dm644 ${finalAttrs.passthru.skillSrc} $skill/SKILL.md
+
     runHook postInstall
   '';
 
@@ -44,7 +51,18 @@ stdenvNoCC.mkDerivation (finalAttrs: {
       --zsh <($out/bin/kaneo --completions zsh)
   '';
 
-  passthru.updateScript = nix-update-script { extraArgs = [ "--version=stable" ]; };
+  passthru.skillSrc = fetchurl {
+    url = "https://raw.githubusercontent.com/usekaneo/kaneo/cli-v${finalAttrs.version}/skills/kaneo-cli/SKILL.md";
+    hash = "sha256-Iv4DDUwZoU+dj9DyJVysSQ+F7TDEQ4pH55UYtIoPuHE=";
+  };
+
+  passthru.updateScript = nix-update-script {
+    extraArgs = [
+      "--version=stable"
+      "--custom-dep"
+      "skillSrc"
+    ];
+  };
 
   passthru.tests = {
     version = testers.testVersion {
@@ -58,6 +76,11 @@ stdenvNoCC.mkDerivation (finalAttrs: {
       test -s ${finalAttrs.finalPackage}/share/bash-completion/completions/kaneo.bash
       test -s ${finalAttrs.finalPackage}/share/fish/vendor_completions.d/kaneo.fish
       test -s ${finalAttrs.finalPackage}/share/zsh/site-functions/_kaneo
+      touch $out
+    '';
+    skill = runCommand "test-kaneo-cli-skill" { } ''
+      head -n1 ${finalAttrs.finalPackage.skill}/SKILL.md | grep -qx -- ---
+      sed -n '1,/^---$/{1d;p}' ${finalAttrs.finalPackage.skill}/SKILL.md | grep -qx 'name: kaneo-cli'
       touch $out
     '';
   };
