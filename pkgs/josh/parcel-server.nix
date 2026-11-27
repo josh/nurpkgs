@@ -13,13 +13,13 @@
 }:
 swiftPackages.stdenv.mkDerivation (finalAttrs: {
   pname = "parcel-server";
-  version = "0.1.0";
+  version = "0.2.0";
 
   src = fetchFromGitHub {
     owner = "josh";
     repo = "parcel-server";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-FBxa9Ibi9kETEJE6IKQ0Arkhi+OEtVHoGM6Mzbqo7cw=";
+    hash = "sha256-fyV2VxWEbKPidANlm6o5xZY25v49AvPxsSKe3Kzv96M=";
   };
 
   nativeBuildInputs = [
