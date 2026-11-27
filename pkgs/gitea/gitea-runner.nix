@@ -7,17 +7,17 @@
 }:
 buildGo127Module (finalAttrs: {
   pname = "gitea-runner";
-  version = "6.0.1";
+  version = "6.1.0";
 
   src = fetchFromGitea {
     domain = "gitea.com";
     owner = "gitea";
     repo = "runner";
     rev = "v${finalAttrs.version}";
-    hash = "sha256-V84K5zC+i9I64fwUXG05oL7oyH1+C56ZFfFMPY1yf20=";
+    hash = "sha256-YylObTsz8+AGavmv4OY8Q6xYiuuvYxxYV/IOg35aJEc=";
   };
 
-  vendorHash = "sha256-HSjcmksxTmRaEHB1rRTCJHZ2VhS/+e2d7/fIXDkd9J8=";
+  vendorHash = "sha256-AAuc045FprbFkkSl35TbJY5uudRSfaboUzII4YQDtCo=";
 
   env.CGO_ENABLED = 0;
   subPackages = [ "." ];
