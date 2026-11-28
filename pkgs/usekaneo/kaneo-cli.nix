@@ -13,7 +13,7 @@
 }:
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "kaneo-cli";
-  version = "0.1.1";
+  version = "0.2.0";
 
   outputs = [
     "out"
@@ -22,7 +22,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   src = fetchurl {
     url = "https://registry.npmjs.org/@kaneo/cli/-/cli-${finalAttrs.version}.tgz";
-    hash = "sha256-dmDVPWp85vh1ugylwUndHg/R+nMMH55RGqRgsIKFiyY=";
+    hash = "sha256-dI9ISvMKm0PE9TY9sDvCATmxv6NrSWM7dTHllqs8DBQ=";
   };
 
   nativeBuildInputs = [
@@ -53,7 +53,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   passthru.skillSrc = fetchurl {
     url = "https://raw.githubusercontent.com/usekaneo/kaneo/cli-v${finalAttrs.version}/skills/kaneo-cli/SKILL.md";
-    hash = "sha256-Iv4DDUwZoU+dj9DyJVysSQ+F7TDEQ4pH55UYtIoPuHE=";
+    hash = "sha256-csU9NCpxibcVtAN+Z7I/aQ4aPACNDKhG4bxUs3MPOxs=";
   };
 
   passthru.updateScript = nix-update-script {
